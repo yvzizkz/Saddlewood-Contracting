@@ -12,9 +12,16 @@ export default function UILoadingDemo() {
         <div className="container-custom">
           <h1 className="text-4xl font-bold mb-4">UI Components - Loading State</h1>
           <p className="text-xl mb-2">This is the actual loading state powered by Next.js 14 Loading UI</p>
-          <p className="text-sm bg-white bg-opacity-10 p-3 rounded-md inline-block">
-            The content is loading... These skeleton components are displayed while waiting.
-          </p>
+          <div className="bg-white bg-opacity-10 p-4 rounded-md">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="animate-spin h-5 w-5 border-2 border-white border-t-transparent rounded-full"></div>
+              <p className="font-medium">Loading content...</p>
+            </div>
+            <p className="text-sm opacity-80">
+              These skeleton components are displayed while content is being fetched. 
+              Notice the pulsing animation that provides visual feedback.
+            </p>
+          </div>
         </div>
       </div>
       
