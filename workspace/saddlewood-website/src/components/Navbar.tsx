@@ -13,6 +13,7 @@ const CompanyLogo = () => (
       width={60}
       height={60}
       className="rounded-full"
+      style={{ width: '60px', height: '60px' }}
       priority
     />
   </div>

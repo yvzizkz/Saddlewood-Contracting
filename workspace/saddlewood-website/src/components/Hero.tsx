@@ -11,9 +11,9 @@ export default function Hero() {
           <Image 
             src="/images/circle-bg.svg" 
             alt="Background circles" 
-            width={800}
-            height={800}
-            className="opacity-30"
+            width={900}
+            height={900}
+            className="opacity-70"
             priority
           />
         </div>
