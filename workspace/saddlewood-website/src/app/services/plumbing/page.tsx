@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function PlumbingPage() {
   return (
@@ -23,9 +24,7 @@ export default function PlumbingPage() {
               We take pride in offering prompt service, quality workmanship, and fair pricing on all plumbing projects, large or small.
             </p>
             
-            <Link href="/contact" className="btn-primary inline-block">
-              Contact for Service
-            </Link>
+            <ServiceCTA service="Plumbing" />
           </div>
           
           <div className="card">
