@@ -26,9 +26,6 @@ const registrationSchema = z.object({
   name: z
     .string()
     .min(2, { message: "Name must be at least 2 characters" }),
-  registrationCode: z
-    .string()
-    .min(1, { message: "Registration code is required" }),
 });
 
 type RegistrationFormData = z.infer<typeof registrationSchema>;
@@ -275,21 +272,7 @@ export default function AdminLoginPage() {
                 )}
               </div>
               
-              <div>
-                <label htmlFor="reg-code" className="block text-gray-700 font-medium mb-2">
-                  Registration Code
-                </label>
-                <input
-                  id="reg-code"
-                  type="text"
-                  {...registerRegister('registrationCode')}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-                    ${registerErrors.registrationCode ? 'border-red-500' : 'border-gray-300'}`}
-                />
-                {registerErrors.registrationCode && (
-                  <p className="text-red-500 text-sm mt-1">{registerErrors.registrationCode.message}</p>
-                )}
-              </div>
+
               
               <button
                 type="submit"
