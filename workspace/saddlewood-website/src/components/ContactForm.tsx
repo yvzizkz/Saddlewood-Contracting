@@ -202,6 +202,13 @@ export default function ContactForm() {
           )}
         </div>
         
+        <div className="mb-4 text-xs text-gray-600">
+          By submitting this form, you agree to our{' '}
+          <a href="/terms-and-conditions" className="text-primary hover:underline">Terms & Conditions</a>{' '}
+          and acknowledge our{' '}
+          <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.
+        </div>
+
         <button 
           type="submit" 
           className={`rounded-full px-6 py-3 font-medium w-full transition-all duration-300

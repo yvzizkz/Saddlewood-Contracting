@@ -53,6 +53,16 @@ export default function Footer() {
         </div>
         
         <div className="text-center pt-8 border-t border-gray-700">
+          <div className="flex justify-center space-x-4 mb-4">
+            <Link href="/privacy-policy" className="text-secondary hover:text-accent transition-colors duration-300 text-sm">
+              Privacy Policy
+            </Link>
+            <span className="text-secondary">|</span>
+            <Link href="/terms-and-conditions" className="text-secondary hover:text-accent transition-colors duration-300 text-sm">
+              Terms & Conditions
+            </Link>
+          </div>
+          
           <p className="uppercase text-sm mb-4 tracking-wider">
             Licensed & Insured | AZ ROC CR‑39 • CR‑11 • CR‑37 • KB‑2
           </p>
