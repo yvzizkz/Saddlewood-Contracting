@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
           
           <p className="uppercase text-sm mb-4 tracking-wider">
-            Licensed & Insured | AZ ROC CR‑39 • CR‑11 • CR‑37 • KB‑2
+            Licensed & Insured | AZ ROC 350714 CR‑39 • ROC 350715 CR‑11 • ROC 350716 CR‑37 • 305762 KB‑2
           </p>
           
           <p className="text-sm">

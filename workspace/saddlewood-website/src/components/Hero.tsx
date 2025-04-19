@@ -30,8 +30,13 @@ export default function Hero() {
               Licensed, insured, and committed to quality workmanship.
             </p>
             
-            <Link href="/contact" className="btn-primary inline-block">
-              Get a Free Estimate
+            <Link 
+              href="/contact" 
+              className="btn-primary inline-block relative overflow-hidden group transition-all duration-300 transform hover:scale-105"
+            >
+              <span className="relative z-10">Get a Free Estimate</span>
+              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-25 transition-opacity duration-300"></span>
+              <span className="absolute left-0 bottom-0 h-1 w-0 bg-accent group-hover:w-full transition-all duration-500 ease-in-out"></span>
             </Link>
           </div>
           
