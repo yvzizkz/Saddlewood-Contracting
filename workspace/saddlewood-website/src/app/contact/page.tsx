@@ -39,7 +39,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <strong className="block">Phone</strong>
-                    <span>480-555-1234</span>
+                    <span>480-999-6100</span>
                   </div>
                 </div>
                 

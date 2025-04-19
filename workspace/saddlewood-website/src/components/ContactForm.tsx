@@ -1,34 +1,56 @@
 "use client";
 
 import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+
+// Define Zod schema for form validation
+const contactFormSchema = z.object({
+  name: z
+    .string()
+    .min(2, { message: 'Name must be at least 2 characters' })
+    .max(50, { message: 'Name must be less than 50 characters' }),
+  email: z
+    .string()
+    .email({ message: 'Please enter a valid email address' }),
+  phone: z
+    .string()
+    .refine((val) => val === '' || /^(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/.test(val), {
+      message: 'Please enter a valid phone number (e.g., (123) 456-7890)'
+    }),
+  service: z
+    .string()
+    .optional(),
+  message: z
+    .string()
+    .min(10, { message: 'Message must be at least 10 characters' })
+    .max(1000, { message: 'Message must be less than 1000 characters' }),
+});
+
+// Infer TypeScript type from the schema
+type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: '',
-  });
-  
   const [formStatus, setFormStatus] = useState({
     submitting: false,
     success: false,
     error: false,
     message: '',
   });
+
+  // Initialize react-hook-form with zod validation
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty, isValid, touchedFields },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    mode: 'onChange', // Validate on change for real-time feedback
+  });
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  const onSubmit = async (data: ContactFormData) => {
     // Set submitting state
     setFormStatus({
       submitting: true,
@@ -41,6 +63,7 @@ export default function ContactForm() {
     try {
       // Simulate a form submission delay
       await new Promise(resolve => setTimeout(resolve, 1000));
+      console.log('Form data submitted:', data);
       
       // Form submission was successful
       setFormStatus({
@@ -51,14 +74,9 @@ export default function ContactForm() {
       });
       
       // Reset form data
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: '',
-      });
+      reset();
     } catch (error) {
+      console.error('Form submission error:', error);
       // Form submission failed
       setFormStatus({
         submitting: false,
@@ -85,52 +103,68 @@ export default function ContactForm() {
         </div>
       ) : null}
       
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Name *</label>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <div className="mb-2">
+          <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
+            Name <span className="text-red-500">*</span>
+          </label>
           <input 
-            type="text"
             id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            {...register('name')}
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+              ${errors.name ? 'border-red-500 bg-red-50' : touchedFields.name ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
           />
+          {errors.name && (
+            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+          )}
+          {touchedFields.name && !errors.name && (
+            <p className="text-green-500 text-sm mt-1">Looks good!</p>
+          )}
         </div>
         
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Email *</label>
+        <div className="mb-2">
+          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
+            Email <span className="text-red-500">*</span>
+          </label>
           <input 
             type="email"
             id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            {...register('email')}
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+              ${errors.email ? 'border-red-500 bg-red-50' : touchedFields.email ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+          )}
+          {touchedFields.email && !errors.email && (
+            <p className="text-green-500 text-sm mt-1">Valid email format!</p>
+          )}
         </div>
         
-        <div className="mb-4">
-          <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">Phone</label>
+        <div className="mb-2">
+          <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+            Phone
+          </label>
           <input 
             type="tel"
             id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            {...register('phone')}
+            placeholder="(123) 456-7890"
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+              ${errors.phone ? 'border-red-500 bg-red-50' : touchedFields.phone ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
           />
+          {errors.phone && (
+            <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+          )}
         </div>
         
-        <div className="mb-4">
-          <label htmlFor="service" className="block text-gray-700 font-medium mb-2">Service Needed</label>
+        <div className="mb-2">
+          <label htmlFor="service" className="block text-gray-700 font-medium mb-2">
+            Service Needed
+          </label>
           <select 
             id="service"
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
+            {...register('service')}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
           >
             <option value="">Select a service</option>
@@ -142,26 +176,38 @@ export default function ContactForm() {
           </select>
         </div>
         
-        <div className="mb-6">
-          <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Message *</label>
+        <div className="mb-4">
+          <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
+            Message <span className="text-red-500">*</span>
+          </label>
           <textarea 
             id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
+            {...register('message')}
             rows={5}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+              ${errors.message ? 'border-red-500 bg-red-50' : touchedFields.message ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
           ></textarea>
+          {errors.message && (
+            <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+          )}
         </div>
         
         <button 
           type="submit" 
-          className="bg-primary text-white rounded-full px-6 py-3 font-medium w-full hover:ring-2 hover:ring-primary transition-all duration-300"
-          disabled={formStatus.submitting}
+          className={`rounded-full px-6 py-3 font-medium w-full transition-all duration-300
+            ${!isDirty || !isValid 
+              ? 'bg-gray-400 text-white cursor-not-allowed' 
+              : 'bg-primary text-white hover:ring-2 hover:ring-primary'}`}
+          disabled={formStatus.submitting || !isDirty || !isValid}
         >
           {formStatus.submitting ? 'Submitting...' : 'Submit'}
         </button>
+        
+        {!isValid && isDirty && (
+          <p className="text-amber-500 text-sm text-center mt-2">
+            Please correct the form errors before submitting.
+          </p>
+        )}
       </form>
     </div>
   );
