@@ -40,7 +40,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4">Contact Us</h3>
             <p className="mb-2">Phoenix, Arizona</p>
-            <p className="mb-2">480-555-1234</p>
+            <p className="mb-2">480-999-6100</p>
             <p>info@saddlewoodcontracting.com</p>
           </div>
           
@@ -49,7 +49,6 @@ export default function Footer() {
             <p className="mb-2">Monday - Friday: 7am - 5pm</p>
             <p className="mb-2">Saturday: 8am - 3pm</p>
             <p>Sunday: Closed</p>
-            <p className="mt-4">Emergency service available 24/7</p>
           </div>
         </div>
         
