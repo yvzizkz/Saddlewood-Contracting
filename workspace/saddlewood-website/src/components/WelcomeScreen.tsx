@@ -13,7 +13,7 @@ export default function WelcomeScreen() {
     "Building Quality",
     "Delivering Excellence",
     "Earning Trust",
-    "Serving Arizona Since 1997"
+    "Serving Arizona Since 2007"
   ];
   
   // Animation timing configuration (in milliseconds)
