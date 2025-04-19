@@ -1,36 +1,24 @@
 import React from 'react';
 import Link from 'next/link';
-
-// This SVG creates a subtle circular ring background element
-const CircularRing = () => (
-  <svg 
-    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-10"
-    width="600"
-    height="600"
-    viewBox="0 0 600 600"
-  >
-    <circle 
-      cx="300" 
-      cy="300" 
-      r="280" 
-      fill="none" 
-      stroke="white" 
-      strokeWidth="8" 
-    />
-    <circle 
-      cx="300" 
-      cy="300" 
-      r="230" 
-      fill="none" 
-      stroke="white" 
-      strokeWidth="4" 
-    />
-  </svg>
-);
+import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section className="bg-primary text-secondary relative py-20 md:py-32 overflow-hidden">
+      {/* Circular ring background - positioned behind content */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <Image 
+            src="/images/circle-bg.svg" 
+            alt="Background circles" 
+            width={800}
+            height={800}
+            className="opacity-30"
+            priority
+          />
+        </div>
+      </div>
+      
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-7/12 mb-12 md:mb-0">
@@ -60,9 +48,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      
-      {/* Circular ring background */}
-      <CircularRing />
     </section>
   );
 }

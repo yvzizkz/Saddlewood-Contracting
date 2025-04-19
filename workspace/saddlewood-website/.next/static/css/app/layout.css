@@ -718,6 +718,15 @@ video {
 .top-1\/2 {
   top: 50%;
 }
+.-bottom-1\/4 {
+  bottom: -25%;
+}
+.-right-1\/4 {
+  right: -25%;
+}
+.top-0 {
+  top: 0px;
+}
 .z-10 {
   z-index: 10;
 }
@@ -809,6 +818,12 @@ video {
 .h-8 {
   height: 2rem;
 }
+.h-\[150\%\] {
+  height: 150%;
+}
+.h-full {
+  height: 100%;
+}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -832,6 +847,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-\[150\%\] {
+  width: 150%;
 }
 .max-w-2xl {
   max-width: 42rem;
@@ -977,6 +995,10 @@ video {
 .fill-current {
   fill: currentColor;
 }
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 .p-3 {
   padding: 0.75rem;
 }
@@ -1097,6 +1119,9 @@ video {
 }
 .opacity-10 {
   opacity: 0.1;
+}
+.opacity-30 {
+  opacity: 0.3;
 }
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
