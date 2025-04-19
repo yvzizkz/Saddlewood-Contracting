@@ -10,7 +10,7 @@ if (!process.env.DATABASE_URL) {
 export default {
   schema: './src/shared/schema.ts',
   out: './drizzle',
-  driver: 'pg',
+  dialect: 'postgresql',
   dbCredentials: {
     url: process.env.DATABASE_URL,
   },
