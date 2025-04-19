@@ -1,13 +1,12 @@
-import React from 'react';
-import Link from 'next/link';
+import { Skeleton } from '@/components/ui/skeleton';
+import RefreshButton from '@/components/RefreshButton';
 import HeroSkeleton from '@/components/HeroSkeleton';
 import ServiceCardSkeleton from '@/components/ServiceCardSkeleton';
 import WhyChooseUsSkeleton from '@/components/WhyChooseUsSkeleton';
 import ContactFormSkeleton from '@/components/ContactFormSkeleton';
-import { Skeleton } from '@/components/ui/skeleton';
-import RefreshButton from '@/components/RefreshButton';
+import Link from 'next/link';
 
-// This causes Next.js to simulate loading for 3 seconds
+// Force page to be dynamic with no caching
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 export const fetchCache = 'force-no-store';
@@ -24,7 +23,7 @@ export async function generateMetadata() {
 export default function UIDemo() {
   return (
     <div>
-      <div className="bg-primary text-secondary py-12">
+      <div className="bg-black text-white py-12">
         <div className="container-custom">
           <h1 className="text-4xl font-bold mb-4">UI Components Demo</h1>
           <p className="text-xl mb-4">Showcase of loading skeletons and UI components</p>
@@ -65,9 +64,9 @@ export default function UIDemo() {
                 <span className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-sm">2</span>
                 Loaded Content
               </h3>
-              <div className="border border-gray-200 rounded-2xl p-6 h-full transition-all hover:shadow-lg hover:border-primary">
+              <div className="border border-gray-200 rounded-2xl p-6 h-full transition-all hover:shadow-lg hover:border-black">
                 <div className="flex items-center space-x-4 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center">
                     <span className="text-xl">H</span>
                   </div>
                   <h3 className="text-xl font-bold">HVAC Services</h3>
@@ -75,7 +74,7 @@ export default function UIDemo() {
                 
                 <p className="mb-6">Installations, repairs, and maintenance for all your heating and cooling needs. Professional service by licensed technicians.</p>
                 
-                <Link href="/services/hvac" className="text-primary hover:underline font-medium inline-flex items-center">
+                <Link href="/services/hvac" className="text-black hover:underline font-medium inline-flex items-center">
                   View Details
                   <svg className="ml-1 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -149,7 +148,7 @@ export default function UIDemo() {
                   
                   <button 
                     type="button" 
-                    className="rounded-full px-6 py-3 font-medium w-full bg-primary text-white"
+                    className="rounded-full px-6 py-3 font-medium w-full bg-black text-white"
                   >
                     Submit
                   </button>
@@ -194,6 +193,15 @@ export default function UIDemo() {
             </div>
           </div>
         </section>
+
+        <div className="mt-12 flex gap-4">
+          <Link href="/demo" className="px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-all">
+            Welcome Screen Demo
+          </Link>
+          <Link href="/" className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-all">
+            Back to Home
+          </Link>
+        </div>
       </div>
     </div>
   );
