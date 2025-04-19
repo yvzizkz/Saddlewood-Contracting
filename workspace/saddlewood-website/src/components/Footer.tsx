@@ -1,0 +1,68 @@
+import React from 'react';
+import Link from 'next/link';
+
+export default function Footer() {
+  return (
+    <footer className="bg-primary text-secondary py-12">
+      <div className="container-custom">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 className="text-xl font-bold mb-4">Saddlewood Contracting</h3>
+            <p className="mb-4">18 years of trusted service in Arizona. We provide professional HVAC, electrical, plumbing, and remodeling services.</p>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-bold mb-4">Our Services</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/services/hvac" className="hover:text-accent transition-colors duration-300">
+                  HVAC Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/electrical" className="hover:text-accent transition-colors duration-300">
+                  Electrical
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/plumbing" className="hover:text-accent transition-colors duration-300">
+                  Plumbing
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/remodeling" className="hover:text-accent transition-colors duration-300">
+                  Remodeling
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+            <p className="mb-2">Phoenix, Arizona</p>
+            <p className="mb-2">480-555-1234</p>
+            <p>info@saddlewoodcontracting.com</p>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-bold mb-4">Business Hours</h3>
+            <p className="mb-2">Monday - Friday: 7am - 5pm</p>
+            <p className="mb-2">Saturday: 8am - 3pm</p>
+            <p>Sunday: Closed</p>
+            <p className="mt-4">Emergency service available 24/7</p>
+          </div>
+        </div>
+        
+        <div className="text-center pt-8 border-t border-gray-700">
+          <p className="uppercase text-sm mb-4 tracking-wider">
+            Licensed & Insured | AZ ROC CR‑39 • CR‑11 • CR‑37 • KB‑2
+          </p>
+          
+          <p className="text-sm">
+            &copy; {new Date().getFullYear()} Saddlewood Contracting LLC. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

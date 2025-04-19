@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-accent: #666666;
+}
+
+@layer base {
+  body {
+    @apply bg-secondary text-primary;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-secondary rounded-full px-6 py-3 font-medium 
+    hover:ring-2 hover:ring-white transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-primary rounded-full px-6 py-3 font-medium border border-primary
+    hover:ring-2 hover:ring-primary transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply uppercase text-secondary hover:text-accent transition-colors duration-300;
+  }
+  
+  .card {
+    @apply rounded-2xl ring-2 ring-gray-300 p-6 bg-secondary text-primary;
+  }
+}
