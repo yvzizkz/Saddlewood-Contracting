@@ -14,7 +14,11 @@ const adminUserSchema = z.object({
 
 type AdminUserFormData = z.infer<typeof adminUserSchema>;
 
-export default function AdminUserForm() {
+interface AdminUserFormProps {
+  onSuccess?: () => void;
+}
+
+export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -55,6 +59,11 @@ export default function AdminUserForm() {
 
       setSubmitSuccess(true);
       reset();
+      
+      // Call the onSuccess callback if provided
+      if (onSuccess) {
+        onSuccess();
+      }
     } catch (error: any) {
       setSubmitError(error.message || "An error occurred");
       console.error("Registration error:", error);
