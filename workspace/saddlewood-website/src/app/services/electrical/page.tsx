@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function ElectricalPage() {
   return (
@@ -23,9 +24,7 @@ export default function ElectricalPage() {
               Safety is our top priority. We adhere to the strictest industry standards and building codes to ensure all electrical work is done properly and safely.
             </p>
             
-            <Link href="/contact" className="btn-primary inline-block">
-              Request Service
-            </Link>
+            <ServiceCTA service="Electrical" />
           </div>
           
           <div className="card">

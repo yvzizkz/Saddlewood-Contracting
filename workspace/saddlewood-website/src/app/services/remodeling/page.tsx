@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function RemodelingPage() {
   return (
@@ -24,9 +25,7 @@ export default function RemodelingPage() {
               attention to detail, and project management excellence.
             </p>
             
-            <Link href="/contact" className="btn-primary inline-block">
-              Start Your Project
-            </Link>
+            <ServiceCTA service="Remodeling" />
           </div>
           
           <div className="card">

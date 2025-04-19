@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ServiceCTA from '@/components/ServiceCTA';
 
 export default function HVACPage() {
   return (
@@ -23,9 +24,7 @@ export default function HVACPage() {
               Whether you need a new installation, emergency repair, or regular maintenance, our team delivers reliable service with attention to detail.
             </p>
             
-            <Link href="/contact" className="btn-primary inline-block">
-              Schedule Service
-            </Link>
+            <ServiceCTA service="HVAC" />
           </div>
           
           <div className="card">
