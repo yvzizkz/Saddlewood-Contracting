@@ -1,0 +1,127 @@
+You are an expert AI pair‑programmer. I want to build a marketing site for Saddlewood Contracting using Next.js (App Router) + TypeScript + TailwindCSS. The site must match our existing circular black‑and‑white logo (attached)—think monochrome palette, ring/border motifs, and the SC monogram as our favicon/brand mark. Please generate a full project scaffold so I can just touch up the details. Follow these exact requirements:
+
+Project Setup
+
+Initialize a Next.js app in /workspace/saddlewood-website with TypeScript and the App Router.
+
+Install dev‑deps: tailwindcss, postcss, autoprefixer.
+
+Create tailwind.config.js and postcss.config.js with the standard Tailwind defaults, pointed at src/app/**/* and src/components/**/*.
+
+Global Styles & Brand Tokens
+
+In src/styles/globals.css, add the Tailwind directives (@tailwind base; @tailwind components; @tailwind utilities;).
+
+Define CSS variables or Tailwind theme overrides for:
+
+--color-primary: #000000 (black)
+
+--color-secondary: #ffffff (white)
+
+--color-accent: #666666 (medium gray)
+
+Import that CSS in src/app/layout.tsx.
+
+Root Layout & Favicon
+
+Update src/app/layout.tsx to:
+
+Import the global CSS.
+
+Load Google fonts “Geist” and “Geist Mono” as before.
+
+Wrap <html><body> around {children}.
+
+Set <title> to “Saddlewood Contracting – 18 Years AZ HVAC, Electrical & Plumbing”.
+
+Add a <link rel="icon" href="/favicon.ico" /> pointing at a generated favicon.ico containing just the “SC” monogram in white on black.
+
+Core Components with Logo‑Inspired Styling
+
+Navbar.tsx:
+
+Use your “SC” monogram as the left‑hand logo 
+
+Links in uppercase white text, hover state in gray.
+
+A “Book Estimate” button styled as a white text circle with a ring-2 ring-white border on hover.
+
+Footer.tsx:
+
+Black background, white text, centered.
+
+Show “Licensed & Insured | AZ ROC CR‑39 • CR‑11 • CR‑37 • KB‑2” in small uppercase.
+
+Hero.tsx:
+
+Full‑width black background.
+
+A subtle circular SVG ring (like your logo border) behind the headline.
+
+Use this somewhere near hero section 
+<div class="text-sm text-white">
+  <p><strong>Licensed Contractor:</strong></p>
+  <p>ROC 350714 – CR-39 Air Conditioning and Refrigeration</p>
+  <p>ROC 350715 – CR-11 Electrical</p>
+  <p>ROC 350716 – CR-37 Plumbing</p>
+  <p>ROC 305762 – KB-2 Dual Residential and Small Commercial</p>
+</div>
+
+Headline in white, “18 Years of Trusted AZ Contracting.”
+
+CTA button as a pill with rounded-full, white text on black, ring-2 ring-white hover.
+
+Page Scaffolds
+
+src/app/page.tsx (Home):
+
+Render <Hero /> plus a 2‑column grid of service cards.
+
+Cards are white backgrounds with black text, each card in a circular <div class="rounded-2xl ring-2 ring-gray-300 p-6">.
+
+/services/* pages (HVAC, Electrical, Plumbing, Remodeling):
+
+Each page uses a top black hero bar with the service name in white and a thin white ring border at the bottom.
+
+/contact/page.tsx:
+
+Form fields on a white circular card with shadow-lg and rounded-2xl.
+
+Submit button in black with white ring border hover.
+
+Folder Structure
+
+bash
+Copy
+Edit
+/workspace/saddlewood-website
+│ package.json
+│ tailwind.config.js
+│ postcss.config.js
+│ public/
+│  └─ favicon.ico  ← SC monogram white-on-black
+└─ src
+   ├─ app
+   │   ├─ layout.tsx
+   │   ├─ page.tsx
+   │   ├─ services/{hvac,electrical,plumbing,remodeling}/page.tsx
+   │   └─ contact/page.tsx
+   ├─ components/{Navbar.tsx,Footer.tsx,Hero.tsx}
+   └─ styles/globals.css
+Styling & UX
+
+Strict black (#000), white (#fff), gray (#666) palette.
+
+Use plenty of rounded-full or rounded-2xl circles/rings to echo the logo.
+
+Buttons and interactive elements use ring-2 outlines on hover.
+
+Mobile‑first, responsive by default.
+
+Final Instructions
+
+Generate all files with complete imports and placeholder TODO: for copy/images.
+
+Ensure npm run dev compiles cleanly and that Tailwind classes (e.g. bg-black, ring-2) render correctly.
+
+Stop after scaffolding so I can review brand alignment before adding images or final copy.
