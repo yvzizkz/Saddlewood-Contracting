@@ -10,9 +10,8 @@ if (!process.env.DATABASE_URL) {
 export default {
   schema: './src/shared/schema.ts',
   out: './drizzle',
-  driver: 'pg', // This is correct for PostgreSQL
+  dialect: 'postgresql',
   dbCredentials: {
-    // This is the correct format for PostgreSQL connections
-    url: process.env.DATABASE_URL,
+    connectionString: process.env.DATABASE_URL,
   },
 } satisfies Config;
