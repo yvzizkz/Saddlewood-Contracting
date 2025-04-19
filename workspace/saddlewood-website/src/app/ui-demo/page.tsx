@@ -1,13 +1,13 @@
 import { Skeleton } from '@/components/ui/skeleton';
-import RefreshButton from '@/components/RefreshButton';
 import HeroSkeleton from '@/components/HeroSkeleton';
 import ServiceCardSkeleton from '@/components/ServiceCardSkeleton';
 import WhyChooseUsSkeleton from '@/components/WhyChooseUsSkeleton';
 import ContactFormSkeleton from '@/components/ContactFormSkeleton';
 import Link from 'next/link';
+import ClientRefreshButton from './ClientRefreshButton';
 
 // Force page to be dynamic with no caching
-export const dynamic = 'force-dynamic';
+export const nextDynamic = 'force-dynamic';
 export const revalidate = 0;
 export const fetchCache = 'force-no-store';
 
@@ -45,7 +45,7 @@ export default function UIDemo() {
             <li>The pulsing animation provides visual feedback that content is loading</li>
           </ul>
           <div className="mt-4">
-            <RefreshButton />
+            <ClientRefreshButton />
           </div>
         </div>
         
