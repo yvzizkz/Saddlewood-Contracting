@@ -59,11 +59,21 @@ export default function ContactForm() {
       message: '',
     });
     
-    // TODO: Replace with actual form submission logic
     try {
-      // Simulate a form submission delay
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      console.log('Form data submitted:', data);
+      // Submit data to the API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.message || 'Something went wrong');
+      }
       
       // Form submission was successful
       setFormStatus({
