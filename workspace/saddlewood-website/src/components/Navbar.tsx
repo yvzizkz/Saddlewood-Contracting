@@ -2,18 +2,19 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
-// SVG for the SC monogram logo
-const SCLogo = () => (
-  <svg viewBox="0 0 100 100" width="50" height="50" className="fill-current text-white">
-    <circle cx="50" cy="50" r="48" fill="black" stroke="white" strokeWidth="4"/>
-    <g transform="translate(28, 30)">
-      {/* S letter */}
-      <path d="M3,16 C3,10 7,7 13,7 C19,7 24,10 24,16 C24,21 21,24 13,26 C8,27 7,28 7,31 C7,33 9,35 13,35 C17,35 19,33 19,31 L24,31 C24,37 19,40 13,40 C7,40 2,37 2,31 C2,25 6,22 13,20 C19,19 19,18 19,15 C19,13 17,11 13,11 C9,11 7,13 7,16 L3,16 Z" fill="white" />
-      {/* C letter */}
-      <path d="M32,13 C32,7 37,4 43,4 C49,4 54,7 54,13 L49,13 C49,9 46,8 43,8 C40,8 37,9 37,13 L37,31 C37,35 40,36 43,36 C46,36 49,35 49,31 L54,31 C54,37 49,40 43,40 C37,40 32,37 32,31 L32,13 Z" fill="white" />
-    </g>
-  </svg>
+// Using logo image 
+const CompanyLogo = () => (
+  <div className="flex items-center">
+    <Image
+      src="/images/logo.svg"
+      alt="Saddlewood Contracting Logo"
+      width={50}
+      height={50}
+      className="rounded-full"
+    />
+  </div>
 );
 
 export default function Navbar() {
@@ -29,7 +30,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <SCLogo />
+            <CompanyLogo />
             <span className="ml-3 text-xl font-bold">Saddlewood Contracting</span>
           </Link>
           
