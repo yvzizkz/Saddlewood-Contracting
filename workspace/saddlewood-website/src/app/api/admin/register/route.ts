@@ -1,81 +1,74 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db';
 import { users } from '@/shared/schema';
-import { z } from 'zod';
 import { hashPassword } from '@/lib/auth/password';
+import { eq } from 'drizzle-orm';
+import { z } from 'zod';
+import { getServerSession } from 'next-auth';
+import { authOptions } from '@/lib/auth/auth-options';
 
-// Admin registration schema
-const adminRegistrationSchema = z.object({
-  username: z
-    .string()
-    .min(3, { message: 'Username must be at least 3 characters' })
-    .max(50, { message: 'Username must be less than 50 characters' }),
-  password: z
-    .string()
-    .min(8, { message: 'Password must be at least 8 characters' }),
-  name: z
-    .string()
-    .min(2, { message: 'Name must be at least 2 characters' })
-    .max(50, { message: 'Name must be less than 50 characters' }),
-  registrationCode: z.string(),
+// Registration schema validation
+const registerSchema = z.object({
+  username: z.string().min(3, "Username must be at least 3 characters"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
+  name: z.string().optional(),
 });
 
-// This endpoint is for registering admin users
 export async function POST(request: NextRequest) {
   try {
-    // Get request body
-    const body = await request.json();
+    // Check if there is already an admin session
+    const session = await getServerSession(authOptions);
     
-    // Validate admin registration code (simple security measure)
-    // In a production app, you'd use a more secure approach
-    const REGISTRATION_CODE = process.env.ADMIN_REGISTRATION_CODE || 'saddlewood2025';
-    
-    if (body.registrationCode !== REGISTRATION_CODE) {
-      return NextResponse.json({
+    // Allow registration only if already authenticated as admin
+    // This prevents unauthorized users from creating admin accounts
+    if (!session) {
+      return NextResponse.json({ 
         success: false,
-        message: 'Invalid registration code',
-      }, { status: 403 });
+        message: "Unauthorized"
+      }, { status: 401 });
     }
     
-    // Validate form data
-    const validatedData = adminRegistrationSchema.parse(body);
+    // Get and validate request body
+    const body = await request.json();
+    const validatedData = registerSchema.parse(body);
     
     // Check if username already exists
-    const existingUsers = await db
+    const [existingUser] = await db
       .select()
       .from(users)
-      .where(({ eq }) => eq(users.username, validatedData.username));
+      .where(eq(users.username, validatedData.username));
     
-    if (existingUsers.length > 0) {
-      return NextResponse.json({
+    if (existingUser) {
+      return NextResponse.json({ 
         success: false,
-        message: 'Username already exists',
+        message: "Username already exists"
       }, { status: 400 });
     }
     
-    // Hash the password
+    // Hash password
     const hashedPassword = await hashPassword(validatedData.password);
     
-    // Insert into database
-    const result = await db.insert(users).values({
-      username: validatedData.username,
-      password: hashedPassword,
-      name: validatedData.name,
-      createdAt: new Date(),
-    }).returning();
+    // Create user
+    const [newUser] = await db
+      .insert(users)
+      .values({
+        username: validatedData.username,
+        password: hashedPassword,
+        name: validatedData.name || validatedData.username,
+        createdAt: new Date(),
+      })
+      .returning();
     
-    // Remove password from the result before returning
-    const { password, ...userWithoutPassword } = result[0];
+    // Remove password from response
+    const { password, ...userWithoutPassword } = newUser;
     
-    // Return success response
-    return NextResponse.json({
+    return NextResponse.json({ 
       success: true,
-      message: 'Admin user created successfully',
-      data: userWithoutPassword,
+      user: userWithoutPassword
     }, { status: 201 });
     
   } catch (error) {
-    console.error('Admin registration error:', error);
+    console.error('Error registering user:', error);
     
     // Handle validation errors
     if (error instanceof z.ZodError) {
@@ -86,10 +79,9 @@ export async function POST(request: NextRequest) {
       }, { status: 400 });
     }
     
-    // Handle other errors
-    return NextResponse.json({
+    return NextResponse.json({ 
       success: false,
-      message: 'An error occurred while processing your request',
+      message: 'An error occurred during registration'
     }, { status: 500 });
   }
 }
