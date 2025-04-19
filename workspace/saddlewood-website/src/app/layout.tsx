@@ -3,6 +3,7 @@ import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import AuthProvider from '@/lib/auth/auth-provider';
 
 // Load Inter font (replacing Geist)
 const inter = Inter({ 
@@ -32,11 +33,13 @@ export default function RootLayout({
         <link rel="icon" href="/images/logo.png" type="image/png" />
       </head>
       <body className="flex flex-col min-h-screen">
-        <Navbar />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
