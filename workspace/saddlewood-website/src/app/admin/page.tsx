@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useProtectedRoute } from "@/lib/auth/protected-route";
 import Link from "next/link";
 import AdminUserForm from "@/components/AdminUserForm";
+import AdminDashboardCharts from "@/components/AdminDashboardCharts";
 
 // Lead type definition
 type Lead = {
@@ -82,6 +83,12 @@ export default function AdminDashboard() {
           {error}
         </div>
       )}
+      
+      {/* Analytics Charts */}
+      <div className="mb-8">
+        <h2 className="text-xl font-semibold mb-4">Analytics</h2>
+        <AdminDashboardCharts leads={leads} />
+      </div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
         {/* Leads Section - 2/3 width on medium screens and above */}
@@ -268,7 +275,7 @@ export default function AdminDashboard() {
             </div>
             
             {/* Admin User Form Component */}
-            <AdminUserForm />
+            <AdminUserForm onSuccess={fetchLeads} />
           </div>
         </div>
       </div>

@@ -45,6 +45,16 @@ export default function AdminNavbar() {
                 Dashboard
               </Link>
               <Link
+                href="/admin/leads"
+                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+                  isActive("/admin/leads")
+                    ? "border-black text-gray-900"
+                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                }`}
+              >
+                Leads
+              </Link>
+              <Link
                 href="/admin/users"
                 className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                   isActive("/admin/users")
@@ -95,6 +105,16 @@ export default function AdminNavbar() {
             }`}
           >
             Dashboard
+          </Link>
+          <Link
+            href="/admin/leads"
+            className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+              isActive("/admin/leads")
+                ? "border-black text-black bg-gray-50"
+                : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+            }`}
+          >
+            Leads
           </Link>
           <Link
             href="/admin/users"
