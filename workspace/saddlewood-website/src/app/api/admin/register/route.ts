@@ -79,11 +79,24 @@ export async function POST(request: NextRequest) {
     // Remove password from response
     const { password, ...userWithoutPassword } = newUser;
     
-    return NextResponse.json({ 
+    // Create response with user data
+    const response = NextResponse.json({ 
       success: true,
       user: userWithoutPassword,
       storageType
     }, { status: 201 });
+    
+    // Set secure cookie with user data
+    response.cookies.set({
+      name: 'adminUser',
+      value: JSON.stringify(userWithoutPassword),
+      httpOnly: true,
+      path: '/',
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    });
+    
+    return response;
     
   } catch (error) {
     console.error('Error registering user:', error);

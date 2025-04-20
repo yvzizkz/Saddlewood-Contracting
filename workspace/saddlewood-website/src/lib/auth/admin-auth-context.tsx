@@ -97,12 +97,20 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
     setLoading(true);
     
     try {
-      // Clear local state
+      // Call logout API to clear the cookie
+      const response = await fetch('/api/admin/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+      
+      // Clear local state regardless of response
       setUser(null);
-      localStorage.removeItem('adminUser');
     } catch (err) {
       console.error('Logout error:', err);
       setError('An error occurred during logout');
+      
+      // Still clear local state on error
+      setUser(null);
     } finally {
       setLoading(false);
     }
@@ -119,6 +127,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // Important for cookies
         body: JSON.stringify({ username, password, name }),
       });
       
@@ -129,9 +138,8 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
         return false;
       }
       
-      // Auto login after registration
+      // Auto login after registration (cookie is set by server)
       setUser(data.user);
-      localStorage.setItem('adminUser', JSON.stringify(data.user));
       return true;
       
     } catch (err) {

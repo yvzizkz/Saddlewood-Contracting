@@ -25,6 +25,21 @@ export async function isAuthenticated(request: NextRequest) {
       }
     }
     
+    // Alternative: check auth header (for API clients)
+    const authHeader = request.headers.get('Authorization');
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+      const token = authHeader.substring(7);
+      try {
+        // Simple token validation (in a real app, you'd verify JWT or similar)
+        const userData = JSON.parse(atob(token));
+        if (userData && userData.id) {
+          return userData;
+        }
+      } catch (e) {
+        console.error('Error parsing auth header:', e);
+      }
+    }
+    
     return false;
   } catch (error) {
     console.error('Auth middleware error:', error);
