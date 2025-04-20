@@ -111,18 +111,27 @@ export default function ContactForm() {
     }
   };
   
+  // Show the thank you page if submission was successful
+  if (formStatus.success && submittedData) {
+    return <EmailThankYouPage 
+      name={submittedData.name}
+      email={submittedData.email}
+      submissionId={submittedData.submissionId}
+      onClose={() => {
+        setFormStatus({
+          submitting: false,
+          success: false,
+          error: false,
+          message: '',
+        });
+        setSubmittedData(null);
+      }}
+    />;
+  }
+
   return (
     <div className="shadow-lg rounded-2xl bg-white p-8">
       <h3 className="text-2xl font-bold mb-6">Contact Form</h3>
-      
-      {formStatus.success ? (
-        <div className="bg-green-100 text-green-700 p-6 rounded-lg mb-6 text-center">
-          <h4 className="text-xl font-bold mb-2">Thank You!</h4>
-          <p>{formStatus.message}</p>
-          <p className="mt-4">Our team will contact you within 24-48 business hours.</p>
-          <p className="mt-2 text-sm">Reference: {new Date().toISOString().split('T')[0]}-{Math.floor(Math.random() * 1000)}</p>
-        </div>
-      ) : null}
       
       {formStatus.error ? (
         <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-6">
