@@ -26,7 +26,53 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: 'Saddlewood Contracting – 18 Years AZ HVAC, Electrical & Plumbing',
-  description: 'Trusted HVAC, electrical, plumbing, and remodeling services in Arizona for over 18 years. Licensed and insured.',
+  description: 'Trusted HVAC, electrical, plumbing, and remodeling services in Arizona for over 18 years. Licensed and insured professionals serving Phoenix and beyond.',
+  keywords: 'HVAC, air conditioning, heating, electrical, plumbing, remodeling, home services, Phoenix, Arizona, contractor, home improvement',
+  authors: [{ name: 'Saddlewood Contracting' }],
+  creator: 'Saddlewood Contracting',
+  publisher: 'Saddlewood Contracting',
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: true,
+  },
+  metadataBase: new URL('https://saddlewoodcontracting.com'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'Saddlewood Contracting – Professional Home Services',
+    description: 'Trusted HVAC, electrical, plumbing, and remodeling services in Arizona since 2007. Licensed and insured professionals for all your home needs.',
+    url: 'https://saddlewoodcontracting.com',
+    siteName: 'Saddlewood Contracting',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Saddlewood Contracting - Professional Home Services',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Saddlewood Contracting – Professional Home Services',
+    description: 'Trusted HVAC, electrical, plumbing, and remodeling services in Arizona since 2007.',
+    images: ['/images/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

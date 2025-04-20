@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { sendContactFormNotification, sendContactFormConfirmation } from '@/lib/email-service';
+import { withRateLimit } from '@/middlewares/rate-limit';
 
 // Contact form validation schema
 const contactFormSchema = z.object({
@@ -64,6 +65,13 @@ async function logContactRequest(data: any) {
 
 export async function POST(request: NextRequest) {
   try {
+    // Apply rate limiting
+    const rateLimitResponse = await withRateLimit(request);
+    if (rateLimitResponse) {
+      // Rate limit exceeded
+      return rateLimitResponse;
+    }
+    
     // Get request body
     const body = await request.json();
     
