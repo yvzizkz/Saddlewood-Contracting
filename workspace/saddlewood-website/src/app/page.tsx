@@ -86,33 +86,33 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-8 text-center">Our Service Areas</h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            <a href="/contact?area=Phoenix" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Phoenix</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            </a>
+            <a href="/contact?area=Paradise Valley" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Paradise Valley</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            </a>
+            <a href="/contact?area=Scottsdale" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Scottsdale</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            </a>
+            <a href="/contact?area=Tempe" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Tempe</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            </a>
+            <a href="/contact?area=Mesa" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Mesa</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            </a>
+            <a href="/contact?area=Chandler" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Chandler</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            </a>
+            <a href="/contact?area=Gilbert" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Gilbert</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            </a>
+            <a href="/contact?area=Glendale" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Glendale</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+            </a>
+            <a href="/contact?area=Fountain Hills" className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md hover:bg-gray-50 transition-all">
               <h3 className="text-lg font-semibold">Fountain Hills</h3>
-            </div>
+            </a>
           </div>
           
           <p className="text-center text-gray-600 mb-8">
