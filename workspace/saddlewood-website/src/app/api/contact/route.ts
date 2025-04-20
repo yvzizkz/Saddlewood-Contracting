@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { sendContactFormNotification, sendContactFormConfirmation } from '@/lib/email-service';
 import { withRateLimit } from '@/middlewares/rate-limit';
+import { verifyRecaptcha } from '@/lib/recaptcha';
 
 // Contact form validation schema
 const contactFormSchema = z.object({
@@ -28,6 +29,9 @@ const contactFormSchema = z.object({
     .string()
     .min(10, { message: 'Message must be at least 10 characters' })
     .max(1000, { message: 'Message must be less than 1000 characters' }),
+  captchaToken: z
+    .string()
+    .min(1, { message: 'CAPTCHA verification is required' }),
 });
 
 /**
@@ -77,6 +81,15 @@ export async function POST(request: NextRequest) {
     
     // Validate form data
     const validatedData = contactFormSchema.parse(body);
+    
+    // Verify reCAPTCHA token
+    const isRecaptchaValid = await verifyRecaptcha(validatedData.captchaToken);
+    if (!isRecaptchaValid) {
+      return NextResponse.json({
+        success: false,
+        message: 'CAPTCHA verification failed. Please try again.',
+      }, { status: 400 });
+    }
     
     // Generate a unique submission ID
     const submissionDate = new Date();

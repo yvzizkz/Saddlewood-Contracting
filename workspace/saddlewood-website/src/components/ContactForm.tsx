@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import EmailThankYouPage from './EmailThankYouPage';
-import ReCAPTCHA from 'react-google-recaptcha';
+import Script from 'next/script';
 
 // Define Zod schema for form validation
 const contactFormSchema = z.object({
@@ -52,7 +52,7 @@ export default function ContactForm() {
   } | null>(null);
 
   const [captchaVerified, setCaptchaVerified] = useState(false);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const recaptchaRef = useRef<any>(null);
 
   // Initialize react-hook-form with zod validation
   const {
@@ -282,14 +282,28 @@ export default function ContactForm() {
           and acknowledge our{' '}
           <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.
         </div>
+        
+        <div className="mb-6 flex justify-center">
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+            onChange={onCaptchaChange}
+          />
+        </div>
+        
+        {!captchaVerified && isDirty && isValid && (
+          <p className="text-amber-500 text-sm text-center mb-4">
+            Please complete the CAPTCHA verification above.
+          </p>
+        )}
 
         <button 
           type="submit" 
           className={`rounded-full px-6 py-3 font-medium w-full transition-all duration-300
-            ${!isDirty || !isValid 
+            ${!isDirty || !isValid || !captchaVerified
               ? 'bg-gray-400 text-white cursor-not-allowed' 
               : 'bg-primary text-white hover:ring-2 hover:ring-primary'}`}
-          disabled={formStatus.submitting || !isDirty || !isValid}
+          disabled={formStatus.submitting || !isDirty || !isValid || !captchaVerified}
         >
           {formStatus.submitting ? 'Submitting...' : 'Submit'}
         </button>
