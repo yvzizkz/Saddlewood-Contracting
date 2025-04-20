@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import ThemeSelector from './ThemeSelector';
 
 // Professional company logo with larger size
 const CompanyLogo = () => (
@@ -82,8 +83,13 @@ export default function Navbar() {
               </Link>
             </div>
             
+            {/* Theme selector */}
+            <div className="ml-4">
+              <ThemeSelector />
+            </div>
+            
             {/* CTA button */}
-            <Link href="/contact" className="ml-6 px-6 py-2.5 text-secondary bg-accent bg-opacity-20 rounded-full hover:bg-opacity-40 transition-all duration-300 font-medium">
+            <Link href="/contact" className="ml-4 px-6 py-2.5 text-secondary bg-accent bg-opacity-20 rounded-full hover:bg-opacity-40 transition-all duration-300 font-medium">
               Book Estimate
             </Link>
           </div>
@@ -244,6 +250,11 @@ export default function Navbar() {
               </div>
               <span className="font-medium">Book an Estimate</span>
             </Link>
+            
+            {/* Theme selector in mobile menu */}
+            <div className="mt-4 flex justify-center">
+              <ThemeSelector />
+            </div>
             
             {/* Bottom text with company info */}
             <div className="mt-4 text-center">

@@ -3,20 +3,36 @@
 @tailwind utilities;
 
 :root {
+  /* Default values - will be overridden by theme context */
   --color-primary: #000000;
   --color-secondary: #ffffff;
-  --color-accent: #666666;
+  --color-accent: #d4af37;
+  --color-neutral: #6b7280;
+  --color-neutral-light: #d1d5db;
+  --color-neutral-dark: #374151;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-background: #ffffff;
+  --color-card: #f8f8f8;
   --color-primary-darker: #111111;
 }
 
 @layer base {
   body {
-    @apply bg-secondary text-primary;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
   
   /* Improve tap targets on mobile */
   button, a {
-    @apply min-h-[44px] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50;
+    @apply min-h-[44px] focus:outline-none focus:ring-2 focus:ring-opacity-50;
+  }
+  
+  button:focus, a:focus {
+    --tw-ring-color: var(--color-accent);
   }
   
   /* Better responsive text sizing */
@@ -36,6 +52,14 @@
   p, li {
     @apply leading-relaxed;
   }
+  
+  /* Theme transition classes */
+  .theme-transition {
+    transition: background-color 0.5s ease, 
+                color 0.5s ease, 
+                border-color 0.5s ease,
+                box-shadow 0.5s ease;
+  }
 }
 
 @layer components {
@@ -44,30 +68,68 @@
   }
   
   .btn-primary {
-    @apply bg-primary text-secondary rounded-full px-5 py-2 sm:px-6 sm:py-3 font-medium 
-    hover:ring-2 hover:ring-white transition-all duration-300 text-sm sm:text-base;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    @apply rounded-full px-5 py-2 sm:px-6 sm:py-3 font-medium 
+    hover:ring-2 transition-all duration-300 text-sm sm:text-base theme-transition;
+  }
+  
+  .btn-primary:hover {
+    --tw-ring-color: var(--color-accent);
   }
   
   .btn-secondary {
-    @apply bg-secondary text-primary rounded-full px-5 py-2 sm:px-6 sm:py-3 font-medium border border-primary
-    hover:ring-2 hover:ring-primary transition-all duration-300 text-sm sm:text-base;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    @apply rounded-full px-5 py-2 sm:px-6 sm:py-3 font-medium border
+    hover:ring-2 transition-all duration-300 text-sm sm:text-base theme-transition;
+  }
+  
+  .btn-secondary:hover {
+    --tw-ring-color: var(--color-primary);
   }
   
   .nav-link {
-    @apply uppercase text-secondary hover:text-accent transition-colors duration-300 text-sm sm:text-base;
+    color: var(--color-secondary);
+    @apply uppercase transition-colors duration-300 text-sm sm:text-base;
+  }
+  
+  .nav-link:hover {
+    color: var(--color-accent);
   }
   
   .card {
-    @apply rounded-2xl ring-2 ring-gray-300 p-4 sm:p-6 bg-secondary text-primary;
+    background-color: var(--color-card);
+    color: var(--color-primary);
+    border-color: var(--color-border);
+    @apply rounded-2xl p-4 sm:p-6 ring-2 theme-transition;
   }
   
   /* Mobile menu styles */
   .mobile-menu-item {
-    @apply flex items-center py-3 px-3 rounded-md hover:bg-primary-darker transition-colors;
+    @apply flex items-center py-3 px-3 rounded-md transition-colors theme-transition;
+  }
+  
+  .mobile-menu-item:hover {
+    background-color: var(--color-primary-darker);
   }
   
   /* Touch-friendly service cards */
   .service-card {
-    @apply rounded-2xl ring-2 ring-gray-300 p-4 sm:p-6 bg-secondary text-primary hover:shadow-lg transition-all duration-300;
+    background-color: var(--color-card);
+    color: var(--color-primary);
+    border-color: var(--color-border);
+    @apply rounded-2xl p-4 sm:p-6 ring-2 hover:shadow-lg transition-all duration-300 theme-transition;
+  }
+  
+  /* Theme selector component */
+  .theme-selector {
+    @apply p-2 rounded-full transition-all duration-300;
+  }
+  
+  .theme-selector-active {
+    @apply ring-2;
+    ring-color: var(--color-accent);
   }
 }

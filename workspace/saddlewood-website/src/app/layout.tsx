@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/lib/auth/auth-provider';
+import { ThemeProvider } from '@/lib/theme-context';
 import dynamic from 'next/dynamic';
 
 // Import components with dynamic loading and disable SSR
@@ -98,20 +99,22 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="flex flex-col min-h-screen">
-        <AuthProvider>
-          {/* Construction-themed loading animation */}
-          <LoadingAnimation />
-          
-          {/* Welcome Screen with company mission animation */}
-          <WelcomeScreen />
-          
-          <Navbar />
-          <main className="flex-grow">
-            {children}
-          </main>
-          <Footer />
-        </AuthProvider>
+      <body className="flex flex-col min-h-screen theme-transition">
+        <ThemeProvider>
+          <AuthProvider>
+            {/* Construction-themed loading animation */}
+            <LoadingAnimation />
+            
+            {/* Welcome Screen with company mission animation */}
+            <WelcomeScreen />
+            
+            <Navbar />
+            <main className="flex-grow">
+              {children}
+            </main>
+            <Footer />
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
