@@ -78,13 +78,54 @@ export default function ElectricalPage() {
     "provider": {
       "@type": "LocalBusiness",
       "@id": "https://saddlewoodcontracting.com/#localbusiness",
-      "name": "Saddlewood Contracting"
+      "name": "Saddlewood Contracting",
+      "telephone": "(480) 999-6100",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      }
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Phoenix",
-      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Phoenix",
+        "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+      },
+      {
+        "@type": "City",
+        "name": "Paradise Valley"
+      },
+      {
+        "@type": "City",
+        "name": "Scottsdale"
+      },
+      {
+        "@type": "City",
+        "name": "Tempe"
+      },
+      {
+        "@type": "City",
+        "name": "Mesa"
+      },
+      {
+        "@type": "City",
+        "name": "Chandler"
+      },
+      {
+        "@type": "City",
+        "name": "Gilbert"
+      },
+      {
+        "@type": "City",
+        "name": "Glendale"
+      },
+      {
+        "@type": "City",
+        "name": "Fountain Hills"
+      }
+    ],
     "description": "Professional electrical services including installation, wiring, repairs, panel upgrades, and EV charging station installation for homes and businesses in Phoenix and surrounding areas.",
     "offers": {
       "@type": "Offer",
@@ -94,7 +135,58 @@ export default function ElectricalPage() {
         "priceCurrency": "USD"
       }
     },
-    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
+    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Electrical Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Electrical Installation & Wiring",
+            "description": "Complete electrical wiring for new construction, renovations, and additions."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Electrical Repairs & Troubleshooting",
+            "description": "Diagnosing and repairing electrical problems in homes and businesses quickly and safely."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Panel Upgrades & Electrical Service",
+            "description": "Upgrading electrical panels to safely handle modern power demands and circuit additions."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Electric Vehicle Charging Stations",
+            "description": "Professional installation of EV charging stations for residential and commercial properties."
+          }
+        }
+      ]
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Arizona Homeowner"
+      },
+      "reviewBody": "The electricians from Saddlewood did an outstanding job on our panel upgrade. They were knowledgeable, efficient, and explained everything. Our home is now safer and can handle all our modern electrical needs."
+    }
   };
   // Benefits data
   const benefits = [
