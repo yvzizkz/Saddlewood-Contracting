@@ -35,9 +35,12 @@ export async function sendContactFormNotification(data: ContactFormEmailData): P
     const toEmail = 'info@saddlewoodcontracting.com';
     
     // Format service type for better readability
-    const serviceType = data.service 
+    // Ensure we get the actual service value from the form
+    const serviceType = data.service && data.service.trim() !== ''
       ? data.service.charAt(0).toUpperCase() + data.service.slice(1) 
       : 'Not specified';
+    
+    console.log('Sending notification with service type:', serviceType, 'from data service:', data.service);
 
     await mailService.send({
       to: toEmail,
@@ -112,9 +115,13 @@ export async function sendContactFormConfirmation(data: ContactFormEmailData): P
       return false;
     }
 
-    const serviceType = data.service 
+    // Format service type for better readability
+    // Ensure we get the actual service value from the form
+    const serviceType = data.service && data.service.trim() !== ''
       ? data.service.charAt(0).toUpperCase() + data.service.slice(1) 
       : 'Not specified';
+    
+    console.log('Sending confirmation with service type:', serviceType, 'from data service:', data.service);
       
     // Get first name from full name for more personable greeting
     const firstName = data.name.split(' ')[0];
