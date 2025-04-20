@@ -152,7 +152,12 @@ export default function ContactForm() {
             id="name"
             {...register('name')}
             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.name ? 'border-red-500 bg-red-50' : touchedFields.name ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              dark:bg-gray-700 dark:text-white
+              ${errors.name 
+                ? 'border-red-500 bg-red-50 dark:bg-red-900/30 dark:border-red-400' 
+                : touchedFields.name 
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/30 dark:border-green-400' 
+                  : 'border-gray-300 dark:border-gray-600'}`}
           />
           {errors.name && (
             <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
@@ -171,7 +176,12 @@ export default function ContactForm() {
             id="email"
             {...register('email')}
             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.email ? 'border-red-500 bg-red-50' : touchedFields.email ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              dark:bg-gray-700 dark:text-white
+              ${errors.email 
+                ? 'border-red-500 bg-red-50 dark:bg-red-900/30 dark:border-red-400' 
+                : touchedFields.email 
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/30 dark:border-green-400' 
+                  : 'border-gray-300 dark:border-gray-600'}`}
           />
           {errors.email && (
             <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -182,7 +192,7 @@ export default function ContactForm() {
         </div>
         
         <div className="mb-2">
-          <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="phone" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
             Phone
           </label>
           <input 
@@ -191,7 +201,12 @@ export default function ContactForm() {
             {...register('phone')}
             placeholder="(123) 456-7890"
             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.phone ? 'border-red-500 bg-red-50' : touchedFields.phone ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              dark:bg-gray-700 dark:text-white
+              ${errors.phone 
+                ? 'border-red-500 bg-red-50 dark:bg-red-900/30 dark:border-red-400' 
+                : touchedFields.phone 
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/30 dark:border-green-400' 
+                  : 'border-gray-300 dark:border-gray-600'}`}
           />
           {errors.phone && (
             <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
@@ -199,15 +214,20 @@ export default function ContactForm() {
         </div>
 
         <div className="mb-2">
-          <label htmlFor="address" className="block text-gray-700 font-medium mb-2">
-            Address <span className="text-red-500">*</span>
+          <label htmlFor="address" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+            Address <span className="text-red-500 dark:text-red-400">*</span>
           </label>
           <input 
             id="address"
             {...register('address')}
             placeholder="123 Main St, City, State, Zip"
             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.address ? 'border-red-500 bg-red-50' : touchedFields.address ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              dark:bg-gray-700 dark:text-white
+              ${errors.address 
+                ? 'border-red-500 bg-red-50 dark:bg-red-900/30 dark:border-red-400' 
+                : touchedFields.address 
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/30 dark:border-green-400' 
+                  : 'border-gray-300 dark:border-gray-600'}`}
           />
           {errors.address && (
             <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>
@@ -218,13 +238,13 @@ export default function ContactForm() {
         </div>
         
         <div className="mb-2">
-          <label htmlFor="service" className="block text-gray-700 font-medium mb-2">
+          <label htmlFor="service" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
             Service Needed
           </label>
           <select 
             id="service"
             {...register('service')}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
           >
             <option value="">Select a service</option>
             <option value="hvac">HVAC</option>
@@ -236,22 +256,27 @@ export default function ContactForm() {
         </div>
         
         <div className="mb-4">
-          <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-            Message <span className="text-red-500">*</span>
+          <label htmlFor="message" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+            Message <span className="text-red-500 dark:text-red-400">*</span>
           </label>
           <textarea 
             id="message"
             {...register('message')}
             rows={5}
             className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.message ? 'border-red-500 bg-red-50' : touchedFields.message ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              dark:bg-gray-700 dark:text-white
+              ${errors.message 
+                ? 'border-red-500 bg-red-50 dark:bg-red-900/30 dark:border-red-400' 
+                : touchedFields.message 
+                  ? 'border-green-500 bg-green-50 dark:bg-green-900/30 dark:border-green-400' 
+                  : 'border-gray-300 dark:border-gray-600'}`}
           ></textarea>
           {errors.message && (
             <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
           )}
         </div>
         
-        <div className="mb-4 text-xs text-gray-600">
+        <div className="mb-4 text-xs text-gray-600 dark:text-gray-400">
           By submitting this form, you agree to our{' '}
           <a href="/terms-and-conditions" className="text-primary hover:underline">Terms & Conditions</a>{' '}
           and acknowledge our{' '}
