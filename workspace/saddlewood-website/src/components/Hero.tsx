@@ -25,9 +25,10 @@ export default function Hero() {
           <Image 
             src="/images/logo-full.png" 
             alt=""
-            width={500}
-            height={500}
-            className="opacity-10"
+            width={600}
+            height={600}
+            className="opacity-[0.15]"
+            style={{ width: 'auto', height: 'auto', maxWidth: '650px' }}
             priority
             aria-hidden="true"
           />
