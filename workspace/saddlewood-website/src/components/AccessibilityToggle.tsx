@@ -31,5 +31,18 @@ export default function AccessibilityToggle({ className = '' }: AccessibilityTog
 
 // Floating version that stays at bottom-right of screen
 export function FloatingAccessibilityToggle() {
-  return <AccessibilityToggle className="fixed bottom-5 right-5 z-50 shadow-lg" />;
+  const { isHighContrast } = useAccessibility();
+  
+  return (
+    <div className="fixed bottom-5 right-5 z-50 flex items-center">
+      <div className={`mr-2 px-3 py-1 rounded-lg text-sm font-medium ${
+        isHighContrast 
+          ? 'bg-white text-black border border-white' 
+          : 'bg-gray-800 text-white'
+      } shadow-lg transition-opacity opacity-90 hover:opacity-100`}>
+        Accessibility
+      </div>
+      <AccessibilityToggle className="shadow-lg rounded-full p-3" />
+    </div>
+  );
 }

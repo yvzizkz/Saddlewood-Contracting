@@ -1715,6 +1715,9 @@ video {
 .opacity-80 {
   opacity: 0.8;
 }
+.opacity-90 {
+  opacity: 0.9;
+}
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -2178,9 +2181,23 @@ video {
 .high-contrast-mode div,
 .high-contrast-mode section,
 .high-contrast-mode aside,
-.high-contrast-mode footer {
+.high-contrast-mode footer,
+.high-contrast-mode nav,
+.high-contrast-mode header {
   background-color: var(--high-contrast-bg) !important;
   color: var(--high-contrast-text) !important;
+}
+
+/* Saddlewood specific components */
+.high-contrast-mode .navbar,
+.high-contrast-mode .footer,
+.high-contrast-mode .hero-section,
+.high-contrast-mode .services-section,
+.high-contrast-mode .contact-section,
+.high-contrast-mode .about-section {
+  background-color: var(--high-contrast-bg) !important;
+  color: var(--high-contrast-text) !important;
+  border: 1px solid var(--high-contrast-border) !important;
 }
 
 /* Text elements */
