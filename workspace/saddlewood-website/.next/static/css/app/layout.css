@@ -1446,6 +1446,9 @@ video {
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
 }
+.bg-opacity-90 {
+  --tw-bg-opacity: 0.9;
+}
 .p-2 {
   padding: 0.5rem;
 }
@@ -1693,6 +1696,10 @@ video {
 .text-yellow-800 {
   --tw-text-opacity: 1;
   color: rgb(133 77 14 / var(--tw-text-opacity, 1));
+}
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity, 1));
 }
 .text-opacity-70 {
   --tw-text-opacity: 0.7;
@@ -2169,6 +2176,10 @@ div, section, header, footer, nav, aside, main {
 .dark\:hover\:bg-gray-700:hover:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+}
+
+.dark\:hover\:bg-accent:hover:is(.dark *) {
+  background-color: var(--color-accent);
 }
 
 @media (min-width: 640px) {
