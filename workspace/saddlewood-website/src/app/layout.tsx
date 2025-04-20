@@ -1,12 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
-import '@/styles/high-contrast.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/lib/auth/auth-provider';
-import { AccessibilityProvider } from '@/lib/accessibility-context';
-import { FloatingAccessibilityToggle } from '@/components/AccessibilityToggle';
 import dynamic from 'next/dynamic';
 
 // Import WelcomeScreen with dynamic loading and disable SSR
@@ -44,19 +41,14 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen">
         <AuthProvider>
-          <AccessibilityProvider>
-            {/* Welcome Screen with company mission animation */}
-            <WelcomeScreen />
-            
-            <Navbar />
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-            
-            {/* Floating accessibility toggle button */}
-            <FloatingAccessibilityToggle />
-          </AccessibilityProvider>
+          {/* Welcome Screen with company mission animation */}
+          <WelcomeScreen />
+          
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
         </AuthProvider>
       </body>
     </html>
