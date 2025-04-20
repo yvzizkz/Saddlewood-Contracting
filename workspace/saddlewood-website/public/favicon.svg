@@ -2,19 +2,38 @@
 <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="faviconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#333333;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#173358;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e4272;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e65c00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f28500;stop-opacity:1" />
     </linearGradient>
   </defs>
   
   <!-- Main circle with gradient -->
-  <circle cx="16" cy="16" r="15" fill="url(#faviconGradient)" stroke="#ffffff" stroke-width="1"/>
+  <circle cx="16" cy="16" r="15" fill="url(#faviconGradient)" stroke="#ffffff" stroke-width="0.5"/>
   
-  <!-- SC letters -->
-  <g transform="translate(8, 8) scale(0.4)">
+  <!-- Inner accent ring -->
+  <circle cx="16" cy="16" r="12" fill="none" stroke="url(#accentGradient)" stroke-width="0.75" stroke-opacity="0.8"/>
+  
+  <!-- SC letters - slightly enlarged and centered -->
+  <g transform="translate(6.5, 8.5) scale(0.45)">
     <!-- S letter -->
     <path d="M3,16 C3,10 7,7 13,7 C19,7 24,10 24,16 C24,21 21,24 13,26 C8,27 7,28 7,31 C7,33 9,35 13,35 C17,35 19,33 19,31 L24,31 C24,37 19,40 13,40 C7,40 2,37 2,31 C2,25 6,22 13,20 C19,19 19,18 19,15 C19,13 17,11 13,11 C9,11 7,13 7,16 L3,16 Z" fill="white" />
     <!-- C letter -->
     <path d="M32,13 C32,7 37,4 43,4 C49,4 54,7 54,13 L49,13 C49,9 46,8 43,8 C40,8 37,9 37,13 L37,31 C37,35 40,36 43,36 C46,36 49,35 49,31 L54,31 C54,37 49,40 43,40 C37,40 32,37 32,31 L32,13 Z" fill="white" />
   </g>
+  
+  <!-- This ensures the SVG displays properly in different browsers -->
+  <style>
+    @media (prefers-color-scheme: dark) {
+      circle[fill="url(#faviconGradient)"] {
+        fill: #1e4272;
+      }
+      path[fill="white"] {
+        fill: #ffffff;
+      }
+    }
+  </style>
 </svg>
