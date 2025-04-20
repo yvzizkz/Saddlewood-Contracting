@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { sendContactFormNotification, sendContactFormConfirmation } from '@/lib/email-service';
+import { saveSubmission } from '@/lib/contact-storage';
 
 // Contact form validation schema
 const contactFormSchema = z.object({
@@ -97,7 +98,22 @@ export async function POST(request: NextRequest) {
       })
     };
     
-    // Send notification email to Saddlewood
+    // Save submission to file storage (reliable backup method)
+    const submission = {
+      id: submissionId,
+      name: validatedData.name,
+      email: validatedData.email,
+      phone: validatedData.phone || '',
+      address: validatedData.address,
+      service: validatedData.service || '',
+      message: validatedData.message,
+      submittedAt: submissionDate.toISOString()
+    };
+    
+    // Always save to file system first (guaranteed to work)
+    saveSubmission(submission);
+    
+    // Then try to send emails (might fail if SendGrid has issues)
     sendContactFormNotification(emailData)
       .then(success => {
         if (success) {
