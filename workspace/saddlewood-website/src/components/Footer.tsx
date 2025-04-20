@@ -15,22 +15,22 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-3 sm:mb-4">Our Services</h3>
             <ul className="grid grid-cols-2 sm:grid-cols-1 gap-1 sm:gap-2">
               <li>
-                <Link href="/services/hvac" className="text-sm sm:text-base hover:text-accent transition-colors duration-300">
+                <Link href="/services/hvac" className="text-sm sm:text-base text-white hover:text-accent transition-colors duration-300">
                   HVAC Services
                 </Link>
               </li>
               <li>
-                <Link href="/services/electrical" className="text-sm sm:text-base hover:text-accent transition-colors duration-300">
+                <Link href="/services/electrical" className="text-sm sm:text-base text-white hover:text-accent transition-colors duration-300">
                   Electrical
                 </Link>
               </li>
               <li>
-                <Link href="/services/plumbing" className="text-sm sm:text-base hover:text-accent transition-colors duration-300">
+                <Link href="/services/plumbing" className="text-sm sm:text-base text-white hover:text-accent transition-colors duration-300">
                   Plumbing
                 </Link>
               </li>
               <li>
-                <Link href="/services/remodeling" className="text-sm sm:text-base hover:text-accent transition-colors duration-300">
+                <Link href="/services/remodeling" className="text-sm sm:text-base text-white hover:text-accent transition-colors duration-300">
                   Remodeling
                 </Link>
               </li>
@@ -40,15 +40,15 @@ export default function Footer() {
           <div className="md:col-span-3">
             <h3 className="text-lg font-bold mb-3 sm:mb-4">Service Areas</h3>
             <div className="grid grid-cols-3 sm:grid-cols-1 gap-1 text-sm sm:text-base">
-              <p className="mb-0 sm:mb-1">Phoenix</p>
-              <p className="mb-0 sm:mb-1">Paradise Valley</p>
-              <p className="mb-0 sm:mb-1">Scottsdale</p>
-              <p className="mb-0 sm:mb-1">Tempe</p>
-              <p className="mb-0 sm:mb-1">Mesa</p>
-              <p className="mb-0 sm:mb-1">Chandler</p>
-              <p className="mb-0 sm:mb-1">Gilbert</p>
-              <p className="mb-0 sm:mb-1">Glendale</p>
-              <p>Fountain Hills</p>
+              <p className="mb-0 sm:mb-1 text-white">Phoenix</p>
+              <p className="mb-0 sm:mb-1 text-white">Paradise Valley</p>
+              <p className="mb-0 sm:mb-1 text-white">Scottsdale</p>
+              <p className="mb-0 sm:mb-1 text-white">Tempe</p>
+              <p className="mb-0 sm:mb-1 text-white">Mesa</p>
+              <p className="mb-0 sm:mb-1 text-white">Chandler</p>
+              <p className="mb-0 sm:mb-1 text-white">Gilbert</p>
+              <p className="mb-0 sm:mb-1 text-white">Glendale</p>
+              <p className="text-white">Fountain Hills</p>
             </div>
           </div>
           
@@ -56,12 +56,12 @@ export default function Footer() {
             <div className="mb-6">
               <h3 className="text-lg font-bold mb-3 sm:mb-4">Contact Us</h3>
               <div className="text-sm sm:text-base">
-                <p className="mb-1 sm:mb-2">Phoenix, Arizona</p>
+                <p className="mb-1 sm:mb-2 text-white">Phoenix, Arizona</p>
                 <p className="mb-1 sm:mb-2">
-                  <a href="tel:4809996100" className="hover:text-accent transition-colors">480-999-6100</a>
+                  <a href="tel:4809996100" className="text-white hover:text-accent transition-colors">480-999-6100</a>
                 </p>
                 <p>
-                  <a href="mailto:info@saddlewoodcontracting.com" className="hover:text-accent transition-colors">info@saddlewoodcontracting.com</a>
+                  <a href="mailto:info@saddlewoodcontracting.com" className="text-white hover:text-accent transition-colors">info@saddlewoodcontracting.com</a>
                 </p>
               </div>
             </div>
@@ -69,9 +69,9 @@ export default function Footer() {
             <div>
               <h3 className="text-lg font-bold mb-3 sm:mb-4">Business Hours</h3>
               <div className="text-sm sm:text-base">
-                <p className="mb-1 sm:mb-2">Monday - Friday: 7am - 5pm</p>
-                <p className="mb-1 sm:mb-2">Saturday: 8am - 3pm</p>
-                <p>Sunday: Closed</p>
+                <p className="mb-1 sm:mb-2 text-white">Monday - Friday: 7am - 5pm</p>
+                <p className="mb-1 sm:mb-2 text-white">Saturday: 8am - 3pm</p>
+                <p className="text-white">Sunday: Closed</p>
               </div>
             </div>
           </div>

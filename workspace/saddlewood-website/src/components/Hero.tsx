@@ -66,10 +66,10 @@ export default function Hero() {
               <div className="text-xs sm:text-sm text-white">
                 <p className="font-bold mb-2 text-accent">Licensed Contractor:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2">
-                  <p className="mb-1 font-medium">ROC 350714 – CR-39 <span className="text-gray-200">Air Conditioning</span></p>
-                  <p className="mb-1 font-medium">ROC 350715 – CR-11 <span className="text-gray-200">Electrical</span></p>
-                  <p className="mb-1 font-medium">ROC 350716 – CR-37 <span className="text-gray-200">Plumbing</span></p>
-                  <p className="mb-1 font-medium">ROC 305762 – KB-2 <span className="text-gray-200">Residential/Commercial</span></p>
+                  <p className="mb-1 font-medium text-white">ROC 350714 – CR-39 <span className="text-white">Air Conditioning</span></p>
+                  <p className="mb-1 font-medium text-white">ROC 350715 – CR-11 <span className="text-white">Electrical</span></p>
+                  <p className="mb-1 font-medium text-white">ROC 350716 – CR-37 <span className="text-white">Plumbing</span></p>
+                  <p className="mb-1 font-medium text-white">ROC 305762 – KB-2 <span className="text-white">Residential/Commercial</span></p>
                 </div>
               </div>
             </div>
