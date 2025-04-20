@@ -22,6 +22,11 @@ const LoadingAnimation = dynamic(() => import('@/components/LoadingAnimation'), 
   ssr: false
 });
 
+// Dynamic import for animated background pattern
+const AnimatedBackgroundPattern = dynamic(() => import('@/components/AnimatedBackgroundPattern'), {
+  ssr: false
+});
+
 // Load Inter font (replacing Geist)
 const inter = Inter({ 
   subsets: ['latin'],
@@ -188,6 +193,9 @@ export default function RootLayout({
           
           {/* Welcome Screen with company mission animation */}
           <WelcomeScreen />
+          
+          {/* Animated blueprint or construction background pattern */}
+          <AnimatedBackgroundPattern patternType="blueprint" speed="slow" opacity={0.04} />
           
           <Navbar />
           <main className="flex-grow">

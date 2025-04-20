@@ -4,6 +4,11 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ServiceCTA from './ServiceCTA';
+import dynamic from 'next/dynamic';
+
+const AnimatedBackgroundPattern = dynamic(() => import('@/components/AnimatedBackgroundPattern'), {
+  ssr: false
+});
 
 interface Benefit {
   title: string;
