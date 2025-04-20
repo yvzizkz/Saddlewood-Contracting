@@ -69,6 +69,33 @@ export const metadata: Metadata = {
 };
 
 export default function RemodelingPage() {
+  // Schema.org structured data for Remodeling services
+  const remodelingSchemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Home Remodeling Services",
+    "serviceType": "Kitchen Remodeling, Bathroom Renovation, Home Additions, and Whole House Remodeling",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://saddlewoodcontracting.com/#localbusiness",
+      "name": "Saddlewood Contracting"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Phoenix",
+      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+    },
+    "description": "Professional home remodeling services including kitchen and bathroom renovations, room additions, whole-house remodels, and outdoor living spaces for homes in Phoenix and surrounding areas.",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD"
+      }
+    },
+    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
+  };
   // Benefits data
   const benefits = [
     {
@@ -152,20 +179,25 @@ export default function RemodelingPage() {
   ];
 
   return (
-    <ServicePageTemplate
-      serviceName="Remodeling"
-      serviceTitle="Professional Home Remodeling in Phoenix, AZ"
-      metaDescription="Premium home remodeling in Phoenix metro area. Kitchen & bath renovations, home additions, whole house remodels & outdoor living spaces. ROC #305762."
-      heroImage="/images/remodeling-hero.jpg"
-      heroAlt="Modern kitchen remodel in Phoenix home"
-      introduction="Saddlewood Contracting transforms homes throughout the Phoenix valley with expert remodeling services. Our team of designers and craftsmen create beautiful, functional spaces that enhance your lifestyle and increase your property's value."
-      primaryCTA="Schedule Consultation"
-      benefits={benefits}
-      services={services}
-      faqs={faqs}
-      certificationNumber="305762"
-      certificationType="KB-2 Residential & Small Commercial"
-      certificationDescription="This dual classification allows us to construct, remodel and repair homes, and construct, alter and repair commercial buildings not exceeding three stories in height and not exceeding 20,000 square feet per structure."
-    />
+    <>
+      <Script id="remodeling-schema" type="application/ld+json">
+        {JSON.stringify(remodelingSchemaData)}
+      </Script>
+      <ServicePageTemplate
+        serviceName="Remodeling"
+        serviceTitle="Professional Home Remodeling in Phoenix, AZ"
+        metaDescription="Premium home remodeling in Phoenix metro area. Kitchen & bath renovations, home additions, whole house remodels & outdoor living spaces. ROC #305762."
+        heroImage="/images/remodeling-hero.jpg"
+        heroAlt="Modern kitchen remodel in Phoenix home"
+        introduction="Saddlewood Contracting transforms homes throughout the Phoenix valley with expert remodeling services. Our team of designers and craftsmen create beautiful, functional spaces that enhance your lifestyle and increase your property's value."
+        primaryCTA="Schedule Consultation"
+        benefits={benefits}
+        services={services}
+        faqs={faqs}
+        certificationNumber="305762"
+        certificationType="KB-2 Residential & Small Commercial"
+        certificationDescription="This dual classification allows us to construct, remodel and repair homes, and construct, alter and repair commercial buildings not exceeding three stories in height and not exceeding 20,000 square feet per structure."
+      />
+    </>
   );
 }
