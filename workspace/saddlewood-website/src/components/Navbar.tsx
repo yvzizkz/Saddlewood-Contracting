@@ -4,20 +4,16 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Enhanced monogram with premium SC design
+// New professional company logo
 const CompanyLogo = () => (
-  <div className="relative flex items-center justify-center">
-    {/* Decorative ring around logo */}
-    <div className="absolute inset-0 rounded-full border border-white border-opacity-20"></div>
-    <div className="absolute inset-0 rounded-full border-2 border-white border-opacity-10 animate-pulse"></div>
-    
+  <div className="flex items-center justify-center">
     <Image
-      src="/images/sc-clean.svg"
+      src="/images/logo.png"
       alt="Saddlewood Contracting Logo"
-      width={60}
-      height={60}
-      className="relative z-10 filter drop-shadow-md transition-transform duration-300 hover:scale-105"
-      style={{ width: '60px', height: '60px' }}
+      width={48}
+      height={48}
+      className="transition-opacity duration-300 hover:opacity-80"
+      style={{ width: 'auto', height: '48px' }}
       priority
     />
   </div>
@@ -34,17 +30,17 @@ export default function Navbar() {
     <nav className="bg-primary text-secondary py-3 sm:py-4 sticky top-0 z-50 shadow-md">
       <div className="container-custom">
         <div className="flex justify-between items-center">
-          {/* Logo and Company Name with enhanced styling */}
+          {/* Logo and Company Name with flush styling */}
           <Link 
             href="/" 
-            className="group flex items-center relative"
+            className="group flex items-center"
             aria-label="Saddlewood Contracting Homepage"
           >
-            {/* Enhanced logo with animated elements */}
+            {/* Logo with hover opacity effect */}
             <CompanyLogo />
             
-            {/* Company name with premium styling */}
-            <div className="flex flex-col ml-3 sm:ml-4">
+            {/* Company name with premium styling - sits flush against logo */}
+            <div className="flex flex-col ml-2">
               <span className="text-lg sm:text-xl uppercase tracking-wider font-bold truncate max-w-[180px] sm:max-w-none relative">
                 Saddlewood
                 {/* Decorative underline that appears on hover */}
@@ -52,11 +48,6 @@ export default function Navbar() {
               </span>
               <span className="text-xs sm:text-sm tracking-widest uppercase text-gray-300">Contracting</span>
               <span className="hidden sm:block text-[10px] uppercase tracking-wider text-gray-400">Est. 2007</span>
-            </div>
-            
-            {/* Subtle decoration that connects the logo and text */}
-            <div className="absolute left-[56px] top-1/2 -translate-y-1/2 w-1 h-12 flex flex-col justify-center items-center opacity-30">
-              <div className="w-px h-8 bg-gradient-to-b from-transparent via-white to-transparent"></div>
             </div>
           </Link>
           
@@ -142,15 +133,15 @@ export default function Navbar() {
           {/* Mobile menu header with logo */}
           <div className="p-5 flex justify-between items-center border-b border-white border-opacity-10">
             <div className="flex items-center">
-              {/* Small logo with new monogram */}
-              <div className="relative w-9 h-9">
-                <div className="absolute inset-0 rounded-full border border-white border-opacity-20"></div>
+              {/* Small logo in mobile menu */}
+              <div className="flex items-center justify-center">
                 <Image
-                  src="/images/sc-clean.svg"
+                  src="/images/logo.png"
                   alt="Saddlewood Contracting Logo"
                   width={36}
                   height={36}
-                  className="filter drop-shadow-md"
+                  className="transition-opacity duration-300"
+                  style={{ width: 'auto', height: '36px' }}
                   priority
                 />
               </div>
