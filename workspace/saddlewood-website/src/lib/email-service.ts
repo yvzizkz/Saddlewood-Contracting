@@ -31,8 +31,9 @@ export async function sendContactFormNotification(data: ContactFormEmailData): P
       return false;
     }
 
-    // The recipient email for Saddlewood (change this to the actual email)
-    const toEmail = 'contact@saddlewoodcontracting.com';
+    // The recipient email for Saddlewood
+    // For testing, we'll send to both Saddlewood and to your email so you can verify both emails
+    const toEmail = ['r.vite67@gmail.com', 'contact@saddlewoodcontracting.com'];
     
     // Format service type for better readability
     const serviceType = data.service 
@@ -41,7 +42,7 @@ export async function sendContactFormNotification(data: ContactFormEmailData): P
 
     await mailService.send({
       to: toEmail,
-      from: 'website@saddlewoodcontracting.com', // Change this to your verified sender
+      from: 'r.vite67@gmail.com', // Using your verified sender email
       subject: `New Contact Form: ${serviceType} Request - ${data.submissionId}`,
       text: `
 New contact form submission from the Saddlewood Contracting website:
@@ -118,23 +119,28 @@ export async function sendContactFormConfirmation(data: ContactFormEmailData): P
 
     await mailService.send({
       to: data.email,
-      from: 'contact@saddlewoodcontracting.com', // Change this to your verified sender
+      from: 'r.vite67@gmail.com', // Using your verified sender email
       subject: `Thank You for Contacting Saddlewood Contracting - Ref: ${data.submissionId}`,
       text: `
+Thank You for Contacting Saddlewood Contracting
+
 Dear ${data.name},
 
-Thank you for contacting Saddlewood Contracting. We have received your inquiry about our ${serviceType} services.
+Thank you for reaching out to Saddlewood Contracting! We're excited about the possibility of working with you on your ${serviceType} project.
 
-We appreciate your interest and will get back to you within 24-48 business hours.
+Your message is important to us, and one of our specialists will personally contact you within 24-48 business hours to discuss your needs in detail.
 
 Your Request Details:
-- Reference ID: ${data.submissionId}
-- Submitted: ${data.submissionDate}
-- Service: ${serviceType}
+Reference ID: ${data.submissionId}
+Submitted: ${data.submissionDate}
+Service: ${serviceType}
 
-If you need immediate assistance, please call us at 480-999-6100.
+If you'd like to speak with someone right away, please don't hesitate to call us at 480-999-6100.
 
-Regards,
+We look forward to helping transform your space into something truly special!
+
+Warm regards,
+
 The Saddlewood Contracting Team
 480-999-6100
 www.saddlewoodcontracting.com
@@ -142,31 +148,33 @@ www.saddlewoodcontracting.com
       html: `
 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
   <div style="text-align: center; margin-bottom: 20px;">
-    <h2 style="color: #333;">Thank You for Contacting Saddlewood Contracting</h2>
+    <h1 style="color: #333; font-size: 24px;">Thank You for Contacting Saddlewood Contracting</h1>
   </div>
   
-  <div style="margin-bottom: 25px; line-height: 1.5;">
-    <p>Dear ${data.name},</p>
-    <p>Thank you for contacting Saddlewood Contracting. We have received your inquiry about our <strong>${serviceType}</strong> services.</p>
-    <p>We appreciate your interest and will get back to you within 24-48 business hours.</p>
+  <div style="margin-bottom: 25px; line-height: 1.6;">
+    <p style="font-size: 16px;">Dear <strong>${data.name}</strong>,</p>
+    <p style="font-size: 16px;">Thank you for reaching out to Saddlewood Contracting! We're excited about the possibility of working with you on your <strong>${serviceType}</strong> project.</p>
+    <p style="font-size: 16px;">Your message is important to us, and one of our specialists will personally contact you within 24-48 business hours to discuss your needs in detail.</p>
   </div>
   
-  <div style="background-color: #f9f9f9; padding: 15px; border-radius: 4px; margin-bottom: 25px;">
-    <h3 style="margin-top: 0; color: #444;">Your Request Details:</h3>
-    <p><strong>Reference ID:</strong> ${data.submissionId}</p>
-    <p><strong>Submitted:</strong> ${data.submissionDate}</p>
-    <p><strong>Service:</strong> ${serviceType}</p>
+  <div style="background-color: #f5f8ff; padding: 20px; border-radius: 8px; margin-bottom: 25px; border-left: 4px solid #4a6da7;">
+    <h3 style="margin-top: 0; color: #4a6da7; font-size: 18px;">Your Request Details:</h3>
+    <p style="margin-bottom: 8px; font-size: 15px;"><strong>Reference ID:</strong> ${data.submissionId}</p>
+    <p style="margin-bottom: 8px; font-size: 15px;"><strong>Submitted:</strong> ${data.submissionDate}</p>
+    <p style="margin-bottom: 8px; font-size: 15px;"><strong>Service:</strong> ${serviceType}</p>
   </div>
   
-  <div style="margin-bottom: 25px;">
-    <p>If you need immediate assistance, please call us at <strong>480-999-6100</strong>.</p>
+  <div style="margin-bottom: 25px; background-color: #f9f9f9; padding: 15px; border-radius: 8px;">
+    <p style="font-size: 16px;">If you'd like to speak with someone right away, please don't hesitate to call us at <strong style="color: #4a6da7; font-size: 17px;">480-999-6100</strong>.</p>
   </div>
+  
+  <p style="font-size: 16px;">We look forward to helping transform your space into something truly special!</p>
   
   <div style="margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px;">
-    <p>Regards,<br>
-    The Saddlewood Contracting Team<br>
-    480-999-6100<br>
-    <a href="https://www.saddlewoodcontracting.com">www.saddlewoodcontracting.com</a></p>
+    <p style="font-size: 16px;">Warm regards,</p>
+    <p style="font-size: 17px; font-weight: bold; color: #333;">The Saddlewood Contracting Team</p>
+    <p style="font-size: 16px;">480-999-6100<br>
+    <a href="https://www.saddlewoodcontracting.com" style="color: #4a6da7; text-decoration: none; font-weight: bold;">www.saddlewoodcontracting.com</a></p>
   </div>
 </div>
       `
