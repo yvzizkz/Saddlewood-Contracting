@@ -78,54 +78,13 @@ export default function RemodelingPage() {
     "provider": {
       "@type": "LocalBusiness",
       "@id": "https://saddlewoodcontracting.com/#localbusiness",
-      "name": "Saddlewood Contracting",
-      "telephone": "(480) 999-6100",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Phoenix",
-        "addressRegion": "AZ",
-        "addressCountry": "US"
-      }
+      "name": "Saddlewood Contracting"
     },
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Phoenix",
-        "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
-      },
-      {
-        "@type": "City",
-        "name": "Paradise Valley"
-      },
-      {
-        "@type": "City",
-        "name": "Scottsdale"
-      },
-      {
-        "@type": "City",
-        "name": "Tempe"
-      },
-      {
-        "@type": "City",
-        "name": "Mesa"
-      },
-      {
-        "@type": "City",
-        "name": "Chandler"
-      },
-      {
-        "@type": "City",
-        "name": "Gilbert"
-      },
-      {
-        "@type": "City",
-        "name": "Glendale"
-      },
-      {
-        "@type": "City",
-        "name": "Fountain Hills"
-      }
-    ],
+    "areaServed": {
+      "@type": "City",
+      "name": "Phoenix",
+      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+    },
     "description": "Professional home remodeling services including kitchen and bathroom renovations, room additions, whole-house remodels, and outdoor living spaces for homes in Phoenix and surrounding areas.",
     "offers": {
       "@type": "Offer",
@@ -135,58 +94,7 @@ export default function RemodelingPage() {
         "priceCurrency": "USD"
       }
     },
-    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Remodeling Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Kitchen & Bathroom Remodeling",
-            "description": "Complete transformations of kitchens and bathrooms, including design, demolition, construction, plumbing, electrical, cabinetry, countertops, flooring, and lighting."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Whole House Renovations",
-            "description": "Comprehensive remodeling solutions for entire homes, including floor plans, wall removal, flooring, electrical, plumbing, fixtures, and wall finishes."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Room Additions & Expansions",
-            "description": "Adding new rooms, expanding living spaces, and building mother-in-law suites that blend seamlessly with existing homes."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Outdoor Living Spaces",
-            "description": "Design and construction of patios, covered spaces, outdoor kitchens, and entertainment areas that extend living spaces outdoors."
-          }
-        }
-      ]
-    },
-    "review": {
-      "@type": "Review",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Satisfied Homeowner"
-      },
-      "reviewBody": "Saddlewood transformed our outdated kitchen into a stunning, modern space that's now the heart of our home. Their attention to detail and quality craftsmanship exceeded our expectations. The project was completed on time and on budget."
-    }
+    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
   };
   // Benefits data
   const benefits = [

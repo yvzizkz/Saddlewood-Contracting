@@ -44,7 +44,6 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' },
     ],
     apple: [
       { url: '/images/logo-enhanced.svg' },
@@ -103,8 +102,6 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/images/logo-enhanced.svg" />
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
