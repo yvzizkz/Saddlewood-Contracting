@@ -63,9 +63,12 @@ export default function Footer() {
             </Link>
           </div>
           
-          <p className="uppercase text-sm mb-4 tracking-wider">
-            Licensed & Insured | AZ ROC 350714 CR‑39 • ROC 350715 CR‑11 • ROC 350716 CR‑37 • 305762 KB‑2
-          </p>
+          {/* License info with improved contrast */}
+          <div className="bg-black bg-opacity-50 dark:bg-white dark:bg-opacity-10 py-3 px-4 rounded-md mb-4 inline-block text-white dark:text-white">
+            <p className="uppercase text-sm tracking-wider">
+              Licensed & Insured | AZ ROC 350714 CR‑39 • ROC 350715 CR‑11 • ROC 350716 CR‑37 • 305762 KB‑2
+            </p>
+          </div>
           
           <p className="text-sm">
             &copy; {new Date().getFullYear()} Saddlewood Contracting LLC. All rights reserved.

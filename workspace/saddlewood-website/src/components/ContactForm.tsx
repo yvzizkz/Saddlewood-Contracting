@@ -134,19 +134,19 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="shadow-lg rounded-2xl bg-white p-8">
+    <div className="shadow-lg rounded-2xl bg-white dark:bg-gray-800 p-8 text-black dark:text-white transition-colors">
       <h3 className="text-2xl font-bold mb-6">Contact Form</h3>
       
       {formStatus.error ? (
-        <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-6">
+        <div className="bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 p-4 rounded-lg mb-6">
           {formStatus.message}
         </div>
       ) : null}
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="mb-2">
-          <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-            Name <span className="text-red-500">*</span>
+          <label htmlFor="name" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+            Name <span className="text-red-500 dark:text-red-400">*</span>
           </label>
           <input 
             id="name"
@@ -163,8 +163,8 @@ export default function ContactForm() {
         </div>
         
         <div className="mb-2">
-          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-            Email <span className="text-red-500">*</span>
+          <label htmlFor="email" className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+            Email <span className="text-red-500 dark:text-red-400">*</span>
           </label>
           <input 
             type="email"
