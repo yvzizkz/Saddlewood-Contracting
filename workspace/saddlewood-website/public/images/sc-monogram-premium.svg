@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular background -->
+  <circle cx="60" cy="60" r="60" fill="black"/>
+  
+  <!-- Outer ring -->
+  <circle cx="60" cy="60" r="58" stroke="white" stroke-width="1" fill="none" stroke-opacity="0.3"/>
+  
+  <!-- SC letters - professional, bold typography -->
+  <g fill="white">
+    <!-- S letter -->
+    <path d="M44 44.5C44 39.5 48 35 55 35C62 35 66 39.5 66 44.5C66 49.5 62 52.5 57 54.5L51 57C47 58.5 45 61 45 65C45 70 49 75 55 75C62 75 65 70 65 65" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- C letter -->
+    <path d="M79 40C76.5 37.5 72 35 67 35C57 35 53 45 53 55C53 65 57 75 67 75C72 75 76.5 72.5 79 70" stroke="white" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

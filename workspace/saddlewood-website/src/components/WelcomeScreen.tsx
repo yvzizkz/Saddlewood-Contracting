@@ -146,8 +146,8 @@ export default function WelcomeScreen() {
             >
               <div className="text-center">
                 <Image
-                  src="/images/logo-enhanced.svg"
-                  alt="Saddlewood Contracting Logo"
+                  src="/images/sc-monogram-correct.svg"
+                  alt="Saddlewood Contracting Monogram"
                   width={90}
                   height={90}
                   className="filter drop-shadow-md"

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular background -->
+  <circle cx="60" cy="60" r="60" fill="black"/>
+  
+  <!-- Outer ring -->
+  <circle cx="60" cy="60" r="58" stroke="white" stroke-width="1" fill="none" stroke-opacity="0.3"/>
+  <circle cx="60" cy="60" r="55" stroke="white" stroke-width="1" fill="none" stroke-opacity="0.15"/>
+  
+  <!-- S letter -->
+  <path d="M54 32C45.5 32 43.5 38.5 43.5 42C43.5 47 46 50 50 52L58 56C63 58 66 61.5 66 66C66 70.5 63 78 54 78C46.5 78 43.5 72.5 43.5 66C43.5 61 46 58 50 56" fill="white"/>
+  <path d="M54 32C45.5 32 43.5 38.5 43.5 42C43.5 47 46 50 50 52L58 56C63 58 66 61.5 66 66C66 70.5 63 78 54 78C46.5 78 43.5 72.5 43.5 66C43.5 61 46 58 50 56" stroke="white" stroke-width="3"/>
+  
+  <!-- C letter -->
+  <path d="M72 32C79 32 84.5 36.5 87 41L87 41C84.5 36.5 79 32 72 32ZM72 32C59.5 32 53 43 53 55C53 67 59.5 78 72 78C78 78 84 74.5 87 69L87 69C84 74.5 78 78 72 78C59.5 78 53 67 53 55C53 43 59.5 32 72 32Z" fill="white"/>
+  <path d="M72 32C79 32 84.5 36.5 87 41M72 32C59.5 32 53 43 53 55C53 67 59.5 78 72 78C78 78 84 74.5 87 69" stroke="white" stroke-width="3"/>
+</svg>

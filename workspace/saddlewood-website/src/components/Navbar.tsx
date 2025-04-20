@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Enhanced logo with SVG for better scaling
+// Enhanced monogram with premium SC design
 const CompanyLogo = () => (
   <div className="relative flex items-center justify-center">
     {/* Decorative ring around logo */}
@@ -12,7 +12,7 @@ const CompanyLogo = () => (
     <div className="absolute inset-0 rounded-full border-2 border-white border-opacity-10 animate-pulse"></div>
     
     <Image
-      src="/images/logo-enhanced.svg"
+      src="/images/sc-monogram-correct.svg"
       alt="Saddlewood Contracting Logo"
       width={60}
       height={60}
@@ -142,11 +142,11 @@ export default function Navbar() {
           {/* Mobile menu header with logo */}
           <div className="p-5 flex justify-between items-center border-b border-white border-opacity-10">
             <div className="flex items-center">
-              {/* Small logo */}
+              {/* Small logo with new monogram */}
               <div className="relative w-9 h-9">
                 <div className="absolute inset-0 rounded-full border border-white border-opacity-20"></div>
                 <Image
-                  src="/images/logo-enhanced.svg"
+                  src="/images/sc-monogram-correct.svg"
                   alt="Saddlewood Contracting Logo"
                   width={36}
                   height={36}
