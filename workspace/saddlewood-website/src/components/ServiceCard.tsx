@@ -48,13 +48,13 @@ export default function ServiceCard({ title, description, link, icon }: ServiceC
   };
 
   return (
-    <div className="rounded-2xl ring-2 ring-gray-300 p-6 bg-secondary text-primary hover:shadow-lg transition-all duration-300 group">
-      <div className="flex items-start">
-        <Link href={link} className="bg-primary text-secondary p-3 rounded-full mr-4 hover:ring-2 hover:ring-accent transition-all duration-300 flex items-center justify-center">
+    <div className="rounded-2xl ring-2 ring-gray-300 p-4 sm:p-6 bg-secondary text-primary hover:shadow-lg transition-all duration-300 group">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start">
+        <Link href={link} className="bg-primary text-secondary p-3 rounded-full mb-4 sm:mb-0 sm:mr-4 hover:ring-2 hover:ring-accent transition-all duration-300 flex items-center justify-center">
           {renderIcon(icon)}
         </Link>
         
-        <div>
+        <div className="text-center sm:text-left">
           <Link href={link} className="inline-block">
             <h3 className="text-xl font-bold mb-2 group-hover:underline hover:text-accent transition-colors duration-300">{title}</h3>
           </Link>
