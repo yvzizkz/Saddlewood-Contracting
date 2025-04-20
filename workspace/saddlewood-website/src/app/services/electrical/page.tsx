@@ -179,20 +179,27 @@ export default function ElectricalPage() {
   ];
 
   return (
-    <ServicePageTemplate
-      serviceName="Electrical"
-      serviceTitle="Professional Electrical Services in Phoenix, AZ"
-      metaDescription="Licensed electrical contractors in Phoenix and surrounding areas. Installations, repairs, panel upgrades, lighting, EV charging stations & more. ROC #350715."
-      heroImage="/images/electrical-hero.jpg"
-      heroAlt="Electrician working on electrical panel in Phoenix home"
-      introduction="Saddlewood Contracting provides complete electrical services for homes and businesses throughout the Valley. Our licensed electricians deliver expert installation, repair, and upgrade services that ensure your electrical systems are safe, efficient, and reliable."
-      primaryCTA="Schedule Service"
-      benefits={benefits}
-      services={services}
-      faqs={faqs}
-      certificationNumber="350715"
-      certificationType="CR-11 Electrical"
-      certificationDescription="This classification allows us to install, alter, and repair any wiring, related electrical material and equipment used in the generating, transmitting, or utilization of electrical energy less than 600 volts, including all overhead electrical wiring on public right-of-ways for signs and street decorations."
-    />
+    <>
+      <Script
+        id="electrical-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(electricalSchemaData) }}
+      />
+      <ServicePageTemplate
+        serviceName="Electrical"
+        serviceTitle="Professional Electrical Services in Phoenix, AZ"
+        metaDescription="Licensed electrical contractors in Phoenix and surrounding areas. Installations, repairs, panel upgrades, lighting, EV charging stations & more. ROC #350715."
+        heroImage="/images/electrical-hero.jpg"
+        heroAlt="Electrician working on electrical panel in Phoenix home"
+        introduction="Saddlewood Contracting provides complete electrical services for homes and businesses throughout the Valley. Our licensed electricians deliver expert installation, repair, and upgrade services that ensure your electrical systems are safe, efficient, and reliable."
+        primaryCTA="Schedule Service"
+        benefits={benefits}
+        services={services}
+        faqs={faqs}
+        certificationNumber="350715"
+        certificationType="CR-11 Electrical"
+        certificationDescription="This classification allows us to install, alter, and repair any wiring, related electrical material and equipment used in the generating, transmitting, or utilization of electrical energy less than 600 volts, including all overhead electrical wiring on public right-of-ways for signs and street decorations."
+      />
+    </>
   );
 }
