@@ -1,7 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/services/hvac/page": "app/services/hvac/page.js",
-  "/license-info/page": "app/license-info/page.js",
-  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
+  "/page": "app/page.js"
 }

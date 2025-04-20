@@ -3,56 +3,124 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 export default function ServicesLoading() {
   return (
-    <div>
-      <div className="bg-primary text-secondary py-12 border-b-2 border-secondary">
-        <div className="container-custom">
-          <Skeleton className="h-12 w-96 bg-white bg-opacity-20 mb-4" />
-          <Skeleton className="h-6 w-80 bg-white bg-opacity-20" />
-        </div>
-      </div>
-      
-      <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
-            <Skeleton className="h-10 w-72 mb-6" />
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-full mb-2" />
-            <Skeleton className="h-4 w-3/4 mb-6" />
-            
-            <Skeleton className="h-12 w-48 rounded-md" />
-          </div>
-          
-          <div className="card">
-            <Skeleton className="h-8 w-64 mb-4" />
-            <div className="space-y-3">
-              {[1, 2, 3, 4, 5, 6].map((index) => (
-                <div key={index} className="flex items-start">
-                  <Skeleton className="h-4 w-4 mr-2 mt-1 rounded-full" />
-                  <div className="flex-1">
-                    <Skeleton className="h-4 w-full mb-1" />
-                    <Skeleton className="h-4 w-5/6" />
-                  </div>
-                </div>
-              ))}
+    <main>
+      {/* Hero Section Skeleton */}
+      <section className="relative bg-primary text-white">
+        <div className="container-custom relative z-10 py-16 md:py-24">
+          <div className="max-w-2xl">
+            <Skeleton className="h-12 w-3/4 mb-4" />
+            <Skeleton className="h-5 w-full mb-2" />
+            <Skeleton className="h-5 w-5/6 mb-8" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Skeleton className="h-12 w-40 rounded-full" />
+              <Skeleton className="h-12 w-40 rounded-full" />
             </div>
           </div>
         </div>
-        
-        <div className="mt-16 rounded-2xl ring-2 ring-gray-300 p-8 bg-gray-50">
-          <Skeleton className="h-8 w-64 mb-4 mx-auto" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3].map((index) => (
-              <div key={index}>
-                <Skeleton className="w-12 h-12 rounded-full mb-3 mx-auto" />
-                <Skeleton className="h-6 w-48 mb-2 mx-auto" />
+      </section>
+      
+      {/* Benefits Section Skeleton */}
+      <section className="py-16 bg-gray-50">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <Skeleton className="h-8 w-64 mx-auto mb-4" />
+            <Skeleton className="h-5 w-full max-w-2xl mx-auto" />
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...Array(3)].map((_, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-md p-6">
+                <Skeleton className="h-10 w-10 mb-4" />
+                <Skeleton className="h-6 w-3/4 mb-2" />
                 <Skeleton className="h-4 w-full mb-1" />
-                <Skeleton className="h-4 w-5/6 mx-auto" />
+                <Skeleton className="h-4 w-full mb-1" />
+                <Skeleton className="h-4 w-2/3" />
               </div>
             ))}
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+      
+      {/* Services Section Skeleton */}
+      <section className="py-16">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <Skeleton className="h-8 w-64 mx-auto mb-4" />
+            <Skeleton className="h-5 w-full max-w-2xl mx-auto" />
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            {[...Array(4)].map((_, index) => (
+              <div key={index} className="mb-8 border-b border-gray-200 pb-8 last:border-b-0">
+                <div className="flex items-start">
+                  <Skeleton className="h-8 w-8 mr-4 rounded-full" />
+                  <div className="flex-1">
+                    <Skeleton className="h-6 w-1/2 mb-2" />
+                    <Skeleton className="h-4 w-full mb-1" />
+                    <Skeleton className="h-4 w-full mb-1" />
+                    <Skeleton className="h-4 w-4/5" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Certification Section Skeleton */}
+      <section className="py-16 bg-gray-50">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-xl shadow-md p-8 flex flex-col md:flex-row">
+              <Skeleton className="h-20 w-20 rounded mb-6 md:mb-0 md:mr-6" />
+              <div className="flex-1">
+                <Skeleton className="h-7 w-64 mb-3" />
+                <Skeleton className="h-5 w-full max-w-lg mb-2" />
+                <Skeleton className="h-4 w-full mb-1" />
+                <Skeleton className="h-4 w-full mb-1" />
+                <Skeleton className="h-4 w-3/4 mb-4" />
+                <Skeleton className="h-5 w-40" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* FAQ Section Skeleton */}
+      <section className="py-16">
+        <div className="container-custom">
+          <div className="text-center mb-12">
+            <Skeleton className="h-8 w-64 mx-auto mb-4" />
+            <Skeleton className="h-5 w-full max-w-2xl mx-auto" />
+          </div>
+          
+          <div className="max-w-3xl mx-auto">
+            {[...Array(3)].map((_, index) => (
+              <div key={index} className="mb-6 border-b border-gray-200 pb-6 last:border-b-0">
+                <Skeleton className="h-6 w-3/4 mb-3" />
+                <Skeleton className="h-4 w-full mb-1" />
+                <Skeleton className="h-4 w-full mb-1" />
+                <Skeleton className="h-4 w-5/6" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* CTA Section Skeleton */}
+      <section className="py-16 bg-primary">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto text-center">
+            <Skeleton className="h-8 w-64 mx-auto mb-4 bg-white bg-opacity-20" />
+            <Skeleton className="h-5 w-full max-w-xl mx-auto mb-8 bg-white bg-opacity-20" />
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Skeleton className="h-12 w-40 rounded-full" />
+              <Skeleton className="h-12 w-40 rounded-full" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
