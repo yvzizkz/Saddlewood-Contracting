@@ -107,6 +107,12 @@ export default function Home() {
             <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
               <h3 className="text-lg font-semibold">Gilbert</h3>
             </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Glendale</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Fountain Hills</h3>
+            </div>
           </div>
           
           <p className="text-center text-gray-600 mb-8">

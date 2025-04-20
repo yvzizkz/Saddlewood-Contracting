@@ -45,7 +45,9 @@ export default function Footer() {
             <p className="mb-1">Tempe</p>
             <p className="mb-1">Mesa</p>
             <p className="mb-1">Chandler</p>
-            <p>Gilbert</p>
+            <p className="mb-1">Gilbert</p>
+            <p className="mb-1">Glendale</p>
+            <p>Fountain Hills</p>
           </div>
           
           <div className="md:col-span-3">
