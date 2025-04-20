@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -18,6 +18,83 @@ const CompanyLogo = () => (
     />
   </div>
 );
+
+// Theme toggle button component
+function ThemeToggle() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  
+  // Initialize theme on client-side
+  useEffect(() => {
+    // Get saved theme from localStorage or use system preference
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark';
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (prefersDark) {
+      setTheme('dark');
+    }
+  }, []);
+  
+  // Effect to handle theme changes
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+  
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+  
+  return (
+    <button
+      onClick={toggleTheme}
+      className="flex items-center justify-center w-8 h-8 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-all"
+      aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+    >
+      {theme === 'light' ? (
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          className="h-4 w-4 text-white"
+        >
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      ) : (
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="currentColor" 
+          strokeWidth="2" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          className="h-4 w-4 text-white"
+        >
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+      )}
+    </button>
+  );
+}
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -64,34 +141,40 @@ export default function Navbar() {
             <Link href="/contact" className="ml-4 px-6 py-2 text-secondary rounded-full hover:ring-2 hover:ring-white transition-all duration-300">
               Book Estimate
             </Link>
+            <div className="ml-4">
+              <ThemeToggle />
+            </div>
           </div>
           
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-secondary"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-          >
-            <svg 
-              viewBox="0 0 20 20" 
-              fill="currentColor" 
-              className="w-6 h-6"
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-4">
+            <ThemeToggle />
+            <button 
+              className="text-secondary"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? (
-                <path 
-                  fillRule="evenodd" 
-                  clipRule="evenodd" 
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                />
-              ) : (
-                <path 
-                  fillRule="evenodd" 
-                  clipRule="evenodd" 
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                />
-              )}
-            </svg>
-          </button>
+              <svg 
+                viewBox="0 0 20 20" 
+                fill="currentColor" 
+                className="w-6 h-6"
+              >
+                {mobileMenuOpen ? (
+                  <path 
+                    fillRule="evenodd" 
+                    clipRule="evenodd" 
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  />
+                ) : (
+                  <path 
+                    fillRule="evenodd" 
+                    clipRule="evenodd" 
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
         
         {/* Mobile Menu */}

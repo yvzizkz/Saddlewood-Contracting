@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Roboto_Mono } from 'next/font/google';
 import './globals.css';
-import '@/styles/theme-transition.css'; // Import custom theme transition styles
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/lib/auth/auth-provider';
@@ -10,10 +9,6 @@ import dynamic from 'next/dynamic';
 // Dynamically import components that use client-side features
 const WelcomeScreen = dynamic(() => import('@/components/WelcomeScreen'), { 
   ssr: false 
-});
-
-const ThemeProviderClient = dynamic(() => import('@/components/ThemeProvider').then(mod => mod.ThemeProvider), {
-  ssr: false
 });
 
 // Load Inter font (replacing Geist)
@@ -44,18 +39,16 @@ export default function RootLayout({
         <link rel="icon" href="/images/logo.png" type="image/png" />
       </head>
       <body className="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
-        <ThemeProviderClient>
-          <AuthProvider>
-            {/* Welcome Screen with company mission animation */}
-            <WelcomeScreen />
-            
-            <Navbar />
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-          </AuthProvider>
-        </ThemeProviderClient>
+        <AuthProvider>
+          {/* Welcome Screen with company mission animation */}
+          <WelcomeScreen />
+          
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
