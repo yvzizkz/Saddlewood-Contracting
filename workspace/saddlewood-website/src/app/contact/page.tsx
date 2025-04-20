@@ -7,7 +7,7 @@ export default function ContactPage() {
       <div className="bg-primary text-secondary py-12 border-b-2 border-secondary">
         <div className="container-custom">
           <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl">Get in touch for a free estimate or consultation</p>
+          <p className="text-xl text-white font-medium">Get in touch for a free estimate or consultation</p>
         </div>
       </div>
       
