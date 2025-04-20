@@ -21,10 +21,24 @@ export async function middleware(request: NextRequest) {
     
     // Check if there's a valid adminUser cookie
     const adminUserCookie = request.cookies.get('adminUser');
-    const isAuthenticated = adminUserCookie?.value ? true : false;
+    
+    // Debug log to see what's happening
+    console.log('Middleware checking auth cookie:', path, !!adminUserCookie?.value);
+    
+    // Check if cookie exists and contains valid data
+    let isAuthenticated = false;
+    if (adminUserCookie?.value) {
+      try {
+        const userData = JSON.parse(adminUserCookie.value);
+        isAuthenticated = userData && userData.id ? true : false;
+      } catch (error) {
+        console.error('Error parsing auth cookie in middleware:', error);
+      }
+    }
     
     // If not authenticated, redirect to login page
     if (!isAuthenticated) {
+      console.log('Not authenticated, redirecting to login');
       const url = new URL('/admin/login', request.url);
       url.searchParams.set('from', path);
       return NextResponse.redirect(url);

@@ -77,13 +77,13 @@ export async function POST(request: NextRequest) {
           password: hashedPassword,
           name: validatedData.name || validatedData.username,
         });
+        console.log('User created in memory storage');
       } catch (memError) {
         console.error('Memory storage error:', memError);
         return NextResponse.json({ 
           success: false,
           message: "Error creating user"
         }, { status: 500 });
-        console.log('User created in memory storage');
       }
     }
     
