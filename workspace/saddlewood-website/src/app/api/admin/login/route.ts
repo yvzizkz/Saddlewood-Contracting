@@ -18,29 +18,38 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const validatedData = loginSchema.parse(body);
     
-    // Try to find user in database first
+    // Try to find user in database or memory storage
     let user;
     let storageType = 'database';
     
+    // First try database
     try {
-      // First try database
       const [dbUser] = await db
         .select()
         .from(users)
-        .where(eq(users.username, validatedData.username));
+        .where(eq(users.username, validatedData.username))
+        .limit(1);
       
       if (dbUser) {
         user = dbUser;
+        console.log('User found in database');
       }
     } catch (dbError) {
-      console.error('Database error, using memory storage fallback:', dbError);
+      console.error('Database error, will try memory storage fallback:', dbError);
       storageType = 'memory';
     }
     
-    // If not found in database, try memory storage
+    // If not found in database or there was an error, try memory storage
     if (!user) {
-      storageType = 'memory';
-      user = await memStorage.getUserByUsername(validatedData.username);
+      try {
+        storageType = 'memory';
+        user = await memStorage.getUserByUsername(validatedData.username);
+        if (user) {
+          console.log('User found in memory storage');
+        }
+      } catch (memError) {
+        console.error('Memory storage error:', memError);
+      }
     }
     
     // If no user found or password doesn't match
@@ -67,8 +76,9 @@ export async function POST(request: NextRequest) {
       value: JSON.stringify(userWithoutPassword),
       httpOnly: true,
       path: '/',
-      sameSite: 'strict',
+      sameSite: 'lax', // Changed from 'strict' to 'lax' for better compatibility
       maxAge: 60 * 60 * 24 * 7, // 7 days
+      secure: process.env.NODE_ENV === 'production', // Only secure in production
     });
     
     return response;

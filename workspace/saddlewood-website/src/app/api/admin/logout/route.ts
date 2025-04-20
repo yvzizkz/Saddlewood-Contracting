@@ -14,7 +14,9 @@ export async function POST(request: NextRequest) {
       value: '',
       expires: new Date(0), // Set expiry to epoch (effectively deleting the cookie)
       path: '/',
-      sameSite: 'strict',
+      sameSite: 'lax', // Changed from 'strict' to 'lax' for better compatibility
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production', // Only secure in production
     });
     
     return response;

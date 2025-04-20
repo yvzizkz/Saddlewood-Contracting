@@ -31,9 +31,11 @@ export async function POST(request: NextRequest) {
       const [existingDbUser] = await db
         .select()
         .from(users)
-        .where(eq(users.username, validatedData.username));
+        .where(eq(users.username, validatedData.username))
+        .limit(1);
       
       if (existingDbUser) {
+        console.log('Username already exists in database');
         return NextResponse.json({ 
           success: false,
           message: "Username already exists"
@@ -59,21 +61,30 @@ export async function POST(request: NextRequest) {
       storageType = 'memory';
       
       // Check if username exists in memory storage
-      const existingMemUser = await memStorage.getUserByUsername(validatedData.username);
-      if (existingMemUser) {
+      try {
+        const existingMemUser = await memStorage.getUserByUsername(validatedData.username);
+        if (existingMemUser) {
+          console.log('Username already exists in memory storage');
+          return NextResponse.json({ 
+            success: false,
+            message: "Username already exists"
+          }, { status: 400 });
+        }
+        
+        // Create user in memory storage
+        newUser = await memStorage.createUser({
+          username: validatedData.username,
+          password: hashedPassword,
+          name: validatedData.name || validatedData.username,
+        });
+      } catch (memError) {
+        console.error('Memory storage error:', memError);
         return NextResponse.json({ 
           success: false,
-          message: "Username already exists"
-        }, { status: 400 });
+          message: "Error creating user"
+        }, { status: 500 });
+        console.log('User created in memory storage');
       }
-      
-      // Create user in memory storage
-      newUser = await memStorage.createUser({
-        username: validatedData.username,
-        password: hashedPassword,
-        name: validatedData.name || validatedData.username,
-      });
-      console.log('User created in memory storage');
     }
     
     // Remove password from response
@@ -92,8 +103,9 @@ export async function POST(request: NextRequest) {
       value: JSON.stringify(userWithoutPassword),
       httpOnly: true,
       path: '/',
-      sameSite: 'strict',
+      sameSite: 'lax', // Changed from 'strict' to 'lax' for better compatibility
       maxAge: 60 * 60 * 24 * 7, // 7 days
+      secure: process.env.NODE_ENV === 'production', // Only secure in production
     });
     
     return response;
