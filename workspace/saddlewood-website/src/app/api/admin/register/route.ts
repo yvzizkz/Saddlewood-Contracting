@@ -4,8 +4,7 @@ import { users } from '@/shared/schema';
 import { hashPassword } from '@/lib/auth/password';
 import { eq } from 'drizzle-orm';
 import { z } from 'zod';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth/auth-options';
+import { memStorage } from '@/lib/mem-storage';
 
 // Registration schema validation
 const registerSchema = z.object({
@@ -16,46 +15,74 @@ const registerSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    // For development and testing, allow any registration
-    // In a production environment, you would want to restrict this
-    
     // Get and validate request body
     const body = await request.json();
     const validatedData = registerSchema.parse(body);
     
-    // Check if username already exists
-    const [existingUser] = await db
-      .select()
-      .from(users)
-      .where(eq(users.username, validatedData.username));
-    
-    if (existingUser) {
-      return NextResponse.json({ 
-        success: false,
-        message: "Username already exists"
-      }, { status: 400 });
-    }
-    
     // Hash password
     const hashedPassword = await hashPassword(validatedData.password);
     
-    // Create user
-    const [newUser] = await db
-      .insert(users)
-      .values({
+    // Try to use database first, fall back to memory storage if it fails
+    let newUser;
+    let storageType = 'database';
+    
+    try {
+      // First try database storage - check if username exists
+      const [existingDbUser] = await db
+        .select()
+        .from(users)
+        .where(eq(users.username, validatedData.username));
+      
+      if (existingDbUser) {
+        return NextResponse.json({ 
+          success: false,
+          message: "Username already exists"
+        }, { status: 400 });
+      }
+      
+      // Create user in database
+      const [dbUser] = await db
+        .insert(users)
+        .values({
+          username: validatedData.username,
+          password: hashedPassword,
+          name: validatedData.name || validatedData.username,
+          createdAt: new Date(),
+        })
+        .returning();
+        
+      newUser = dbUser;
+      console.log('User created in database');
+      
+    } catch (dbError) {
+      console.error('Database error, using memory storage fallback:', dbError);
+      storageType = 'memory';
+      
+      // Check if username exists in memory storage
+      const existingMemUser = await memStorage.getUserByUsername(validatedData.username);
+      if (existingMemUser) {
+        return NextResponse.json({ 
+          success: false,
+          message: "Username already exists"
+        }, { status: 400 });
+      }
+      
+      // Create user in memory storage
+      newUser = await memStorage.createUser({
         username: validatedData.username,
         password: hashedPassword,
         name: validatedData.name || validatedData.username,
-        createdAt: new Date(),
-      })
-      .returning();
+      });
+      console.log('User created in memory storage');
+    }
     
     // Remove password from response
     const { password, ...userWithoutPassword } = newUser;
     
     return NextResponse.json({ 
       success: true,
-      user: userWithoutPassword
+      user: userWithoutPassword,
+      storageType
     }, { status: 201 });
     
   } catch (error) {
