@@ -29,7 +29,17 @@ export default function Navbar() {
   return (
     <nav className="bg-primary text-secondary py-3 sm:py-4 sticky top-0 z-50 shadow-md">
       <div className="container-custom">
-        <div className="flex justify-between items-center">
+        <div className="relative flex justify-between items-center py-2"
+          style={{
+            backgroundImage: 'url(/images/sc-clean.svg)',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '200px 200px',
+            backgroundBlendMode: 'soft-light',
+            backgroundColor: 'rgba(0, 0, 0, 0.92)',
+            minHeight: '80px'
+          }}
+        >
           {/* Logo and Company Name with flush styling */}
           <Link 
             href="/" 
