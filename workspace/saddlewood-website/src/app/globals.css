@@ -6,11 +6,35 @@
   --color-primary: #000000;
   --color-secondary: #ffffff;
   --color-accent: #666666;
+  --color-primary-darker: #111111;
 }
 
 @layer base {
   body {
     @apply bg-secondary text-primary;
+  }
+  
+  /* Improve tap targets on mobile */
+  button, a {
+    @apply min-h-[44px] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50;
+  }
+  
+  /* Better responsive text sizing */
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl sm:text-2xl;
+  }
+  
+  /* Improve general readability */
+  p, li {
+    @apply leading-relaxed;
   }
 }
 
@@ -20,20 +44,30 @@
   }
   
   .btn-primary {
-    @apply bg-primary text-secondary rounded-full px-6 py-3 font-medium 
-    hover:ring-2 hover:ring-white transition-all duration-300;
+    @apply bg-primary text-secondary rounded-full px-5 py-2 sm:px-6 sm:py-3 font-medium 
+    hover:ring-2 hover:ring-white transition-all duration-300 text-sm sm:text-base;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-primary rounded-full px-6 py-3 font-medium border border-primary
-    hover:ring-2 hover:ring-primary transition-all duration-300;
+    @apply bg-secondary text-primary rounded-full px-5 py-2 sm:px-6 sm:py-3 font-medium border border-primary
+    hover:ring-2 hover:ring-primary transition-all duration-300 text-sm sm:text-base;
   }
   
   .nav-link {
-    @apply uppercase text-secondary hover:text-accent transition-colors duration-300;
+    @apply uppercase text-secondary hover:text-accent transition-colors duration-300 text-sm sm:text-base;
   }
   
   .card {
-    @apply rounded-2xl ring-2 ring-gray-300 p-6 bg-secondary text-primary;
+    @apply rounded-2xl ring-2 ring-gray-300 p-4 sm:p-6 bg-secondary text-primary;
+  }
+  
+  /* Mobile menu styles */
+  .mobile-menu-item {
+    @apply flex items-center py-3 px-3 rounded-md hover:bg-primary-darker transition-colors;
+  }
+  
+  /* Touch-friendly service cards */
+  .service-card {
+    @apply rounded-2xl ring-2 ring-gray-300 p-4 sm:p-6 bg-secondary text-primary hover:shadow-lg transition-all duration-300;
   }
 }
