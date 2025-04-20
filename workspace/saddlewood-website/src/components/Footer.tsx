@@ -5,13 +5,13 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-secondary py-12">
       <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+          <div className="md:col-span-3">
             <h3 className="text-xl font-bold mb-4">Saddlewood Contracting</h3>
-            <p className="mb-4">18 years of trusted service in Arizona. We provide professional HVAC, electrical, plumbing, and remodeling services.</p>
+            <p className="mb-4">18 years of trusted service in Arizona. We provide professional HVAC, electrical, plumbing, and remodeling services throughout the Phoenix Valley.</p>
           </div>
           
-          <div>
+          <div className="md:col-span-3">
             <h3 className="text-lg font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
@@ -36,19 +36,34 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
-          <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
-            <p className="mb-2">Phoenix, Arizona</p>
-            <p className="mb-2">480-999-6100</p>
-            <p>info@saddlewoodcontracting.com</p>
+
+          <div className="md:col-span-3">
+            <h3 className="text-lg font-bold mb-4">Service Areas</h3>
+            <p className="mb-1">Phoenix</p>
+            <p className="mb-1">Paradise Valley</p>
+            <p className="mb-1">Scottsdale</p>
+            <p className="mb-1">Tempe</p>
+            <p className="mb-1">Mesa</p>
+            <p className="mb-1">Chandler</p>
+            <p className="mb-1">North Phoenix</p>
+            <p className="mb-1">Biltmore</p>
+            <p>Madison</p>
           </div>
           
-          <div>
-            <h3 className="text-lg font-bold mb-4">Business Hours</h3>
-            <p className="mb-2">Monday - Friday: 7am - 5pm</p>
-            <p className="mb-2">Saturday: 8am - 3pm</p>
-            <p>Sunday: Closed</p>
+          <div className="md:col-span-3">
+            <div className="mb-6">
+              <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+              <p className="mb-2">Phoenix, Arizona</p>
+              <p className="mb-2">480-999-6100</p>
+              <p>info@saddlewoodcontracting.com</p>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-bold mb-4">Business Hours</h3>
+              <p className="mb-2">Monday - Friday: 7am - 5pm</p>
+              <p className="mb-2">Saturday: 8am - 3pm</p>
+              <p>Sunday: Closed</p>
+            </div>
           </div>
         </div>
         

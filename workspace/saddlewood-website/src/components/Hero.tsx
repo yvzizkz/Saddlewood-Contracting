@@ -25,9 +25,13 @@ export default function Hero() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               18 Years of Trusted AZ Contracting
             </h1>
-            <p className="text-xl mb-8 max-w-2xl">
+            <p className="text-xl mb-4 max-w-2xl">
               Your complete solution for HVAC, electrical, plumbing, and remodeling services. 
               Licensed, insured, and committed to quality workmanship.
+            </p>
+            <p className="text-lg mb-8 max-w-2xl opacity-90">
+              Proudly serving Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, 
+              North Phoenix, Biltmore, Madison, and surrounding areas.
             </p>
             
             <Link 
