@@ -44,9 +44,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/images/logo-favicon.png' },
     ],
     apple: [
-      { url: '/images/logo-enhanced.svg' },
+      { url: '/images/logo.png' },
+    ],
+    shortcut: [
+      { url: '/images/logo-favicon.png' },
     ],
   },
   formatDetection: {

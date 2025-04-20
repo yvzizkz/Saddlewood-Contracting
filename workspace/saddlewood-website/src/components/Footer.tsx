@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 md:gap-8 mb-8">
           <div className="md:col-span-3">
             <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Saddlewood Contracting</h3>
-            <p className="mb-4 text-sm sm:text-base">18 years of trusted service in Arizona. We provide professional HVAC, electrical, plumbing, and remodeling services throughout the Phoenix Valley.</p>
+            <p className="mb-4 text-sm sm:text-base text-white">18 years of trusted service in Arizona. We provide professional HVAC, electrical, plumbing, and remodeling services throughout the Phoenix Valley.</p>
           </div>
           
           <div className="md:col-span-3">
