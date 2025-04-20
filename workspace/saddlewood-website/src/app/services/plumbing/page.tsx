@@ -79,13 +79,54 @@ export default function PlumbingPage() {
     "provider": {
       "@type": "LocalBusiness",
       "@id": "https://saddlewoodcontracting.com/#localbusiness",
-      "name": "Saddlewood Contracting"
+      "name": "Saddlewood Contracting",
+      "telephone": "(480) 999-6100",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      }
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Phoenix",
-      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Phoenix",
+        "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+      },
+      {
+        "@type": "City",
+        "name": "Paradise Valley"
+      },
+      {
+        "@type": "City",
+        "name": "Scottsdale"
+      },
+      {
+        "@type": "City",
+        "name": "Tempe"
+      },
+      {
+        "@type": "City",
+        "name": "Mesa"
+      },
+      {
+        "@type": "City",
+        "name": "Chandler"
+      },
+      {
+        "@type": "City",
+        "name": "Gilbert"
+      },
+      {
+        "@type": "City",
+        "name": "Glendale"
+      },
+      {
+        "@type": "City",
+        "name": "Fountain Hills"
+      }
+    ],
     "description": "Professional plumbing services including leak detection, drain cleaning, water heater installation and repair, pipe maintenance, and fixture installations for homes in Phoenix and surrounding areas.",
     "offers": {
       "@type": "Offer",
@@ -95,7 +136,58 @@ export default function PlumbingPage() {
         "priceCurrency": "USD"
       }
     },
-    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
+    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Plumbing Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Leak Detection & Repair",
+            "description": "Using advanced technology to locate hidden leaks behind walls, under floors, or in your foundation without extensive demolition."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Drain Cleaning & Sewer Services",
+            "description": "Professional drain cleaning using the latest techniques and equipment to clear stubborn clogs and maintain free-flowing drains."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Water Heater Services",
+            "description": "Installation, repair, maintenance, and replacement for traditional tank and tankless water heaters."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Plumbing Repair & Replacement",
+            "description": "Fixing leaky faucets, running toilets, replacing pipes and fixtures with upfront pricing and comprehensive warranties."
+          }
+        }
+      ]
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Phoenix Customer"
+      },
+      "reviewBody": "The plumber from Saddlewood was professional, quick, and fixed our leak perfectly. Their expertise saved us from what could have been major water damage."
+    }
   };
   // Benefits data
   const benefits = [

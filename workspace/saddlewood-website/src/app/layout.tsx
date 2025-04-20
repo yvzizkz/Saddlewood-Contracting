@@ -6,6 +6,11 @@ import Footer from '@/components/Footer';
 import AuthProvider from '@/lib/auth/auth-provider';
 import dynamic from 'next/dynamic';
 
+// Mobile sticky estimate button
+const MobileEstimateButton = dynamic(() => import('@/components/MobileEstimateButton'), {
+  ssr: false
+});
+
 // Import components with dynamic loading and disable SSR
 // This ensures components work properly with localStorage and browser APIs
 const WelcomeScreen = dynamic(() => import('@/components/WelcomeScreen'), { 
@@ -171,6 +176,9 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          
+          {/* Mobile sticky estimate button */}
+          <MobileEstimateButton />
         </AuthProvider>
       </body>
     </html>
