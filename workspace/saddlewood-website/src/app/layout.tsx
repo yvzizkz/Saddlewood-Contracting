@@ -6,7 +6,8 @@ import Footer from '@/components/Footer';
 import AuthProvider from '@/lib/auth/auth-provider';
 import dynamic from 'next/dynamic';
 
-// Dynamically import components that use client-side features
+// Import WelcomeScreen with dynamic loading and disable SSR
+// This ensures the welcome screen works properly with localStorage
 const WelcomeScreen = dynamic(() => import('@/components/WelcomeScreen'), { 
   ssr: false 
 });
@@ -38,7 +39,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/logo.png" type="image/png" />
       </head>
-      <body className="flex flex-col min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
+      <body className="flex flex-col min-h-screen">
         <AuthProvider>
           {/* Welcome Screen with company mission animation */}
           <WelcomeScreen />

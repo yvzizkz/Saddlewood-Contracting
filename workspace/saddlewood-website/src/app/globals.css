@@ -8,26 +8,6 @@
   --color-accent: #666666;
 }
 
-.dark {
-  --color-primary: #ffffff;
-  --color-secondary: #121212;
-  --color-accent: #9ca3af;
-}
-
-/* Theme transition styles */
-html {
-  transition: background-color 400ms ease-in-out, color 400ms ease-in-out;
-}
-
-body,
-h1, h2, h3, h4, h5, h6,
-p, span, a, button, input, select, textarea,
-div, section, header, footer, nav, aside, main {
-  transition-property: color, background-color, border-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 400ms;
-}
-
 @layer base {
   body {
     @apply bg-secondary text-primary;
