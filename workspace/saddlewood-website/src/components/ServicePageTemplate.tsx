@@ -120,7 +120,7 @@ export default function ServicePageTemplate({
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <p className="text-gray-700">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -171,7 +171,7 @@ export default function ServicePageTemplate({
               <div>
                 <h2 className="text-2xl font-bold mb-3">Licensed {serviceName} Contractor</h2>
                 <h3 className="font-medium text-gray-700 mb-2">{certificationType}</h3>
-                <p className="text-gray-600">{certificationDescription}</p>
+                <p className="text-gray-700">{certificationDescription}</p>
                 <Link 
                   href="/license-info" 
                   className="inline-block mt-4 text-accent hover:text-accent-dark font-medium"
@@ -198,7 +198,7 @@ export default function ServicePageTemplate({
             {faqs.map((faq, index) => (
               <div key={index} className="mb-6 border-b border-gray-200 pb-6 last:border-b-0">
                 <h3 className="text-xl font-semibold mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+                <p className="text-gray-700">{faq.answer}</p>
               </div>
             ))}
           </div>
