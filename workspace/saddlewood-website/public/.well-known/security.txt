@@ -1,0 +1,8 @@
+# Security Contact Information for Saddlewood Contracting
+Contact: mailto:security@saddlewoodcontracting.com
+Expires: 2026-04-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://saddlewoodcontracting.com/.well-known/security.txt
+Policy: https://saddlewoodcontracting.com/security-policy
+# Thank you for checking our security.txt file. Security is a priority for us.
+# Last updated: 2025-04-20
