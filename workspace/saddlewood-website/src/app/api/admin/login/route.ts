@@ -51,17 +51,27 @@ export async function POST(request: NextRequest) {
       }, { status: 401 });
     }
     
-    // Create session
-    // (in a real app, this would set up a session or JWT)
-    
-    // Remove password from response
+    // Create cookie-based session
     const { password, ...userWithoutPassword } = user;
     
-    return NextResponse.json({ 
+    // Create response with user data
+    const response = NextResponse.json({ 
       success: true,
       user: userWithoutPassword,
       storageType
     });
+    
+    // Set secure cookie with user data
+    response.cookies.set({
+      name: 'adminUser',
+      value: JSON.stringify(userWithoutPassword),
+      httpOnly: true,
+      path: '/',
+      sameSite: 'strict',
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+    });
+    
+    return response;
     
   } catch (error) {
     console.error('Error during login:', error);

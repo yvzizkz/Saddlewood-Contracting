@@ -19,18 +19,28 @@ function AdminLayoutContent({
     if (!loading && !user && pathname !== '/admin/login') {
       // Redirect to login if not authenticated and not already on login page
       router.push('/admin/login');
+    } else if (!loading && user && pathname === '/admin/login') {
+      // Redirect to dashboard if already authenticated and on login page
+      router.push('/admin');
     }
   }, [user, loading, router, pathname]);
-
-  // Don't render navbar until we know user is authenticated
-  // This prevents a flash of the navbar before redirect to login
-  if (loading || (!user && pathname !== '/admin/login')) {
+  
+  // Immediately return null to prevent any rendering until authentication is complete
+  if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50">
-        <main>{children}</main>
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
       </div>
     );
   }
+  
+  // If not on login page and not authenticated, prevent rendering anything
+  if (!user && pathname !== '/admin/login') {
+    return null;
+  }
+
+  // We've already handled loading state and authentication above
+  // The code below only executes if authentication is confirmed
 
   // Show only content (no navbar) for login page
   if (pathname === '/admin/login') {

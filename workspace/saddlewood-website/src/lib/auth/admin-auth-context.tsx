@@ -33,13 +33,22 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
     const checkLoggedIn = async () => {
       setLoading(true);
       try {
-        // Check local storage first
-        const storedUser = localStorage.getItem('adminUser');
-        if (storedUser) {
-          setUser(JSON.parse(storedUser));
+        // Make a request to check auth status
+        const response = await fetch('/api/admin/user', {
+          method: 'GET',
+          credentials: 'include', // Important for cookies
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          setUser(data.user);
+        } else {
+          // Not authenticated
+          setUser(null);
         }
       } catch (err) {
         console.error('Error checking authentication:', err);
+        setUser(null);
       } finally {
         setLoading(false);
       }
@@ -59,6 +68,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
         headers: {
           'Content-Type': 'application/json',
         },
+        credentials: 'include', // Important for cookies
         body: JSON.stringify({ username, password }),
       });
       
@@ -69,9 +79,8 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
         return false;
       }
       
-      // Save user to state and localStorage
+      // Save user to state (cookie set by server)
       setUser(data.user);
-      localStorage.setItem('adminUser', JSON.stringify(data.user));
       return true;
       
     } catch (err) {
