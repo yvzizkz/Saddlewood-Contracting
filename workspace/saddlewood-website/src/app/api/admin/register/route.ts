@@ -5,6 +5,7 @@ import { hashPassword } from '@/lib/auth/password';
 import { eq } from 'drizzle-orm';
 import { z } from 'zod';
 import { memStorage } from '@/lib/mem-storage';
+import { setSessionCookie } from '@/lib/session';
 
 // Registration schema validation
 const registerSchema = z.object({
@@ -97,16 +98,8 @@ export async function POST(request: NextRequest) {
       storageType
     }, { status: 201 });
     
-    // Set secure cookie with user data
-    response.cookies.set({
-      name: 'adminUser',
-      value: JSON.stringify(userWithoutPassword),
-      httpOnly: true,
-      path: '/',
-      sameSite: 'lax', // Changed from 'strict' to 'lax' for better compatibility
-      maxAge: 60 * 60 * 24 * 7, // 7 days
-      secure: process.env.NODE_ENV === 'production', // Only secure in production
-    });
+    // Set session cookie using our new helper
+    setSessionCookie(response, userWithoutPassword);
     
     return response;
     

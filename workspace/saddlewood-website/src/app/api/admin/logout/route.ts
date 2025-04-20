@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { clearSessionCookie } from '@/lib/session';
 
 export async function POST(request: NextRequest) {
   try {
@@ -8,16 +9,8 @@ export async function POST(request: NextRequest) {
       message: 'Logged out successfully'
     });
     
-    // Clear the adminUser cookie
-    response.cookies.set({
-      name: 'adminUser',
-      value: '',
-      expires: new Date(0), // Set expiry to epoch (effectively deleting the cookie)
-      path: '/',
-      sameSite: 'lax', // Changed from 'strict' to 'lax' for better compatibility
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // Only secure in production
-    });
+    // Clear the session using our new helper
+    clearSessionCookie(response);
     
     return response;
     

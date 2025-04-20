@@ -1,18 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { isAuthenticated } from '@/middlewares/auth-middleware';
+import { getSessionFromRequest } from '@/lib/session';
 
 // GET - Check if user is authenticated and return user data
 export async function GET(request: NextRequest) {
   try {
-    const user = await isAuthenticated(request);
+    console.log('Checking user session...');
+    const user = getSessionFromRequest(request);
     
     if (!user) {
+      console.log('No valid session found');
       return NextResponse.json({ 
         success: false,
         message: 'Not authenticated' 
       }, { status: 401 });
     }
     
+    console.log('Valid session found:', user);
     return NextResponse.json({
       success: true,
       user

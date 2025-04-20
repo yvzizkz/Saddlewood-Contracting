@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
+import { getSessionFromRequest } from '@/lib/session';
 
 // Define paths that should be protected
 const PROTECTED_ADMIN_PATHS = [
@@ -19,25 +20,14 @@ export async function middleware(request: NextRequest) {
   // Only process admin paths (except public ones like login)
   if (path.startsWith('/admin') && !PUBLIC_ADMIN_PATHS.includes(path)) {
     
-    // Check if there's a valid adminUser cookie
-    const adminUserCookie = request.cookies.get('adminUser');
+    // Get user from session using our new helper
+    const user = getSessionFromRequest(request);
     
     // Debug log to see what's happening
-    console.log('Middleware checking auth cookie:', path, !!adminUserCookie?.value);
-    
-    // Check if cookie exists and contains valid data
-    let isAuthenticated = false;
-    if (adminUserCookie?.value) {
-      try {
-        const userData = JSON.parse(adminUserCookie.value);
-        isAuthenticated = userData && userData.id ? true : false;
-      } catch (error) {
-        console.error('Error parsing auth cookie in middleware:', error);
-      }
-    }
+    console.log('Middleware checking session:', path, !!user);
     
     // If not authenticated, redirect to login page
-    if (!isAuthenticated) {
+    if (!user) {
       console.log('Not authenticated, redirecting to login');
       const url = new URL('/admin/login', request.url);
       url.searchParams.set('from', path);
