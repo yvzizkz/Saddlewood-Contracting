@@ -33,9 +33,9 @@
     @apply text-xl sm:text-2xl;
   }
   
-  /* Improve general readability */
+  /* Improve general readability and contrast */
   p, li {
-    @apply leading-relaxed;
+    @apply leading-relaxed text-gray-800;
   }
 }
 

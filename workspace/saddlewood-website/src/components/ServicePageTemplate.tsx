@@ -108,7 +108,7 @@ export default function ServicePageTemplate({
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Benefits of Our {serviceName} Services</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               See why homeowners throughout the Valley trust Saddlewood Contracting for their {serviceName.toLowerCase()} needs.
             </p>
           </div>
@@ -132,7 +132,7 @@ export default function ServicePageTemplate({
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Our {serviceName} Services</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Comprehensive {serviceName.toLowerCase()} solutions from licensed professionals you can trust.
             </p>
           </div>
@@ -148,7 +148,7 @@ export default function ServicePageTemplate({
                   )}
                   <div>
                     <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
+                    <p className="text-gray-700">{service.description}</p>
                   </div>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export default function ServicePageTemplate({
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Common questions about our {serviceName.toLowerCase()} services
             </p>
           </div>
