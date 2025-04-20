@@ -30,8 +30,8 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Saddlewood Contracting – 18 Years AZ HVAC, Electrical & Plumbing',
-  description: 'Trusted HVAC, electrical, plumbing, and remodeling services in Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, and surrounding areas. Licensed professionals with 18+ years experience.',
+  title: 'Saddlewood Contracting – Premium HVAC, Electrical & Plumbing | Phoenix AZ',
+  description: 'Valley-wide same-day HVAC, electrical, plumbing & remodeling from a top-rated Arizona contractor. 18+ years of quality service in Phoenix and surrounding areas. Licensed & insured with ROC certification.',
   keywords: 'HVAC, air conditioning, heating, electrical, plumbing, remodeling, home services, Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, Arizona, contractor, home improvement',
   authors: [{ name: 'Saddlewood Contracting' }],
   creator: 'Saddlewood Contracting',
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Saddlewood Contracting – Professional Home Services Throughout the Valley',
-    description: 'Trusted HVAC, electrical, plumbing, and remodeling services serving Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, and surrounding areas since 2007. Licensed and insured professionals.',
+    title: 'Saddlewood Contracting – Premium Home Services | Same-Day Service',
+    description: 'Expert HVAC, electrical, plumbing, and remodeling throughout Phoenix, AZ. 5-star service since 2007. Licensed, bonded and insured with full ROC certifications. Book online today!',
     url: 'https://saddlewoodcontracting.com',
     siteName: 'Saddlewood Contracting',
     locale: 'en_US',
@@ -71,8 +71,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Saddlewood Contracting – Professional Home Services',
-    description: 'Trusted home services throughout the Valley - Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, and surrounding areas since 2007.',
+    title: 'Saddlewood Contracting – Premium Home Services | Same-Day Service',
+    description: 'Expert HVAC, electrical, plumbing, and remodeling throughout Phoenix, AZ. 5-star service since 2007. Licensed and insured with full ROC certifications.',
     images: ['/images/brand-splash.svg'],
   },
   robots: {
@@ -98,7 +98,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen text-gray-800">
         <AuthProvider>
           {/* Construction-themed loading animation */}
           <LoadingAnimation />

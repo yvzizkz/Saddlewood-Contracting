@@ -1105,6 +1105,9 @@ video {
 .h-px {
   height: 1px;
 }
+.h-7 {
+  height: 1.75rem;
+}
 .min-h-\[calc\(100vh-200px\)\] {
   min-height: calc(100vh - 200px);
 }
@@ -1191,6 +1194,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-1\/4 {
+  width: 25%;
 }
 .min-w-full {
   min-width: 100%;
@@ -2603,6 +2609,10 @@ video {
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
   }
 
   .md\:grid-cols-12 {
