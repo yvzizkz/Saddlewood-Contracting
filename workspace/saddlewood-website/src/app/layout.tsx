@@ -12,6 +12,11 @@ const WelcomeScreen = dynamic(() => import('@/components/WelcomeScreen'), {
   ssr: false 
 });
 
+// Dynamic import for loading animation to use browser APIs
+const LoadingAnimation = dynamic(() => import('@/components/LoadingAnimation'), {
+  ssr: false
+});
+
 // Load Inter font (replacing Geist)
 const inter = Inter({ 
   subsets: ['latin'],
@@ -95,6 +100,9 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen">
         <AuthProvider>
+          {/* Construction-themed loading animation */}
+          <LoadingAnimation />
+          
           {/* Welcome Screen with company mission animation */}
           <WelcomeScreen />
           

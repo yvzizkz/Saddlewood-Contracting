@@ -2,41 +2,56 @@
 
 import { useState, useEffect } from 'react';
 
-// This hook manages whether to show the loading animation
-// It shows the loading animation on the first visit only
+// This hook manages whether to show the loading animation and welcome screen
+// It shows these animations on the first visit only, with separate flags
 export function useLoadingState() {
   // Always set to true initially to show animation by default
   const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
-    // Force the animation to show for demonstration
-    // Comment the following line to use the actual localStorage check
-    return setIsFirstLoad(true);
-
-    // Original implementation below - commented out for now
-    /*
     // Check if this is the first load of the site
     const hasVisitedBefore = localStorage.getItem('saddlewood_visited');
+    const hasSeenLoading = localStorage.getItem('saddlewood_loading_seen');
     
     if (!hasVisitedBefore) {
-      // This is the first visit, so show loading animation
-      // Set a flag in localStorage to remember this visit
+      // This is the first visit, show welcome screen
       localStorage.setItem('saddlewood_visited', 'true');
       setIsFirstLoad(true);
     } else {
-      // The user has visited before, no need for loading animation
       setIsFirstLoad(false);
     }
+    
+    // Set loading animation flag
+    if (!hasSeenLoading) {
+      // First time seeing loading animation
+      localStorage.setItem('saddlewood_loading_seen', 'true');
+    }
+    
+    // For development/testing - uncomment to always show the loading animation
+    // setIsFirstLoad(true);
+    // localStorage.removeItem('saddlewood_loading_seen');
 
-    // Auto-clear the first load flag after a session
+    // Auto-clear the first load flags occasionally to refresh the experience
     return () => {
-      // An expired session will see the loading animation again
-      if (Math.random() < 0.1) { // 10% chance to reset on each visit
+      // 10% chance to reset welcome screen on each visit
+      if (Math.random() < 0.1) {
         localStorage.removeItem('saddlewood_visited');
       }
+      
+      // 5% chance to reset loading animation on each visit
+      if (Math.random() < 0.05) {
+        localStorage.removeItem('saddlewood_loading_seen');
+      }
     };
-    */
   }, []);
 
   return isFirstLoad;
+}
+
+// Function to manually reset the loading state for testing
+export function resetLoadingState() {
+  if (typeof window !== 'undefined') {
+    localStorage.removeItem('saddlewood_loading_seen');
+    localStorage.removeItem('saddlewood_visited');
+  }
 }
