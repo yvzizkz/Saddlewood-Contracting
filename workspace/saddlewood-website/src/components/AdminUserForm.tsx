@@ -4,6 +4,7 @@ import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useAdminAuth } from "@/lib/auth/admin-auth-context";
 
 // Form schema validation
 const adminUserSchema = z.object({
@@ -19,6 +20,7 @@ interface AdminUserFormProps {
 }
 
 export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
+  const { register: registerUser } = useAdminAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -43,6 +45,27 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
       setSubmitError(null);
       setSubmitSuccess(false);
 
+      // Try our context method first
+      try {
+        const success = await registerUser(data.username, data.password, data.name);
+        
+        if (!success) {
+          throw new Error("Registration failed");
+        }
+        
+        setSubmitSuccess(true);
+        reset();
+        
+        // Call the onSuccess callback if provided
+        if (onSuccess) {
+          onSuccess();
+        }
+        return;
+      } catch (contextError) {
+        console.error("Context registration failed, trying API directly:", contextError);
+      }
+
+      // Fallback to direct API call if context method fails
       const response = await fetch("/api/admin/register", {
         method: "POST",
         headers: {

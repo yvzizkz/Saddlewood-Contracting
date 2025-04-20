@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useProtectedRoute } from "@/lib/auth/protected-route";
 import Link from "next/link";
 import AdminUserForm from "@/components/AdminUserForm";
 import AdminDashboardCharts from "@/components/AdminDashboardCharts";
+import { useAdminAuth } from "@/lib/auth/admin-auth-context";
 
 // Lead type definition
 type Lead = {
@@ -20,19 +20,22 @@ type Lead = {
 };
 
 export default function AdminDashboard() {
-  const { session, status } = useProtectedRoute();
+  const { user } = useAdminAuth();
   const [leads, setLeads] = useState<Lead[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [filterStatus, setFilterStatus] = useState<string>("all");
   const [filterProcessed, setFilterProcessed] = useState<string>("all");
+  const [dataFetched, setDataFetched] = useState(false);
 
   // Fetch leads data
   useEffect(() => {
-    if (status === "authenticated") {
+    // Only fetch data if user is authenticated and we haven't fetched yet
+    if (user && !dataFetched) {
       fetchLeads();
+      setDataFetched(true);
     }
-  }, [status]);
+  }, [user, dataFetched]);
 
   const fetchLeads = async () => {
     try {
@@ -40,15 +43,21 @@ export default function AdminDashboard() {
       const response = await fetch("/api/admin/leads");
       
       if (!response.ok) {
-        throw new Error("Failed to fetch leads");
+        console.warn("Failed to fetch leads from API, using empty array");
+        // Use empty array as fallback
+        setLeads([]);
+        setError("Could not fetch leads from server. Using empty dataset.");
+        return;
       }
       
       const data = await response.json();
-      setLeads(data.leads);
+      setLeads(data.leads || []);
       setError(null);
     } catch (err: any) {
       console.error("Error fetching leads:", err);
-      setError(err.message || "An error occurred while fetching leads");
+      // Use empty array as fallback
+      setLeads([]);
+      setError("An error occurred while fetching leads. Using empty dataset.");
     } finally {
       setLoading(false);
     }
@@ -66,7 +75,9 @@ export default function AdminDashboard() {
   });
 
   // Loading state
-  if (status === "loading" || loading) {
+  const { loading: authLoading } = useAdminAuth();
+  
+  if (authLoading || loading) {
     return (
       <div className="flex items-center justify-center min-h-[calc(100vh-200px)]">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
