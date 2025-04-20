@@ -122,6 +122,7 @@ export default function RootLayout({
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",

@@ -13,7 +13,7 @@ const CompanyLogo = () => (
       width={80}
       height={80}
       className="transition-opacity duration-300 hover:opacity-80"
-      style={{ width: 'auto', height: 'auto', maxHeight: '80px' }}
+      style={{ width: '80px', height: 'auto' }}
       priority
     />
   </div>
@@ -160,7 +160,7 @@ export default function Navbar() {
                     width={48}
                     height={48}
                     className="transition-opacity duration-300"
-                    style={{ width: 'auto', height: 'auto', maxHeight: '48px' }}
+                    style={{ width: '48px', height: 'auto' }}
                     priority
                   />
                 </div>
