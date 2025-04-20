@@ -97,6 +97,66 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* Schema.org structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://saddlewoodcontracting.com/#organization",
+                  "name": "Saddlewood Contracting",
+                  "url": "https://saddlewoodcontracting.com",
+                  "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://saddlewoodcontracting.com/images/logo.png"
+                  },
+                  "sameAs": [
+                    "https://www.facebook.com/saddlewoodcontracting",
+                    "https://www.instagram.com/saddlewoodcontracting"
+                  ],
+                  "description": "Expert HVAC, electrical, plumbing, and remodeling service provider serving Phoenix and surrounding areas since 2007."
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://saddlewoodcontracting.com/#localbusiness",
+                  "name": "Saddlewood Contracting",
+                  "url": "https://saddlewoodcontracting.com",
+                  "telephone": "(480) 999-6100",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "1234 N Construction Ave",
+                    "addressLocality": "Phoenix",
+                    "addressRegion": "AZ",
+                    "postalCode": "85001",
+                    "addressCountry": "US"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 33.4484,
+                    "longitude": -112.0740
+                  },
+                  "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday"
+                    ],
+                    "opens": "08:00",
+                    "closes": "17:00"
+                  },
+                  "priceRange": "$$",
+                  "servesCuisine": "Home Services"
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className="flex flex-col min-h-screen text-gray-800">
         <AuthProvider>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Script from 'next/script';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 // SVG Icons for benefits
@@ -68,6 +69,33 @@ export const metadata: Metadata = {
 };
 
 export default function ElectricalPage() {
+  // Schema.org structured data for Electrical services
+  const electricalSchemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Electrical Services",
+    "serviceType": "Electrical Installation, Repair, and Maintenance",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://saddlewoodcontracting.com/#localbusiness",
+      "name": "Saddlewood Contracting"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Phoenix",
+      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+    },
+    "description": "Professional electrical services including installation, wiring, repairs, panel upgrades, and EV charging station installation for homes and businesses in Phoenix and surrounding areas.",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD"
+      }
+    },
+    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
+  };
   // Benefits data
   const benefits = [
     {

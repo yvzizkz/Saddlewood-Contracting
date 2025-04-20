@@ -1,5 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Script from 'next/script';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 // SVG Icons for benefits
@@ -68,6 +69,33 @@ export const metadata: Metadata = {
 };
 
 export default function HVACPage() {
+  // Schema.org structured data for HVAC services
+  const hvacSchemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "HVAC Services",
+    "serviceType": "Heating, Ventilation, and Air Conditioning",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://saddlewoodcontracting.com/#localbusiness",
+      "name": "Saddlewood Contracting"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Phoenix",
+      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+    },
+    "description": "Expert HVAC services including air conditioning installation, repair, and maintenance, heating system services, and indoor air quality solutions for homes in Phoenix and surrounding areas.",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD"
+      }
+    },
+    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
+  };
   // Benefits data
   const benefits = [
     {
@@ -151,20 +179,27 @@ export default function HVACPage() {
   ];
 
   return (
-    <ServicePageTemplate
-      serviceName="HVAC"
-      serviceTitle="Professional HVAC Services in Phoenix, AZ"
-      metaDescription="Expert HVAC services in Phoenix - AC repair, installation, maintenance & heating solutions. Emergency service available. Licensed & insured (ROC #350714)."
-      heroImage="/images/hvac-hero.jpg"
-      heroAlt="HVAC technician installing an air conditioning unit"
-      introduction="Saddlewood Contracting provides complete heating, ventilation, and air conditioning services for homes throughout the Phoenix valley. Our licensed technicians deliver expert installation, repair, and maintenance services that keep your home comfortable year-round."
-      primaryCTA="Schedule Service"
-      benefits={benefits}
-      services={services}
-      faqs={faqs}
-      certificationNumber="350714"
-      certificationType="CR-39 Air Conditioning and Refrigeration"
-      certificationDescription="This classification allows us to install, alter, and repair refrigeration and evaporative cooling systems, including warm-air heating systems and all integrated parts of a heating, cooling, and ventilation system."
-    />
+    <>
+      <Script
+        id="hvac-service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hvacSchemaData) }}
+      />
+      <ServicePageTemplate
+        serviceName="HVAC"
+        serviceTitle="Professional HVAC Services in Phoenix, AZ"
+        metaDescription="Expert HVAC services in Phoenix - AC repair, installation, maintenance & heating solutions. Emergency service available. Licensed & insured (ROC #350714)."
+        heroImage="/images/hvac-hero.jpg"
+        heroAlt="HVAC technician installing an air conditioning unit"
+        introduction="Saddlewood Contracting provides complete heating, ventilation, and air conditioning services for homes throughout the Phoenix valley. Our licensed technicians deliver expert installation, repair, and maintenance services that keep your home comfortable year-round."
+        primaryCTA="Schedule Service"
+        benefits={benefits}
+        services={services}
+        faqs={faqs}
+        certificationNumber="350714"
+        certificationType="CR-39 Air Conditioning and Refrigeration"
+        certificationDescription="This classification allows us to install, alter, and repair refrigeration and evaporative cooling systems, including warm-air heating systems and all integrated parts of a heating, cooling, and ventilation system."
+      />
+    </>
   );
 }
