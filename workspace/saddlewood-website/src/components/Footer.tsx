@@ -64,8 +64,8 @@ export default function Footer() {
           </div>
           
           {/* License info with improved contrast */}
-          <div className="bg-black bg-opacity-50 dark:bg-white dark:bg-opacity-10 py-3 px-4 rounded-md mb-4 inline-block text-white dark:text-white">
-            <p className="uppercase text-sm tracking-wider">
+          <div className="bg-black bg-opacity-80 dark:bg-black dark:bg-opacity-80 py-3 px-4 rounded-md mb-4 inline-block text-white dark:text-white shadow-md">
+            <p className="uppercase text-sm tracking-wider font-medium">
               Licensed & Insured | AZ ROC 350714 CR‑39 • ROC 350715 CR‑11 • ROC 350716 CR‑37 • 305762 KB‑2
             </p>
           </div>

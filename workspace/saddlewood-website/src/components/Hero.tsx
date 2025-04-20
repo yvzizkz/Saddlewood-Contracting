@@ -41,13 +41,13 @@ export default function Hero() {
           </div>
           
           <div className="md:w-5/12">
-            <div className="bg-white bg-opacity-10 p-6 rounded-2xl border border-white border-opacity-20">
+            <div className="bg-black bg-opacity-60 p-6 rounded-2xl border border-white border-opacity-20 shadow-lg">
               <div className="text-sm text-white">
-                <p className="font-bold mb-2">Licensed Contractor:</p>
-                <p>ROC 350714 – CR-39 Air Conditioning and Refrigeration</p>
-                <p>ROC 350715 – CR-11 Electrical</p>
-                <p>ROC 350716 – CR-37 Plumbing</p>
-                <p>ROC 305762 – KB-2 Dual Residential and Small Commercial</p>
+                <p className="font-bold mb-2 text-white">Licensed Contractor:</p>
+                <p className="text-white">ROC 350714 – CR-39 Air Conditioning and Refrigeration</p>
+                <p className="text-white">ROC 350715 – CR-11 Electrical</p>
+                <p className="text-white">ROC 350716 – CR-37 Plumbing</p>
+                <p className="text-white">ROC 305762 – KB-2 Dual Residential and Small Commercial</p>
               </div>
             </div>
           </div>
