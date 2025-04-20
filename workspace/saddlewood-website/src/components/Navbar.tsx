@@ -4,16 +4,16 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Professional company logo with increased size
+// Professional company logo with larger size
 const CompanyLogo = () => (
   <div className="flex items-center justify-center">
     <Image
       src="/images/logo.png"
       alt="Saddlewood Contracting Logo"
-      width={64}
-      height={64}
+      width={80}
+      height={80}
       className="transition-opacity duration-300 hover:opacity-80"
-      style={{ width: 'auto', height: '64px' }}
+      style={{ width: 'auto', height: '80px' }}
       priority
     />
   </div>
