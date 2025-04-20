@@ -78,13 +78,54 @@ export default function HVACPage() {
     "provider": {
       "@type": "LocalBusiness",
       "@id": "https://saddlewoodcontracting.com/#localbusiness",
-      "name": "Saddlewood Contracting"
+      "name": "Saddlewood Contracting",
+      "telephone": "(480) 999-6100",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Phoenix",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      }
     },
-    "areaServed": {
-      "@type": "City",
-      "name": "Phoenix",
-      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
-    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Phoenix",
+        "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+      },
+      {
+        "@type": "City",
+        "name": "Paradise Valley"
+      },
+      {
+        "@type": "City",
+        "name": "Scottsdale"
+      },
+      {
+        "@type": "City",
+        "name": "Tempe"
+      },
+      {
+        "@type": "City",
+        "name": "Mesa"
+      },
+      {
+        "@type": "City",
+        "name": "Chandler"
+      },
+      {
+        "@type": "City",
+        "name": "Gilbert"
+      },
+      {
+        "@type": "City",
+        "name": "Glendale"
+      },
+      {
+        "@type": "City",
+        "name": "Fountain Hills"
+      }
+    ],
     "description": "Expert HVAC services including air conditioning installation, repair, and maintenance, heating system services, and indoor air quality solutions for homes in Phoenix and surrounding areas.",
     "offers": {
       "@type": "Offer",
@@ -94,7 +135,58 @@ export default function HVACPage() {
         "priceCurrency": "USD"
       }
     },
-    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
+    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "HVAC Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "HVAC Installation & Replacement",
+            "description": "Professional installation of new heating and cooling systems, from central air conditioners and heat pumps to mini-split systems and furnaces."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "HVAC Repair & Troubleshooting",
+            "description": "Fast, reliable repair service for all makes and models with upfront pricing and robust guarantees."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Preventative Maintenance",
+            "description": "Regular maintenance including thorough inspections, cleaning, and tune-ups to ensure optimal performance year-round."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Indoor Air Quality Solutions",
+            "description": "Whole-house air purifiers, humidifiers, dehumidifiers, and advanced filtration systems to improve indoor air quality."
+          }
+        }
+      ]
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Valley Resident"
+      },
+      "reviewBody": "Saddlewood's HVAC technicians were professional, prompt, and fixed our AC during a brutal heatwave. Their expertise and quick response kept our home comfortable when we needed it most."
+    }
   };
   // Benefits data
   const benefits = [
