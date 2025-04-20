@@ -4,23 +4,22 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
-      {/* Hero background image */}
-      <div className="absolute inset-0 w-full h-full">
-        <Image 
-          src="/images/hero-project.jpg" 
-          alt="Saddlewood Contracting - Quality craftsmanship"
-          fill
-          priority
-          className="object-cover brightness-[0.35]"
-          sizes="100vw"
-          loading="eager"
-        />
-        {/* Subtle logo watermark in background */}
-        <div className="absolute inset-0 bg-center bg-no-repeat opacity-[0.12]"
-             style={{ backgroundImage: 'url(/images/logo-full.png)', backgroundSize: '40%' }}>
-        </div>
-      </div>
+    <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      {/* Subtle logo watermark in background */}
+      <div 
+        className="absolute inset-0 bg-center bg-no-repeat opacity-[0.12]"
+        style={{ backgroundImage: 'url(/images/logo-full.png)', backgroundSize: '40%' }}
+        aria-hidden="true"
+      />
+      
+      {/* Construction pattern overlay */}
+      <div 
+        className="absolute inset-0 opacity-10" 
+        style={{ 
+          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' 
+        }}
+        aria-hidden="true"
+      />
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row items-center">
@@ -28,17 +27,17 @@ export default function Hero() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               18 Years of Trusted AZ Contracting
             </h1>
-            <p className="text-lg sm:text-xl mb-3 sm:mb-4 max-w-2xl">
+            <p className="text-lg sm:text-xl mb-3 sm:mb-4 max-w-2xl text-gray-100">
               Your complete solution for HVAC, electrical, plumbing, and remodeling services. 
               Licensed, insured, and committed to quality workmanship.
             </p>
-            <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl">
+            <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl text-gray-200">
               Valley-wide same-day service available. Proudly serving Phoenix, Paradise Valley, Scottsdale, 
               Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, and surrounding areas.
             </p>
             
             <div className="mb-8">
-              <p className="text-sm italic text-gray-200">
+              <p className="text-sm italic text-gray-300">
                 "Founded by Arizona natives with a passion for quality construction, 
                 Saddlewood brings traditional craftsmanship and modern solutions to every project."
               </p>
