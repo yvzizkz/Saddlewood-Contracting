@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import EmailThankYouPage from './EmailThankYouPage';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 // Define Zod schema for form validation
 const contactFormSchema = z.object({
@@ -50,6 +51,9 @@ export default function ContactForm() {
     submissionId?: string;
   } | null>(null);
 
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+
   // Initialize react-hook-form with zod validation
   const {
     register,
@@ -61,7 +65,22 @@ export default function ContactForm() {
     mode: 'onChange', // Validate on change for real-time feedback
   });
   
+  const onCaptchaChange = (token: string | null) => {
+    setCaptchaVerified(!!token);
+  };
+  
   const onSubmit = async (data: ContactFormData) => {
+    // Check if captcha is verified
+    if (!captchaVerified) {
+      setFormStatus({
+        submitting: false,
+        success: false,
+        error: true,
+        message: 'Please verify that you are not a robot by completing the CAPTCHA.',
+      });
+      return;
+    }
+    
     // Set submitting state
     setFormStatus({
       submitting: true,
@@ -71,13 +90,19 @@ export default function ContactForm() {
     });
     
     try {
+      // Get reCAPTCHA token
+      const captchaToken = recaptchaRef.current?.getValue() || '';
+      
       // Submit data to the API
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          captchaToken
+        }),
       });
       
       const result = await response.json();
