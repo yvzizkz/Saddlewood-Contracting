@@ -239,7 +239,7 @@ export default function ServicePageTemplate({
               </a>
             </div>
             
-            <div className="mt-8 text-gray-200 text-sm">
+            <div className="mt-8 text-white text-sm">
               <p>Available in Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills and the surrounding areas</p>
             </div>
           </div>
