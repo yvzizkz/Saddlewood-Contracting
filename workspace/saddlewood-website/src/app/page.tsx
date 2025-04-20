@@ -81,6 +81,46 @@ export default function Home() {
         </div>
       </section>
       
+      <section className="py-16 bg-gray-50">
+        <div className="container-custom">
+          <h2 className="text-3xl font-bold mb-8 text-center">Our Service Areas</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Phoenix</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Paradise Valley</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Scottsdale</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Tempe</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Mesa</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Chandler</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">North Phoenix</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Biltmore</h3>
+            </div>
+            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
+              <h3 className="text-lg font-semibold">Madison</h3>
+            </div>
+          </div>
+          
+          <p className="text-center text-gray-600 mb-8">
+            We also provide services to many surrounding areas throughout the Valley. Contact us to check availability in your area.
+          </p>
+        </div>
+      </section>
+      
       <section className="py-16 container-custom">
         <h2 className="text-3xl font-bold mb-8 text-center">Ready to Get Started?</h2>
         <div className="text-center">
