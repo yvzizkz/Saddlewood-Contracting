@@ -251,8 +251,8 @@ export default function ServicePageTemplate({
               </a>
             </div>
             
-            <div className="mt-8 text-white text-sm">
-              <p>Available in Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills and the surrounding areas</p>
+            <div className="mt-8">
+              <p className="text-white text-sm font-medium tracking-wide" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>Available in Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills and the surrounding areas</p>
             </div>
           </div>
         </div>

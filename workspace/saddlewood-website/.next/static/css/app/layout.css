@@ -1920,6 +1920,9 @@ video {
 .tracking-widest {
   letter-spacing: 0.1em;
 }
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
 .text-accent {
   color: var(--color-accent);
 }

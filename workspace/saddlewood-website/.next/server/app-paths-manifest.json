@@ -1,4 +1,7 @@
 {
   "/page": "app/page.js",
+  "/services/hvac/page": "app/services/hvac/page.js",
+  "/services/plumbing/page": "app/services/plumbing/page.js",
+  "/services/remodeling/page": "app/services/remodeling/page.js",
   "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js"
 }
