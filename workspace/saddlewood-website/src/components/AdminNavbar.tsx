@@ -2,19 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { signOut } from "next-auth/react";
+import { usePathname, useRouter } from "next/navigation";
+import { useAdminAuth } from "@/lib/auth/admin-auth-context";
 
 export default function AdminNavbar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const { logout, user } = useAdminAuth();
   const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   const handleLogout = async () => {
     try {
       setIsLoggingOut(true);
-      await signOut({ redirect: true, callbackUrl: "/admin/login" });
+      await logout();
+      router.push('/admin/login');
     } catch (error) {
       console.error("Error logging out:", error);
+    } finally {
       setIsLoggingOut(false);
     }
   };

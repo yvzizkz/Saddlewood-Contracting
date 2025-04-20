@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useAdminAuth } from "@/lib/auth/admin-auth-context";
 
 // Login form validation schema
 const loginSchema = z.object({
@@ -32,6 +32,7 @@ type RegistrationFormData = z.infer<typeof registrationSchema>;
 
 export default function AdminLoginPage() {
   const router = useRouter();
+  const { login, register, user, loading, error: authError } = useAdminAuth();
   const [isLogin, setIsLogin] = useState(true);
   const [formStatus, setFormStatus] = useState({
     submitting: false,
@@ -39,6 +40,13 @@ export default function AdminLoginPage() {
     error: false,
     message: '',
   });
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user) {
+      router.push('/admin');
+    }
+  }, [user, router]);
 
   // Login form hook
   const {
@@ -69,31 +77,26 @@ export default function AdminLoginPage() {
     });
 
     try {
-      const result = await signIn("credentials", {
-        username: data.username,
-        password: data.password,
-        redirect: false,
-      });
+      const success = await login(data.username, data.password);
 
-      if (result?.error) {
+      if (!success) {
         setFormStatus({
           submitting: false,
           success: false,
           error: true,
-          message: 'Invalid username or password',
+          message: authError || 'Invalid username or password',
         });
         return;
       }
 
-      // Redirect to admin dashboard
-      router.push('/admin');
-    } catch (error) {
+      // Redirect happens automatically in useEffect when user is set
+    } catch (error: any) {
       console.error('Login error:', error);
       setFormStatus({
         submitting: false,
         success: false,
         error: true,
-        message: 'An error occurred during login',
+        message: error.message || 'An error occurred during login',
       });
     }
   };
@@ -108,29 +111,20 @@ export default function AdminLoginPage() {
     });
 
     try {
-      const response = await fetch('/api/admin/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      const success = await register(data.username, data.password, data.name);
 
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.message || 'Registration failed');
+      if (!success) {
+        setFormStatus({
+          submitting: false,
+          success: false,
+          error: true,
+          message: authError || 'Registration failed',
+        });
+        return;
       }
 
-      setFormStatus({
-        submitting: false,
-        success: true,
-        error: false,
-        message: 'Registration successful! You can now log in.',
-      });
-
-      resetRegisterForm();
-      setIsLogin(true);
+      // Automatically logged in by the register function in our auth context
+      // Redirect happens automatically in useEffect when user is set
     } catch (error: any) {
       console.error('Registration error:', error);
       setFormStatus({
