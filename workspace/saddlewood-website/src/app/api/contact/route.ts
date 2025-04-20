@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
+import { sendContactFormNotification, sendContactFormConfirmation } from '@/lib/email-service';
 
 // Contact form validation schema
 const contactFormSchema = z.object({
@@ -15,6 +16,10 @@ const contactFormSchema = z.object({
     .refine((val) => val === '' || /^(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/.test(val), {
       message: 'Please enter a valid phone number (e.g., (123) 456-7890)'
     }),
+  address: z
+    .string()
+    .min(5, { message: 'Address must be at least 5 characters' })
+    .max(200, { message: 'Address must be less than 200 characters' }),
   service: z
     .string()
     .optional(),
@@ -65,8 +70,58 @@ export async function POST(request: NextRequest) {
     // Validate form data
     const validatedData = contactFormSchema.parse(body);
     
-    // Log contact request (would be an email in production)
+    // Generate a unique submission ID
+    const submissionDate = new Date();
+    const submissionId = `SC-${submissionDate.toISOString().split('T')[0]}-${Math.floor(Math.random() * 10000)}`;
+    
+    // Log the contact request for debugging purposes
     await logContactRequest(validatedData);
+    
+    // Prepare email data
+    const emailData = {
+      name: validatedData.name,
+      email: validatedData.email,
+      phone: validatedData.phone || '',
+      address: validatedData.address,
+      service: validatedData.service || '',
+      message: validatedData.message,
+      submissionId: submissionId,
+      submissionDate: submissionDate.toLocaleString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        timeZoneName: 'short'
+      })
+    };
+    
+    // Send notification email to Saddlewood
+    sendContactFormNotification(emailData)
+      .then(success => {
+        if (success) {
+          console.log('Notification email sent to Saddlewood');
+        } else {
+          console.warn('Failed to send notification email to Saddlewood');
+        }
+      })
+      .catch(err => {
+        console.error('Error sending notification email:', err);
+      });
+    
+    // Send confirmation email to the customer
+    sendContactFormConfirmation(emailData)
+      .then(success => {
+        if (success) {
+          console.log('Confirmation email sent to customer');
+        } else {
+          console.warn('Failed to send confirmation email to customer');
+        }
+      })
+      .catch(err => {
+        console.error('Error sending confirmation email:', err);
+      });
     
     // Return success response
     return NextResponse.json({
@@ -75,7 +130,8 @@ export async function POST(request: NextRequest) {
       data: {
         name: validatedData.name,
         email: validatedData.email,
-        submitted: new Date().toISOString(),
+        id: submissionId,
+        submitted: submissionDate.toISOString(),
       }
     }, { status: 201 });
     

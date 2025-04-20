@@ -20,6 +20,10 @@ const contactFormSchema = z.object({
     .refine((val) => val === '' || /^(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/.test(val), {
       message: 'Please enter a valid phone number (e.g., (123) 456-7890)'
     }),
+  address: z
+    .string()
+    .min(5, { message: 'Address must be at least 5 characters' })
+    .max(200, { message: 'Address must be less than 200 characters' }),
   service: z
     .string()
     .optional(),
@@ -191,6 +195,25 @@ export default function ContactForm() {
           />
           {errors.phone && (
             <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+          )}
+        </div>
+
+        <div className="mb-2">
+          <label htmlFor="address" className="block text-gray-700 font-medium mb-2">
+            Address <span className="text-red-500">*</span>
+          </label>
+          <input 
+            id="address"
+            {...register('address')}
+            placeholder="123 Main St, City, State, Zip"
+            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+              ${errors.address ? 'border-red-500 bg-red-50' : touchedFields.address ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+          />
+          {errors.address && (
+            <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>
+          )}
+          {touchedFields.address && !errors.address && (
+            <p className="text-green-500 text-sm mt-1">Looks good!</p>
           )}
         </div>
         

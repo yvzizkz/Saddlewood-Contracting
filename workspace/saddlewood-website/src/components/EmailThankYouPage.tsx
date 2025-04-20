@@ -66,7 +66,7 @@ export default function EmailThankYouPage({
           Return to Home
         </Link>
         <Link 
-          href="/services"
+          href="/#services"
           className="border border-primary text-primary py-2 px-6 rounded-full text-center hover:bg-primary hover:text-white transition-all"
         >
           Explore Services

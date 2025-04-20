@@ -12,6 +12,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
     "@neondatabase/serverless": "^1.0.0",
+    "@sendgrid/mail": "^8.1.5",
     "@types/cookie": "^0.6.0",
     "@types/node": "^22.14.1",
     "@types/pg": "^8.11.13",
