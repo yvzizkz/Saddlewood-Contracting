@@ -165,15 +165,15 @@ export default function LoadingAnimation() {
       </div>
       
       <div className="w-full max-w-md px-6 flex flex-col items-center relative z-10">
-        {/* Company Logo */}
+        {/* Company Logo - larger size */}
         <div className="mb-8">
-          <div className="relative w-24 h-24 mb-3 mx-auto">
+          <div className="relative w-32 h-32 mb-3 mx-auto">
             <div className="absolute inset-0 rounded-full border-2 border-white border-opacity-20"></div>
             <Image
               src="/images/logo.png"
               alt="Saddlewood Contracting Logo"
-              width={96}
-              height={96}
+              width={128}
+              height={128}
               className="rounded-full shadow-lg animate-pulse"
               style={{ 
                 animationDuration: '3s',

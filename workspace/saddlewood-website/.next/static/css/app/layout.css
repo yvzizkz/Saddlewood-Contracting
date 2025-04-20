@@ -1065,6 +1065,9 @@ video {
 .-ml-1 {
   margin-left: -0.25rem;
 }
+.mt-0 {
+  margin-top: 0px;
+}
 .block {
   display: block;
 }
@@ -1836,6 +1839,10 @@ video {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -2200,6 +2207,10 @@ video {
 
 .hover\:border-primary:hover {
   border-color: var(--color-primary);
+}
+
+.hover\:border-accent:hover {
+  border-color: var(--color-accent);
 }
 
 .hover\:bg-accent:hover {

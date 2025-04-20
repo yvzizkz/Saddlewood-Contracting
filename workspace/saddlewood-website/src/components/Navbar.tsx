@@ -4,16 +4,16 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// New professional company logo
+// Professional company logo with increased size
 const CompanyLogo = () => (
   <div className="flex items-center justify-center">
     <Image
       src="/images/logo.png"
       alt="Saddlewood Contracting Logo"
-      width={48}
-      height={48}
+      width={64}
+      height={64}
       className="transition-opacity duration-300 hover:opacity-80"
-      style={{ width: 'auto', height: '48px' }}
+      style={{ width: 'auto', height: '64px' }}
       priority
     />
   </div>
@@ -51,32 +51,39 @@ export default function Navbar() {
             </div>
           </Link>
           
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            <Link href="/" className="nav-link hover:text-accent transition-colors duration-200">
-              Home
-            </Link>
-            <div className="relative group">
-              <span className="nav-link cursor-pointer hover:text-accent transition-colors duration-200">Services</span>
-              <div className="absolute left-0 mt-2 w-48 bg-primary shadow-lg rounded-md overflow-hidden z-10 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
-                <Link href="/services/hvac" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
-                  HVAC
-                </Link>
-                <Link href="/services/electrical" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
-                  Electrical
-                </Link>
-                <Link href="/services/plumbing" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
-                  Plumbing
-                </Link>
-                <Link href="/services/remodeling" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
-                  Remodeling
-                </Link>
+          {/* Desktop Navigation with aligned tabs */}
+          <div className="hidden md:flex items-center h-16">
+            {/* Navigation links in a row with consistent height */}
+            <div className="flex items-center h-full">
+              <Link href="/" className="px-4 h-full flex items-center uppercase tracking-wider text-sm font-medium hover:text-accent transition-colors duration-200 border-b-2 border-transparent hover:border-accent">
+                HOME
+              </Link>
+              <div className="relative group h-full">
+                <div className="px-4 h-full flex items-center uppercase tracking-wider text-sm font-medium cursor-pointer hover:text-accent transition-colors duration-200 border-b-2 border-transparent hover:border-accent">
+                  SERVICES
+                </div>
+                <div className="absolute left-0 mt-0 w-48 bg-primary shadow-lg rounded-md overflow-hidden z-10 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
+                  <Link href="/services/hvac" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
+                    HVAC
+                  </Link>
+                  <Link href="/services/electrical" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
+                    Electrical
+                  </Link>
+                  <Link href="/services/plumbing" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
+                    Plumbing
+                  </Link>
+                  <Link href="/services/remodeling" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
+                    Remodeling
+                  </Link>
+                </div>
               </div>
+              <Link href="/contact" className="px-4 h-full flex items-center uppercase tracking-wider text-sm font-medium hover:text-accent transition-colors duration-200 border-b-2 border-transparent hover:border-accent">
+                CONTACT
+              </Link>
             </div>
-            <Link href="/contact" className="nav-link hover:text-accent transition-colors duration-200">
-              Contact
-            </Link>
-            <Link href="/contact" className="ml-3 sm:ml-4 px-4 sm:px-6 py-2 text-secondary bg-accent bg-opacity-20 rounded-full hover:bg-opacity-40 transition-all duration-300 font-medium">
+            
+            {/* CTA button */}
+            <Link href="/contact" className="ml-6 px-6 py-2.5 text-secondary bg-accent bg-opacity-20 rounded-full hover:bg-opacity-40 transition-all duration-300 font-medium">
               Book Estimate
             </Link>
           </div>
@@ -133,15 +140,15 @@ export default function Navbar() {
           {/* Mobile menu header with logo */}
           <div className="p-5 flex justify-between items-center border-b border-white border-opacity-10">
             <div className="flex items-center">
-              {/* Small logo in mobile menu */}
+              {/* Logo in mobile menu (larger size) */}
               <div className="flex items-center justify-center">
                 <Image
                   src="/images/logo.png"
                   alt="Saddlewood Contracting Logo"
-                  width={36}
-                  height={36}
+                  width={48}
+                  height={48}
                   className="transition-opacity duration-300"
-                  style={{ width: 'auto', height: '36px' }}
+                  style={{ width: 'auto', height: '48px' }}
                   priority
                 />
               </div>
