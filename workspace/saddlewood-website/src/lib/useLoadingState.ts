@@ -33,10 +33,7 @@ export function useLoadingState() {
 
     // Auto-clear the first load flags occasionally to refresh the experience
     return () => {
-      // 10% chance to reset welcome screen on each visit
-      if (Math.random() < 0.1) {
-        localStorage.removeItem('saddlewood_visited');
-      }
+      // Welcome screen is now permanently disabled, so don't reset the flag
       
       // 5% chance to reset loading animation on each visit
       if (Math.random() < 0.05) {

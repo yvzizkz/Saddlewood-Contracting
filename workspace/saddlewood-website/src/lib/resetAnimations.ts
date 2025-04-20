@@ -13,13 +13,12 @@ export function resetLoadingAnimation() {
 }
 
 /**
- * Resets the welcome screen so it will show again on the next page refresh
+ * This function is now deprecated as the welcome screen has been disabled
+ * It remains here only for backward compatibility
  */
 export function resetWelcomeScreen() {
-  if (typeof window !== 'undefined') {
-    localStorage.removeItem('saddlewood_welcomed');
-    console.log('Welcome screen reset. Refresh the page to see it.');
-  }
+  // Welcome screen permanently disabled - function remains for backwards compatibility
+  console.log('Welcome screen has been permanently disabled');
 }
 
 /**
