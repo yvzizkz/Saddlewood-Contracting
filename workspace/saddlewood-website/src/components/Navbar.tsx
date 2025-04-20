@@ -4,15 +4,15 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-// Using actual logo image
+// Enhanced logo with SVG for better scaling
 const CompanyLogo = () => (
   <div className="flex items-center">
     <Image
-      src="/images/logo.png"
+      src="/images/logo-enhanced.svg"
       alt="Saddlewood Contracting Logo"
       width={60}
       height={60}
-      className="rounded-full"
+      className="filter drop-shadow-md"
       style={{ width: '60px', height: '60px' }}
       priority
     />
