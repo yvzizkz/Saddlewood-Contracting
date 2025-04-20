@@ -82,8 +82,13 @@ export default function Navbar() {
               </Link>
             </div>
             
-            {/* CTA button */}
-            <Link href="/contact" className="ml-6 px-6 py-2.5 text-secondary bg-accent bg-opacity-20 rounded-full hover:bg-opacity-40 transition-all duration-300 font-medium">
+            {/* Enhanced CTA button */}
+            <Link 
+              href="/contact" 
+              className="ml-6 px-7 py-3 text-secondary bg-accent hover:bg-accent-dark 
+                        rounded-full transition-all duration-300 font-medium shadow-lg
+                        transform hover:scale-105 hover:shadow-xl"
+            >
               Book Estimate
             </Link>
           </div>
@@ -234,7 +239,9 @@ export default function Navbar() {
           <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-white border-opacity-10">
             <Link 
               href="/contact" 
-              className="flex items-center justify-center py-3 px-6 bg-white text-primary rounded-full hover:bg-opacity-90 transition-all duration-300 text-center"
+              className="flex items-center justify-center py-3 px-6 bg-accent text-white rounded-xl 
+                        hover:bg-accent-dark transition-all duration-300 text-center shadow-lg
+                        transform hover:scale-105"
               onClick={() => setMobileMenuOpen(false)}
             >
               <div className="relative w-5 h-5 mr-2 flex items-center justify-center">
@@ -242,7 +249,7 @@ export default function Navbar() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
-              <span className="font-medium">Book an Estimate</span>
+              <span className="font-bold">Book an Estimate</span>
             </Link>
             
             {/* Bottom text with company info */}

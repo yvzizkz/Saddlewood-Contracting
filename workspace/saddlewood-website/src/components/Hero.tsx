@@ -22,11 +22,19 @@ export default function Hero() {
             
             <Link 
               href="/contact" 
-              className="btn-primary inline-block relative overflow-hidden group transition-all duration-300 transform hover:scale-105 text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 shadow-lg"
+              className="inline-block relative overflow-hidden group transition-all duration-300 
+                        transform hover:scale-105 text-base sm:text-lg px-7 py-4 sm:px-9 sm:py-5 
+                        bg-accent hover:bg-accent-dark text-white font-bold rounded-xl
+                        shadow-xl hover:shadow-2xl"
             >
-              <span className="relative z-10">Get a Free Estimate</span>
-              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-25 transition-opacity duration-300"></span>
-              <span className="absolute left-0 bottom-0 h-1 w-0 bg-accent group-hover:w-full transition-all duration-500 ease-in-out"></span>
+              <span className="relative z-10 flex items-center">
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                Get a Free Estimate
+              </span>
+              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-15 transition-opacity duration-300"></span>
+              <span className="absolute left-0 bottom-0 h-1 w-0 bg-white group-hover:w-full transition-all duration-500 ease-in-out"></span>
             </Link>
           </div>
           
