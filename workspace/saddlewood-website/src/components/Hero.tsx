@@ -28,7 +28,7 @@ export default function Hero() {
             width={900}
             height={900}
             className="opacity-[0.15]"
-            style={{ width: '900px', height: '900px' }}
+            style={{ width: 'auto', height: 'auto', maxWidth: '900px' }}
             priority
             aria-hidden="true"
           />
