@@ -33,13 +33,13 @@ export default function LoadingAnimation() {
         // 85-100%: Finishing touches (slowest)
         let increment;
         if (prevProgress < 30) {
-          increment = 12; // Fast initial progress
+          increment = 8; // Fast initial progress
         } else if (prevProgress < 60) {
-          increment = 8;  // Medium progress
+          increment = 5;  // Medium progress
         } else if (prevProgress < 85) {
-          increment = 5;  // Slower details
+          increment = 3;  // Slower details
         } else {
-          increment = 3;  // Final finishing touches
+          increment = 2;  // Final finishing touches
         }
         
         return Math.min(prevProgress + increment, 100);

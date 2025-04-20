@@ -5,9 +5,16 @@ import { useState, useEffect } from 'react';
 // This hook manages whether to show the loading animation
 // It shows the loading animation on the first visit only
 export function useLoadingState() {
+  // Always set to true initially to show animation by default
   const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
+    // Force the animation to show for demonstration
+    // Comment the following line to use the actual localStorage check
+    return setIsFirstLoad(true);
+
+    // Original implementation below - commented out for now
+    /*
     // Check if this is the first load of the site
     const hasVisitedBefore = localStorage.getItem('saddlewood_visited');
     
@@ -28,6 +35,7 @@ export function useLoadingState() {
         localStorage.removeItem('saddlewood_visited');
       }
     };
+    */
   }, []);
 
   return isFirstLoad;
