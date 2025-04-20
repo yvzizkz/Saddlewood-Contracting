@@ -19,6 +19,21 @@ export default function Hero() {
         </div>
       </div>
       
+      {/* Full-circle logo watermark - centered behind all content */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <Image 
+            src="/images/logo-full.png" 
+            alt=""
+            width={500}
+            height={500}
+            className="opacity-10"
+            priority
+            aria-hidden="true"
+          />
+        </div>
+      </div>
+      
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-7/12 mb-10 md:mb-0">
