@@ -145,7 +145,14 @@ export default function WelcomeScreen() {
               }`}
             >
               <div className="text-center">
-                <span className="text-5xl font-bold tracking-wider">SC</span>
+                <Image
+                  src="/images/logo-enhanced.svg"
+                  alt="Saddlewood Contracting Logo"
+                  width={90}
+                  height={90}
+                  className="filter drop-shadow-md"
+                  priority
+                />
               </div>
             </div>
           </div>

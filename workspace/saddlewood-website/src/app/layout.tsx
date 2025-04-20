@@ -31,6 +31,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'Saddlewood Contracting' }],
   creator: 'Saddlewood Contracting',
   publisher: 'Saddlewood Contracting',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/images/logo-enhanced.svg' },
+    ],
+  },
   formatDetection: {
     email: true,
     address: true,
@@ -49,7 +57,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/brand-splash.svg',
         width: 1200,
         height: 630,
         alt: 'Saddlewood Contracting - Professional Home Services',
@@ -60,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Saddlewood Contracting – Professional Home Services',
     description: 'Trusted home services throughout the Valley - Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, and surrounding areas since 2007.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/brand-splash.svg'],
   },
   robots: {
     index: true,
@@ -83,7 +91,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
       <head>
-        <link rel="icon" href="/images/logo.png" type="image/png" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body className="flex flex-col min-h-screen">
         <AuthProvider>
