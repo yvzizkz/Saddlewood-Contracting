@@ -59,7 +59,7 @@ export default function Home() {
                 <span className="text-2xl">18+</span>
               </div>
               <h3 className="text-xl font-bold mb-2">Years of Experience</h3>
-              <p>Serving Arizona homeowners and businesses since 2005.</p>
+              <p>Serving Arizona homeowners and businesses since 2007.</p>
             </div>
             
             <div className="text-center p-6">
