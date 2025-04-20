@@ -146,7 +146,7 @@ export default function WelcomeScreen() {
             >
               <div className="text-center">
                 <Image
-                  src="/images/sc-monogram-correct.svg"
+                  src="/images/sc-clean.svg"
                   alt="Saddlewood Contracting Monogram"
                   width={90}
                   height={90}

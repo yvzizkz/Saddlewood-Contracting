@@ -12,7 +12,7 @@ const CompanyLogo = () => (
     <div className="absolute inset-0 rounded-full border-2 border-white border-opacity-10 animate-pulse"></div>
     
     <Image
-      src="/images/sc-monogram-correct.svg"
+      src="/images/sc-clean.svg"
       alt="Saddlewood Contracting Logo"
       width={60}
       height={60}
@@ -146,7 +146,7 @@ export default function Navbar() {
               <div className="relative w-9 h-9">
                 <div className="absolute inset-0 rounded-full border border-white border-opacity-20"></div>
                 <Image
-                  src="/images/sc-monogram-correct.svg"
+                  src="/images/sc-clean.svg"
                   alt="Saddlewood Contracting Logo"
                   width={36}
                   height={36}
