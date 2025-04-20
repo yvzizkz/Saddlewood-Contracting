@@ -105,10 +105,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        {/* Standard favicons with high resolution */}
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="256x256" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="icon" href="/favicon.png" type="image/png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+        
+        {/* iOS/macOS specific icons */}
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        
+        {/* Windows tile icon */}
+        <meta name="msapplication-TileImage" content="/favicon.png" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        
         {/* Schema.org structured data */}
         <script
           type="application/ld+json"
