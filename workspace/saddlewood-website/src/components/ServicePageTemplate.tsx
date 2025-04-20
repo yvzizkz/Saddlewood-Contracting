@@ -211,8 +211,15 @@ export default function ServicePageTemplate({
       </section>
       
       {/* CTA Section */}
-      <section id="contact" className="py-16 bg-primary text-white">
-        <div className="container-custom">
+      <section id="contact" className="py-16 bg-primary text-white relative overflow-hidden">
+        {/* Add animated blueprint pattern to this section */}
+        <AnimatedBackgroundPattern 
+          patternType="blueprint" 
+          speed="slow" 
+          opacity={0.06} 
+          className="z-0"
+        />
+        <div className="container-custom relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-lg mb-8 text-gray-100">
