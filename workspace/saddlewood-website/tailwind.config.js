@@ -4,6 +4,7 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class', // Enable dark mode with 'class' strategy
   theme: {
     extend: {
       colors: {
@@ -14,6 +15,15 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-geist)', 'sans-serif'],
         mono: ['var(--font-geist-mono)', 'monospace'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      transitionProperty: {
+        'colors': 'color, background-color, border-color, text-decoration-color, fill, stroke',
+      },
+      transitionDuration: {
+        'slow': '500ms',
       },
     },
   },
