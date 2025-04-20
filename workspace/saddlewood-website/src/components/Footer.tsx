@@ -88,11 +88,11 @@ export default function Footer() {
             </Link>
           </div>
           
-          <p className="uppercase text-xs sm:text-sm mb-3 sm:mb-4 tracking-wider px-2">
+          <p className="uppercase text-xs sm:text-sm mb-3 sm:mb-4 tracking-wider px-2 text-white">
             Licensed & Insured | AZ ROC 350714 CR‑39 • ROC 350715 CR‑11 • ROC 350716 CR‑37 • 305762 KB‑2
           </p>
           
-          <p className="text-xs sm:text-sm">
+          <p className="text-xs sm:text-sm text-white">
             &copy; {new Date().getFullYear()} Saddlewood Contracting LLC. All rights reserved.
           </p>
         </div>

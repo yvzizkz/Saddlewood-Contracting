@@ -59,7 +59,7 @@ export default function Home() {
                 <span className="text-xl sm:text-2xl">18+</span>
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Years of Experience</h3>
-              <p className="text-sm sm:text-base">Serving Arizona homeowners and businesses since 2007.</p>
+              <p className="text-sm sm:text-base text-white">Serving Arizona homeowners and businesses since 2007.</p>
             </div>
             
             <div className="text-center p-4 sm:p-6 bg-primary-darker bg-opacity-10 rounded-lg">
@@ -67,7 +67,7 @@ export default function Home() {
                 <span className="text-xl sm:text-2xl">✓</span>
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Licensed & Insured</h3>
-              <p className="text-sm sm:text-base">Multiple ROC licenses covering all aspects of contracting.</p>
+              <p className="text-sm sm:text-base text-white">Multiple ROC licenses covering all aspects of contracting.</p>
             </div>
             
             <div className="text-center p-4 sm:p-6 bg-primary-darker bg-opacity-10 rounded-lg sm:col-span-2 md:col-span-1 mx-auto md:mx-0 max-w-sm sm:max-w-full">
@@ -75,7 +75,7 @@ export default function Home() {
                 <span className="text-xl sm:text-2xl">★</span>
               </div>
               <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">5-Star Service</h3>
-              <p className="text-sm sm:text-base">Committed to customer satisfaction on every project.</p>
+              <p className="text-sm sm:text-base text-white">Committed to customer satisfaction on every project.</p>
             </div>
           </div>
         </div>

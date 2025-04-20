@@ -37,7 +37,7 @@ export default function Hero() {
             </p>
             
             <div className="mb-8">
-              <p className="text-sm italic text-gray-300">
+              <p className="text-sm italic text-white">
                 "Founded by Arizona natives with a passion for quality construction, 
                 Saddlewood brings traditional craftsmanship and modern solutions to every project."
               </p>
