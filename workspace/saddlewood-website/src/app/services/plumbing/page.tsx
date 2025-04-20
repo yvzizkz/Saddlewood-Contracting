@@ -70,6 +70,33 @@ export const metadata: Metadata = {
 };
 
 export default function PlumbingPage() {
+  // Schema.org structured data for Plumbing services
+  const plumbingSchemaData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Plumbing Services",
+    "serviceType": "Plumbing Repair, Installation, and Maintenance",
+    "provider": {
+      "@type": "LocalBusiness",
+      "@id": "https://saddlewoodcontracting.com/#localbusiness",
+      "name": "Saddlewood Contracting"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Phoenix",
+      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
+    },
+    "description": "Professional plumbing services including leak detection, drain cleaning, water heater installation and repair, pipe maintenance, and fixture installations for homes in Phoenix and surrounding areas.",
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "USD"
+      }
+    },
+    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
+  };
   // Benefits data
   const benefits = [
     {
@@ -153,20 +180,25 @@ export default function PlumbingPage() {
   ];
 
   return (
-    <ServicePageTemplate
-      serviceName="Plumbing"
-      serviceTitle="Professional Plumbing Services in Phoenix, AZ"
-      metaDescription="Expert plumbing services for Phoenix area homes - leak detection, drain cleaning, water heater services, fixture installations & repairs. ROC #350716."
-      heroImage="/images/plumbing-hero.jpg"
-      heroAlt="Plumber working on pipes in Phoenix home"
-      introduction="Saddlewood Contracting provides comprehensive plumbing services for residential properties throughout the Phoenix valley. Our licensed plumbers deliver expert installation, repair, and maintenance services that ensure your plumbing systems function reliably and efficiently."
-      primaryCTA="Schedule Service"
-      benefits={benefits}
-      services={services}
-      faqs={faqs}
-      certificationNumber="350716"
-      certificationType="CR-37 Plumbing"
-      certificationDescription="This classification allows us to install, alter, and repair all plumbing when performed solely within property lines and not on public easements or right-of-ways, including the required venting for waste or drainage, hot and cold water piping, and gas piping systems."
-    />
+    <>
+      <Script id="plumbing-schema" type="application/ld+json">
+        {JSON.stringify(plumbingSchemaData)}
+      </Script>
+      <ServicePageTemplate
+        serviceName="Plumbing"
+        serviceTitle="Professional Plumbing Services in Phoenix, AZ"
+        metaDescription="Expert plumbing services for Phoenix area homes - leak detection, drain cleaning, water heater services, fixture installations & repairs. ROC #350716."
+        heroImage="/images/plumbing-hero.jpg"
+        heroAlt="Plumber working on pipes in Phoenix home"
+        introduction="Saddlewood Contracting provides comprehensive plumbing services for residential properties throughout the Phoenix valley. Our licensed plumbers deliver expert installation, repair, and maintenance services that ensure your plumbing systems function reliably and efficiently."
+        primaryCTA="Schedule Service"
+        benefits={benefits}
+        services={services}
+        faqs={faqs}
+        certificationNumber="350716"
+        certificationType="CR-37 Plumbing"
+        certificationDescription="This classification allows us to install, alter, and repair all plumbing when performed solely within property lines and not on public easements or right-of-ways, including the required venting for waste or drainage, hot and cold water piping, and gas piping systems."
+      />
+    </>
   );
 }

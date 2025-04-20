@@ -1,5 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
+import Script from 'next/script';
 import ServicePageTemplate from '@/components/ServicePageTemplate';
 
 // SVG Icons for benefits
