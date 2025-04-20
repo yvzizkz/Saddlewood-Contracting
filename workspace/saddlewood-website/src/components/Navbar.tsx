@@ -29,8 +29,8 @@ export default function Navbar() {
   return (
     <header className="bg-primary text-secondary sticky top-0 z-50 shadow-md flex flex-col">
       {/* License info bar */}
-      <div className="bg-black bg-opacity-30 py-1 text-center text-xs">
-        <p className="text-gray-300">AZ ROC #350714, #350715, #350716, #305762 | <Link href="/license-info" className="underline hover:text-white transition-colors">License Details</Link></p>
+      <div className="bg-black bg-opacity-80 py-1 text-center text-xs">
+        <p className="text-gray-100 font-medium">AZ ROC #350714, #350715, #350716, #305762 | <Link href="/license-info" className="underline hover:text-white transition-colors text-accent">License Details</Link></p>
       </div>
       
       <nav className="py-3 sm:py-4">

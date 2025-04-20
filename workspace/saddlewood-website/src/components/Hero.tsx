@@ -62,14 +62,14 @@ export default function Hero() {
           </div>
           
           <div className="w-full md:w-5/12">
-            <div className="bg-white bg-opacity-10 p-4 sm:p-6 rounded-2xl border border-white border-opacity-20 shadow-lg">
+            <div className="bg-black bg-opacity-70 p-4 sm:p-6 rounded-2xl border border-white border-opacity-40 shadow-lg">
               <div className="text-xs sm:text-sm text-white">
-                <p className="font-bold mb-2">Licensed Contractor:</p>
+                <p className="font-bold mb-2 text-accent">Licensed Contractor:</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2">
-                  <p className="mb-1">ROC 350714 – CR-39 Air Conditioning</p>
-                  <p className="mb-1">ROC 350715 – CR-11 Electrical</p>
-                  <p className="mb-1">ROC 350716 – CR-37 Plumbing</p>
-                  <p className="mb-1">ROC 305762 – KB-2 Residential/Commercial</p>
+                  <p className="mb-1 font-medium">ROC 350714 – CR-39 <span className="text-gray-200">Air Conditioning</span></p>
+                  <p className="mb-1 font-medium">ROC 350715 – CR-11 <span className="text-gray-200">Electrical</span></p>
+                  <p className="mb-1 font-medium">ROC 350716 – CR-37 <span className="text-gray-200">Plumbing</span></p>
+                  <p className="mb-1 font-medium">ROC 305762 – KB-2 <span className="text-gray-200">Residential/Commercial</span></p>
                 </div>
               </div>
             </div>
