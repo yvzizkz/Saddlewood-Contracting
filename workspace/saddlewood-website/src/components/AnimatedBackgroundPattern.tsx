@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface AnimatedBackgroundPatternProps {
   className?: string;
@@ -16,6 +16,7 @@ export default function AnimatedBackgroundPattern({
   opacity = 0.06
 }: AnimatedBackgroundPatternProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [isFirstTimeUser, setIsFirstTimeUser] = useState(true);
   
   // Convert speed to milliseconds
   const getSpeedValue = () => {
@@ -27,8 +28,28 @@ export default function AnimatedBackgroundPattern({
   };
 
   useEffect(() => {
+    // Check if this is first time user
+    const checkFirstTimeVisit = () => {
+      if (typeof window !== 'undefined') {
+        const visited = localStorage.getItem('hasVisitedBefore');
+        if (!visited) {
+          setIsFirstTimeUser(true);
+          // Set the flag after 15 seconds for future visits
+          setTimeout(() => {
+            localStorage.setItem('hasVisitedBefore', 'true');
+            setIsFirstTimeUser(false);
+          }, 15000);
+        } else {
+          setIsFirstTimeUser(false);
+        }
+      }
+    };
+    
+    checkFirstTimeVisit();
+    
+    // If first time user, don't render animations
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || isFirstTimeUser) return;
     
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
@@ -188,7 +209,7 @@ export default function AnimatedBackgroundPattern({
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationId);
     };
-  }, [patternType, speed, opacity]);
+  }, [patternType, speed, opacity, isFirstTimeUser]);
   
   return (
     <canvas 

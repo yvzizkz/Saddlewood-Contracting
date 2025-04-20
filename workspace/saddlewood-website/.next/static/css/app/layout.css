@@ -1914,14 +1914,14 @@ video {
 .leading-tight {
   line-height: 1.25;
 }
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
 .tracking-wider {
   letter-spacing: 0.05em;
 }
 .tracking-widest {
   letter-spacing: 0.1em;
-}
-.tracking-wide {
-  letter-spacing: 0.025em;
 }
 .text-accent {
   color: var(--color-accent);
