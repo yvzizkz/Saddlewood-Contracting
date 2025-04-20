@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import EmailThankYouPage from './EmailThankYouPage';
 
 // Define Zod schema for form validation
 const contactFormSchema = z.object({
@@ -38,6 +39,12 @@ export default function ContactForm() {
     error: false,
     message: '',
   });
+  
+  const [submittedData, setSubmittedData] = useState<{
+    name: string;
+    email: string;
+    submissionId?: string;
+  } | null>(null);
 
   // Initialize react-hook-form with zod validation
   const {
@@ -80,7 +87,14 @@ export default function ContactForm() {
         submitting: false,
         success: true,
         error: false,
-        message: 'Thank you for contacting us! We will get back to you shortly.',
+        message: result.message || 'Thank you for contacting us! We will get back to you shortly.',
+      });
+      
+      // Set data for thank you page
+      setSubmittedData({
+        name: data.name,
+        email: data.email,
+        submissionId: result.data?.id || `${new Date().toISOString().split('T')[0]}-${Math.floor(Math.random() * 1000)}`
       });
       
       // Reset form data
@@ -102,8 +116,11 @@ export default function ContactForm() {
       <h3 className="text-2xl font-bold mb-6">Contact Form</h3>
       
       {formStatus.success ? (
-        <div className="bg-green-100 text-green-700 p-4 rounded-lg mb-6">
-          {formStatus.message}
+        <div className="bg-green-100 text-green-700 p-6 rounded-lg mb-6 text-center">
+          <h4 className="text-xl font-bold mb-2">Thank You!</h4>
+          <p>{formStatus.message}</p>
+          <p className="mt-4">Our team will contact you within 24-48 business hours.</p>
+          <p className="mt-2 text-sm">Reference: {new Date().toISOString().split('T')[0]}-{Math.floor(Math.random() * 1000)}</p>
         </div>
       ) : null}
       

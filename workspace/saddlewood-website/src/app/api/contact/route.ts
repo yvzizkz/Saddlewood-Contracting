@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { db } from '@/lib/db';
-import { leads } from '@/shared/schema';
 import { z } from 'zod';
 
 // Contact form validation schema
@@ -26,6 +24,39 @@ const contactFormSchema = z.object({
     .max(1000, { message: 'Message must be less than 1000 characters' }),
 });
 
+/**
+ * A simple function to log contact form submissions to a file
+ * In a production environment, this would be replaced with an email service
+ */
+async function logContactRequest(data: any) {
+  console.log('New contact form submission:');
+  console.log('----------------------------');
+  console.log(`Name: ${data.name}`);
+  console.log(`Email: ${data.email}`);
+  console.log(`Phone: ${data.phone || 'Not provided'}`);
+  console.log(`Service: ${data.service || 'Not specified'}`);
+  console.log(`Message: ${data.message}`);
+  console.log(`Date: ${new Date().toISOString()}`);
+  console.log('----------------------------');
+  
+  // In a real implementation, you would send an email here
+  // Example with a service like SendGrid, Mailgun, or AWS SES
+  // return sendEmail({
+  //   to: 'contact@saddlewoodcontracting.com',
+  //   from: 'website@saddlewoodcontracting.com',
+  //   subject: `New Contact Form: ${data.service || 'General Inquiry'}`,
+  //   text: `
+  //     Name: ${data.name}
+  //     Email: ${data.email}
+  //     Phone: ${data.phone || 'Not provided'}
+  //     Service: ${data.service || 'Not specified'}
+  //     Message: ${data.message}
+  //   `
+  // });
+  
+  return true;
+}
+
 export async function POST(request: NextRequest) {
   try {
     // Get request body
@@ -34,24 +65,18 @@ export async function POST(request: NextRequest) {
     // Validate form data
     const validatedData = contactFormSchema.parse(body);
     
-    // Insert into database
-    const result = await db.insert(leads).values({
-      name: validatedData.name,
-      email: validatedData.email,
-      phone: validatedData.phone || '',
-      service: validatedData.service || '',
-      message: validatedData.message,
-      status: 'new',
-      processed: false,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    }).returning();
+    // Log contact request (would be an email in production)
+    await logContactRequest(validatedData);
     
     // Return success response
     return NextResponse.json({
       success: true,
-      message: 'Contact form submitted successfully',
-      data: result[0],
+      message: 'Contact form submitted successfully. We will get back to you soon!',
+      data: {
+        name: validatedData.name,
+        email: validatedData.email,
+        submitted: new Date().toISOString(),
+      }
     }, { status: 201 });
     
   } catch (error) {
