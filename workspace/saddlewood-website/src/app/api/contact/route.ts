@@ -82,13 +82,19 @@ export async function POST(request: NextRequest) {
     // Validate form data
     const validatedData = contactFormSchema.parse(body);
     
-    // Verify reCAPTCHA token
-    const isRecaptchaValid = await verifyRecaptcha(validatedData.captchaToken);
-    if (!isRecaptchaValid) {
-      return NextResponse.json({
-        success: false,
-        message: 'CAPTCHA verification failed. Please try again.',
-      }, { status: 400 });
+    // Verify captcha token
+    // For simple captcha, we just check that the token exists
+    const isSimpleCaptcha = validatedData.captchaToken === 'simple-captcha-verified';
+    
+    // If it's not our simple captcha, then verify with reCAPTCHA
+    if (!isSimpleCaptcha) {
+      const isRecaptchaValid = await verifyRecaptcha(validatedData.captchaToken);
+      if (!isRecaptchaValid) {
+        return NextResponse.json({
+          success: false,
+          message: 'CAPTCHA verification failed. Please try again.',
+        }, { status: 400 });
+      }
     }
     
     // Generate a unique submission ID

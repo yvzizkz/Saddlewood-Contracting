@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import EmailThankYouPage from './EmailThankYouPage';
-import Script from 'next/script';
+import SimpleCaptcha from './SimpleCaptcha';
 
 // Define Zod schema for form validation
 const contactFormSchema = z.object({
@@ -52,7 +52,6 @@ export default function ContactForm() {
   } | null>(null);
 
   const [captchaVerified, setCaptchaVerified] = useState(false);
-  const recaptchaRef = useRef<any>(null);
 
   // Initialize react-hook-form with zod validation
   const {
@@ -65,8 +64,8 @@ export default function ContactForm() {
     mode: 'onChange', // Validate on change for real-time feedback
   });
   
-  const onCaptchaChange = (token: string | null) => {
-    setCaptchaVerified(!!token);
+  const handleCaptchaVerification = (verified: boolean) => {
+    setCaptchaVerified(verified);
   };
   
   const onSubmit = async (data: ContactFormData) => {
@@ -76,7 +75,7 @@ export default function ContactForm() {
         submitting: false,
         success: false,
         error: true,
-        message: 'Please verify that you are not a robot by completing the CAPTCHA.',
+        message: 'Please verify that you are not a robot by completing the captcha.',
       });
       return;
     }
@@ -90,9 +89,6 @@ export default function ContactForm() {
     });
     
     try {
-      // Get reCAPTCHA token
-      const captchaToken = recaptchaRef.current?.getValue() || '';
-      
       // Submit data to the API
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -101,7 +97,7 @@ export default function ContactForm() {
         },
         body: JSON.stringify({
           ...data,
-          captchaToken
+          captchaToken: 'simple-captcha-verified' // Using our simple captcha
         }),
       });
       
@@ -283,17 +279,13 @@ export default function ContactForm() {
           <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.
         </div>
         
-        <div className="mb-6 flex justify-center">
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-            onChange={onCaptchaChange}
-          />
+        <div className="mb-6">
+          <SimpleCaptcha onVerify={handleCaptchaVerification} />
         </div>
         
         {!captchaVerified && isDirty && isValid && (
           <p className="text-amber-500 text-sm text-center mb-4">
-            Please complete the CAPTCHA verification above.
+            Please complete the verification above.
           </p>
         )}
 
