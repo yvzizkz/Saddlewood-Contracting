@@ -31,8 +31,8 @@ export async function sendContactFormNotification(data: ContactFormEmailData): P
       return false;
     }
 
-    // The recipient email for Saddlewood (change this to the actual email)
-    const toEmail = 'contact@saddlewoodcontracting.com';
+    // The recipient email for Saddlewood
+    const toEmail = 'info@saddlewoodcontracting.com';
     
     // Format service type for better readability
     const serviceType = data.service 
@@ -41,7 +41,7 @@ export async function sendContactFormNotification(data: ContactFormEmailData): P
 
     await mailService.send({
       to: toEmail,
-      from: 'website@saddlewoodcontracting.com', // Change this to your verified sender
+      from: 'info@saddlewoodcontracting.com', // Verified sender email
       subject: `New Contact Form: ${serviceType} Request - ${data.submissionId}`,
       text: `
 New contact form submission from the Saddlewood Contracting website:
@@ -121,7 +121,7 @@ export async function sendContactFormConfirmation(data: ContactFormEmailData): P
 
     await mailService.send({
       to: data.email,
-      from: 'contact@saddlewoodcontracting.com', // Change this to your verified sender
+      from: 'info@saddlewoodcontracting.com', // Verified sender email
       subject: `We've Got Your Request, ${firstName} — Thank You!`,
       text: `
 Hi ${data.name},
