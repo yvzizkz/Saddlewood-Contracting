@@ -1,0 +1,46 @@
+I have some feedback on the site so far , can you please consider and make these changes appropriately  
+
+
+What works | What to improve
+• Clear hero headline and “Get a Free Estimate” CTA.​Saddlewood Contracting | • Hero image: add a strong, high‑res project photo instead of the current plain background to showcase craftsmanship.• Consistent spacing—some sections sit tight against the viewport while others have large gaps. Standardize padding (e.g., py‑16) for rhythm.
+• Simple, four‑item nav. | • Logo feels detached. Try using a stacked logo lock‑up in the header or a faint watermark behind the hero text (CSS background‑image with 10‑15 % opacity) so branding stays visible but unobtrusive.
+• Primary brand color carries through CTA buttons. | • Color contrast: the light‑gray body text on white drops below WCAG AA on smaller screens—darken it a bit (#444).
+
+All main‑menu links just scroll to anchors on the home page. Create standalone /hvac, /electrical, /plumbing, /remodeling pages with:
+
+Service‑specific keywords for SEO
+
+A project gallery and FAQ section
+
+Dedicated conversion form (“Schedule HVAC Service”)
+
+Provide a persistent “Book Estimate” button in the sticky header on mobile; right now it disappears once users scroll.
+
+You already list the numbers in hero and footer. To meet AZ ROC advertising rules, add a short “AZ ROC #350714, #350715, #350716, #305762” line in the header bar as well (12 px is fine).
+
+Create a /license-info page linked from the header that spells out the classification (CR‑39, CR‑11, etc.) in plain language.
+
+Voice
+
+Tone is professional but generic. Pepper in local cues (“Valley‑wide same‑day service”) and a one‑sentence founder story to humanize the brand.
+
+Check | Action
+Title tag currently defaults to the site name only. | Make it “Saddlewood Contracting
+No meta description detected. | Add ~155‑character sales blurb with service area keywords.
+Images aren’t compressed/webp. | Export hero/project photos to WebP < 150 kB; enable lazy‑loading (loading="lazy").
+Schema markup missing. | Add Organization, LocalBusiness, and Service structured data blocks for each trade.
+
+6. Accessibility
+Ensure every icon or decorative image has alt="" or relevant alt text.
+
+Verify heading order (h1 > h2 > h3); avoid skipping levels.
+
+Test keyboard focus states—visible outlines on buttons and links.
+
+7. Performance basics
+Enable Brotli or gzip compression on the server.
+
+Set far‑future cache headers for static assets.
+
+Consider a lightweight CSS framework or purge unused Tailwind classes to shrink CSS bundle.
+

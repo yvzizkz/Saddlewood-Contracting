@@ -4,10 +4,27 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="bg-primary text-secondary relative py-16 sm:py-20 md:py-32 overflow-hidden">
+    <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
+      {/* Hero background image */}
+      <div className="absolute inset-0 w-full h-full">
+        <Image 
+          src="/images/hero-project.jpg" 
+          alt="Saddlewood Contracting - Quality craftsmanship"
+          fill
+          priority
+          className="object-cover brightness-[0.35]"
+          sizes="100vw"
+          loading="eager"
+        />
+        {/* Subtle logo watermark in background */}
+        <div className="absolute inset-0 bg-center bg-no-repeat opacity-[0.12]"
+             style={{ backgroundImage: 'url(/images/logo-full.png)', backgroundSize: '40%' }}>
+        </div>
+      </div>
+
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-7/12 mb-10 md:mb-0">
+          <div className="md:w-7/12 mb-10 md:mb-0 text-white">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
               18 Years of Trusted AZ Contracting
             </h1>
@@ -15,10 +32,17 @@ export default function Hero() {
               Your complete solution for HVAC, electrical, plumbing, and remodeling services. 
               Licensed, insured, and committed to quality workmanship.
             </p>
-            <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl opacity-90">
-              Proudly serving Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, 
-              Gilbert, Glendale, Fountain Hills, and surrounding areas.
+            <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl">
+              Valley-wide same-day service available. Proudly serving Phoenix, Paradise Valley, Scottsdale, 
+              Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, and surrounding areas.
             </p>
+            
+            <div className="mb-8">
+              <p className="text-sm italic text-gray-200">
+                "Founded by Arizona natives with a passion for quality construction, 
+                Saddlewood brings traditional craftsmanship and modern solutions to every project."
+              </p>
+            </div>
             
             <Link 
               href="/contact" 
