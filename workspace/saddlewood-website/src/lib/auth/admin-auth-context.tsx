@@ -34,7 +34,7 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
       setLoading(true);
       try {
         console.log('Checking authentication status...');
-        // Make a request to check auth status
+        // Make a request to check auth status with proper caching disabled
         const response = await fetch('/api/admin/user', {
           method: 'GET',
           credentials: 'include', // Important for cookies
@@ -45,8 +45,9 @@ export function AdminAuthProvider({ children }: { children: ReactNode }) {
           },
         });
         
-        if (response.ok) {
-          const data = await response.json();
+        const data = await response.json();
+        
+        if (response.ok && data.success && data.user) {
           console.log('User authenticated:', data.user);
           setUser(data.user);
         } else {
