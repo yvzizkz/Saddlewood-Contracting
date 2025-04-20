@@ -105,17 +105,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
       <head>
-        {/* Standard favicons with high resolution */}
-        <link rel="icon" href="/favicon.ico" sizes="32x32" />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="256x256" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* Standard favicons with multiple resolutions */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
+        <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512" />
         
         {/* iOS/macOS specific icons */}
-        <link rel="apple-touch-icon" href="/favicon.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
         {/* Windows tile icon */}
-        <meta name="msapplication-TileImage" content="/favicon.png" />
+        <meta name="msapplication-TileImage" content="/favicon-512.png" />
         <meta name="msapplication-TileColor" content="#000000" />
         
         {/* Schema.org structured data */}
