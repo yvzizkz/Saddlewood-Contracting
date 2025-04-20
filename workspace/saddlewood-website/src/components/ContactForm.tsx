@@ -155,154 +155,208 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="shadow-lg rounded-2xl bg-white p-8">
-      <h3 className="text-2xl font-bold mb-6">Contact Form</h3>
+    <div className="shadow-lg rounded-2xl bg-white p-8 border-t-4 border-primary">
+      <h3 className="text-2xl font-bold mb-6 text-primary">Request A Free Estimate</h3>
       
       {formStatus.error ? (
-        <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-6">
-          {formStatus.message}
+        <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-6 shadow-sm border-l-4 border-red-500">
+          <p className="font-medium">Error</p>
+          <p>{formStatus.message}</p>
         </div>
       ) : null}
       
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div className="mb-2">
-          <label htmlFor="name" className="block text-gray-700 font-medium mb-2">
-            Name <span className="text-red-500">*</span>
-          </label>
-          <input 
-            id="name"
-            {...register('name')}
-            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.name ? 'border-red-500 bg-red-50' : touchedFields.name ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
-          />
-          {errors.name && (
-            <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
-          )}
-          {touchedFields.name && !errors.name && (
-            <p className="text-green-500 text-sm mt-1">Looks good!</p>
-          )}
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+        {/* Name and Email in 2 columns on larger screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="mb-1">
+            <label htmlFor="name" className="block text-gray-700 font-medium mb-2 flex items-center">
+              <span className="mr-1">Name</span> <span className="text-red-500">*</span>
+            </label>
+            <div className="relative">
+              <input 
+                id="name"
+                {...register('name')}
+                placeholder="Your full name"
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+                  ${errors.name ? 'border-red-500 bg-red-50' : touchedFields.name ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              />
+              {touchedFields.name && !errors.name && (
+                <span className="absolute right-3 top-3 text-green-500">
+                  ✓
+                </span>
+              )}
+            </div>
+            {errors.name && (
+              <p className="text-red-500 text-sm mt-1 flex items-center">
+                <span className="mr-1">⚠️</span> {errors.name.message}
+              </p>
+            )}
+          </div>
+          
+          <div className="mb-1">
+            <label htmlFor="email" className="block text-gray-700 font-medium mb-2 flex items-center">
+              <span className="mr-1">Email</span> <span className="text-red-500">*</span>
+            </label>
+            <div className="relative">
+              <input 
+                type="email"
+                id="email"
+                placeholder="your@email.com"
+                {...register('email')}
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+                  ${errors.email ? 'border-red-500 bg-red-50' : touchedFields.email ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              />
+              {touchedFields.email && !errors.email && (
+                <span className="absolute right-3 top-3 text-green-500">
+                  ✓
+                </span>
+              )}
+            </div>
+            {errors.email && (
+              <p className="text-red-500 text-sm mt-1 flex items-center">
+                <span className="mr-1">⚠️</span> {errors.email.message}
+              </p>
+            )}
+          </div>
         </div>
         
-        <div className="mb-2">
-          <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-            Email <span className="text-red-500">*</span>
-          </label>
-          <input 
-            type="email"
-            id="email"
-            {...register('email')}
-            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.email ? 'border-red-500 bg-red-50' : touchedFields.email ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
-          )}
-          {touchedFields.email && !errors.email && (
-            <p className="text-green-500 text-sm mt-1">Valid email format!</p>
-          )}
-        </div>
-        
-        <div className="mb-2">
-          <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
-            Phone
-          </label>
-          <input 
-            type="tel"
-            id="phone"
-            {...register('phone')}
-            placeholder="(123) 456-7890"
-            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.phone ? 'border-red-500 bg-red-50' : touchedFields.phone ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
-          />
-          {errors.phone && (
-            <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
-          )}
-        </div>
+        {/* Phone and Address in 2 columns on larger screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="mb-1">
+            <label htmlFor="phone" className="block text-gray-700 font-medium mb-2">
+              Phone Number
+            </label>
+            <div className="relative">
+              <input 
+                type="tel"
+                id="phone"
+                {...register('phone')}
+                placeholder="(123) 456-7890"
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+                  ${errors.phone ? 'border-red-500 bg-red-50' : touchedFields.phone ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              />
+              {touchedFields.phone && !errors.phone && (
+                <span className="absolute right-3 top-3 text-green-500">
+                  ✓
+                </span>
+              )}
+            </div>
+            {errors.phone && (
+              <p className="text-red-500 text-sm mt-1 flex items-center">
+                <span className="mr-1">⚠️</span> {errors.phone.message}
+              </p>
+            )}
+          </div>
 
-        <div className="mb-2">
-          <label htmlFor="address" className="block text-gray-700 font-medium mb-2">
-            Address <span className="text-red-500">*</span>
-          </label>
-          <input 
-            id="address"
-            {...register('address')}
-            placeholder="123 Main St, City, State, Zip"
-            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.address ? 'border-red-500 bg-red-50' : touchedFields.address ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
-          />
-          {errors.address && (
-            <p className="text-red-500 text-sm mt-1">{errors.address.message}</p>
-          )}
-          {touchedFields.address && !errors.address && (
-            <p className="text-green-500 text-sm mt-1">Looks good!</p>
-          )}
+          <div className="mb-1">
+            <label htmlFor="address" className="block text-gray-700 font-medium mb-2 flex items-center">
+              <span className="mr-1">Address</span> <span className="text-red-500">*</span>
+            </label>
+            <div className="relative">
+              <input 
+                id="address"
+                {...register('address')}
+                placeholder="123 Main St, City, AZ"
+                className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
+                  ${errors.address ? 'border-red-500 bg-red-50' : touchedFields.address ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+              />
+              {touchedFields.address && !errors.address && (
+                <span className="absolute right-3 top-3 text-green-500">
+                  ✓
+                </span>
+              )}
+            </div>
+            {errors.address && (
+              <p className="text-red-500 text-sm mt-1 flex items-center">
+                <span className="mr-1">⚠️</span> {errors.address.message}
+              </p>
+            )}
+          </div>
         </div>
         
-        <div className="mb-2">
+        <div className="mb-1">
           <label htmlFor="service" className="block text-gray-700 font-medium mb-2">
             Service Needed
           </label>
           <select 
             id="service"
             {...register('service')}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white"
           >
             <option value="">Select a service</option>
-            <option value="hvac">HVAC</option>
-            <option value="electrical">Electrical</option>
-            <option value="plumbing">Plumbing</option>
-            <option value="remodeling">Remodeling</option>
+            <option value="hvac">HVAC Installation or Repair</option>
+            <option value="electrical">Electrical Services</option>
+            <option value="plumbing">Plumbing Services</option>
+            <option value="remodeling">Home Remodeling</option>
             <option value="other">Other/Not Sure</option>
           </select>
         </div>
         
-        <div className="mb-4">
-          <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-            Message <span className="text-red-500">*</span>
+        <div className="mb-3">
+          <label htmlFor="message" className="block text-gray-700 font-medium mb-2 flex items-center">
+            <span className="mr-1">Message</span> <span className="text-red-500">*</span>
           </label>
-          <textarea 
-            id="message"
-            {...register('message')}
-            rows={5}
-            className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-              ${errors.message ? 'border-red-500 bg-red-50' : touchedFields.message ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
-          ></textarea>
+          <div className="relative">
+            <textarea 
+              id="message"
+              {...register('message')}
+              rows={5}
+              placeholder="Please describe your project or the service you need..."
+              className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors resize-none
+                ${errors.message ? 'border-red-500 bg-red-50' : touchedFields.message ? 'border-green-500 bg-green-50' : 'border-gray-300'}`}
+            ></textarea>
+            {touchedFields.message && !errors.message && (
+              <span className="absolute right-3 top-3 text-green-500">
+                ✓
+              </span>
+            )}
+          </div>
           {errors.message && (
-            <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+            <p className="text-red-500 text-sm mt-1 flex items-center">
+              <span className="mr-1">⚠️</span> {errors.message.message}
+            </p>
           )}
         </div>
         
-        <div className="mb-4 text-xs text-gray-600">
-          By submitting this form, you agree to our{' '}
-          <a href="/terms-and-conditions" className="text-primary hover:underline">Terms & Conditions</a>{' '}
-          and acknowledge our{' '}
-          <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.
-        </div>
-        
-        <div className="mb-6">
+        <div className="p-4 bg-gray-50 rounded-lg border border-gray-200 mb-4">
           <SimpleCaptcha onVerify={handleCaptchaVerification} />
         </div>
         
         {!captchaVerified && isDirty && isValid && (
-          <p className="text-amber-500 text-sm text-center mb-4">
-            Please complete the verification above.
+          <p className="text-amber-500 text-sm text-center mb-4 flex items-center justify-center">
+            <span className="mr-1">⚠️</span> Please complete the verification above.
           </p>
         )}
 
+        <div className="text-xs text-gray-600 border-t pt-4 mb-6">
+          By submitting this form, you agree to our{' '}
+          <a href="/privacy-policy" className="text-primary hover:underline">Privacy Policy</a>.
+        </div>
+
         <button 
           type="submit" 
-          className={`rounded-full px-6 py-3 font-medium w-full transition-all duration-300
+          className={`rounded-full px-8 py-4 font-medium w-full transition-all duration-300 text-lg shadow-md
             ${!isDirty || !isValid || !captchaVerified
               ? 'bg-gray-400 text-white cursor-not-allowed' 
-              : 'bg-primary text-white hover:ring-2 hover:ring-primary'}`}
+              : 'bg-primary text-white hover:bg-black hover:text-white hover:shadow-lg'}`}
           disabled={formStatus.submitting || !isDirty || !isValid || !captchaVerified}
         >
-          {formStatus.submitting ? 'Submitting...' : 'Submit'}
+          {formStatus.submitting ? (
+            <span className="flex items-center justify-center">
+              <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Submitting...
+            </span>
+          ) : (
+            'Get Your Free Estimate'
+          )}
         </button>
         
         {!isValid && isDirty && (
-          <p className="text-amber-500 text-sm text-center mt-2">
-            Please correct the form errors before submitting.
+          <p className="text-amber-500 text-sm text-center mt-2 flex items-center justify-center">
+            <span className="mr-1">⚠️</span> Please correct the form errors before submitting.
           </p>
         )}
       </form>
