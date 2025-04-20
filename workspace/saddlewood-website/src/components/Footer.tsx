@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-secondary py-10 sm:py-12">
+    <footer className="bg-primary text-gray-100 py-10 sm:py-12">
       <div className="container-custom">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6 md:gap-8 mb-8">
           <div className="md:col-span-3">
@@ -79,11 +79,11 @@ export default function Footer() {
         
         <div className="text-center pt-6 sm:pt-8 border-t border-gray-700">
           <div className="flex justify-center space-x-4 mb-4">
-            <Link href="/privacy-policy" className="text-secondary hover:text-accent transition-colors duration-300 text-xs sm:text-sm">
+            <Link href="/privacy-policy" className="text-gray-100 hover:text-accent transition-colors duration-300 text-xs sm:text-sm">
               Privacy Policy
             </Link>
-            <span className="text-secondary">|</span>
-            <Link href="/terms-and-conditions" className="text-secondary hover:text-accent transition-colors duration-300 text-xs sm:text-sm">
+            <span className="text-gray-100">|</span>
+            <Link href="/terms-and-conditions" className="text-gray-100 hover:text-accent transition-colors duration-300 text-xs sm:text-sm">
               Terms & Conditions
             </Link>
           </div>
