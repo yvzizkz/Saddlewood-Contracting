@@ -6,10 +6,14 @@ import Footer from '@/components/Footer';
 import AuthProvider from '@/lib/auth/auth-provider';
 import dynamic from 'next/dynamic';
 
-// Import WelcomeScreen with dynamic loading and disable SSR
-// This ensures the welcome screen works properly with localStorage
+// Import components with dynamic loading and disable SSR
+// This ensures components work properly with localStorage and browser APIs
 const WelcomeScreen = dynamic(() => import('@/components/WelcomeScreen'), { 
   ssr: false 
+});
+
+const LoadingAnimation = dynamic(() => import('@/components/LoadingAnimation'), {
+  ssr: false
 });
 
 // Load Inter font (replacing Geist)
@@ -87,6 +91,9 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen">
         <AuthProvider>
+          {/* Loading Animation */}
+          <LoadingAnimation />
+          
           {/* Welcome Screen with company mission animation */}
           <WelcomeScreen />
           
