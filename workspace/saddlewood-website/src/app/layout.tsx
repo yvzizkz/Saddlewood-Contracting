@@ -26,8 +26,8 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: 'Saddlewood Contracting – 18 Years AZ HVAC, Electrical & Plumbing',
-  description: 'Trusted HVAC, electrical, plumbing, and remodeling services in Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, North Phoenix, Biltmore, and Madison areas. Licensed professionals with 18+ years experience.',
-  keywords: 'HVAC, air conditioning, heating, electrical, plumbing, remodeling, home services, Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, North Phoenix, Biltmore, Madison, Arizona, contractor, home improvement',
+  description: 'Trusted HVAC, electrical, plumbing, and remodeling services in Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, and Gilbert areas. Licensed professionals with 18+ years experience.',
+  keywords: 'HVAC, air conditioning, heating, electrical, plumbing, remodeling, home services, Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Arizona, contractor, home improvement',
   authors: [{ name: 'Saddlewood Contracting' }],
   creator: 'Saddlewood Contracting',
   publisher: 'Saddlewood Contracting',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Saddlewood Contracting – Professional Home Services Throughout the Valley',
-    description: 'Trusted HVAC, electrical, plumbing, and remodeling services serving Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, North Phoenix, Biltmore, and Madison areas since 2007. Licensed and insured professionals.',
+    description: 'Trusted HVAC, electrical, plumbing, and remodeling services serving Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, and Gilbert areas since 2007. Licensed and insured professionals.',
     url: 'https://saddlewoodcontracting.com',
     siteName: 'Saddlewood Contracting',
     locale: 'en_US',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Saddlewood Contracting – Professional Home Services',
-    description: 'Trusted home services throughout the Valley - Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, North Phoenix, Biltmore, and Madison areas since 2007.',
+    description: 'Trusted home services throughout the Valley - Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, and Gilbert areas since 2007.',
     images: ['/images/og-image.jpg'],
   },
   robots: {

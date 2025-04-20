@@ -31,7 +31,7 @@ export default function Hero() {
             </p>
             <p className="text-lg mb-8 max-w-2xl opacity-90">
               Proudly serving Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, 
-              North Phoenix, Biltmore, Madison, and surrounding areas.
+              Gilbert, and surrounding areas.
             </p>
             
             <Link 

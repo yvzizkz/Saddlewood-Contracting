@@ -105,13 +105,7 @@ export default function Home() {
               <h3 className="text-lg font-semibold">Chandler</h3>
             </div>
             <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
-              <h3 className="text-lg font-semibold">North Phoenix</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
-              <h3 className="text-lg font-semibold">Biltmore</h3>
-            </div>
-            <div className="bg-white p-4 shadow-sm rounded-md text-center hover:shadow-md transition-all">
-              <h3 className="text-lg font-semibold">Madison</h3>
+              <h3 className="text-lg font-semibold">Gilbert</h3>
             </div>
           </div>
           
