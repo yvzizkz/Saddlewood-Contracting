@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-7/12 mb-10 md:mb-0 text-white">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-              18 Years of Trusted AZ Contracting
+              18 Years of Trusted Contracting in Arizona
             </h1>
             <p className="text-lg sm:text-xl mb-3 sm:mb-4 max-w-2xl text-gray-100">
               Your complete solution for HVAC, electrical, plumbing, and remodeling services. 
