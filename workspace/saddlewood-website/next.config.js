@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: [],
   },
+  env: {
+    NEXT_PUBLIC_GA_MEASUREMENT_ID: process.env.VITE_GA_MEASUREMENT_ID,
+  },
 }
 
 module.exports = nextConfig
