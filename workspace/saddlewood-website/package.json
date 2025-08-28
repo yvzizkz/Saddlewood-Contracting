@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "./start.sh",
+    "dev": "npm run build && npm run start",
     "serve": "next dev -p 5000",
     "build": "next build",
     "start": "next start -p 5000",
-    "production": "npm run build && npm run start",
     "lint": "next lint",
     "db:generate": "drizzle-kit generate:pg",
     "db:push": "drizzle-kit push:pg",
