@@ -22,7 +22,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd workspace/saddlewood-website && npm run serve"
+args = "cd workspace/saddlewood-website && npm run build && npm run start"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
