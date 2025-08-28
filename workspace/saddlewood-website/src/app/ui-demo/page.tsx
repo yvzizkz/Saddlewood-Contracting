@@ -7,7 +7,7 @@ import Link from 'next/link';
 import ClientRefreshButton from './ClientRefreshButton';
 
 // Force page to be dynamic with no caching
-export const nextDynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 export const fetchCache = 'force-no-store';
 

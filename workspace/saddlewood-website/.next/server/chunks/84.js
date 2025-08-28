@@ -1,0 +1,1 @@
+"use strict";exports.id=84,exports.ids=[84],exports.modules={94935:(e,o,r)=>{r.r(o),r.d(o,{default:()=>s});let s=(0,r(68570).createProxy)(String.raw`/home/runner/workspace/workspace/saddlewood-website/src/components/LoadingAnimation.tsx#default`)}};

@@ -74,6 +74,21 @@ Preferred communication style: Simple, everyday language.
 - **PostCSS & Autoprefixer**: CSS processing and browser compatibility
 - **ESLint**: Code quality and consistency
 
+## Deployment Configuration
+
+The application is configured for production deployment with the following setup:
+
+### Production Workflow
+- **Build Command**: `npm run build` - Creates optimized production build
+- **Start Command**: `npm run start -p 5000` - Runs production server on port 5000
+- **Port Configuration**: Application serves on port 5000 for Replit compatibility
+
+### Recent Changes (January 28, 2025)
+- Fixed deployment configuration to use production build instead of development server
+- Resolved TypeScript error in ui-demo page (changed `nextDynamic` to `dynamic`)
+- Updated workflow to use `npm run build && npm run start` for production deployment
+- Application successfully building and running in production mode
+
 ### Optional Integrations
 - **reCAPTCHA**: Google reCAPTCHA for enhanced form security (fallback to simple captcha)
 - **WebSocket Support**: Real-time capabilities for future features

@@ -20,16 +20,13 @@ args = "Saddlewood Website Server"
 name = "Saddlewood Website Server"
 author = "agent"
 
-[workflows.workflow.metadata]
-agentRequireRestartOnSave = false
-
-[[workflows.workflow.tasks]]
-task = "packager.installForAll"
-
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd workspace/saddlewood-website && npm install && npm run dev"
+args = "cd workspace/saddlewood-website && npm install && npm run build && npm run start"
 waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
 
 [deployment]
 run = ["sh", "-c", "cd workspace/saddlewood-website && npm install && npm run dev"]
