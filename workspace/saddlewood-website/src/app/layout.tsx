@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/lib/auth/auth-provider';
 import dynamic from 'next/dynamic';
-import AnalyticsProvider from '@/components/AnalyticsProvider';
+
 
 // Mobile sticky estimate button
 const MobileEstimateButton = dynamic(() => import('@/components/MobileEstimateButton'), {
@@ -189,26 +189,23 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen text-gray-800">
         <AuthProvider>
-          {/* Google Analytics provider */}
-          <AnalyticsProvider>
-            {/* Construction-themed loading animation */}
-            <LoadingAnimation />
-            
-            {/* Welcome Screen with company mission animation */}
-            <WelcomeScreen />
-            
-            {/* Animated blueprint or construction background pattern */}
-            <AnimatedBackgroundPattern patternType="blueprint" speed="slow" opacity={0.04} />
-            
-            <Navbar />
-            <main className="flex-grow">
-              {children}
-            </main>
-            <Footer />
-            
-            {/* Mobile sticky estimate button */}
-            <MobileEstimateButton />
-          </AnalyticsProvider>
+          {/* Construction-themed loading animation */}
+          <LoadingAnimation />
+          
+          {/* Welcome Screen with company mission animation */}
+          <WelcomeScreen />
+          
+          {/* Animated blueprint or construction background pattern */}
+          <AnimatedBackgroundPattern patternType="blueprint" speed="slow" opacity={0.04} />
+          
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          
+          {/* Mobile sticky estimate button */}
+          <MobileEstimateButton />
         </AuthProvider>
       </body>
     </html>

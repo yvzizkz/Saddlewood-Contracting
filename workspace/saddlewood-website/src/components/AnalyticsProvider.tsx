@@ -11,6 +11,8 @@ export default function AnalyticsProvider({
 }) {
   // Initialize Google Analytics when app loads
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     // Verify required environment variable is present
     if (!process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) {
       console.warn('Missing required Google Analytics key: NEXT_PUBLIC_GA_MEASUREMENT_ID');

@@ -10,6 +10,8 @@ declare global {
 
 // Initialize Google Analytics
 export const initGA = () => {
+  if (typeof window === 'undefined') return;
+  
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   if (!measurementId) {
