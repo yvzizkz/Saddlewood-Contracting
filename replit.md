@@ -99,6 +99,9 @@ The application is configured for production deployment with the following setup
 - Build command: `npm run build`, Run command: `npm run start` (no longer combined)
 - **ROOT REPLIT FILE CONFLICT FIX**: Root .replit uses `npm run dev`, so redirected dev script to production start command
 - Removed conflicting workspace .replit file to prevent configuration conflicts
+- **DEPLOYMENT TROUBLESHOOTING (September 2, 2025)**: Added standalone output mode and replit_deploy.toml
+- Modified dev script to directly use `next start -p 5000` for production server
+- Build completes successfully with all dynamic routes properly configured
 
 ### Optional Integrations
 - **reCAPTCHA**: Google reCAPTCHA for enhanced form security (fallback to simple captcha)
