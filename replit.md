@@ -108,6 +108,7 @@ The application is configured for production deployment with the following setup
 - **FORM INTEGRATION (September 2, 2025)**: Successfully integrated GoHighLevel contact form
 - Replaced existing HTML form with GoHighLevel iframe embed (form ID: m9HFqfuvfyCpP01F8Ip1)
 - Added GoHighLevel form script to layout for proper functionality
+- Added Privacy Policy compliance link at bottom of contact form
 - SendGrid API key configured for email notifications (backup system)
 
 ### Optional Integrations

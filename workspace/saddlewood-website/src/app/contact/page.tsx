@@ -85,6 +85,21 @@ export default function ContactPage() {
                   title="Contact Us"
                 />
               </div>
+              
+              {/* Privacy Policy Compliance Link */}
+              <div className="px-6 py-4 bg-gray-50 border-t text-center text-sm text-gray-600">
+                <p>
+                  By submitting this form, you agree to our{' '}
+                  <a 
+                    href="/privacy-policy" 
+                    className="text-primary hover:text-primary/80 underline font-medium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Privacy Policy
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
