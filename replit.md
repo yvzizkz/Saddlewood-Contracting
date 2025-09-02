@@ -97,6 +97,8 @@ The application is configured for production deployment with the following setup
 - Application successfully building and running in production mode with all secrets configured
 - **REPLIT SUPPORT SOLUTION (September 2, 2025)**: Separated build and run commands in .replit file per official support guidance
 - Build command: `npm run build`, Run command: `npm run start` (no longer combined)
+- **ROOT REPLIT FILE CONFLICT FIX**: Root .replit uses `npm run dev`, so redirected dev script to production start command
+- Removed conflicting workspace .replit file to prevent configuration conflicts
 
 ### Optional Integrations
 - **reCAPTCHA**: Google reCAPTCHA for enhanced form security (fallback to simple captcha)
