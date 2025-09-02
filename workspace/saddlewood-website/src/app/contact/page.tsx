@@ -1,5 +1,4 @@
 import React from 'react';
-import ContactForm from '@/components/ContactForm';
 
 export default function ContactPage() {
   return (
@@ -65,7 +64,14 @@ export default function ContactPage() {
           </div>
           
           <div>
-            <ContactForm />
+            {/* GoHighLevel Form Placeholder */}
+            <div className="bg-white p-8 rounded-lg shadow-lg border">
+              <h3 className="text-2xl font-bold mb-6 text-center">Request Your Free Estimate</h3>
+              <div className="text-center text-gray-600 py-12">
+                <p className="mb-4">GoHighLevel form will be embedded here</p>
+                <p className="text-sm">This placeholder will be replaced with your GoHighLevel form embed code</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
