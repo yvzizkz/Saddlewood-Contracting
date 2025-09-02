@@ -83,7 +83,7 @@ export default function ThankYouPage() {
               </li>
               <li>
                 <Link 
-                  href="/demo" 
+                  href="/gallery" 
                   style={{ color: '#3b82f6' }}
                   className="hover:underline"
                 >
