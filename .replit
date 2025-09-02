@@ -29,8 +29,8 @@ waitForPort = 5000
 outputType = "webview"
 
 [deployment]
-run = ["sh", "-c", "npm run start"]
-build = ["sh", "-c", "npm run build"]
+run = ["sh", "-c", "cd workspace/saddlewood-website && npm run start"]
+build = ["sh", "-c", "cd workspace/saddlewood-website && npm run build"]
 
 [[ports]]
 localPort = 5000
