@@ -56,24 +56,8 @@ export default function ThankYouPage() {
                 style={{ color: '#3b82f6' }}
               >
                 (480) 999‑6100
-              </a>{' '}
-              or book a consultation using the calendar below.
+              </a>.
             </p>
-            
-            <div style={{ margin: '20px 0' }}>
-              {/* GoHighLevel Calendar Embed Placeholder */}
-              <div className="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
-                <h3 className="text-lg font-semibold text-gray-700 mb-2">
-                  Schedule Your Consultation
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  GoHighLevel calendar embed will be placed here
-                </p>
-                <div className="text-sm text-gray-500">
-                  <p>This placeholder will be replaced with your GoHighLevel calendar widget</p>
-                </div>
-              </div>
-            </div>
 
             <p style={{
               fontSize: '16px',
@@ -180,12 +164,7 @@ export default function ThankYouPage() {
               </div>
               <div className="flex justify-between">
                 <span className="font-medium text-gray-700">Sunday:</span>
-                <span className="text-gray-600">Emergency Only</span>
-              </div>
-              <div className="mt-4 pt-4 border-t border-gray-200">
-                <p className="text-sm text-gray-600">
-                  <strong>Emergency Services:</strong> Available 24/7 for urgent HVAC, electrical, and plumbing issues.
-                </p>
+                <span className="text-gray-600">Closed</span>
               </div>
             </div>
           </div>
