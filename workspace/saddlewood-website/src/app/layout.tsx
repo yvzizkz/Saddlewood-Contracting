@@ -186,6 +186,9 @@ export default function RootLayout({
             })
           }}
         />
+        
+        {/* GoHighLevel Form Script */}
+        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
       </head>
       <body className="flex flex-col min-h-screen text-gray-800">
         <AuthProvider>

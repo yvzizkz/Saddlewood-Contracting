@@ -64,12 +64,26 @@ export default function ContactPage() {
           </div>
           
           <div>
-            {/* GoHighLevel Form Placeholder */}
-            <div className="bg-white p-8 rounded-lg shadow-lg border">
-              <h3 className="text-2xl font-bold mb-6 text-center">Request Your Free Estimate</h3>
-              <div className="text-center text-gray-600 py-12">
-                <p className="mb-4">GoHighLevel form will be embedded here</p>
-                <p className="text-sm">This placeholder will be replaced with your GoHighLevel form embed code</p>
+            {/* GoHighLevel Contact Form */}
+            <div className="bg-white rounded-lg shadow-lg border overflow-hidden">
+              <div style={{ height: '933px' }}>
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/m9HFqfuvfyCpP01F8Ip1"
+                  style={{ width: '100%', height: '100%', border: 'none', borderRadius: '4px' }}
+                  id="inline-m9HFqfuvfyCpP01F8Ip1"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Contact Us"
+                  data-height="933"
+                  data-layout-iframe-id="inline-m9HFqfuvfyCpP01F8Ip1"
+                  data-form-id="m9HFqfuvfyCpP01F8Ip1"
+                  title="Contact Us"
+                />
               </div>
             </div>
           </div>
