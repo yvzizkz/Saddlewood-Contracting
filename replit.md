@@ -101,8 +101,9 @@ The application is configured for production deployment with the following setup
 - Removed conflicting workspace .replit file to prevent configuration conflicts
 - **DEPLOYMENT TROUBLESHOOTING (September 2, 2025)**: Quinn from Replit Support provided solution
 - Root .replit file cannot be edited directly (forbidden) - explains deployment failures
-- Solution: Remove deployment section from .replit and configure in Deployment tab manually
-- Build command: `npm run build`, Run command: `npm run start` (configured in UI)
+- Solution: Configure deployment to run from workspace/saddlewood-website directory
+- Build command: `cd workspace/saddlewood-website && npm run build`
+- Run command: `cd workspace/saddlewood-website && npm run start`
 
 ### Optional Integrations
 - **reCAPTCHA**: Google reCAPTCHA for enhanced form security (fallback to simple captcha)
