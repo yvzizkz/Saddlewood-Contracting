@@ -9,77 +9,133 @@ const AnimatedBackgroundPattern = dynamic(() => import('@/components/AnimatedBac
 
 export default function Hero() {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-      {/* Subtle logo watermark in background */}
+    <section className="relative py-20 sm:py-24 md:py-32 overflow-hidden bg-gradient-to-br from-charcoal via-charcoal-light to-primary">
       <div 
-        className="absolute inset-0 bg-center bg-no-repeat opacity-[0.12]"
-        style={{ backgroundImage: 'url(/images/logo-full.png)', backgroundSize: '40%' }}
+        className="absolute inset-0 bg-center bg-no-repeat opacity-[0.08]"
+        style={{ backgroundImage: 'url(/images/logo-full.png)', backgroundSize: '35%' }}
         aria-hidden="true"
       />
       
-      {/* Animated construction pattern overlay */}
       <AnimatedBackgroundPattern 
         patternType="construction" 
         speed="medium" 
-        opacity={0.08} 
+        opacity={0.05} 
         className="z-10"
       />
+      
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
 
       <div className="container-custom relative z-10">
         <div className="flex flex-col md:flex-row items-center">
-          <div className="md:w-7/12 mb-10 md:mb-0 text-white">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-              18 Years of Trusted Contracting in Arizona
+          <div className="md:w-7/12 mb-12 md:mb-0 text-white">
+            <div className="inline-block mb-6">
+              <span className="text-gold uppercase tracking-[0.3em] text-xs sm:text-sm font-medium border border-gold/30 px-4 py-2 rounded-full">
+                Exclusive Home Services
+              </span>
+            </div>
+            
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 leading-tight">
+              Crafting Exceptional
+              <span className="block text-gold">Living Spaces</span>
             </h1>
-            <p className="text-lg sm:text-xl mb-3 sm:mb-4 max-w-2xl text-gray-100">
-              Your complete solution for HVAC, electrical, plumbing, and remodeling services. 
-              Licensed, insured, and committed to quality workmanship.
-            </p>
-            <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl text-gray-200">
-              Valley-wide same-day service available. Proudly serving Phoenix, Paradise Valley, Scottsdale, 
-              Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, and surrounding areas.
+            
+            <p className="text-lg sm:text-xl mb-4 max-w-2xl text-gray-200 leading-relaxed">
+              For discerning homeowners who demand excellence. We deliver bespoke HVAC, 
+              electrical, plumbing, and remodeling solutions with uncompromising attention to detail.
             </p>
             
-            <div className="mb-8">
-              <p className="text-sm italic text-white">
-                "Founded by Arizona natives with a passion for quality construction, 
-                Saddlewood brings traditional craftsmanship and modern solutions to every project."
+            <p className="text-base sm:text-lg mb-8 max-w-2xl text-gray-400">
+              Serving Paradise Valley, Scottsdale, Phoenix, and select communities throughout the Valley. 
+              By appointment only.
+            </p>
+            
+            <div className="mb-10 pl-4 border-l-2 border-gold/50">
+              <p className="text-sm italic text-gray-300">
+                "We don't just complete projects—we curate experiences that 
+                elevate your home and lifestyle."
               </p>
             </div>
             
-            <Link 
-              href="/contact" 
-              className="inline-block relative overflow-hidden group transition-all duration-300 
-                        transform hover:scale-105 text-base sm:text-lg px-7 py-4 sm:px-9 sm:py-5 
-                        bg-accent hover:bg-accent-dark text-white font-bold rounded-xl
-                        shadow-xl hover:shadow-2xl"
-            >
-              <span className="relative z-10 flex items-center">
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center justify-center px-8 py-4 
+                          bg-gradient-to-r from-gold to-gold-dark text-primary font-semibold 
+                          rounded-lg shadow-gold-glow hover:shadow-xl
+                          transform hover:scale-105 transition-all duration-300"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
-                Get a Free Estimate
-              </span>
-              <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-15 transition-opacity duration-300"></span>
-              <span className="absolute left-0 bottom-0 h-1 w-0 bg-white group-hover:w-full transition-all duration-500 ease-in-out"></span>
-            </Link>
+                Schedule a Design Consultation
+              </Link>
+              
+              <Link 
+                href="/gallery" 
+                className="inline-flex items-center justify-center px-8 py-4 
+                          border border-white/30 text-white font-medium 
+                          rounded-lg hover:bg-white/10 hover:border-gold/50
+                          transition-all duration-300"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                View Our Portfolio
+              </Link>
+            </div>
           </div>
           
           <div className="w-full md:w-5/12">
-            <div className="bg-black bg-opacity-70 p-4 sm:p-6 rounded-2xl border border-white border-opacity-40 shadow-lg">
-              <div className="text-xs sm:text-sm text-white">
-                <p className="font-bold mb-2 text-accent">Licensed Contractor:</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-2">
-                  <p className="mb-1 font-medium text-white">ROC 350714 – CR-39 <span className="text-white">Air Conditioning</span></p>
-                  <p className="mb-1 font-medium text-white">ROC 350715 – CR-11 <span className="text-white">Electrical</span></p>
-                  <p className="mb-1 font-medium text-white">ROC 350716 – CR-37 <span className="text-white">Plumbing</span></p>
-                  <p className="mb-1 font-medium text-white">ROC 305762 – KB-2 <span className="text-white">Residential/Commercial</span></p>
+            <div className="bg-primary/80 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-gold/20 shadow-premium">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center mr-4">
+                  <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-gold font-semibold text-sm uppercase tracking-wider">Fully Licensed & Insured</p>
+                  <p className="text-gray-400 text-xs">Arizona Registrar of Contractors</p>
+                </div>
+              </div>
+              
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center justify-between p-3 bg-charcoal/50 rounded-lg">
+                  <span className="text-gray-300">HVAC Systems</span>
+                  <span className="text-gold font-medium">ROC 350714</span>
+                </div>
+                <div className="flex items-center justify-between p-3 bg-charcoal/50 rounded-lg">
+                  <span className="text-gray-300">Electrical</span>
+                  <span className="text-gold font-medium">ROC 350715</span>
+                </div>
+                <div className="flex items-center justify-between p-3 bg-charcoal/50 rounded-lg">
+                  <span className="text-gray-300">Plumbing</span>
+                  <span className="text-gold font-medium">ROC 350716</span>
+                </div>
+                <div className="flex items-center justify-between p-3 bg-charcoal/50 rounded-lg">
+                  <span className="text-gray-300">General Contracting</span>
+                  <span className="text-gold font-medium">ROC 305762</span>
+                </div>
+              </div>
+              
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-white font-medium">18+ Years of Excellence</p>
+                    <p className="text-gray-400 text-xs">Serving Arizona Since 2007</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-gold font-semibold text-lg">(480) 999-6100</p>
+                    <p className="text-gray-400 text-xs">Concierge Line</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-40"></div>
     </section>
   );
 }

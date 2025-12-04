@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Roboto_Mono } from 'next/font/google';
+import { Inter, Roboto_Mono, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -28,16 +28,23 @@ const AnimatedBackgroundPattern = dynamic(() => import('@/components/AnimatedBac
   ssr: false
 });
 
-// Load Inter font (replacing Geist)
+// Load Inter font - clean, modern sans-serif
 const inter = Inter({ 
   subsets: ['latin'],
   variable: '--font-inter',
 });
 
-// Load Roboto Mono font (replacing Geist Mono)
+// Load Roboto Mono font for code/technical elements
 const robotoMono = Roboto_Mono({
   subsets: ['latin'],
   variable: '--font-roboto-mono',
+});
+
+// Load Playfair Display - elegant serif for premium headings
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700'],
 });
 
 export const metadata: Metadata = {
@@ -109,7 +116,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${robotoMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${robotoMono.variable} ${playfair.variable}`}>
       <head>
         {/* Saddlewood Contracting favicon */}
         <link rel="icon" href="/favicon.ico" />

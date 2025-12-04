@@ -3,10 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #000000;
+  --color-primary: #0a0a0a;
   --color-secondary: #ffffff;
-  --color-accent: #666666;
-  --color-primary-darker: #111111;
+  --color-accent: #d4af37;
+  --color-accent-dark: #b8960f;
+  --color-primary-darker: #050505;
+  --color-gold: #d4af37;
+  --color-gold-light: #e6c453;
+  --color-gold-dark: #b8960f;
+  --color-charcoal: #1a1a1a;
+  --color-charcoal-light: #2d2d2d;
 }
 
 @layer base {
