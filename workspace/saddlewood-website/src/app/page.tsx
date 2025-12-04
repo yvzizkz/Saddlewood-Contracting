@@ -5,26 +5,26 @@ import Link from 'next/link';
 export default function Home() {
   const services = [
     {
-      title: 'Remodeling',
+      title: 'Custom Remodeling',
       description: 'Transform your space with our custom renovation services. Kitchens, bathrooms, and whole-home transformations.',
       link: '/services/remodeling',
       icon: 'home',
     },
     {
-      title: 'HVAC Systems',
+      title: 'Custom HVAC',
       description: 'Custom climate solutions designed for comfort and efficiency. From high-end system installations to precision maintenance.',
       link: '/services/hvac',
       icon: 'ac_unit',
     },
     {
-      title: 'Electrical',
-      description: 'Premium electrical work for discerning homeowners. Smart home integration, lighting design, and complete system upgrades.',
+      title: 'Custom Electrical',
+      description: 'Custom electrical work for discerning homeowners. Smart home integration, lighting design, and complete system upgrades.',
       link: '/services/electrical',
       icon: 'bolt',
     },
     {
-      title: 'Plumbing',
-      description: 'Luxury plumbing installations and expert repairs. Fixture upgrades, water treatment systems, and whole-home solutions.',
+      title: 'Custom Plumbing',
+      description: 'Custom plumbing installations and expert repairs. Fixture upgrades, water treatment systems, and whole-home solutions.',
       link: '/services/plumbing',
       icon: 'water_drop',
     },
@@ -39,7 +39,7 @@ export default function Home() {
           <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">What We Offer</span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold mt-3">Our Signature Services</h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Each project receives our full attention and commitment to excellence. We specialize in premium home services for clients who expect the best.
+            Each custom project receives our full attention and commitment to excellence. We specialize in premium home services for clients who expect the best.
           </p>
         </div>
         
@@ -56,74 +56,39 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="py-16 sm:py-20 bg-charcoal text-white">
+      <section className="py-12 sm:py-16 bg-charcoal text-white">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Follow Our Journey</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Behind the Scenes</h2>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-              Watch our team in action. From concept to completion, we share our process and the transformations we create for our clients.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            <div className="bg-charcoal-light rounded-2xl p-6 border border-gold/20 hover:border-gold/40 transition-all duration-300 group">
-              <div className="aspect-video bg-primary/50 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gold/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <svg className="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                    </svg>
-                  </div>
-                  <p className="text-gray-400 text-sm">Instagram</p>
-                </div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Daily Project Stories</h3>
-              <p className="text-gray-400 text-sm mb-4">See our work in progress and completed transformations.</p>
-              <a href="https://www.instagram.com/saddlewood_contracting/" target="_blank" rel="noopener noreferrer" className="text-gold text-sm font-medium hover:text-gold-light transition-colors">
-                Follow @saddlewood_contracting →
-              </a>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+            <div>
+              <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Follow Our Work</span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-semibold mt-2">See Our Custom Projects</h2>
             </div>
-            
-            <div className="bg-charcoal-light rounded-2xl p-6 border border-gold/20 hover:border-gold/40 transition-all duration-300 group">
-              <div className="aspect-video bg-primary/50 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gold/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <svg className="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
-                    </svg>
-                  </div>
-                  <p className="text-gray-400 text-sm">TikTok</p>
-                </div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Behind the Scenes</h3>
-              <p className="text-gray-400 text-sm mb-4">Quick tips, transformations, and our team at work.</p>
-              <a href="https://tiktok.com/@saddlewoodcontracting" target="_blank" rel="noopener noreferrer" className="text-gold text-sm font-medium hover:text-gold-light transition-colors">
-                Follow @saddlewoodcontracting →
+            <div className="flex flex-wrap gap-3">
+              <a href="https://www.instagram.com/saddlewood_contracting/" target="_blank" rel="noopener noreferrer" 
+                 className="inline-flex items-center px-5 py-2.5 bg-gold/20 text-gold rounded-lg hover:bg-gold/30 transition-colors">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Instagram
               </a>
-            </div>
-            
-            <div className="bg-charcoal-light rounded-2xl p-6 border border-gold/20 hover:border-gold/40 transition-all duration-300 group">
-              <div className="aspect-video bg-primary/50 rounded-xl mb-4 flex items-center justify-center overflow-hidden">
-                <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gold/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <svg className="w-8 h-8 text-gold" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                  </div>
-                  <p className="text-gray-400 text-sm">Facebook</p>
-                </div>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Community Updates</h3>
-              <p className="text-gray-400 text-sm mb-4">News, client testimonials, and community involvement.</p>
-              <a href="https://www.facebook.com/SaddlewoodAZ/" target="_blank" rel="noopener noreferrer" className="text-gold text-sm font-medium hover:text-gold-light transition-colors">
-                Like Our Page →
+              <a href="https://www.facebook.com/SaddlewoodAZ/" target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center px-5 py-2.5 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                Facebook
+              </a>
+              <a href="https://tiktok.com/@saddlewoodcontracting" target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center px-5 py-2.5 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors">
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
+                </svg>
+                TikTok
               </a>
             </div>
           </div>
           
-          <div className="text-center">
-            <p className="text-gray-400 mb-4">Your project could be our next feature</p>
+          <div className="text-center border-t border-white/10 pt-6">
             <Link href="/gallery" className="inline-flex items-center text-gold font-medium hover:text-gold-light transition-colors">
               <span>View Our Complete Portfolio</span>
               <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,8 +102,69 @@ export default function Home() {
       <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12">
+            <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Featured Work</span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Custom Kitchen Transformation</h2>
+            <p className="text-gray-600 mt-4">Paradise Valley | Complete Kitchen Remodel</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="relative">
+              <div className="aspect-[4/3] bg-gradient-to-br from-gray-300 to-gray-400 rounded-2xl overflow-hidden relative">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-gray-600">
+                    <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-white/80 flex items-center justify-center">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                    <p className="text-sm font-medium">Before</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-3 -left-3 bg-charcoal text-white px-4 py-2 rounded-lg text-sm font-medium">
+                Before
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="aspect-[4/3] bg-gradient-to-br from-charcoal-light to-charcoal rounded-2xl overflow-hidden relative shadow-premium">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white">
+                    <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-gold/20 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                      </svg>
+                    </div>
+                    <p className="text-sm font-medium text-gray-300">After</p>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute -bottom-3 -right-3 bg-gold text-charcoal px-4 py-2 rounded-lg text-sm font-medium">
+                After
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <blockquote className="max-w-2xl mx-auto">
+              <p className="text-lg text-gray-700 italic mb-4">
+                "Saddlewood transformed our outdated kitchen into a stunning custom space that exceeded our expectations. The attention to detail was remarkable."
+              </p>
+              <cite className="not-italic">
+                <span className="text-charcoal font-semibold">The Morrison Family</span>
+                <span className="text-gray-400 mx-2">|</span>
+                <span className="text-gold">Paradise Valley</span>
+              </cite>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+      
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container-custom">
+          <div className="text-center mb-12">
             <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">The Saddlewood Difference</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Why Discerning Clients Choose Us</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Why Clients Choose Our Custom Work</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -179,7 +205,7 @@ export default function Home() {
             <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Where We Serve</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Select Service Areas</h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              We proudly serve the most prestigious communities in the Phoenix Valley. Contact us to discuss your project.
+              We proudly serve the most prestigious communities in the Phoenix Valley. Contact us to discuss your custom project.
             </p>
           </div>
           
@@ -202,7 +228,7 @@ export default function Home() {
           <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Ready to Begin?</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3 text-white">Let's Discuss Your Vision</h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto mb-8">
-            Every exceptional project starts with a conversation. Schedule a private consultation to explore how we can elevate your home.
+            Every custom project starts with a conversation. Schedule a private consultation to explore how we can elevate your home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 

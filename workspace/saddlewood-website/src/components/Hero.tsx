@@ -40,18 +40,22 @@ export default function Hero() {
             </h1>
             
             <p className="text-lg sm:text-xl mb-4 max-w-2xl text-gray-200 leading-relaxed">
-              For discerning homeowners who demand excellence. We deliver tailored HVAC, 
-              electrical, plumbing, and remodeling solutions with uncompromising attention to detail.
+              We deliver custom home transformations with uncompromising attention to detail.
             </p>
             
-            <p className="text-base sm:text-lg mb-8 max-w-2xl text-gray-400">
-              Serving Paradise Valley, Scottsdale, Phoenix, and select communities throughout the Valley. 
-              By appointment only.
+            <p className="text-base sm:text-lg mb-6 max-w-2xl text-gray-400">
+              Serving Paradise Valley, Scottsdale, Phoenix, and select communities throughout the Valley.
             </p>
             
-            <div className="mb-10 pl-4 border-l-2 border-gold/50">
-              <p className="text-sm italic text-gray-300">
-                "Your vision, built right."
+            <div className="flex items-center gap-4 mb-10">
+              <div className="pl-4 border-l-2 border-gold/50">
+                <p className="text-sm italic text-gray-300">
+                  "Your vision, built right."
+                </p>
+              </div>
+              <div className="h-8 w-px bg-white/20"></div>
+              <p className="text-sm text-gold font-medium">
+                Family-Owned Since 2007
               </p>
             </div>
             
