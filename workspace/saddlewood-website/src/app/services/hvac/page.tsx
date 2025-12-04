@@ -60,14 +60,14 @@ export default function HVACPage() {
               <div className="text-center lg:text-left flex-1">
                 <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
                   <div className="h-px w-8 bg-gold/50"></div>
-                  <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Custom HVAC</span>
+                  <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Climate Systems</span>
                   <div className="h-px w-8 bg-gold/50"></div>
                 </div>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
                   Precision <span className="text-gold">Climate Control</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-2xl mb-8">
-                  Custom comfort solutions for Arizona's most discerning homeowners. Where technology meets tranquility.
+                  Tailored comfort solutions for Arizona's most discerning homeowners. Where technology meets tranquility.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link 

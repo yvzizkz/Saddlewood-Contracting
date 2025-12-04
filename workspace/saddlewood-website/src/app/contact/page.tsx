@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,17 +12,66 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
-      <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-16 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212,175,55,0.3) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+        </div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
+        
         <div className="container-custom relative z-10">
-          <div className="text-center">
-            <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Get in Touch</span>
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold mt-4 mb-4">Schedule a Consultation</h1>
+          <div className="flex flex-col items-center text-center">
+            <div className="mb-6">
+              <div className="relative">
+                <div className="w-24 h-24 rounded-full border-2 border-gold/30 flex items-center justify-center bg-charcoal/50 backdrop-blur-sm">
+                  <Image
+                    src="/images/logo.png"
+                    alt="Saddlewood Contracting"
+                    width={80}
+                    height={80}
+                    className="opacity-95"
+                    style={{ width: '70px', height: 'auto' }}
+                  />
+                </div>
+                <div className="absolute -inset-2 rounded-full border border-gold/20"></div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 mb-4">
+              <div className="h-px w-12 bg-gold/50"></div>
+              <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Begin Your Project</span>
+              <div className="h-px w-12 bg-gold/50"></div>
+            </div>
+            
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-4">
+              Schedule a <span className="text-gold">Consultation</span>
+            </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Let's discuss your vision and explore how we can elevate your home
+              Let's discuss your vision and explore how we can transform your home
             </p>
+            
+            <div className="mt-8 flex flex-wrap justify-center gap-6 text-center">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span className="text-gray-300 text-sm">No Obligation</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span className="text-gray-300 text-sm">Response Within 24 Hours</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span className="text-gray-300 text-sm">Licensed & Insured</span>
+              </div>
+            </div>
           </div>
         </div>
+        
         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-40"></div>
       </div>
       

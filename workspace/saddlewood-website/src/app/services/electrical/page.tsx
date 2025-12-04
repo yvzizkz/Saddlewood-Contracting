@@ -60,14 +60,14 @@ export default function ElectricalPage() {
               <div className="text-center lg:text-left flex-1">
                 <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
                   <div className="h-px w-8 bg-gold/50"></div>
-                  <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Custom Electrical</span>
+                  <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Expert Electrical</span>
                   <div className="h-px w-8 bg-gold/50"></div>
                 </div>
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
                   Power Meets <span className="text-gold">Elegance</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-2xl mb-8">
-                  Custom electrical solutions that blend seamlessly with your lifestyle. Smart, safe, and beautifully integrated.
+                  Electrical solutions that blend seamlessly with your lifestyle. Smart, safe, and beautifully integrated.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Link 
