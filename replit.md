@@ -120,23 +120,27 @@ The application is configured for production deployment with the following setup
 - **Social Media Integration**: Instagram (@saddlewood_contracting), TikTok, and Facebook (SaddlewoodAZ) icons in header and footer
 - **Homepage Redesign**: 
   - "Crafting Exceptional Living Spaces" hero messaging for high-end clientele
+  - New slogan: "Your vision, built right." (authentic, simple)
   - Social showcase section with profile links and engagement highlights
   - Video showcase section for professional marketing content
   - Trust badges with ROC license numbers prominently displayed
   - "By appointment only" exclusive positioning
-- **Services Page**: "Signature Services" with investment ranges and premium descriptions
+- **Services Page**: "Signature Services" - Remodeling prioritized first
 - **Gallery Page**: Redesigned with social media integration, dynamic filters, before/after showcases, and Instagram/TikTok feed placeholders
 - **Contact Page**: "Concierge Experience" styling with premium contact form integration
 - **Thank You Page**: Premium styling with gold accents, next steps guidance, and professional confirmation experience
 - **License Info Page**: Simplified design, removed verification links for cleaner presentation
-- **Individual Service Pages (HVAC, Electrical, Plumbing, Remodeling)**: 
+- **Individual Service Pages (Remodeling, HVAC, Electrical, Plumbing)**: 
   - Completely simplified premium layouts
-  - Investment ranges prominently displayed
+  - NO pricing displayed (sky's the limit positioning)
   - Single focused testimonial per service
   - Clean 3-service offerings section
   - ROC license badges with linking to full license page
   - Consistent gold/charcoal luxury aesthetic throughout
+  - Replaced "bespoke" with "tailored" and "custom" throughout
+- **Header**: Updated to match footer style - "Saddlewood" with "CONTRACTING LLC" in gold
 - **Footer**: Social media links, refined premium branding, and elegant layout
+- **Navigation**: Remodeling moved to first position in Services dropdown (primary focus)
 - **Design Tokens**: Custom charcoal, gold, and premium shadow utilities in Tailwind config
 
 ### Optional Integrations
