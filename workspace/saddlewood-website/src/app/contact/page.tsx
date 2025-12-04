@@ -230,18 +230,6 @@ export default function ContactPage() {
                   title="Form 4"
                 />
               </div>
-              
-              <div className="px-6 py-4 bg-gray-50 border-t text-center text-sm text-gray-500">
-                <p>
-                  By submitting this form, you agree to our{' '}
-                  <Link 
-                    href="/privacy-policy" 
-                    className="text-gold hover:text-gold-dark underline font-medium"
-                  >
-                    Privacy Policy
-                  </Link>
-                </p>
-              </div>
             </div>
           </div>
         </div>
