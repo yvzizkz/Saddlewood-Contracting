@@ -1,182 +1,27 @@
-import React from 'react';
+import Link from 'next/link';
 import { Metadata } from 'next';
 import Script from 'next/script';
-import ServicePageTemplate from '@/components/ServicePageTemplate';
 
-// SVG Icons for benefits
-const BenefitIcons = {
-  Comfort: (
-    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-    </svg>
-  ),
-  Efficiency: (
-    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-    </svg>
-  ),
-  Savings: (
-    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-    </svg>
-  ),
-  HealthySafe: (
-    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-    </svg>
-  ),
-  ExpertService: (
-    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
-    </svg>
-  ),
-  AllBrands: (
-    <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
-    </svg>
-  )
-};
-
-// SVG Icons for services
-const ServiceIcons = {
-  Installation: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
-    </svg>
-  ),
-  Repair: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-    </svg>
-  ),
-  Maintenance: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-    </svg>
-  ),
-  AirQuality: (
-    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-    </svg>
-  )
-};
-
-// Metadata
 export const metadata: Metadata = {
-  title: 'HVAC Services | Air Conditioning, Heating & Ventilation | Saddlewood',
-  description: 'Expert HVAC services in Phoenix - AC repair, installation, maintenance & heating solutions. Emergency service available. Licensed & insured (ROC #350714).',
+  title: 'HVAC Services | Climate Systems | Saddlewood Contracting',
+  description: 'Premium HVAC services in Phoenix - precision climate control, smart home integration, and whole-house comfort solutions for discerning homeowners. Licensed & insured (ROC #350714).',
 };
 
 export default function HVACPage() {
-  // Schema.org structured data for HVAC services
   const hvacSchemaData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "HVAC Services",
+    "name": "Premium HVAC Services",
     "serviceType": "Heating, Ventilation, and Air Conditioning",
     "provider": {
       "@type": "LocalBusiness",
-      "@id": "https://saddlewoodcontracting.com/#localbusiness",
       "name": "Saddlewood Contracting"
     },
     "areaServed": {
       "@type": "City",
-      "name": "Phoenix",
-      "sameAs": "https://en.wikipedia.org/wiki/Phoenix,_Arizona"
-    },
-    "description": "Expert HVAC services including air conditioning installation, repair, and maintenance, heating system services, and indoor air quality solutions for homes in Phoenix and surrounding areas.",
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "priceSpecification": {
-        "@type": "PriceSpecification",
-        "priceCurrency": "USD"
-      }
-    },
-    "termsOfService": "https://saddlewoodcontracting.com/terms-and-conditions"
+      "name": "Phoenix"
+    }
   };
-  // Benefits data
-  const benefits = [
-    {
-      title: "Improved Comfort",
-      description: "Enjoy perfect temperatures and balanced humidity levels throughout your home, all year round.",
-      icon: BenefitIcons.Comfort
-    },
-    {
-      title: "Enhanced Efficiency",
-      description: "Modern HVAC systems can reduce energy consumption by up to 50% compared to older models.",
-      icon: BenefitIcons.Efficiency
-    },
-    {
-      title: "Cost Savings",
-      description: "Lower utility bills and reduce maintenance costs with properly installed and maintained systems.",
-      icon: BenefitIcons.Savings
-    },
-    {
-      title: "Healthier Air",
-      description: "Improved indoor air quality with advanced filtration to remove allergens, dust, and pollutants.",
-      icon: BenefitIcons.HealthySafe
-    },
-    {
-      title: "Expert Service",
-      description: "Our licensed technicians have an average of 10+ years of HVAC experience.",
-      icon: BenefitIcons.ExpertService
-    },
-    {
-      title: "All Major Brands",
-      description: "We service and install all major HVAC brands, including Carrier, Trane, Lennox, and more.",
-      icon: BenefitIcons.AllBrands
-    }
-  ];
-
-  // Services data
-  const services = [
-    {
-      title: "HVAC Installation & Replacement",
-      description: "Professional installation of new heating and cooling systems, from central air conditioners and heat pumps to mini-split systems and furnaces. We'll help you select the right size and type of system for your home's specific needs and budget.",
-      icon: ServiceIcons.Installation
-    },
-    {
-      title: "HVAC Repair & Troubleshooting",
-      description: "Fast, reliable repair service for all makes and models. Our technicians are extensively trained to diagnose and fix issues with your air conditioner, heat pump, or furnace quickly. We provide upfront pricing and stand behind our work with robust guarantees.",
-      icon: ServiceIcons.Repair
-    },
-    {
-      title: "Preventative Maintenance",
-      description: "Regular maintenance keeps your system running efficiently, extends its lifespan, and prevents costly breakdowns. Our maintenance plans include thorough inspections, cleaning, and tune-ups to ensure optimal performance year-round.",
-      icon: ServiceIcons.Maintenance
-    },
-    {
-      title: "Indoor Air Quality Solutions",
-      description: "Improve the air you breathe with whole-house air purifiers, humidifiers, dehumidifiers, and advanced filtration systems. We offer comprehensive solutions to address air quality issues like allergens, mold, bacteria, and dry air.",
-      icon: ServiceIcons.AirQuality
-    }
-  ];
-
-  // FAQs data
-  const faqs = [
-    {
-      question: "How often should I replace my HVAC air filters?",
-      answer: "Standard fiberglass filters should typically be replaced every 30 days. Higher-quality pleated filters can last 3-6 months. However, if you have pets, allergies, or live in a dusty environment, more frequent changes may be necessary. We recommend checking your filter monthly to determine when replacement is needed."
-    },
-    {
-      question: "What size HVAC system do I need for my home?",
-      answer: "The correct size depends on several factors including your home's square footage, insulation levels, window efficiency, ceiling height, and local climate. An improperly sized system can lead to comfort issues and wasted energy. Our technicians perform a detailed load calculation to determine the perfect size for your specific home."
-    },
-    {
-      question: "How long should my HVAC system last?",
-      answer: "With proper maintenance, you can expect a typical HVAC system to last 15-20 years. Air conditioners and heat pumps may last 10-15 years, while furnaces can last 15-20 years or more. Regular maintenance is crucial for maximizing lifespan and maintaining efficiency."
-    },
-    {
-      question: "What maintenance does my HVAC system need?",
-      answer: "Regular maintenance includes changing air filters, cleaning coils, checking refrigerant levels, inspecting electrical components, lubricating moving parts, and ensuring proper airflow. We recommend professional maintenance twice yearly—once before cooling season and once before heating season."
-    },
-    {
-      question: "How can I lower my heating and cooling costs?",
-      answer: "Maintain your system regularly, use a programmable thermostat, ensure proper insulation, seal air leaks, keep vents unobstructed, use ceiling fans, and consider upgrading to a high-efficiency system if yours is over 10 years old. Our energy audit can identify specific ways to improve efficiency in your home."
-    }
-  ];
 
   return (
     <>
@@ -185,21 +30,155 @@ export default function HVACPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(hvacSchemaData) }}
       />
-      <ServicePageTemplate
-        serviceName="HVAC"
-        serviceTitle="Professional HVAC Services in Phoenix, AZ"
-        metaDescription="Expert HVAC services in Phoenix - AC repair, installation, maintenance & heating solutions. Emergency service available. Licensed & insured (ROC #350714)."
-        heroImage="/images/hvac-hero.jpg"
-        heroAlt="HVAC technician installing an air conditioning unit"
-        introduction="Saddlewood Contracting provides complete heating, ventilation, and air conditioning services for homes throughout the Phoenix valley. Our licensed technicians deliver expert installation, repair, and maintenance services that keep your home comfortable year-round."
-        primaryCTA="Schedule Service"
-        benefits={benefits}
-        services={services}
-        faqs={faqs}
-        certificationNumber="350714"
-        certificationType="CR-39 Air Conditioning and Refrigeration"
-        certificationDescription="This classification allows us to install, alter, and repair refrigeration and evaporative cooling systems, including warm-air heating systems and all integrated parts of a heating, cooling, and ventilation system."
-      />
+      
+      <div className="min-h-screen">
+        <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-20 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Climate Systems</span>
+            <h1 className="font-serif text-4xl md:text-6xl font-semibold mt-4 mb-6">
+              Precision Climate Control
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+              Tailored comfort solutions for Arizona's most discerning homeowners. 
+              Where technology meets tranquility.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-charcoal font-semibold rounded-lg hover:shadow-gold-glow transition-all duration-300"
+              >
+                Schedule Consultation
+              </Link>
+              <a 
+                href="tel:4809996100" 
+                className="inline-flex items-center justify-center px-8 py-4 border border-gold/50 text-gold font-medium rounded-lg hover:bg-gold/10 transition-all duration-300"
+              >
+                (480) 999-6100
+              </a>
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-40"></div>
+        </div>
+
+        <div className="py-16 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Our Expertise</span>
+              <h2 className="font-serif text-3xl font-semibold mt-2 text-charcoal">What We Offer</h2>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { title: "System Design & Installation", desc: "Custom climate solutions engineered for your home's unique architecture and your family's comfort preferences." },
+                { title: "Smart Integration", desc: "Seamless integration with home automation systems for zone control, scheduling, and remote monitoring." },
+                { title: "Precision Maintenance", desc: "Proactive care programs that maximize system longevity, efficiency, and performance." }
+              ].map((service, i) => (
+                <div key={i} className="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-shadow">
+                  <h3 className="font-semibold text-lg text-charcoal mb-3">{service.title}</h3>
+                  <p className="text-gray-600 text-sm">{service.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="py-16 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+              <div className="text-center mb-10">
+                <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Investment Guide</span>
+                <h2 className="font-serif text-3xl font-semibold mt-2 text-charcoal">Typical Project Range</h2>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="text-center p-6 border border-gray-100 rounded-xl">
+                  <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">System Upgrade</p>
+                  <p className="text-3xl font-serif font-semibold text-charcoal">$15K - $45K</p>
+                  <p className="text-gray-500 text-sm mt-2">Single or dual-zone systems</p>
+                </div>
+                <div className="text-center p-6 border border-gold/30 rounded-xl bg-gold/5">
+                  <p className="text-gold text-sm uppercase tracking-wider mb-2">Estate Climate Design</p>
+                  <p className="text-3xl font-serif font-semibold text-charcoal">$50K - $150K+</p>
+                  <p className="text-gray-500 text-sm mt-2">Multi-zone with smart integration</p>
+                </div>
+              </div>
+              
+              <p className="text-center text-gray-500 text-sm mt-8">
+                Every project is unique. Schedule a consultation for a personalized assessment.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-16 bg-charcoal">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8">
+              <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Client Experience</span>
+            </div>
+            
+            <blockquote className="text-center">
+              <p className="text-2xl md:text-3xl font-serif text-white leading-relaxed mb-6">
+                "The team designed a climate system that's invisible yet transformative. 
+                Every room is perfectly comfortable, and the energy savings exceeded our expectations."
+              </p>
+              <footer>
+                <cite className="not-italic">
+                  <span className="text-gold font-medium">The Henderson Family</span>
+                  <span className="text-gray-400 mx-3">|</span>
+                  <span className="text-gray-400">Paradise Valley</span>
+                </cite>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+
+        <div className="py-12 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-gray-50 rounded-2xl">
+              <div className="flex items-center gap-4">
+                <div className="bg-charcoal text-white px-4 py-2 rounded text-center">
+                  <span className="block text-xs text-gray-400">ROC</span>
+                  <span className="font-bold text-gold">350714</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-charcoal">CR-39 Licensed</p>
+                  <p className="text-sm text-gray-500">Air Conditioning & Refrigeration</p>
+                </div>
+              </div>
+              <Link 
+                href="/license-info" 
+                className="text-gold hover:text-gold-dark font-medium text-sm"
+              >
+                View All Licenses →
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-16 bg-gradient-to-br from-charcoal to-charcoal-light">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Ready to Begin?</span>
+            <h2 className="font-serif text-3xl font-semibold mt-3 mb-6 text-white">
+              Let's Design Your Perfect Climate
+            </h2>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact" 
+                className="bg-gradient-to-r from-gold to-gold-dark text-charcoal px-8 py-4 rounded-lg font-semibold hover:shadow-gold-glow transition-all duration-300"
+              >
+                Schedule Consultation
+              </Link>
+              <a 
+                href="tel:4809996100" 
+                className="border border-gold/50 text-gold hover:bg-gold/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+              >
+                (480) 999-6100
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

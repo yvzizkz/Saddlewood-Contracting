@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST='{"components/ServicePageTemplate.tsx -> @/components/AnimatedBackgroundPattern":{"id":2989,"files":["static/chunks/2989.251b1ec89ef7263f.js"]}}';
+self.__REACT_LOADABLE_MANIFEST="{}";
