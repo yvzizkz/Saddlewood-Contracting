@@ -47,13 +47,12 @@ export default function Navbar() {
               
               {/* Company name with premium styling - sits flush against logo */}
               <div className="flex flex-col ml-2">
-                <span className="text-lg sm:text-xl uppercase tracking-wider font-bold truncate max-w-[180px] sm:max-w-none relative">
+                <span className="text-lg sm:text-xl tracking-wider font-bold truncate max-w-[180px] sm:max-w-none relative">
                   Saddlewood
                   {/* Decorative underline that appears on hover */}
                   <span className="absolute left-0 -bottom-px h-px w-0 bg-white opacity-60 transition-all duration-500 ease-in-out group-hover:w-full"></span>
                 </span>
-                <span className="text-xs sm:text-sm tracking-widest uppercase text-gray-300">Contracting</span>
-                <span className="hidden sm:block text-[10px] uppercase tracking-wider text-gray-400">Est. 2007</span>
+                <span className="text-xs sm:text-sm tracking-widest uppercase text-gold">Contracting LLC</span>
               </div>
             </Link>
             
@@ -69,6 +68,9 @@ export default function Navbar() {
                     SERVICES
                   </div>
                   <div className="absolute left-0 mt-0 w-48 bg-primary shadow-lg rounded-md overflow-hidden z-10 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
+                    <Link href="/services/remodeling" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
+                      Remodeling
+                    </Link>
                     <Link href="/services/hvac" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
                       HVAC
                     </Link>
@@ -77,9 +79,6 @@ export default function Navbar() {
                     </Link>
                     <Link href="/services/plumbing" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
                       Plumbing
-                    </Link>
-                    <Link href="/services/remodeling" className="block px-4 py-3 text-secondary hover:bg-accent transition-colors duration-200">
-                      Remodeling
                     </Link>
                   </div>
                 </div>
@@ -200,8 +199,8 @@ export default function Navbar() {
                   />
                 </div>
                 <div className="ml-2">
-                  <p className="text-sm uppercase tracking-wider font-bold text-white">Saddlewood</p>
-                  <p className="text-xs uppercase tracking-wider text-gray-400">Est. 2007</p>
+                  <p className="text-sm tracking-wider font-bold text-white">Saddlewood</p>
+                  <p className="text-xs uppercase tracking-wider text-gold">Contracting LLC</p>
                 </div>
               </div>
               
@@ -249,7 +248,7 @@ export default function Navbar() {
                 
                 <div className="ml-11 mt-2 space-y-3 border-l border-white border-opacity-10 pl-4">
                   {/* Service submenu items with subtle styling */}
-                  {['HVAC', 'Electrical', 'Plumbing', 'Remodeling'].map((service) => (
+                  {['Remodeling', 'HVAC', 'Electrical', 'Plumbing'].map((service) => (
                     <Link 
                       key={service}
                       href={`/services/${service.toLowerCase()}`} 

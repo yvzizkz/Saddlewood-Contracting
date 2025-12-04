@@ -40,7 +40,7 @@ export default function Hero() {
             </h1>
             
             <p className="text-lg sm:text-xl mb-4 max-w-2xl text-gray-200 leading-relaxed">
-              For discerning homeowners who demand excellence. We deliver bespoke HVAC, 
+              For discerning homeowners who demand excellence. We deliver tailored HVAC, 
               electrical, plumbing, and remodeling solutions with uncompromising attention to detail.
             </p>
             
@@ -51,8 +51,7 @@ export default function Hero() {
             
             <div className="mb-10 pl-4 border-l-2 border-gold/50">
               <p className="text-sm italic text-gray-300">
-                "We don't just complete projects—we curate experiences that 
-                elevate your home and lifestyle."
+                "Your vision, built right."
               </p>
             </div>
             

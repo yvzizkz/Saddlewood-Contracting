@@ -5,6 +5,12 @@ import Link from 'next/link';
 export default function Home() {
   const services = [
     {
+      title: 'Remodeling',
+      description: 'Transform your space with our custom renovation services. Kitchens, bathrooms, and whole-home transformations.',
+      link: '/services/remodeling',
+      icon: 'home',
+    },
+    {
       title: 'HVAC Systems',
       description: 'Custom climate solutions designed for comfort and efficiency. From high-end system installations to precision maintenance.',
       link: '/services/hvac',
@@ -21,12 +27,6 @@ export default function Home() {
       description: 'Luxury plumbing installations and expert repairs. Fixture upgrades, water treatment systems, and whole-home solutions.',
       link: '/services/plumbing',
       icon: 'water_drop',
-    },
-    {
-      title: 'Remodeling',
-      description: 'Transform your space with our bespoke renovation services. Kitchens, bathrooms, and whole-home transformations.',
-      link: '/services/remodeling',
-      icon: 'home',
     },
   ];
 

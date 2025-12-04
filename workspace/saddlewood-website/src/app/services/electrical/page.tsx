@@ -83,34 +83,6 @@ export default function ElectricalPage() {
           </div>
         </div>
 
-        <div className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-              <div className="text-center mb-10">
-                <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Investment Guide</span>
-                <h2 className="font-serif text-3xl font-semibold mt-2 text-charcoal">Typical Project Range</h2>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="text-center p-6 border border-gray-100 rounded-xl">
-                  <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Panel & EV Charging</p>
-                  <p className="text-3xl font-serif font-semibold text-charcoal">$8K - $35K</p>
-                  <p className="text-gray-500 text-sm mt-2">Service upgrades & charging stations</p>
-                </div>
-                <div className="text-center p-6 border border-gold/30 rounded-xl bg-gold/5">
-                  <p className="text-gold text-sm uppercase tracking-wider mb-2">Complete Smart Home</p>
-                  <p className="text-3xl font-serif font-semibold text-charcoal">$50K - $200K+</p>
-                  <p className="text-gray-500 text-sm mt-2">Full automation & lighting design</p>
-                </div>
-              </div>
-              
-              <p className="text-center text-gray-500 text-sm mt-8">
-                Every project is unique. Schedule a consultation for a personalized assessment.
-              </p>
-            </div>
-          </div>
-        </div>
-
         <div className="py-16 bg-charcoal">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8">

@@ -17,7 +17,7 @@ export default function ServicesPage() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 2v8m0 4v8M2 12h8m4 0h8M4.93 4.93l5.66 5.66m2.83 2.83l5.66 5.66M19.07 4.93l-5.66 5.66m-2.83 2.83-5.66 5.66"></path>
         </svg>
       ),
-      description: "Bespoke climate solutions engineered for optimal comfort and efficiency",
+      description: "Tailored climate solutions engineered for optimal comfort and efficiency",
       services: [
         "High-Efficiency System Design & Installation",
         "Precision System Maintenance",
@@ -28,7 +28,6 @@ export default function ServicesPage() {
         "Energy Optimization Consulting",
         "Premium Brand Partnerships"
       ],
-      investment: "Starting at $8,500"
     },
     {
       category: "Electrical Systems",
@@ -49,7 +48,6 @@ export default function ServicesPage() {
         "Pool & Landscape Electrical",
         "Security System Wiring"
       ],
-      investment: "Starting at $2,500"
     },
     {
       category: "Plumbing Systems",
@@ -70,7 +68,6 @@ export default function ServicesPage() {
         "Radiant Floor Heating",
         "Preventive Maintenance Programs"
       ],
-      investment: "Starting at $1,500"
     },
     {
       category: "Custom Renovations",
@@ -81,7 +78,7 @@ export default function ServicesPage() {
           <polyline points="9 22 9 12 15 12 15 22" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></polyline>
         </svg>
       ),
-      description: "Bespoke renovations that elevate your living experience",
+      description: "Custom renovations that elevate your living experience",
       services: [
         "Chef's Kitchen Transformations",
         "Spa-Inspired Bathrooms",
@@ -92,7 +89,6 @@ export default function ServicesPage() {
         "Home Office Design",
         "Aging-in-Place Modifications"
       ],
-      investment: "Starting at $25,000"
     }
   ];
 
@@ -165,11 +161,7 @@ export default function ServicesPage() {
                   ))}
                 </ul>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
-                  <div>
-                    <span className="text-gray-500 text-sm">Investment</span>
-                    <p className="text-charcoal font-semibold">{serviceCategory.investment}</p>
-                  </div>
+                <div className="pt-6 border-t border-gray-100 flex items-center justify-end">
                   <Link 
                     href={`/services/${serviceCategory.category.toLowerCase().split(' ')[0]}`}
                     className="text-gold hover:text-gold-dark font-medium flex items-center group/link"

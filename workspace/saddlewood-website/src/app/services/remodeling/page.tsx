@@ -4,7 +4,7 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Remodeling Services | Kitchen, Bath & Home Renovation | Saddlewood Contracting',
-  description: 'Premium home remodeling in Phoenix - luxury kitchen and bath renovations, whole-home transformations, and bespoke design. Licensed & insured (ROC #305762).',
+  description: 'Premium home remodeling in Phoenix - luxury kitchen and bath renovations, whole-home transformations, and custom design. Licensed & insured (ROC #305762).',
 };
 
 export default function RemodelingPage() {
@@ -37,7 +37,7 @@ export default function RemodelingPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Home Renovation</span>
             <h1 className="font-serif text-4xl md:text-6xl font-semibold mt-4 mb-6">
-              Bespoke Transformations
+              Custom Transformations
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
               Reimagine your living spaces with craftsmanship that honors your vision. 
@@ -79,34 +79,6 @@ export default function RemodelingPage() {
                   <p className="text-gray-600 text-sm">{service.desc}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-              <div className="text-center mb-10">
-                <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Investment Guide</span>
-                <h2 className="font-serif text-3xl font-semibold mt-2 text-charcoal">Typical Project Range</h2>
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="text-center p-6 border border-gray-100 rounded-xl">
-                  <p className="text-gray-500 text-sm uppercase tracking-wider mb-2">Kitchen or Bath Remodel</p>
-                  <p className="text-3xl font-serif font-semibold text-charcoal">$75K - $200K</p>
-                  <p className="text-gray-500 text-sm mt-2">Single room transformation</p>
-                </div>
-                <div className="text-center p-6 border border-gold/30 rounded-xl bg-gold/5">
-                  <p className="text-gold text-sm uppercase tracking-wider mb-2">Whole-Home Renovation</p>
-                  <p className="text-3xl font-serif font-semibold text-charcoal">$250K - $750K+</p>
-                  <p className="text-gray-500 text-sm mt-2">Complete home transformation</p>
-                </div>
-              </div>
-              
-              <p className="text-center text-gray-500 text-sm mt-8">
-                Every project is unique. Schedule a consultation for a personalized assessment.
-              </p>
             </div>
           </div>
         </div>
