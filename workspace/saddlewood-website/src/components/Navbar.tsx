@@ -63,6 +63,9 @@ export default function Navbar() {
                 <Link href="/" className="px-4 h-full flex items-center uppercase tracking-wider text-sm font-medium hover:text-accent transition-colors duration-200 border-b-2 border-transparent hover:border-accent">
                   HOME
                 </Link>
+                <Link href="/about" className="px-4 h-full flex items-center uppercase tracking-wider text-sm font-medium hover:text-accent transition-colors duration-200 border-b-2 border-transparent hover:border-accent">
+                  ABOUT
+                </Link>
                 <div className="relative group h-full">
                   <div className="px-4 h-full flex items-center uppercase tracking-wider text-sm font-medium cursor-pointer hover:text-accent transition-colors duration-200 border-b-2 border-transparent hover:border-accent">
                     SERVICES
@@ -231,6 +234,20 @@ export default function Navbar() {
                   </svg>
                 </div>
                 <span className="uppercase tracking-wider text-sm text-white group-hover:text-accent transition-colors duration-300">Home</span>
+              </Link>
+              
+              <Link 
+                href="/about" 
+                className="flex items-center py-2 group"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <div className="relative w-8 h-8 mr-3 flex items-center justify-center">
+                  <div className="absolute inset-0 rounded-full border border-white border-opacity-20 group-hover:border-opacity-50 transition-all duration-300"></div>
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <span className="uppercase tracking-wider text-sm text-white group-hover:text-accent transition-colors duration-300">About</span>
               </Link>
               
               {/* Services dropdown with expandable menu */}

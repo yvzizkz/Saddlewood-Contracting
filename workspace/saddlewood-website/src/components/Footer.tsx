@@ -95,8 +95,8 @@ export default function Footer() {
             <h3 className="text-gold font-semibold mb-4 uppercase tracking-wider text-sm">Company</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-gold transition-colors">
-                  All Services
+                <Link href="/about" className="text-gray-400 hover:text-gold transition-colors">
+                  About Us
                 </Link>
               </li>
               <li>
