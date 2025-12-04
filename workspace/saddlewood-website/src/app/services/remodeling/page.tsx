@@ -33,42 +33,79 @@ export default function RemodelingPage() {
       />
       
       <div className="min-h-screen">
-        <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-20 relative overflow-hidden">
+        <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-24 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212,175,55,0.3) 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+          </div>
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="flex justify-center mb-6">
-              <Image
-                src="/images/logo.png"
-                alt="Saddlewood Contracting"
-                width={100}
-                height={100}
-                className="opacity-90"
-                style={{ width: '100px', height: 'auto' }}
-              />
+          
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="flex flex-col lg:flex-row items-center gap-12">
+              <div className="flex-shrink-0">
+                <div className="relative">
+                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-gold/30 flex items-center justify-center bg-charcoal/50 backdrop-blur-sm">
+                    <Image
+                      src="/images/logo.png"
+                      alt="Saddlewood Contracting"
+                      width={120}
+                      height={120}
+                      className="opacity-95"
+                      style={{ width: '100px', height: 'auto' }}
+                    />
+                  </div>
+                  <div className="absolute -inset-2 rounded-full border border-gold/20"></div>
+                </div>
+              </div>
+              
+              <div className="text-center lg:text-left flex-1">
+                <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+                  <div className="h-px w-8 bg-gold/50"></div>
+                  <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Custom Remodeling</span>
+                  <div className="h-px w-8 bg-gold/50"></div>
+                </div>
+                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold mb-6">
+                  Transform Your <span className="text-gold">Living Space</span>
+                </h1>
+                <p className="text-xl text-gray-300 max-w-2xl mb-8">
+                  Reimagine your home with craftsmanship that honors your vision. From kitchens to whole-home renovations, every detail is custom.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Link 
+                    href="/contact" 
+                    className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-charcoal font-semibold rounded-lg hover:shadow-gold-glow transition-all duration-300"
+                  >
+                    Schedule Consultation
+                  </Link>
+                  <a 
+                    href="tel:4809996100" 
+                    className="inline-flex items-center justify-center px-8 py-4 border border-gold/50 text-gold font-medium rounded-lg hover:bg-gold/10 transition-all duration-300"
+                  >
+                    (480) 999-6100
+                  </a>
+                </div>
+              </div>
             </div>
-            <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Home Renovation</span>
-            <h1 className="font-serif text-4xl md:text-6xl font-semibold mt-4 mb-6">
-              Custom Transformations
-            </h1>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-              Reimagine your living spaces with craftsmanship that honors your vision. 
-              Where dreams take form.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact" 
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-charcoal font-semibold rounded-lg hover:shadow-gold-glow transition-all duration-300"
-              >
-                Schedule Consultation
-              </Link>
-              <a 
-                href="tel:4809996100" 
-                className="inline-flex items-center justify-center px-8 py-4 border border-gold/50 text-gold font-medium rounded-lg hover:bg-gold/10 transition-all duration-300"
-              >
-                (480) 999-6100
-              </a>
+            
+            <div className="mt-16 pt-8 border-t border-white/10">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-8 text-center">
+                <div>
+                  <p className="text-3xl font-serif text-gold">18+</p>
+                  <p className="text-sm text-gray-400 mt-1">Years Experience</p>
+                </div>
+                <div className="h-12 w-px bg-gold/20 hidden sm:block"></div>
+                <div>
+                  <p className="text-3xl font-serif text-gold">ROC</p>
+                  <p className="text-sm text-gray-400 mt-1">#305762</p>
+                </div>
+                <div className="h-12 w-px bg-gold/20 hidden sm:block"></div>
+                <div>
+                  <p className="text-3xl font-serif text-white">Family</p>
+                  <p className="text-sm text-gray-400 mt-1">Owned & Operated</p>
+                </div>
+              </div>
             </div>
           </div>
+          
           <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-40"></div>
         </div>
 

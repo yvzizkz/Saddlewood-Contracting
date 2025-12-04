@@ -40,7 +40,7 @@ export default function Hero() {
             </h1>
             
             <p className="text-lg sm:text-xl mb-4 max-w-2xl text-gray-200 leading-relaxed">
-              We deliver custom home transformations with uncompromising attention to detail.
+              For discerning homeowners who demand excellence. We deliver custom remodeling, HVAC, electrical, and plumbing solutions with uncompromising attention to detail.
             </p>
             
             <p className="text-base sm:text-lg mb-6 max-w-2xl text-gray-400">
@@ -50,7 +50,7 @@ export default function Hero() {
             <div className="flex items-center gap-4 mb-10">
               <div className="pl-4 border-l-2 border-gold/50">
                 <p className="text-sm italic text-gray-300">
-                  "Your vision, built right."
+                  "Every detail custom. Every home unforgettable."
                 </p>
               </div>
               <div className="h-8 w-px bg-white/20"></div>
