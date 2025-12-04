@@ -197,7 +197,7 @@ export default function ThankYouPage() {
                 <svg className="w-5 h-5 text-gold mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
-                <span className="text-gray-600">Transparent pricing, no surprises</span>
+                <span className="text-gray-600">Clear communication every step of the way</span>
               </li>
             </ul>
           </div>

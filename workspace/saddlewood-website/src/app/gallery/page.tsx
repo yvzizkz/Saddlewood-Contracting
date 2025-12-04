@@ -6,15 +6,15 @@ import { useState } from 'react';
 const categories = ['All', 'Climate', 'Electrical', 'Plumbing', 'Renovations'];
 
 const projects = [
-  { id: 1, category: 'Renovations', title: 'Complete Home Transformation', location: 'Paradise Valley', scope: '$450K', featured: true },
-  { id: 2, category: 'Climate', title: 'Estate Climate Control', location: 'Paradise Valley', scope: '$85K', featured: true },
-  { id: 3, category: 'Electrical', title: 'Complete Smart Home', location: 'Fountain Hills', scope: '$125K', featured: true },
-  { id: 4, category: 'Plumbing', title: 'Spa Master Suite', location: 'Paradise Valley', scope: '$95K', featured: false },
-  { id: 5, category: 'Renovations', title: 'Gourmet Kitchen', location: 'Arcadia', scope: '$185K', featured: false },
-  { id: 6, category: 'Climate', title: 'Smart Home Integration', location: 'Scottsdale', scope: '$42K', featured: false },
-  { id: 7, category: 'Electrical', title: 'Architectural Lighting', location: 'Paradise Valley', scope: '$38K', featured: false },
-  { id: 8, category: 'Plumbing', title: "Chef's Kitchen", location: 'Scottsdale', scope: '$48K', featured: false },
-  { id: 9, category: 'Renovations', title: 'Wine Cellar & Bar', location: 'Scottsdale', scope: '$78K', featured: false },
+  { id: 1, category: 'Renovations', title: 'Complete Home Transformation', location: 'Paradise Valley', featured: true },
+  { id: 2, category: 'Climate', title: 'Estate Climate Control', location: 'Paradise Valley', featured: true },
+  { id: 3, category: 'Electrical', title: 'Complete Smart Home', location: 'Fountain Hills', featured: true },
+  { id: 4, category: 'Plumbing', title: 'Spa Master Suite', location: 'Paradise Valley', featured: false },
+  { id: 5, category: 'Renovations', title: 'Gourmet Kitchen', location: 'Arcadia', featured: false },
+  { id: 6, category: 'Climate', title: 'Smart Home Integration', location: 'Scottsdale', featured: false },
+  { id: 7, category: 'Electrical', title: 'Architectural Lighting', location: 'Paradise Valley', featured: false },
+  { id: 8, category: 'Plumbing', title: "Chef's Kitchen", location: 'Scottsdale', featured: false },
+  { id: 9, category: 'Renovations', title: 'Wine Cellar & Bar', location: 'Scottsdale', featured: false },
 ];
 
 const testimonials = [
@@ -179,11 +179,8 @@ export default function GalleryPage() {
                 </div>
                 
                 <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-gold text-sm font-medium">{project.location}</span>
-                    <span className="text-gray-500 text-sm">{project.scope}</span>
-                  </div>
-                  <h3 className="font-serif text-xl font-semibold text-charcoal">
+                  <span className="text-gold text-sm font-medium">{project.location}</span>
+                  <h3 className="font-serif text-xl font-semibold text-charcoal mt-1">
                     {project.title}
                   </h3>
                 </div>
