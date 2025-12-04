@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import Script from 'next/script';
 
@@ -35,6 +36,16 @@ export default function PlumbingPage() {
         <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-20 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div className="flex justify-center mb-6">
+              <Image
+                src="/images/logo.png"
+                alt="Saddlewood Contracting"
+                width={100}
+                height={100}
+                className="opacity-90"
+                style={{ width: '100px', height: 'auto' }}
+              />
+            </div>
             <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Water Systems</span>
             <h1 className="font-serif text-4xl md:text-6xl font-semibold mt-4 mb-6">
               Refined Water Solutions
