@@ -118,7 +118,7 @@ export default function HVACPage() {
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: "System Design & Installation", desc: "Custom climate solutions engineered for your home's unique architecture and your family's comfort preferences." },
+                { title: "System Design & Installation", desc: "Climate solutions engineered for your home's unique architecture and your family's comfort preferences." },
                 { title: "Smart Integration", desc: "Seamless integration with home automation systems for zone control, scheduling, and remote monitoring." },
                 { title: "Precision Maintenance", desc: "Proactive care programs that maximize system longevity, efficiency, and performance." }
               ].map((service, i) => (

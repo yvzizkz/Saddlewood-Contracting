@@ -5,26 +5,26 @@ import Link from 'next/link';
 export default function Home() {
   const services = [
     {
-      title: 'Custom Remodeling',
-      description: 'Transform your space with our custom renovation services. Kitchens, bathrooms, and whole-home transformations.',
+      title: 'Signature Remodeling',
+      description: 'Transform your space with renovation services tailored to your vision. Kitchens, bathrooms, and whole-home transformations.',
       link: '/services/remodeling',
       icon: 'home',
     },
     {
-      title: 'Custom HVAC',
-      description: 'Custom climate solutions designed for comfort and efficiency. From high-end system installations to precision maintenance.',
+      title: 'Precision Climate',
+      description: 'Climate solutions engineered for comfort and efficiency. High-end system installations and expert maintenance.',
       link: '/services/hvac',
       icon: 'ac_unit',
     },
     {
-      title: 'Custom Electrical',
-      description: 'Custom electrical work for discerning homeowners. Smart home integration, lighting design, and complete system upgrades.',
+      title: 'Expert Electrical',
+      description: 'Electrical work for discerning homeowners. Smart home integration, architectural lighting, and complete system upgrades.',
       link: '/services/electrical',
       icon: 'bolt',
     },
     {
-      title: 'Custom Plumbing',
-      description: 'Custom plumbing installations and expert repairs. Fixture upgrades, water treatment systems, and whole-home solutions.',
+      title: 'Premium Plumbing',
+      description: 'Thoughtful plumbing installations and expert repairs. Fixture upgrades, water treatment, and whole-home solutions.',
       link: '/services/plumbing',
       icon: 'water_drop',
     },
@@ -39,7 +39,7 @@ export default function Home() {
           <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">What We Offer</span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold mt-3">Our Signature Services</h2>
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-            Each custom project receives our full attention and commitment to excellence. We specialize in premium home services for clients who expect the best.
+            Each project receives our full attention and commitment to excellence. We specialize in premium home services for clients who expect the best.
           </p>
         </div>
         
@@ -61,7 +61,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
             <div>
               <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Follow Our Work</span>
-              <h2 className="font-serif text-2xl sm:text-3xl font-semibold mt-2">See Our Custom Projects</h2>
+              <h2 className="font-serif text-2xl sm:text-3xl font-semibold mt-2">See Our Latest Projects</h2>
             </div>
             <div className="flex flex-wrap gap-3">
               <a href="https://www.instagram.com/saddlewood_contracting/" target="_blank" rel="noopener noreferrer" 
@@ -103,7 +103,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Featured Work</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Custom Kitchen Transformation</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Kitchen Transformation</h2>
             <p className="text-gray-600 mt-4">Paradise Valley | Complete Kitchen Remodel</p>
           </div>
           
@@ -148,7 +148,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <blockquote className="max-w-2xl mx-auto">
               <p className="text-lg text-gray-700 italic mb-4">
-                "Saddlewood transformed our outdated kitchen into a stunning custom space that exceeded our expectations. The attention to detail was remarkable."
+                "Saddlewood transformed our outdated kitchen into a stunning space that exceeded our expectations. The attention to detail was remarkable."
               </p>
               <cite className="not-italic">
                 <span className="text-charcoal font-semibold">The Morrison Family</span>
@@ -164,7 +164,7 @@ export default function Home() {
         <div className="container-custom">
           <div className="text-center mb-12">
             <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">The Saddlewood Difference</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Why Clients Choose Our Custom Work</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Why Clients Choose Us</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -205,7 +205,7 @@ export default function Home() {
             <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Where We Serve</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3">Select Service Areas</h2>
             <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              We proudly serve the most prestigious communities in the Phoenix Valley. Contact us to discuss your custom project.
+              We proudly serve the most prestigious communities in the Phoenix Valley. Contact us to discuss your project.
             </p>
           </div>
           
@@ -228,7 +228,7 @@ export default function Home() {
           <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Ready to Begin?</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3 text-white">Let's Discuss Your Vision</h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto mb-8">
-            Every custom project starts with a conversation. Schedule a private consultation to explore how we can elevate your home.
+            Every project starts with a conversation. Schedule a private consultation to explore how we can elevate your home.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 

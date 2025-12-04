@@ -118,7 +118,7 @@ export default function RemodelingPage() {
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: "Kitchen Transformations", desc: "Custom cabinetry, premium finishes, and layouts designed for how you live and entertain." },
+                { title: "Kitchen Transformations", desc: "Handcrafted cabinetry, premium finishes, and layouts designed for how you live and entertain." },
                 { title: "Bathroom Sanctuaries", desc: "Spa-inspired retreats featuring designer fixtures, natural materials, and meticulous craftsmanship." },
                 { title: "Whole-Home Renovation", desc: "Comprehensive transformations that reimagine your entire living space with cohesive design." }
               ].map((service, i) => (

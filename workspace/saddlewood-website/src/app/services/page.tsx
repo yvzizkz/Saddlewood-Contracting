@@ -4,13 +4,13 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Signature Services - Saddlewood Contracting | Phoenix AZ',
   description: 'Premium HVAC, electrical, plumbing, and remodeling services for discerning homeowners throughout Phoenix and the Valley. Licensed, bonded, and insured.',
-  keywords: 'premium HVAC, luxury electrical, high-end plumbing, custom remodeling, Phoenix, Paradise Valley, Scottsdale, Arizona',
+  keywords: 'premium HVAC, luxury electrical, high-end plumbing, signature remodeling, Phoenix, Paradise Valley, Scottsdale, Arizona',
 };
 
 export default function ServicesPage() {
   const services = [
     {
-      category: "Custom Renovations",
+      category: "Signature Renovations",
       subtitle: "Transformative Design",
       icon: (
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,12 +18,12 @@ export default function ServicesPage() {
           <polyline points="9 22 9 12 15 12 15 22" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"></polyline>
         </svg>
       ),
-      description: "Custom renovations that elevate your living experience",
+      description: "Renovations that elevate your living experience",
       services: [
         "Chef's Kitchen Transformations",
         "Spa-Inspired Bathrooms",
         "Whole-Home Renovations",
-        "Custom Room Additions",
+        "Tailored Room Additions",
         "Outdoor Living Spaces",
         "Wine Cellars & Bars",
         "Home Office Design",
@@ -42,7 +42,7 @@ export default function ServicesPage() {
       services: [
         "High-Efficiency System Design & Installation",
         "Precision System Maintenance",
-        "Custom Ductwork Engineering",
+        "Precision Ductwork Engineering",
         "Advanced Air Purification",
         "Smart Climate Control Integration",
         "Zoned Comfort Systems",

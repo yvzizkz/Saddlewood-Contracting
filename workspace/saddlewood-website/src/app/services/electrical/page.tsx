@@ -118,7 +118,7 @@ export default function ElectricalPage() {
             
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: "Smart Home Integration", desc: "Lutron, Control4, and custom automation systems that give you complete control of your home environment." },
+                { title: "Smart Home Integration", desc: "Lutron, Control4, and intelligent automation systems that give you complete control of your home environment." },
                 { title: "Architectural Lighting", desc: "Curated lighting designs that showcase your home's architecture, art, and landscaping with precision." },
                 { title: "EV & Power Upgrades", desc: "Future-ready electrical infrastructure including EV charging, solar prep, and panel upgrades." }
               ].map((service, i) => (
