@@ -36,5 +36,9 @@ build = ["sh", "-c", "cd workspace/saddlewood-website && npm run build"]
 localPort = 5000
 externalPort = 80
 
+[[ports]]
+localPort = 46243
+externalPort = 3000
+
 [agent]
 expertMode = true
