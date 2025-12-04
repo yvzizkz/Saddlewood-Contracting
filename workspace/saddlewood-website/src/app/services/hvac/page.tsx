@@ -43,17 +43,17 @@ export default function HVACPage() {
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="flex-shrink-0">
                 <div className="relative">
-                  <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-gold/30 flex items-center justify-center bg-charcoal/50 backdrop-blur-sm">
+                  <div className="w-48 h-48 md:w-56 md:h-56 rounded-full border border-gold/15 flex items-center justify-center">
                     <Image
                       src="/images/logo.png"
                       alt="Saddlewood Contracting"
-                      width={120}
-                      height={120}
-                      className="opacity-95"
-                      style={{ width: '100px', height: 'auto' }}
+                      width={200}
+                      height={200}
+                      className="opacity-30"
+                      style={{ width: '180px', height: 'auto' }}
                     />
                   </div>
-                  <div className="absolute -inset-2 rounded-full border border-gold/20"></div>
+                  <div className="absolute -inset-3 rounded-full border border-gold/10"></div>
                 </div>
               </div>
               

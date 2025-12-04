@@ -22,17 +22,17 @@ export default function ContactPage() {
           <div className="flex flex-col items-center text-center">
             <div className="mb-6">
               <div className="relative">
-                <div className="w-24 h-24 rounded-full border-2 border-gold/30 flex items-center justify-center bg-charcoal/50 backdrop-blur-sm">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border border-gold/15 flex items-center justify-center">
                   <Image
                     src="/images/logo.png"
                     alt="Saddlewood Contracting"
-                    width={80}
-                    height={80}
-                    className="opacity-95"
-                    style={{ width: '70px', height: 'auto' }}
+                    width={160}
+                    height={160}
+                    className="opacity-30"
+                    style={{ width: '140px', height: 'auto' }}
                   />
                 </div>
-                <div className="absolute -inset-2 rounded-full border border-gold/20"></div>
+                <div className="absolute -inset-3 rounded-full border border-gold/10"></div>
               </div>
             </div>
             
