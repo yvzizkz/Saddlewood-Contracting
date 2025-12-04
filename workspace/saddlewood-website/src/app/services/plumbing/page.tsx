@@ -155,7 +155,7 @@ export default function PlumbingPage() {
 
         <div className="py-12 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-gray-50 rounded-2xl">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 bg-gray-50 rounded-2xl mb-8">
               <div className="flex items-center gap-4">
                 <div className="bg-charcoal text-white px-4 py-2 rounded text-center">
                   <span className="block text-xs text-gray-400">ROC</span>
@@ -171,6 +171,26 @@ export default function PlumbingPage() {
                 className="text-gold hover:text-gold-dark font-medium text-sm"
               >
                 View All Licenses →
+              </Link>
+            </div>
+            
+            <div className="text-center p-8 border border-gold/20 rounded-2xl bg-gradient-to-br from-charcoal/5 to-transparent">
+              <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">See Our Work</span>
+              <h3 className="font-serif text-2xl font-semibold mt-2 mb-4 text-charcoal">Explore Our Project Gallery</h3>
+              <p className="text-gray-600 mb-6 max-w-lg mx-auto">View our luxury plumbing installations and bathroom transformations.</p>
+              <Link 
+                href="/gallery" 
+                className="group relative inline-flex items-center justify-center px-8 py-4 
+                          bg-charcoal text-white font-medium 
+                          rounded-lg overflow-hidden
+                          hover:bg-charcoal-light
+                          transition-all duration-300"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/20 to-transparent animate-shimmer" style={{ backgroundSize: '200% 100%' }}></span>
+                <svg className="w-5 h-5 mr-2 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span className="relative z-10">View Our Portfolio</span>
               </Link>
             </div>
           </div>

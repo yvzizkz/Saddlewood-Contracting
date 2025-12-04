@@ -69,6 +69,11 @@ export default function Footer() {
             <h3 className="text-gold font-semibold mb-4 uppercase tracking-wider text-sm">Services</h3>
             <ul className="space-y-3">
               <li>
+                <Link href="/services/remodeling" className="text-gray-400 hover:text-gold transition-colors">
+                  Remodeling
+                </Link>
+              </li>
+              <li>
                 <Link href="/services/hvac" className="text-gray-400 hover:text-gold transition-colors">
                   HVAC Systems
                 </Link>
@@ -81,11 +86,6 @@ export default function Footer() {
               <li>
                 <Link href="/services/plumbing" className="text-gray-400 hover:text-gold transition-colors">
                   Plumbing
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/remodeling" className="text-gray-400 hover:text-gold transition-colors">
-                  Remodeling
                 </Link>
               </li>
             </ul>

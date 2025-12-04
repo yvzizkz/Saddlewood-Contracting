@@ -31,6 +31,20 @@ module.exports = {
         'gradient-premium': 'linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%)',
         'gradient-gold': 'linear-gradient(135deg, #d4af37 0%, #c9a227 50%, #b8960f 100%)',
       },
+      animation: {
+        'shimmer': 'shimmer 2.5s ease-in-out infinite',
+        'pulse-gold': 'pulse-gold 2s ease-in-out infinite',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        'pulse-gold': {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(212, 175, 55, 0)' },
+          '50%': { boxShadow: '0 0 20px 3px rgba(212, 175, 55, 0.4)' },
+        },
+      },
     },
   },
   plugins: [],
