@@ -186,8 +186,7 @@ export default function RootLayout({
                     "opens": "08:00",
                     "closes": "17:00"
                   },
-                  "priceRange": "$$",
-                  "servesCuisine": "Home Services"
+                  "areaServed": "Phoenix Metropolitan Area"
                 }
               ]
             })

@@ -32,10 +32,10 @@ export default function TermsAndConditionsPage() {
             promptly as possible.
           </p>
           
-          <h2 className="text-3xl font-bold mt-8 mb-6">Estimates and Pricing</h2>
+          <h2 className="text-3xl font-bold mt-8 mb-6">Project Estimates</h2>
           <p>
             Any estimates provided are based on our assessment of the work required and are subject to change if additional
-            issues are discovered during the service. We will communicate any significant changes in pricing before proceeding
+            issues are discovered during the service. We will communicate any significant changes before proceeding
             with additional work.
           </p>
           

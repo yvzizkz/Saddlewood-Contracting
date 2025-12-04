@@ -124,6 +124,57 @@ export default function ThankYouPage() {
           </div>
         </div>
 
+        <div className="bg-gradient-to-br from-gold/10 via-white to-gold/5 rounded-3xl p-8 md:p-12 mb-12 border border-gold/20">
+          <div className="text-center mb-8">
+            <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Start Dreaming</span>
+            <h3 className="font-serif text-2xl md:text-3xl text-charcoal mt-2 mb-3">
+              Picture This...
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              While you wait for our call, take a moment to imagine the possibilities. What would make your home feel perfect?
+            </p>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-gold/30 hover:shadow-md transition-all duration-300 text-center group">
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                </svg>
+              </div>
+              <p className="text-charcoal font-medium text-sm">That open-concept kitchen you've always wanted</p>
+            </div>
+            <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-gold/30 hover:shadow-md transition-all duration-300 text-center group">
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+              </div>
+              <p className="text-charcoal font-medium text-sm">Perfect lighting that sets the mood</p>
+            </div>
+            <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-gold/30 hover:shadow-md transition-all duration-300 text-center group">
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707"></path>
+                </svg>
+              </div>
+              <p className="text-charcoal font-medium text-sm">A home that stays cool all summer</p>
+            </div>
+            <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:border-gold/30 hover:shadow-md transition-all duration-300 text-center group">
+              <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors">
+                <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+              </div>
+              <p className="text-charcoal font-medium text-sm">A spa-like bathroom retreat</p>
+            </div>
+          </div>
+          
+          <p className="text-center text-gray-500 text-sm italic mb-8">
+            "The best home projects start with a clear vision. We're here to make yours real."
+          </p>
+        </div>
+
         <div className="bg-gradient-to-br from-charcoal to-charcoal-light rounded-3xl p-8 md:p-12 mb-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 opacity-5">
             <Image
@@ -138,10 +189,10 @@ export default function ThankYouPage() {
           <div className="relative z-10 text-center md:text-left md:flex items-center justify-between">
             <div className="mb-6 md:mb-0">
               <h3 className="font-serif text-2xl md:text-3xl text-white mb-2">
-                While You Wait...
+                Get Inspired
               </h3>
               <p className="text-gray-400 max-w-lg">
-                Get inspired by our latest projects. See how we've helped homeowners just like you transform their spaces.
+                See how we've helped other Arizona homeowners transform their spaces into something extraordinary.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
