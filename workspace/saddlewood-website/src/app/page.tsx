@@ -80,8 +80,8 @@ export default function Home() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Daily Project Stories</h3>
               <p className="text-gray-400 text-sm mb-4">See our work in progress and completed transformations.</p>
-              <a href="https://instagram.com/saddlewoodcontracting" target="_blank" rel="noopener noreferrer" className="text-gold text-sm font-medium hover:text-gold-light transition-colors">
-                Follow @saddlewoodcontracting →
+              <a href="https://www.instagram.com/saddlewood_contracting/" target="_blank" rel="noopener noreferrer" className="text-gold text-sm font-medium hover:text-gold-light transition-colors">
+                Follow @saddlewood_contracting →
               </a>
             </div>
             
@@ -116,7 +116,7 @@ export default function Home() {
               </div>
               <h3 className="font-semibold text-lg mb-2">Community Updates</h3>
               <p className="text-gray-400 text-sm mb-4">News, client testimonials, and community involvement.</p>
-              <a href="https://facebook.com/saddlewoodcontracting" target="_blank" rel="noopener noreferrer" className="text-gold text-sm font-medium hover:text-gold-light transition-colors">
+              <a href="https://www.facebook.com/SaddlewoodAZ/" target="_blank" rel="noopener noreferrer" className="text-gold text-sm font-medium hover:text-gold-light transition-colors">
                 Like Our Page →
               </a>
             </div>

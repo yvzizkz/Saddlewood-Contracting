@@ -122,7 +122,7 @@ export default function ContactPage() {
             
             <div className="mt-8 flex space-x-4">
               <a 
-                href="https://instagram.com/saddlewoodcontracting" 
+                href="https://www.instagram.com/saddlewood_contracting/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-charcoal flex items-center justify-center hover:bg-gold/20 transition-colors group"
@@ -142,7 +142,7 @@ export default function ContactPage() {
                 </svg>
               </a>
               <a 
-                href="https://facebook.com/saddlewoodcontracting" 
+                href="https://www.facebook.com/SaddlewoodAZ/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-charcoal flex items-center justify-center hover:bg-gold/20 transition-colors group"

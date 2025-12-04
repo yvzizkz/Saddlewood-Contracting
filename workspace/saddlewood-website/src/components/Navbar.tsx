@@ -90,7 +90,7 @@ export default function Navbar() {
               
               <div className="flex items-center space-x-3 ml-4">
                 <a 
-                  href="https://instagram.com/saddlewoodcontracting" 
+                  href="https://www.instagram.com/saddlewood_contracting/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold/20 transition-colors"
@@ -112,7 +112,7 @@ export default function Navbar() {
                   </svg>
                 </a>
                 <a 
-                  href="https://facebook.com/saddlewoodcontracting" 
+                  href="https://www.facebook.com/SaddlewoodAZ/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold/20 transition-colors"

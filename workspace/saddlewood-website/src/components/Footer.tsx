@@ -30,7 +30,7 @@ export default function Footer() {
             
             <div className="flex space-x-4">
               <a 
-                href="https://instagram.com/saddlewoodcontracting" 
+                href="https://www.instagram.com/saddlewood_contracting/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-charcoal-light flex items-center justify-center hover:bg-gold/20 transition-colors group"
@@ -52,7 +52,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a 
-                href="https://facebook.com/saddlewoodcontracting" 
+                href="https://www.facebook.com/SaddlewoodAZ/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-charcoal-light flex items-center justify-center hover:bg-gold/20 transition-colors group"

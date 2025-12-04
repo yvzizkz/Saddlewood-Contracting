@@ -1,132 +1,106 @@
 import React from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'License Information | Saddlewood Contracting',
-  description: 'Detailed information about Saddlewood Contracting licenses, ROC certifications, and contractor classifications for our HVAC, electrical, plumbing, and remodeling services in Phoenix and surrounding areas.',
+export const metadata: Metadata = {
+  title: 'License Information - Saddlewood Contracting | Phoenix AZ',
+  description: 'Detailed information about Saddlewood Contracting licenses, ROC certifications, and contractor classifications for our HVAC, electrical, plumbing, and remodeling services.',
 };
 
 export default function LicenseInfoPage() {
+  const licenses = [
+    {
+      category: "Climate Systems",
+      roc: "350714",
+      classification: "CR-39 Air Conditioning and Refrigeration",
+      description: "Installation, alteration, and repair of refrigeration and evaporative cooling systems, including warm-air heating systems and all integrated parts of heating, cooling, and ventilation systems."
+    },
+    {
+      category: "Electrical Systems",
+      roc: "350715",
+      classification: "CR-11 Electrical",
+      description: "Installation, alteration, and repair of any wiring, related electrical material and equipment used in generating, transmitting, or utilization of electrical energy less than 600 volts."
+    },
+    {
+      category: "Plumbing Systems",
+      roc: "350716",
+      classification: "CR-37 Plumbing",
+      description: "Installation, alteration, and repair of all plumbing within property lines, including required venting for waste or drainage, hot and cold water piping, and gas piping systems."
+    },
+    {
+      category: "General Contracting",
+      roc: "305762",
+      classification: "KB-2 Residential & Small Commercial",
+      description: "Construction, remodeling, and repair of homes, as well as construction, alteration, and repair of commercial buildings not exceeding three stories or 20,000 square feet."
+    }
+  ];
+
   return (
-    <main className="bg-gray-50 py-16">
-      <div className="container-custom">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Arizona ROC License Information</h1>
-          
-          <div className="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8">
-            <p className="text-gray-700 mb-6">
-              Saddlewood Contracting is fully licensed, bonded, and insured to perform contracting work in the state of Arizona.
-              Our Arizona Registrar of Contractors (ROC) licenses allow us to legally provide the following services.
-            </p>
-            
-            <div className="space-y-8">
-              <div className="border-b border-gray-200 pb-6">
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">HVAC Services</h2>
-                <div className="flex items-start">
-                  <div className="bg-primary text-white text-center px-3 py-2 rounded mr-4">
-                    <span className="font-bold block">ROC</span>
-                    <span className="text-sm">350714</span>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-700">CR-39 Air Conditioning and Refrigeration</h3>
-                    <p className="text-gray-600 mt-1">
-                      This classification allows us to install, alter, and repair refrigeration and evaporative cooling 
-                      systems, including warm-air heating systems and all integrated parts of a heating, cooling, 
-                      and ventilation system.
-                    </p>
-                  </div>
+    <div className="min-h-screen">
+      <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-16 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Credentials</span>
+          <h1 className="font-serif text-3xl md:text-5xl font-semibold mt-4 mb-4">
+            Arizona ROC Licenses
+          </h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Fully licensed, bonded, and insured for your protection
+          </p>
+        </div>
+        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-40"></div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="mb-10">
+          <p className="text-gray-600 text-lg leading-relaxed">
+            Saddlewood Contracting holds four Arizona Registrar of Contractors (ROC) licenses, 
+            allowing us to legally and professionally perform a comprehensive range of home services 
+            throughout the Phoenix metropolitan area.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          {licenses.map((license, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-premium transition-all duration-300"
+            >
+              <div className="flex items-stretch">
+                <div className="w-28 bg-charcoal flex flex-col items-center justify-center p-4">
+                  <span className="text-gray-400 text-xs uppercase tracking-wider mb-1">ROC</span>
+                  <span className="text-gold font-serif text-2xl font-bold">{license.roc}</span>
                 </div>
-              </div>
-              
-              <div className="border-b border-gray-200 pb-6">
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">Electrical Services</h2>
-                <div className="flex items-start">
-                  <div className="bg-primary text-white text-center px-3 py-2 rounded mr-4">
-                    <span className="font-bold block">ROC</span>
-                    <span className="text-sm">350715</span>
+                <div className="flex-1 p-6">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3">
+                    <div>
+                      <h2 className="font-serif text-xl font-semibold text-charcoal">{license.category}</h2>
+                      <p className="text-gold text-sm font-medium">{license.classification}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-medium text-gray-700">CR-11 Electrical</h3>
-                    <p className="text-gray-600 mt-1">
-                      This classification allows us to install, alter, and repair any wiring, related electrical 
-                      material and equipment used in the generating, transmitting, or utilization of electrical 
-                      energy less than 600 volts, including all overhead electrical wiring on public right-of-ways 
-                      for signs and street decorations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="border-b border-gray-200 pb-6">
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">Plumbing Services</h2>
-                <div className="flex items-start">
-                  <div className="bg-primary text-white text-center px-3 py-2 rounded mr-4">
-                    <span className="font-bold block">ROC</span>
-                    <span className="text-sm">350716</span>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-700">CR-37 Plumbing</h3>
-                    <p className="text-gray-600 mt-1">
-                      This classification allows us to install, alter, and repair all plumbing when performed solely 
-                      within property lines and not on public easements or right-of-ways, including the required 
-                      venting for waste or drainage, hot and cold water piping, and gas piping systems.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div>
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">Remodeling & Construction</h2>
-                <div className="flex items-start">
-                  <div className="bg-primary text-white text-center px-3 py-2 rounded mr-4">
-                    <span className="font-bold block">ROC</span>
-                    <span className="text-sm">305762</span>
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-gray-700">KB-2 Residential & Small Commercial</h3>
-                    <p className="text-gray-600 mt-1">
-                      This dual classification allows us to construct, remodel and repair homes, and construct, 
-                      alter and repair commercial buildings not exceeding three stories in height and not exceeding 
-                      20,000 square feet per structure.
-                    </p>
-                  </div>
+                  <p className="text-gray-600 text-sm leading-relaxed">{license.description}</p>
                 </div>
               </div>
             </div>
-          </div>
-          
-          <div className="bg-gray-100 rounded-lg p-6 mb-8">
-            <h2 className="text-lg font-semibold text-gray-800 mb-3">Verify Our Licenses</h2>
-            <p className="text-gray-700 mb-4">
-              You can verify all of our licenses through the Arizona Registrar of Contractors website:
-            </p>
-            <a 
-              href="https://roc.az.gov/contractor-search" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="inline-block bg-accent hover:bg-accent-dark text-white font-medium py-2 px-4 rounded-lg transition-colors"
-            >
-              Arizona ROC Contractor Search
-            </a>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-between bg-white rounded-xl shadow-md p-6">
-            <div className="mb-4 md:mb-0 md:mr-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">Have Questions?</h2>
-              <p className="text-gray-600">
-                Our team is ready to help with any questions about our qualifications or services.
-              </p>
-            </div>
-            <Link 
-              href="/contact" 
-              className="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              Contact Us
-            </Link>
-          </div>
+          ))}
+        </div>
+
+        <div className="mt-16 bg-gradient-to-br from-charcoal to-charcoal-light rounded-2xl p-8 text-center">
+          <h2 className="font-serif text-2xl font-semibold text-white mb-4">Have Questions?</h2>
+          <p className="text-gray-400 mb-6 max-w-lg mx-auto">
+            Our team is ready to help with any questions about our qualifications, services, or how we can assist with your project.
+          </p>
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-charcoal font-semibold rounded-lg hover:shadow-gold-glow transition-all duration-300"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            Contact Us
+          </Link>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
