@@ -45,14 +45,14 @@ export default function Navbar() {
               {/* Logo with hover opacity effect */}
               <CompanyLogo />
               
-              {/* Company name with premium styling - sits flush against logo */}
+              {/* Company name with premium styling - matches footer */}
               <div className="flex flex-col ml-2">
-                <span className="text-lg sm:text-xl tracking-wider font-bold truncate max-w-[180px] sm:max-w-none relative">
+                <span className="text-lg sm:text-xl font-serif font-semibold text-white truncate max-w-[180px] sm:max-w-none relative">
                   Saddlewood
                   {/* Decorative underline that appears on hover */}
                   <span className="absolute left-0 -bottom-px h-px w-0 bg-white opacity-60 transition-all duration-500 ease-in-out group-hover:w-full"></span>
                 </span>
-                <span className="text-xs sm:text-sm tracking-widest uppercase text-gold">Contracting LLC</span>
+                <span className="text-sm tracking-wider text-gold">CONTRACTING LLC</span>
               </div>
             </Link>
             
@@ -202,8 +202,8 @@ export default function Navbar() {
                   />
                 </div>
                 <div className="ml-2">
-                  <p className="text-sm tracking-wider font-bold text-white">Saddlewood</p>
-                  <p className="text-xs uppercase tracking-wider text-gold">Contracting LLC</p>
+                  <p className="text-sm font-serif font-semibold text-white">Saddlewood</p>
+                  <p className="text-xs tracking-wider text-gold">CONTRACTING LLC</p>
                 </div>
               </div>
               
