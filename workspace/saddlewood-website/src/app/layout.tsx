@@ -215,6 +215,13 @@ export default function RootLayout({
           
           {/* Mobile sticky estimate button */}
           <MobileEstimateButton />
+          
+          {/* GoHighLevel Chat Widget */}
+          <script 
+            src="https://widgets.leadconnectorhq.com/loader.js"
+            data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+            data-widget-id="6939cccae9d476259f5f6719"
+          />
         </AuthProvider>
       </body>
     </html>
