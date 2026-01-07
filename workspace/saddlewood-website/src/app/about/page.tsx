@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import MountainBackdrop from '@/components/MountainBackdrop';
+import MountainDivider from '@/components/MountainDivider';
+import DesertTexture from '@/components/DesertTexture';
 
 export const metadata: Metadata = {
   title: 'About Us - Saddlewood Contracting | Phoenix AZ',
@@ -81,8 +84,9 @@ export default function AboutPage() {
 
   return (
     <div className="pb-20 md:pb-0">
-      <div className="relative bg-gradient-desert overflow-hidden">
+      <div className="relative bg-gradient-sunrise overflow-hidden">
         <div className="absolute inset-0 bg-noise pointer-events-none"></div>
+        <MountainBackdrop opacity={0.15} variant="hero" className="z-0" />
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28">
           <div className="text-center max-w-3xl mx-auto">

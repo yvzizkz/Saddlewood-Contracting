@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import MountainBackdrop from '@/components/MountainBackdrop';
+import MountainDivider from '@/components/MountainDivider';
 
 export const metadata: Metadata = {
   title: 'Schedule a Consultation - Saddlewood Contracting | Phoenix AZ',
@@ -12,8 +14,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen pb-20 md:pb-0">
-      <div className="bg-gradient-desert py-20 relative overflow-hidden">
+      <div className="bg-gradient-sunrise py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-noise pointer-events-none"></div>
+        <MountainBackdrop opacity={0.15} variant="hero" className="z-0" />
         
         <div className="container-custom relative z-10">
           <div className="flex flex-col items-center text-center">

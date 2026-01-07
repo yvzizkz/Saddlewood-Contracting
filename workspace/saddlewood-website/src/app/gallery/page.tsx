@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import MountainBackdrop from '@/components/MountainBackdrop';
+import MountainDivider from '@/components/MountainDivider';
 
 const categories = ['All', 'Climate', 'Electrical', 'Plumbing', 'Renovations'];
 
@@ -32,8 +34,9 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen pb-20 md:pb-0">
-      <div className="bg-gradient-desert py-16 relative overflow-hidden">
+      <div className="bg-gradient-sunrise py-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-noise pointer-events-none"></div>
+        <MountainBackdrop opacity={0.15} variant="hero" className="z-0" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             <span className="inline-block text-accent uppercase tracking-[0.25em] text-sm font-medium bg-accent/10 px-5 py-2.5 rounded-full border border-accent/20 mb-6">
