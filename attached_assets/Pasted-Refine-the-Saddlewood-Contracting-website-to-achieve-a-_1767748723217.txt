@@ -1,0 +1,74 @@
+Refine the Saddlewood Contracting website to achieve a sophisticated, high-end desert luxury aesthetic inspired by modern Paradise Valley estates and luxury resorts (think Four Seasons Scottsdale, Optima Kierland architecture).
+
+REMOVE/REPLACE:
+- Delete the layered mountain SVG silhouettes (MountainBackdrop.tsx) - they look too artificial
+- Remove the dark brown/charcoal sections - too heavy and dated
+- Eliminate obvious desert texture patterns (DesertTexture.tsx) - they're too busy
+- Replace vibrant terracotta CTAs with more refined colors
+
+LUXURY COLOR PALETTE:
+Primary Background: Warm ivory/cream (#F5F1E8)
+Secondary Background: Soft sandstone (#E8DFD0) 
+Accent Gold: Champagne gold (#D4AF37) - for CTAs and highlights
+Accent Neutral: Warm taupe (#B39F8D) - for secondary elements
+Text Dark: Charcoal brown (#3D3529)
+Accent Sage: Muted sage (#9B9F8F) - minimal use for trust badges only
+
+SUBTLE MOUNTAIN APPROACH:
+Instead of SVG silhouettes, use:
+- Very subtle, blurred photograph of McDowell Mountains as hero background (20-30% opacity max)
+- OR use a barely-visible topographic line art pattern at 5% opacity in light taupe
+- Mountains should be FELT not SEEN - suggesting place without being obvious
+
+REFINED DESIGN ELEMENTS:
+1. Hero Section:
+   - Clean, minimal gradient: ivory to soft sandstone (very subtle, 2-3% transition)
+   - Optional: Ultra-subtle blurred mountain photo backdrop at 25% opacity
+   - Elegant typography with generous whitespace
+   - Champagne gold CTA buttons with subtle shadow
+
+2. Section Backgrounds:
+   - Alternate between warm ivory and soft sandstone
+   - NO dark sections - keep it light and airy
+   - Subtle paper/linen texture overlay at 3-5% opacity (not desert-specific)
+
+3. Dividers:
+   - Remove mountain wave dividers
+   - Use clean horizontal lines in warm taupe
+   - OR very subtle gradient fade transitions between sections
+
+4. Service Cards:
+   - Clean white backgrounds with soft shadows
+   - Remove service-specific desert textures
+   - Elegant icons in champagne gold
+   - Refined hover effects (subtle lift + shadow)
+
+5. CTA Buttons:
+   - Champagne gold background (#D4AF37)
+   - White text
+   - Subtle shadow for depth
+   - Smooth hover: slightly darker gold + gentle lift effect
+
+6. Trust Badges/Credentials:
+   - Muted sage green accents (keep this, it works well)
+   - Clean shield icons
+   - Generous padding and breathing room
+
+7. Footer:
+   - Remove mountain silhouette
+   - Clean warm ivory background
+   - Taupe text
+   - Simple, elegant layout
+
+LUXURY PRINCIPLES:
+- More whitespace (increase padding/margins by 20-30%)
+- Fewer elements competing for attention
+- Subtle over obvious
+- Refined photography over illustrations
+- Elegance through restraint
+- Think "spa brochure" not "desert adventure"
+
+REFERENCE AESTHETIC:
+Modern luxury real estate websites, high-end interior design portfolios, boutique hotel sites - clean, sophisticated, letting quality speak through restraint rather than decoration.
+
+The goal is "quiet luxury" - where the desert location is suggested through refined color choices and optional subtle photography, not cartoon mountains and busy textures.
