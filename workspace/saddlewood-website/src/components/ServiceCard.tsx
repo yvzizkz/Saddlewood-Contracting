@@ -6,9 +6,10 @@ interface ServiceCardProps {
   description: string;
   link: string;
   icon: string;
+  featured?: boolean;
 }
 
-export default function ServiceCard({ title, description, link, icon }: ServiceCardProps) {
+export default function ServiceCard({ title, description, link, icon, featured }: ServiceCardProps) {
   const renderIcon = (iconName: string) => {
     switch (iconName) {
       case 'ac_unit':
@@ -48,14 +49,38 @@ export default function ServiceCard({ title, description, link, icon }: ServiceC
 
   return (
     <Link href={link} className="block">
-      <div className="relative rounded-2xl bg-white border border-sandstone p-8 sm:p-10 
-                      hover:shadow-lift hover:border-gold/40 hover:-translate-y-1 
-                      transition-all duration-300 group">
-        <div className="flex flex-col sm:flex-row items-start gap-6">
+      <div className={`relative rounded-2xl bg-white border p-8 sm:p-10 
+                      hover:shadow-lift hover:-translate-y-1 
+                      transition-all duration-300 group overflow-hidden
+                      ${featured 
+                        ? 'border-gold/40 shadow-soft-lg' 
+                        : 'border-sandstone hover:border-gold/40 shadow-soft'}`}>
+        {featured && (
+          <>
+            <div className="absolute top-0 right-0 w-24 h-24">
+              <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-gold animate-pulse"></div>
+              <svg viewBox="0 0 100 100" className="w-full h-full text-gold/10">
+                <path d="M100 0 L100 100 L0 100 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div className="absolute top-4 left-4">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gold/10 text-gold text-xs font-semibold uppercase tracking-wider">
+                <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                Featured
+              </span>
+            </div>
+          </>
+        )}
+        
+        <div className={`flex flex-col sm:flex-row items-start gap-6 ${featured ? 'mt-6' : ''}`}>
           <div className="flex-shrink-0">
-            <div className="w-16 h-16 rounded-xl bg-ivory text-gold flex items-center justify-center
-                           group-hover:bg-gold group-hover:text-white transition-all duration-300
-                           shadow-soft">
+            <div className={`w-16 h-16 rounded-xl flex items-center justify-center
+                           transition-all duration-300 shadow-soft
+                           ${featured 
+                             ? 'bg-gradient-to-br from-gold/20 to-gold/5 text-gold group-hover:from-gold group-hover:to-gold-dark group-hover:text-white' 
+                             : 'bg-ivory text-gold group-hover:bg-gold group-hover:text-white'}`}>
               {renderIcon(icon)}
             </div>
           </div>
@@ -84,6 +109,8 @@ export default function ServiceCard({ title, description, link, icon }: ServiceC
             </span>
           </div>
         </div>
+        
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/0 via-gold/20 to-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
       </div>
     </Link>
   );
