@@ -149,25 +149,36 @@ The application is configured for production deployment with the following setup
   - Primary: Charcoal (#3d3d3d) - dark accents
   - Sandstone: #d4c4a8 - warm cream/beige backgrounds
   - Clay: #c4846a - terracotta tones
-  - Sage: #8a9a7a - natural green accent
+  - Sage: #8a9a7a - natural green accent (with sage-light and sage-dark variants)
   - Accent: #a67c52 - warm brown for buttons and highlights
+  - Terracotta: #d4613a - vibrant CTA button color
+  - Coral: #e8927c - sunset coral accent
   - Desert: #f5f0e8 - soft cream for sections
+- **Visual Enhancements**:
+  - **Mountain Backdrop Component**: Layered SVG mountain silhouettes in hero sections
+  - **Mountain Wave Dividers**: Custom SVG section dividers between major page sections
+  - **Desert Texture Component**: Unique background patterns per service type (home, AC, bolt, water)
+  - **Sunset Gradients**: bg-gradient-sunrise for warm peachy backgrounds in all hero sections
+  - **CTA Gradients**: bg-gradient-cta with terracotta (#d4613a) for vibrant call-to-action buttons
+  - Sage green (#8a9a7a) accents on trust/credential badges with checkmark shield icon
+  - Footer enhanced with mountain silhouette at top
 - **Design Elements**:
   - Soft shadows with warm tones (shadow-soft, shadow-warm)
   - Rounded corners (2xl) for cards and buttons
   - Subtle noise texture backgrounds
   - Desert gradient backgrounds (bg-gradient-desert)
 - **Updated Pages**:
-  - Homepage: Desert hero with warm color scheme
-  - All 4 service pages (Remodeling, HVAC, Electrical, Plumbing): Consistent desert styling
+  - Homepage: Desert hero with mountain backdrop and sunset gradient
+  - All 4 service pages (Remodeling, HVAC, Electrical, Plumbing): Mountain backdrops and terracotta CTA buttons
   - Contact page: Desert theme with GoHighLevel Form 4 integration
-  - About page: Warm neutrals with sand/clay accents
-  - Gallery page: Desert portfolio styling
+  - About page: Warm neutrals with sand/clay accents and mountain backdrop
+  - Gallery page: Desert portfolio styling with mountain backdrop
   - Navbar & Footer: Updated with warm color scheme
 - **Typography**: Playfair Display serif retained for elegant headings
 - **No pricing displayed anywhere** - premium positioning maintained
 - **First-load animations removed** - immediate page rendering for better UX
 - **Mobile CTA positioning fixed** - button at bottom-20 to avoid chat widget overlap
+- **Reusable Components**: MountainBackdrop.tsx, MountainDivider.tsx, DesertTexture.tsx
 
 ### Optional Integrations
 - **reCAPTCHA**: Google reCAPTCHA for enhanced form security (fallback to simple captcha)
