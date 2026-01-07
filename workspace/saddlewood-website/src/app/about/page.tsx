@@ -215,8 +215,20 @@ export default function AboutPage() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-10">
+            <div className="text-center p-10 bg-white rounded-2xl shadow-soft border border-sandstone/50">
+              <div className="w-40 h-40 mx-auto mb-8 rounded-full bg-ivory border border-gold/20 overflow-hidden relative">
+                <Image
+                  src="/images/marco.jpeg"
+                  alt="Marco - Leadership"
+                  fill
+                  className="object-cover object-top"
+                  sizes="160px"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-primary mb-3">Marco</h3>
+              <p className="text-primary/60 text-sm">Guiding vision and client relationships</p>
+            </div>
             {[
-              { role: "Leadership", desc: "Guiding vision and client relationships" },
               { role: "Project Management", desc: "Coordinating every detail seamlessly" },
               { role: "Master Craftsmen", desc: "Bringing expertise to every trade" },
             ].map((member, index) => (
