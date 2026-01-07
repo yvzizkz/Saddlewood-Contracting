@@ -147,23 +147,16 @@ export default function AboutPage() {
             </div>
             
             <div className="relative">
-              <div className="aspect-square bg-ivory rounded-2xl overflow-hidden relative border border-sandstone shadow-soft">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-5 rounded-full border border-gold/30 flex items-center justify-center bg-white shadow-soft">
-                      <Image
-                        src="/images/logo.png"
-                        alt="Saddlewood Contracting"
-                        width={100}
-                        height={100}
-                        className="opacity-60"
-                      />
-                    </div>
-                    <p className="text-taupe text-sm">Team photo coming soon</p>
-                  </div>
-                </div>
+              <div className="aspect-[3/4] bg-ivory rounded-2xl overflow-hidden relative border border-sandstone shadow-soft">
+                <Image
+                  src="/images/saddlewood-family.png"
+                  alt="The Saddlewood Family"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-primary text-white font-semibold px-8 py-4 rounded-xl font-semibold shadow-gold">
+              <div className="absolute -bottom-4 -right-4 bg-primary text-white font-semibold px-8 py-4 rounded-xl shadow-gold">
                 Since 2007
               </div>
             </div>
