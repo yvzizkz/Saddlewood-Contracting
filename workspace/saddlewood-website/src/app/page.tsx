@@ -1,5 +1,6 @@
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
+import VideoShowcase from '@/components/VideoShowcase';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -66,6 +67,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Video Showcase Section */}
+      <VideoShowcase />
       
       <section className="relative py-20 sm:py-24 bg-gradient-to-b from-sandstone-light via-sandstone to-sandstone-light overflow-hidden">
         <div className="absolute inset-0 opacity-[0.02] bg-linen-texture"></div>
