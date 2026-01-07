@@ -225,7 +225,8 @@ export default function AboutPage() {
                   sizes="160px"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-primary mb-3">Marco</h3>
+              <h3 className="text-xl font-semibold text-primary mb-1">Leadership</h3>
+              <p className="text-primary font-medium mb-3">Marco Cravioto</p>
               <p className="text-primary/60 text-sm">Guiding vision and client relationships</p>
             </div>
             {[
