@@ -1,5 +1,7 @@
 import Hero from '@/components/Hero';
 import ServiceCard from '@/components/ServiceCard';
+import MountainDivider from '@/components/MountainDivider';
+import DesertTexture from '@/components/DesertTexture';
 import Link from 'next/link';
 
 export default function Home() {
@@ -34,7 +36,9 @@ export default function Home() {
     <div className="pb-20 md:pb-0">
       <Hero />
       
-      <section className="py-20 sm:py-24 bg-white">
+      <MountainDivider variant="wave" color="#ffffff" className="-mt-1" />
+      
+      <section className="py-20 sm:py-24 bg-white relative">
         <div className="container-custom">
           <div className="text-center mb-14">
             <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">What We Offer</span>
@@ -57,6 +61,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <MountainDivider variant="peaks" color="#2c2622" />
       
       <section className="py-16 sm:py-20 bg-primary">
         <div className="container-custom">
@@ -101,8 +107,11 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="py-20 sm:py-24 bg-desert">
-        <div className="container-custom">
+      <MountainDivider variant="wave" color="#f5f0e8" />
+      
+      <section className="py-20 sm:py-24 bg-desert relative">
+        <DesertTexture variant="topographic" opacity={0.03} />
+        <div className="container-custom relative z-10">
           <div className="text-center mb-14">
             <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">Featured Work</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3 text-primary">Kitchen Transformation</h2>
@@ -162,6 +171,8 @@ export default function Home() {
         </div>
       </section>
       
+      <MountainDivider variant="gentle" color="#ffffff" />
+      
       <section className="py-20 sm:py-24 bg-white">
         <div className="container-custom">
           <div className="text-center mb-14">
@@ -201,8 +212,11 @@ export default function Home() {
         </div>
       </section>
       
-      <section className="py-20 sm:py-24 bg-desert">
-        <div className="container-custom">
+      <MountainDivider variant="wave" color="#f5f0e8" />
+      
+      <section className="py-20 sm:py-24 bg-desert relative">
+        <DesertTexture variant="sand" opacity={0.04} />
+        <div className="container-custom relative z-10">
           <div className="text-center mb-14">
             <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">Where We Serve</span>
             <h2 className="font-serif text-3xl sm:text-4xl font-semibold mt-3 text-primary">Select Service Areas</h2>
@@ -225,6 +239,8 @@ export default function Home() {
         </div>
       </section>
       
+      <MountainDivider variant="peaks" color="#2c2622" />
+      
       <section className="py-20 sm:py-24 bg-primary">
         <div className="container-custom text-center">
           <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">Ready to Begin?</span>
@@ -236,9 +252,9 @@ export default function Home() {
             <Link 
               href="/contact" 
               className="inline-flex items-center justify-center px-8 py-4 
-                        bg-accent text-white font-medium 
+                        bg-gradient-cta text-white font-medium 
                         rounded-xl shadow-warm hover:shadow-warm-lg
-                        hover:bg-clay transition-all duration-300"
+                        hover:bg-terracotta-dark transition-all duration-300"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>

@@ -1,11 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import MountainBackdrop from './MountainBackdrop';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-sandstone-light">
-      <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent"></div>
+    <footer className="bg-primary text-sandstone-light relative">
+      <MountainBackdrop variant="footer" opacity={0.25} className="h-20" />
+      <div className="h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent relative z-10"></div>
       
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-12">

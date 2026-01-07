@@ -1,10 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import MountainBackdrop from './MountainBackdrop';
 
 export default function Hero() {
   return (
-    <section className="relative py-20 sm:py-28 md:py-36 overflow-hidden bg-gradient-desert">
+    <section className="relative py-20 sm:py-28 md:py-36 overflow-hidden bg-gradient-sunrise">
       <div className="absolute inset-0 bg-noise pointer-events-none"></div>
+      <MountainBackdrop opacity={0.2} variant="hero" className="z-0" />
       
       <div className="container-custom relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -44,9 +46,9 @@ export default function Hero() {
               <Link 
                 href="/contact" 
                 className="inline-flex items-center justify-center px-8 py-4 
-                          bg-accent text-white font-medium 
+                          bg-gradient-cta text-white font-medium 
                           rounded-xl shadow-warm hover:shadow-warm-lg
-                          hover:bg-accent-dark transition-all duration-300"
+                          hover:bg-terracotta-dark transition-all duration-300"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
