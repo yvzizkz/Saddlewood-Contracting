@@ -143,6 +143,32 @@ The application is configured for production deployment with the following setup
 - **Navigation**: Remodeling moved to first position in Services dropdown (primary focus)
 - **Design Tokens**: Custom charcoal, gold, and premium shadow utilities in Tailwind config
 
+### Paradise Valley Desert Theme Redesign (January 7, 2026)
+- **Complete Theme Overhaul**: Transformed from black/gold luxury theme to warm "Modern Paradise Valley Desert" aesthetic
+- **Color Palette**: 
+  - Primary: Charcoal (#3d3d3d) - dark accents
+  - Sandstone: #d4c4a8 - warm cream/beige backgrounds
+  - Clay: #c4846a - terracotta tones
+  - Sage: #8a9a7a - natural green accent
+  - Accent: #a67c52 - warm brown for buttons and highlights
+  - Desert: #f5f0e8 - soft cream for sections
+- **Design Elements**:
+  - Soft shadows with warm tones (shadow-soft, shadow-warm)
+  - Rounded corners (2xl) for cards and buttons
+  - Subtle noise texture backgrounds
+  - Desert gradient backgrounds (bg-gradient-desert)
+- **Updated Pages**:
+  - Homepage: Desert hero with warm color scheme
+  - All 4 service pages (Remodeling, HVAC, Electrical, Plumbing): Consistent desert styling
+  - Contact page: Desert theme with GoHighLevel Form 4 integration
+  - About page: Warm neutrals with sand/clay accents
+  - Gallery page: Desert portfolio styling
+  - Navbar & Footer: Updated with warm color scheme
+- **Typography**: Playfair Display serif retained for elegant headings
+- **No pricing displayed anywhere** - premium positioning maintained
+- **First-load animations removed** - immediate page rendering for better UX
+- **Mobile CTA positioning fixed** - button at bottom-20 to avoid chat widget overlap
+
 ### Optional Integrations
 - **reCAPTCHA**: Google reCAPTCHA for enhanced form security (fallback to simple captcha)
 - **WebSocket Support**: Real-time capabilities for future features
