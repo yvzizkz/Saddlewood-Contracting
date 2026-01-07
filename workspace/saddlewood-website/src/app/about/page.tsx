@@ -80,49 +80,35 @@ export default function AboutPage() {
   ];
 
   return (
-    <>
-      <div className="relative bg-gradient-to-br from-charcoal via-charcoal to-charcoal-light overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <Image
-              src="/images/logo.png"
-              alt=""
-              width={600}
-              height={600}
-              className="opacity-20"
-            />
-          </div>
-        </div>
+    <div className="pb-20 md:pb-0">
+      <div className="relative bg-gradient-desert overflow-hidden">
+        <div className="absolute inset-0 bg-noise pointer-events-none"></div>
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20 md:py-28">
           <div className="text-center max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="h-px w-12 bg-gold/50"></div>
-              <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Our Story</span>
-              <div className="h-px w-12 bg-gold/50"></div>
-            </div>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6">
-              Building <span className="text-gold">Trust</span> Since 2007
+            <span className="inline-block text-accent uppercase tracking-[0.25em] text-sm font-medium bg-accent/10 px-5 py-2.5 rounded-full border border-accent/20 mb-6">
+              Our Story
+            </span>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-primary mb-6">
+              Building <span className="text-accent">Trust</span> Since 2007
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg text-charcoal-light leading-relaxed">
               A family-owned company dedicated to crafting exceptional living spaces 
               for Arizona's most discerning homeowners.
             </p>
           </div>
         </div>
-        
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-40"></div>
       </div>
 
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Who We Are</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 mb-6 text-charcoal">
+              <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">Who We Are</span>
+              <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 mb-6 text-primary">
                 More Than Contractors. We're Craftsmen.
               </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-charcoal-light leading-relaxed">
                 <p>
                   Founded in 2007, Saddlewood Contracting began with a simple belief: every homeowner 
                   deserves a contractor who treats their home with the same care and attention they would 
@@ -140,29 +126,29 @@ export default function AboutPage() {
                 </p>
               </div>
               
-              <div className="mt-8 flex flex-wrap gap-6">
+              <div className="mt-8 pt-8 border-t border-sandstone flex flex-wrap gap-8">
                 <div className="text-center">
-                  <p className="text-3xl font-serif text-gold">18+</p>
-                  <p className="text-sm text-gray-500 mt-1">Years Experience</p>
+                  <p className="text-3xl font-serif text-accent">18+</p>
+                  <p className="text-sm text-charcoal-light mt-1">Years Experience</p>
                 </div>
-                <div className="h-12 w-px bg-gray-200"></div>
+                <div className="h-12 w-px bg-sandstone"></div>
                 <div className="text-center">
-                  <p className="text-3xl font-serif text-gold">4</p>
-                  <p className="text-sm text-gray-500 mt-1">Trade Licenses</p>
+                  <p className="text-3xl font-serif text-accent">4</p>
+                  <p className="text-sm text-charcoal-light mt-1">Trade Licenses</p>
                 </div>
-                <div className="h-12 w-px bg-gray-200"></div>
+                <div className="h-12 w-px bg-sandstone"></div>
                 <div className="text-center">
-                  <p className="text-3xl font-serif text-charcoal">Family</p>
-                  <p className="text-sm text-gray-500 mt-1">Owned & Operated</p>
+                  <p className="text-3xl font-serif text-primary">Family</p>
+                  <p className="text-sm text-charcoal-light mt-1">Owned & Operated</p>
                 </div>
               </div>
             </div>
             
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-charcoal-light to-charcoal rounded-2xl overflow-hidden relative">
+              <div className="aspect-square bg-desert rounded-2xl overflow-hidden relative border border-sandstone-light shadow-soft">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 rounded-full border-2 border-gold/30 flex items-center justify-center">
+                    <div className="w-32 h-32 mx-auto mb-4 rounded-full border-2 border-accent/30 flex items-center justify-center bg-white shadow-soft">
                       <Image
                         src="/images/logo.png"
                         alt="Saddlewood Contracting"
@@ -171,11 +157,11 @@ export default function AboutPage() {
                         className="opacity-60"
                       />
                     </div>
-                    <p className="text-gray-400 text-sm">Team photo coming soon</p>
+                    <p className="text-charcoal-light text-sm">Team photo coming soon</p>
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-gold text-charcoal px-6 py-3 rounded-lg font-semibold shadow-gold-glow">
+              <div className="absolute -bottom-4 -right-4 bg-accent text-white px-6 py-3 rounded-xl font-semibold shadow-warm">
                 Since 2007
               </div>
             </div>
@@ -183,12 +169,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-desert">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">How We Work</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 text-charcoal">Our Process</h2>
-            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
+            <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">How We Work</span>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 text-primary">Our Process</h2>
+            <p className="text-charcoal-light mt-4 max-w-2xl mx-auto">
               From first conversation to final reveal, we guide you through every step with transparency and care.
             </p>
           </div>
@@ -196,19 +182,19 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((item, index) => (
               <div key={index} className="relative">
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow h-full">
+                <div className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-soft-lg transition-shadow h-full border border-sandstone-light/50">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 rounded-full bg-charcoal flex items-center justify-center text-gold">
+                    <div className="w-14 h-14 rounded-full bg-desert flex items-center justify-center text-accent">
                       {item.icon}
                     </div>
-                    <span className="text-4xl font-serif text-gold/30 font-bold">{item.step}</span>
+                    <span className="text-4xl font-serif text-accent/30 font-bold">{item.step}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-charcoal mb-3">{item.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-semibold text-primary mb-3">{item.title}</h3>
+                  <p className="text-charcoal-light text-sm leading-relaxed">{item.description}</p>
                 </div>
                 {index < processSteps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <svg className="w-8 h-8 text-gold/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-8 h-8 text-accent/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                     </svg>
                   </div>
@@ -219,12 +205,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-charcoal">
+      <section className="py-20 bg-primary">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Meet the Team</span>
+            <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">Meet the Team</span>
             <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 text-white">The People Behind the Work</h2>
-            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+            <p className="text-sandstone-dark mt-4 max-w-2xl mx-auto">
               Our skilled team brings decades of combined experience to every project.
             </p>
           </div>
@@ -236,26 +222,26 @@ export default function AboutPage() {
               { role: "Master Craftsmen", desc: "Bringing expertise to every trade" },
             ].map((member, index) => (
               <div key={index} className="text-center">
-                <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-charcoal-light border-2 border-gold/20 flex items-center justify-center">
-                  <svg className="w-16 h-16 text-gold/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-40 h-40 mx-auto mb-6 rounded-full bg-charcoal border-2 border-accent/20 flex items-center justify-center">
+                  <svg className="w-16 h-16 text-accent/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{member.role}</h3>
-                <p className="text-gray-400 text-sm">{member.desc}</p>
-                <p className="text-gold/50 text-xs mt-3 italic">Photo coming soon</p>
+                <p className="text-sandstone-dark text-sm">{member.desc}</p>
+                <p className="text-accent/50 text-xs mt-3 italic">Photo coming soon</p>
               </div>
             ))}
           </div>
           
           <div className="mt-12 text-center">
-            <p className="text-gray-400 mb-6">Follow us to see our team in action</p>
+            <p className="text-sandstone-dark mb-6">Follow us to see our team in action</p>
             <div className="flex justify-center gap-4">
               <a 
                 href="https://www.instagram.com/saddlewood_contracting/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-gold/20 text-gold rounded-lg hover:bg-gold/30 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-accent/20 text-accent rounded-xl hover:bg-accent/30 transition-colors"
               >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -266,7 +252,7 @@ export default function AboutPage() {
                 href="https://tiktok.com/@saddlewoodcontracting" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors"
+                className="inline-flex items-center px-6 py-3 bg-white/10 text-white rounded-xl hover:bg-white/20 transition-colors"
               >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/>
@@ -281,22 +267,22 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Got Questions?</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 text-charcoal">Frequently Asked Questions</h2>
+            <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">Got Questions?</span>
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 text-primary">Frequently Asked Questions</h2>
           </div>
           
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="border border-gray-200 rounded-xl overflow-hidden">
+              <div key={index} className="border border-sandstone rounded-xl overflow-hidden">
                 <details className="group">
-                  <summary className="flex items-center justify-between p-6 cursor-pointer bg-gray-50 hover:bg-gray-100 transition-colors">
-                    <h3 className="font-semibold text-charcoal pr-4">{faq.question}</h3>
-                    <svg className="w-5 h-5 text-gold flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <summary className="flex items-center justify-between p-6 cursor-pointer bg-desert hover:bg-sandstone-light/50 transition-colors">
+                    <h3 className="font-semibold text-primary pr-4">{faq.question}</h3>
+                    <svg className="w-5 h-5 text-accent flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                   </summary>
                   <div className="p-6 bg-white">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                    <p className="text-charcoal-light leading-relaxed">{faq.answer}</p>
                   </div>
                 </details>
               </div>
@@ -305,31 +291,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-br from-charcoal to-charcoal-light">
+      <section className="py-16 bg-primary">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Ready to Start?</span>
+          <span className="text-accent uppercase tracking-[0.2em] text-sm font-medium">Ready to Start?</span>
           <h2 className="font-serif text-3xl font-semibold mt-3 mb-6 text-white">
             Let's Discuss Your Project
           </h2>
-          <p className="text-gray-400 mb-8 max-w-xl mx-auto">
+          <p className="text-sandstone-dark mb-8 max-w-xl mx-auto">
             Every great project begins with a conversation. Schedule your consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/contact" 
-              className="bg-gradient-to-r from-gold to-gold-dark text-charcoal px-8 py-4 rounded-lg font-semibold hover:shadow-gold-glow transition-all duration-300"
+              className="bg-accent text-white px-8 py-4 rounded-xl font-medium shadow-warm hover:shadow-warm-lg hover:bg-clay transition-all duration-300"
             >
               Schedule Consultation
             </Link>
             <a 
               href="tel:4809996100" 
-              className="border border-gold/50 text-gold hover:bg-gold/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
+              className="border border-accent/50 text-accent hover:bg-accent/10 px-8 py-4 rounded-xl font-medium transition-all duration-300"
             >
               (480) 999-6100
             </a>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

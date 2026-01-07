@@ -2,34 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Paradise Valley Desert Color Palette */
-  --color-primary: #2c2622;
-  --color-primary-darker: #1a1714;
-  --color-secondary: #faf8f5;
-  --color-accent: #a67c52;
-  --color-accent-dark: #8b6914;
-  
-  /* Sandstone tones */
-  --color-sandstone: #d4c4a8;
-  --color-sandstone-light: #e8dcc8;
-  --color-sandstone-dark: #b8a88c;
-  
-  /* Clay/terracotta tones */
-  --color-clay: #c4846a;
-  --color-clay-light: #d9a08a;
-  
-  /* Sage green accents */
-  --color-sage: #8a9a7a;
-  --color-sage-light: #a8b89a;
-  
-  /* Warm whites and neutrals */
-  --color-warmwhite: #fdfcfa;
-  --color-desert: #f5f0e8;
-  --color-charcoal: #3d3631;
-  --color-charcoal-light: #5a534d;
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -41,8 +13,7 @@
   }
   
   button, a {
-    @apply min-h-[44px] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50
-           focus:ring-offset-2 focus:ring-offset-secondary transition-all duration-200;
+    @apply min-h-[44px] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-secondary transition-all duration-200;
   }
   
   h1 {

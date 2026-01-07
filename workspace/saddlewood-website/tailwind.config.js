@@ -7,22 +7,37 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary)',
-        'primary-darker': 'var(--color-primary-darker)',
-        secondary: 'var(--color-secondary)',
-        accent: 'var(--color-accent)',
-        'accent-dark': 'var(--color-accent-dark)',
-        sandstone: 'var(--color-sandstone)',
-        'sandstone-light': 'var(--color-sandstone-light)',
-        'sandstone-dark': 'var(--color-sandstone-dark)',
-        clay: 'var(--color-clay)',
-        'clay-light': 'var(--color-clay-light)',
-        sage: 'var(--color-sage)',
-        'sage-light': 'var(--color-sage-light)',
-        warmwhite: 'var(--color-warmwhite)',
-        desert: 'var(--color-desert)',
-        charcoal: 'var(--color-charcoal)',
-        'charcoal-light': 'var(--color-charcoal-light)',
+        primary: {
+          DEFAULT: '#2c2622',
+          darker: '#1a1714',
+        },
+        secondary: '#faf8f5',
+        accent: {
+          DEFAULT: '#a67c52',
+          dark: '#8b6914',
+        },
+        sandstone: {
+          DEFAULT: '#d4c4a8',
+          light: '#e8dcc8',
+          dark: '#b8a88c',
+        },
+        clay: {
+          DEFAULT: '#c4846a',
+          light: '#d9a08a',
+        },
+        sage: {
+          DEFAULT: '#8a9a7a',
+          light: '#a8b89a',
+        },
+        warmwhite: '#fdfcfa',
+        desert: '#f5f0e8',
+        charcoal: {
+          DEFAULT: '#3d3631',
+          light: '#5a534d',
+        },
+        gold: '#d4af37',
+        'gold-light': '#e4c459',
+        'gold-dark': '#b8972e',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
