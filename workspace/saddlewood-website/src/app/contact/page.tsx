@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import MountainBackdrop from '@/components/MountainBackdrop';
-import MountainDivider from '@/components/MountainDivider';
 
 export const metadata: Metadata = {
   title: 'Schedule a Consultation - Saddlewood Contracting | Phoenix AZ',

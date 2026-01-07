@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import MountainBackdrop from '@/components/MountainBackdrop';
-import MountainDivider from '@/components/MountainDivider';
 
 const categories = ['All', 'Climate', 'Electrical', 'Plumbing', 'Renovations'];
 

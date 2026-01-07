@@ -2,8 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import MountainBackdrop from '@/components/MountainBackdrop';
-import MountainDivider from '@/components/MountainDivider';
-import DesertTexture from '@/components/DesertTexture';
 
 export const metadata: Metadata = {
   title: 'About Us - Saddlewood Contracting | Phoenix AZ',

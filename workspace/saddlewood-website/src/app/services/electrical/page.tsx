@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import MountainBackdrop from '@/components/MountainBackdrop';
-import MountainDivider from '@/components/MountainDivider';
 
 export const metadata: Metadata = {
   title: 'Electrical Services | Smart Home & Lighting | Saddlewood Contracting',
