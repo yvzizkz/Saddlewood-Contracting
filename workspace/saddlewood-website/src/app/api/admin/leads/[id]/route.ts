@@ -120,7 +120,7 @@ export async function PATCH(
       return NextResponse.json({
         success: false,
         message: 'Validation error',
-        errors: error.errors,
+        errors: error.issues,
       }, { status: 400 });
     }
     
