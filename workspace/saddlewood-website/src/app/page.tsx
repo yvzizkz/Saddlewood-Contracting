@@ -37,6 +37,9 @@ export default function Home() {
     <div className="pb-20 md:pb-0">
       <Hero />
       
+      {/* Video Showcase Section - Featured near top for visibility */}
+      <VideoShowcase />
+      
       <section className="py-24 sm:py-28 bg-white relative">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-sandstone to-transparent"></div>
         
@@ -67,9 +70,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      {/* Video Showcase Section */}
-      <VideoShowcase />
       
       <section className="relative py-20 sm:py-24 bg-gradient-to-b from-sandstone-light via-sandstone to-sandstone-light overflow-hidden">
         <div className="absolute inset-0 opacity-[0.02] bg-linen-texture"></div>
