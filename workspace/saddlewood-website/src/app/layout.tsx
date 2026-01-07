@@ -12,21 +12,6 @@ const MobileEstimateButton = dynamic(() => import('@/components/MobileEstimateBu
   ssr: false
 });
 
-// Import components with dynamic loading and disable SSR
-// This ensures components work properly with localStorage and browser APIs
-const WelcomeScreen = dynamic(() => import('@/components/WelcomeScreen'), { 
-  ssr: false 
-});
-
-// Dynamic import for loading animation to use browser APIs
-const LoadingAnimation = dynamic(() => import('@/components/LoadingAnimation'), {
-  ssr: false
-});
-
-// Dynamic import for animated background pattern
-const AnimatedBackgroundPattern = dynamic(() => import('@/components/AnimatedBackgroundPattern'), {
-  ssr: false
-});
 
 // Load Inter font - clean, modern sans-serif
 const inter = Inter({ 
@@ -198,15 +183,6 @@ export default function RootLayout({
       </head>
       <body className="flex flex-col min-h-screen text-gray-800">
         <AuthProvider>
-          {/* Construction-themed loading animation */}
-          <LoadingAnimation />
-          
-          {/* Welcome Screen with company mission animation */}
-          <WelcomeScreen />
-          
-          {/* Animated blueprint or construction background pattern */}
-          <AnimatedBackgroundPattern patternType="blueprint" speed="slow" opacity={0.04} />
-          
           <Navbar />
           <main className="flex-grow">
             {children}
