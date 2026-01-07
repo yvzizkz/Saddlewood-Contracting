@@ -1,0 +1,29 @@
+You are working on my website project for saddlewoodcontracting.com (in this Replit repo). I need 3 changes:
+
+1) Remove first-load animation
+- Find and remove/disable the “first time page load” animation (any splash, fade-in, slide-in, loader, or Framer Motion/GSAP intro).
+- Keep normal hover/scroll micro-interactions if they exist, but the initial page load should render immediately with no entrance animation.
+- Also remove any code that tracks “first load” (localStorage flags, state like isFirstLoad/hasLoadedOnce, etc.) if that’s what’s driving it.
+
+2) Redesign the full theme: “Modern Paradise Valley Desert”
+Update the site’s overall look and feel to a modern Paradise Valley / Sonoran desert vibe:
+- Visual direction: clean luxury desert-modern (Paradise Valley), warm neutrals + sandstone + clay + subtle sage accents, lots of whitespace, premium feel.
+- Typography: modern, readable, minimal (no playful fonts). Use a strong heading font + clean body font.
+- UI: rounded corners, soft shadows, tasteful borders, consistent spacing scale, better hierarchy.
+- Backgrounds/textures: subtle desert gradients (sand -> warm stone), optional very subtle noise texture (don’t overdo).
+- Imagery: if there are stock photos, update to match desert luxury construction/remodeling (but do not break existing image paths—only swap if images are already in the repo; otherwise keep images and adjust styling).
+- Apply this theme consistently across: hero, buttons, cards/sections, nav, footer, forms, and headings.
+
+3) Fix mobile CTA overlap (chat button vs schedule button)
+- On mobile widths, the chat widget button overlaps the “Schedule Consultation” button.
+- Fix by adjusting layout/z-index/spacing so both are usable. Options:
+  a) add bottom padding to the page content so fixed chat button doesn’t cover CTAs,
+  b) reposition the chat button slightly higher on mobile,
+  c) reduce the size of the chat button on mobile,
+  d) ensure proper z-index so CTAs remain clickable.
+- Implement the best solution and verify on common widths (375px, 390px, 428px).
+
+Deliverables
+- Make the changes directly in the codebase.
+- Tell me exactly which files you modified and what you changed.
+- After changes, ensure the site still builds with no errors and there are no broken imports.
