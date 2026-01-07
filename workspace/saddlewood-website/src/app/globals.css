@@ -8,12 +8,12 @@
   }
   
   body {
-    @apply bg-secondary text-primary antialiased;
+    @apply bg-ivory text-primary antialiased;
     font-feature-settings: "kern" 1, "liga" 1;
   }
   
   button, a {
-    @apply min-h-[44px] focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-secondary transition-all duration-200;
+    @apply min-h-[44px] focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-ivory transition-all duration-200;
   }
   
   h1 {
@@ -33,7 +33,7 @@
   }
   
   p, li {
-    @apply leading-relaxed text-charcoal-light;
+    @apply leading-relaxed text-primary/70;
   }
 }
 
@@ -43,47 +43,47 @@
   }
   
   .btn-primary {
-    @apply bg-primary text-secondary rounded-xl px-6 py-3 sm:px-8 sm:py-4 font-medium 
-    hover:bg-charcoal shadow-soft hover:shadow-soft-lg transition-all duration-300 text-sm sm:text-base;
+    @apply bg-primary text-white rounded-xl px-6 py-3 sm:px-8 sm:py-4 font-medium 
+    hover:bg-charcoal shadow-soft hover:shadow-lift transition-all duration-300 text-sm sm:text-base;
   }
   
   .btn-secondary {
     @apply bg-transparent text-primary rounded-xl px-6 py-3 sm:px-8 sm:py-4 font-medium 
-    border-2 border-primary hover:bg-primary hover:text-secondary transition-all duration-300 text-sm sm:text-base;
+    border border-taupe/30 hover:border-gold/50 transition-all duration-300 text-sm sm:text-base;
   }
   
-  .btn-accent {
-    @apply bg-accent text-white rounded-xl px-6 py-3 sm:px-8 sm:py-4 font-medium 
-    hover:bg-accent-dark shadow-warm hover:shadow-warm-lg transition-all duration-300 text-sm sm:text-base;
+  .btn-gold {
+    @apply bg-gold text-white rounded-xl px-6 py-3 sm:px-8 sm:py-4 font-medium 
+    hover:bg-gold-dark shadow-gold hover:shadow-gold-lg transition-all duration-300 text-sm sm:text-base;
   }
   
   .nav-link {
-    @apply text-charcoal hover:text-accent transition-colors duration-200 text-sm font-medium tracking-wide;
+    @apply text-primary hover:text-gold transition-colors duration-200 text-sm font-medium tracking-wide;
   }
   
   .card {
-    @apply rounded-2xl bg-white p-6 sm:p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 border border-sandstone-light/50;
+    @apply rounded-2xl bg-white p-6 sm:p-8 shadow-soft hover:shadow-lift transition-all duration-300 border border-sandstone/50;
   }
   
-  .card-desert {
-    @apply rounded-2xl bg-gradient-sand p-6 sm:p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300;
+  .card-ivory {
+    @apply rounded-2xl bg-ivory p-6 sm:p-8 shadow-soft hover:shadow-lift transition-all duration-300;
   }
   
   .mobile-menu-item {
-    @apply flex items-center py-3 px-4 rounded-xl hover:bg-sandstone-light/50 transition-colors duration-200;
+    @apply flex items-center py-3 px-4 rounded-xl hover:bg-sandstone/50 transition-colors duration-200;
   }
   
   .service-card {
-    @apply rounded-2xl bg-white p-6 sm:p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 
-    border border-sandstone-light/50 hover:border-accent/30;
+    @apply rounded-2xl bg-white p-6 sm:p-8 shadow-soft hover:shadow-lift transition-all duration-300 
+    border border-sandstone/50 hover:border-gold/30;
   }
   
   .section-padding {
     @apply py-16 sm:py-20 lg:py-24;
   }
   
-  .text-gradient {
-    @apply bg-gradient-to-r from-accent to-clay bg-clip-text text-transparent;
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent;
   }
 }
 
@@ -92,7 +92,7 @@
     text-wrap: balance;
   }
   
-  .bg-noise {
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  .bg-linen-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='linen'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23linen)' opacity='0.5'/%3E%3C/svg%3E");
   }
 }
