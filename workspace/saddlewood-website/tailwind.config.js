@@ -28,6 +28,16 @@ module.exports = {
         sage: {
           DEFAULT: '#8a9a7a',
           light: '#a8b89a',
+          dark: '#6b7a5a',
+        },
+        terracotta: {
+          DEFAULT: '#d4613a',
+          light: '#e67e50',
+          dark: '#b84e2a',
+        },
+        coral: {
+          DEFAULT: '#e8927c',
+          light: '#f0a898',
         },
         warmwhite: '#fdfcfa',
         desert: '#f5f0e8',
@@ -56,6 +66,11 @@ module.exports = {
         'gradient-sand': 'linear-gradient(135deg, #f5f0e8 0%, #ebe4d8 100%)',
         'gradient-warm': 'linear-gradient(135deg, #a67c52 0%, #8b6914 100%)',
         'gradient-hero': 'linear-gradient(180deg, rgba(250,248,245,0) 0%, rgba(250,248,245,1) 100%)',
+        'gradient-sunset': 'linear-gradient(180deg, #f4d4c0 0%, #d4a574 100%)',
+        'gradient-sunrise': 'linear-gradient(180deg, #faf8f5 0%, #f4d4c0 50%, #e8c4a8 100%)',
+        'gradient-cta': 'linear-gradient(135deg, #d4613a 0%, #e67e50 100%)',
+        'gradient-cta-hover': 'linear-gradient(135deg, #b84e2a 0%, #d4613a 100%)',
+        'mountain-fade': 'linear-gradient(180deg, transparent 0%, rgba(245,240,232,0.8) 100%)',
       },
       borderRadius: {
         'xl': '1rem',
