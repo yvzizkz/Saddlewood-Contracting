@@ -8,6 +8,38 @@ interface ServiceCardProps {
   icon: string;
 }
 
+const getServiceBackground = (iconName: string) => {
+  switch (iconName) {
+    case 'home':
+      return (
+        <svg className="absolute right-0 top-0 w-32 h-32 opacity-[0.04]" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M10 90V50l40-35 40 35v40H60V65H40v25H10z" />
+        </svg>
+      );
+    case 'ac_unit':
+      return (
+        <svg className="absolute right-0 top-0 w-32 h-32 opacity-[0.04]" viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="50" cy="50" r="20" />
+          <path d="M50 10v20M50 70v20M10 50h20M70 50h20M22 22l14 14M64 64l14 14M22 78l14-14M64 36l14-14" strokeWidth="6" stroke="currentColor" fill="none" />
+        </svg>
+      );
+    case 'bolt':
+      return (
+        <svg className="absolute right-0 top-0 w-32 h-32 opacity-[0.04]" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M55 10L25 55h25l-5 35 30-45H50l5-35z" />
+        </svg>
+      );
+    case 'water_drop':
+      return (
+        <svg className="absolute right-0 top-0 w-32 h-32 opacity-[0.04]" viewBox="0 0 100 100" fill="currentColor">
+          <path d="M50 10c-5 10-25 30-25 50a25 25 0 0050 0c0-20-20-40-25-50z" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+};
+
 export default function ServiceCard({ title, description, link, icon }: ServiceCardProps) {
   const renderIcon = (iconName: string) => {
     switch (iconName) {
@@ -50,7 +82,10 @@ export default function ServiceCard({ title, description, link, icon }: ServiceC
     <Link href={link} className="block">
       <div className="relative rounded-2xl bg-white border border-sandstone-light/80 p-6 sm:p-8 
                       hover:shadow-soft-lg hover:border-accent/30 transition-all duration-300 group overflow-hidden">
-        <div className="flex flex-col sm:flex-row items-start gap-5">
+        <div className="text-sandstone-dark">
+          {getServiceBackground(icon)}
+        </div>
+        <div className="flex flex-col sm:flex-row items-start gap-5 relative z-10">
           <div className="flex-shrink-0">
             <div className="w-14 h-14 rounded-xl bg-desert text-accent flex items-center justify-center
                            group-hover:bg-accent group-hover:text-white transition-all duration-300
