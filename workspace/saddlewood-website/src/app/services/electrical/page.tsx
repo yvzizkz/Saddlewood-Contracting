@@ -66,7 +66,7 @@ export default function ElectricalPage() {
                 <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start">
                   <Link 
                     href="/contact" 
-                    className="inline-flex items-center justify-center px-10 py-5 bg-gold text-white font-medium rounded-xl shadow-gold hover:shadow-gold-lg hover:bg-gold-dark transition-all duration-300"
+                    className="inline-flex items-center justify-center px-10 py-5 bg-primary text-white font-semibold font-medium rounded-xl shadow-soft-lg hover:shadow-lift hover:bg-charcoal transition-all duration-300"
                   >
                     Schedule Consultation
                   </Link>
@@ -203,7 +203,7 @@ export default function ElectricalPage() {
             <div className="flex flex-col sm:flex-row gap-5 justify-center">
               <Link 
                 href="/contact" 
-                className="bg-gold text-white px-10 py-5 rounded-xl font-medium shadow-gold hover:shadow-gold-lg hover:bg-gold-dark transition-all duration-300"
+                className="bg-primary text-white font-semibold px-10 py-5 rounded-xl font-medium shadow-soft-lg hover:shadow-lift hover:bg-charcoal transition-all duration-300"
               >
                 Schedule Consultation
               </Link>

@@ -288,8 +288,8 @@ export default function Home() {
             <Link 
               href="/contact" 
               className="group inline-flex items-center justify-center px-8 py-4 
-                        bg-gradient-to-r from-gold to-gold-dark text-white font-medium 
-                        rounded-xl shadow-gold hover:shadow-gold-lg
+                        bg-primary text-white font-semibold 
+                        rounded-xl shadow-soft-lg hover:shadow-lift hover:bg-charcoal
                         transition-all duration-300"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

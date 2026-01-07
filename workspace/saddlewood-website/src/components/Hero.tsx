@@ -81,16 +81,14 @@ export default function Hero() {
               <Link 
                 href="/contact" 
                 className="group inline-flex items-center justify-center px-8 py-4 
-                          bg-gradient-to-r from-gold to-gold-dark text-white font-medium 
-                          rounded-xl shadow-gold hover:shadow-gold-lg
-                          transition-all duration-300 relative overflow-hidden"
+                          bg-primary text-white font-semibold 
+                          rounded-xl shadow-soft-lg hover:shadow-lift hover:bg-charcoal
+                          transition-all duration-300"
               >
-                <span className="relative z-10 flex items-center">
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
-                  Schedule a Consultation
-                </span>
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                Schedule a Consultation
               </Link>
               
               <a 
