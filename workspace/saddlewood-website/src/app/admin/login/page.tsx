@@ -141,75 +141,75 @@ export default function AdminLoginPage() {
       {/* Left side - Form */}
       <div className="w-full md:w-1/2 p-6 flex items-center justify-center">
         <div className="w-full max-w-md">
-          <h1 className="text-3xl font-bold mb-6 text-center">Admin Portal</h1>
-          
+          <h1 className="text-3xl font-bold mb-6 text-center text-text-primary">Admin Portal</h1>
+
           {/* Toggle between login and register */}
-          <div className="flex mb-6 border rounded-md overflow-hidden">
+          <div className="flex mb-6 border border-border-default rounded-md overflow-hidden">
             <button
-              className={`flex-1 py-3 text-center transition-colors ${isLogin ? 'bg-black text-white' : 'bg-gray-100'}`}
+              className={`flex-1 py-3 text-center transition-colors ${isLogin ? 'bg-gold text-text-inverse' : 'bg-surface-light text-text-secondary'}`}
               onClick={() => setIsLogin(true)}
             >
               Login
             </button>
             <button
-              className={`flex-1 py-3 text-center transition-colors ${!isLogin ? 'bg-black text-white' : 'bg-gray-100'}`}
+              className={`flex-1 py-3 text-center transition-colors ${!isLogin ? 'bg-gold text-text-inverse' : 'bg-surface-light text-text-secondary'}`}
               onClick={() => setIsLogin(false)}
             >
               Register
             </button>
           </div>
-          
+
           {/* Status messages */}
           {formStatus.success && (
-            <div className="bg-green-100 text-green-700 p-4 rounded-lg mb-6">
+            <div className="bg-green-900/30 text-green-400 p-4 rounded-lg mb-6">
               {formStatus.message}
             </div>
           )}
-          
+
           {formStatus.error && (
-            <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-6">
+            <div className="bg-red-900/30 text-red-400 p-4 rounded-lg mb-6">
               {formStatus.message}
             </div>
           )}
-          
+
           {/* Login Form */}
           {isLogin ? (
             <form onSubmit={handleLoginSubmit(onLoginSubmit)} className="space-y-4">
               <div>
-                <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="username" className="block text-text-secondary font-medium mb-2">
                   Username
                 </label>
                 <input
                   id="username"
                   type="text"
                   {...registerLogin('username')}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-                    ${loginErrors.username ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-4 py-2 border rounded-lg bg-surface-light text-text-primary focus:outline-none focus:ring-2 focus:ring-gold transition-colors
+                    ${loginErrors.username ? 'border-red-500' : 'border-border-default'}`}
                 />
                 {loginErrors.username && (
-                  <p className="text-red-500 text-sm mt-1">{loginErrors.username.message}</p>
+                  <p className="text-red-400 text-sm mt-1">{loginErrors.username.message}</p>
                 )}
               </div>
-              
+
               <div>
-                <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="password" className="block text-text-secondary font-medium mb-2">
                   Password
                 </label>
                 <input
                   id="password"
                   type="password"
                   {...registerLogin('password')}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-                    ${loginErrors.password ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-4 py-2 border rounded-lg bg-surface-light text-text-primary focus:outline-none focus:ring-2 focus:ring-gold transition-colors
+                    ${loginErrors.password ? 'border-red-500' : 'border-border-default'}`}
                 />
                 {loginErrors.password && (
-                  <p className="text-red-500 text-sm mt-1">{loginErrors.password.message}</p>
+                  <p className="text-red-400 text-sm mt-1">{loginErrors.password.message}</p>
                 )}
               </div>
-              
+
               <button
                 type="submit"
-                className="w-full py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+                className="w-full py-3 bg-gold text-text-inverse font-medium rounded-lg hover:bg-gold-dark transition-colors"
                 disabled={formStatus.submitting}
               >
                 {formStatus.submitting ? 'Logging in...' : 'Login'}
@@ -219,58 +219,58 @@ export default function AdminLoginPage() {
             /* Registration Form */
             <form onSubmit={handleRegisterSubmit(onRegisterSubmit)} className="space-y-4">
               <div>
-                <label htmlFor="reg-username" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="reg-username" className="block text-text-secondary font-medium mb-2">
                   Username
                 </label>
                 <input
                   id="reg-username"
                   type="text"
                   {...registerRegister('username')}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-                    ${registerErrors.username ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-4 py-2 border rounded-lg bg-surface-light text-text-primary focus:outline-none focus:ring-2 focus:ring-gold transition-colors
+                    ${registerErrors.username ? 'border-red-500' : 'border-border-default'}`}
                 />
                 {registerErrors.username && (
-                  <p className="text-red-500 text-sm mt-1">{registerErrors.username.message}</p>
+                  <p className="text-red-400 text-sm mt-1">{registerErrors.username.message}</p>
                 )}
               </div>
-              
+
               <div>
-                <label htmlFor="reg-name" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="reg-name" className="block text-text-secondary font-medium mb-2">
                   Full Name
                 </label>
                 <input
                   id="reg-name"
                   type="text"
                   {...registerRegister('name')}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-                    ${registerErrors.name ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-4 py-2 border rounded-lg bg-surface-light text-text-primary focus:outline-none focus:ring-2 focus:ring-gold transition-colors
+                    ${registerErrors.name ? 'border-red-500' : 'border-border-default'}`}
                 />
                 {registerErrors.name && (
-                  <p className="text-red-500 text-sm mt-1">{registerErrors.name.message}</p>
+                  <p className="text-red-400 text-sm mt-1">{registerErrors.name.message}</p>
                 )}
               </div>
-              
+
               <div>
-                <label htmlFor="reg-password" className="block text-gray-700 font-medium mb-2">
+                <label htmlFor="reg-password" className="block text-text-secondary font-medium mb-2">
                   Password
                 </label>
                 <input
                   id="reg-password"
                   type="password"
                   {...registerRegister('password')}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-colors
-                    ${registerErrors.password ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-4 py-2 border rounded-lg bg-surface-light text-text-primary focus:outline-none focus:ring-2 focus:ring-gold transition-colors
+                    ${registerErrors.password ? 'border-red-500' : 'border-border-default'}`}
                 />
                 {registerErrors.password && (
-                  <p className="text-red-500 text-sm mt-1">{registerErrors.password.message}</p>
+                  <p className="text-red-400 text-sm mt-1">{registerErrors.password.message}</p>
                 )}
               </div>
-              
 
-              
+
+
               <button
                 type="submit"
-                className="w-full py-3 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+                className="w-full py-3 bg-gold text-text-inverse font-medium rounded-lg hover:bg-gold-dark transition-colors"
                 disabled={formStatus.submitting}
               >
                 {formStatus.submitting ? 'Registering...' : 'Register'}
@@ -279,32 +279,32 @@ export default function AdminLoginPage() {
           )}
         </div>
       </div>
-      
+
       {/* Right side - Hero Section */}
-      <div className="w-full md:w-1/2 bg-gray-100 p-6 md:p-12 flex items-center justify-center">
+      <div className="w-full md:w-1/2 bg-surface-light p-6 md:p-12 flex items-center justify-center">
         <div className="text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Saddlewood Admin</h2>
-          <p className="text-lg mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-text-primary">Saddlewood Admin</h2>
+          <p className="text-lg mb-6 text-text-secondary">
             Manage your leads, track communications, and stay on top of your business with the Saddlewood Contracting admin dashboard.
           </p>
           <div className="flex flex-col space-y-4">
             <div className="flex items-start">
-              <svg className="w-6 h-6 text-black mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6 text-gold mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
               </svg>
-              <p className="text-gray-700">View and manage all contact form submissions</p>
+              <p className="text-text-secondary">View and manage all contact form submissions</p>
             </div>
             <div className="flex items-start">
-              <svg className="w-6 h-6 text-black mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6 text-gold mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
               </svg>
-              <p className="text-gray-700">Track communications with potential clients</p>
+              <p className="text-text-secondary">Track communications with potential clients</p>
             </div>
             <div className="flex items-start">
-              <svg className="w-6 h-6 text-black mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6 text-gold mr-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
               </svg>
-              <p className="text-gray-700">Organize leads by service type and status</p>
+              <p className="text-text-secondary">Organize leads by service type and status</p>
             </div>
           </div>
         </div>

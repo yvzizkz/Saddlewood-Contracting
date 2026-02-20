@@ -37,14 +37,14 @@ export default function LicenseInfoPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-16 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-obsidian via-surface to-obsidian text-text-primary py-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <span className="text-gold uppercase tracking-[0.3em] text-sm font-medium">Credentials</span>
           <h1 className="font-serif text-3xl md:text-5xl font-semibold mt-4 mb-4">
             Arizona ROC Licenses
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-silver-dark max-w-2xl mx-auto">
             Fully licensed, bonded, and insured for your protection
           </p>
         </div>
@@ -53,46 +53,46 @@ export default function LicenseInfoPage() {
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-10">
-          <p className="text-gray-600 text-lg leading-relaxed">
-            Saddlewood Contracting holds four Arizona Registrar of Contractors (ROC) licenses, 
-            allowing us to legally and professionally perform a comprehensive range of home services 
+          <p className="text-silver-dark text-lg leading-relaxed">
+            Saddlewood Contracting holds four Arizona Registrar of Contractors (ROC) licenses,
+            allowing us to legally and professionally perform a comprehensive range of home services
             throughout the Phoenix metropolitan area.
           </p>
         </div>
 
         <div className="space-y-6">
           {licenses.map((license, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-premium transition-all duration-300"
+            <div
+              key={index}
+              className="bg-surface rounded-2xl shadow-lg border border-border-default overflow-hidden hover:shadow-premium transition-all duration-300"
             >
               <div className="flex items-stretch">
-                <div className="w-28 bg-charcoal flex flex-col items-center justify-center p-4">
-                  <span className="text-gray-400 text-xs uppercase tracking-wider mb-1">ROC</span>
+                <div className="w-28 bg-obsidian flex flex-col items-center justify-center p-4">
+                  <span className="text-text-muted text-xs uppercase tracking-wider mb-1">ROC</span>
                   <span className="text-gold font-serif text-2xl font-bold">{license.roc}</span>
                 </div>
                 <div className="flex-1 p-6">
                   <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-3">
                     <div>
-                      <h2 className="font-serif text-xl font-semibold text-charcoal">{license.category}</h2>
+                      <h2 className="font-serif text-xl font-semibold text-text-primary">{license.category}</h2>
                       <p className="text-gold text-sm font-medium">{license.classification}</p>
                     </div>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{license.description}</p>
+                  <p className="text-silver-dark text-sm leading-relaxed">{license.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-br from-charcoal to-charcoal-light rounded-2xl p-8 text-center">
-          <h2 className="font-serif text-2xl font-semibold text-white mb-4">Have Questions?</h2>
-          <p className="text-gray-400 mb-6 max-w-lg mx-auto">
+        <div className="mt-16 bg-gradient-to-br from-obsidian to-surface rounded-2xl p-8 text-center">
+          <h2 className="font-serif text-2xl font-semibold text-text-primary mb-4">Have Questions?</h2>
+          <p className="text-text-muted mb-6 max-w-lg mx-auto">
             Our team is ready to help with any questions about our qualifications, services, or how we can assist with your project.
           </p>
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-charcoal font-semibold rounded-lg hover:shadow-gold-glow transition-all duration-300"
+          <Link
+            href="/contact"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-text-inverse font-semibold rounded-lg hover:shadow-gold-glow transition-all duration-300"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>

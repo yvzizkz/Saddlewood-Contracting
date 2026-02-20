@@ -41,11 +41,11 @@ export default function LeadDetailPage() {
     try {
       setLoading(true);
       const response = await fetch(`/api/admin/leads/${params.id}`);
-      
+
       if (!response.ok) {
         throw new Error("Failed to fetch lead");
       }
-      
+
       const data = await response.json();
       setLead(data.lead);
       setNotes(data.lead.notes || "");
@@ -61,7 +61,7 @@ export default function LeadDetailPage() {
   // Update lead status
   const updateLeadStatus = async (newStatus: string) => {
     if (!lead) return;
-    
+
     try {
       setSubmitting(true);
       const response = await fetch(`/api/admin/leads/${lead.id}`, {
@@ -71,11 +71,11 @@ export default function LeadDetailPage() {
         },
         body: JSON.stringify({ status: newStatus }),
       });
-      
+
       if (!response.ok) {
         throw new Error("Failed to update lead status");
       }
-      
+
       // Refresh lead data
       fetchLead();
     } catch (err: any) {
@@ -89,7 +89,7 @@ export default function LeadDetailPage() {
   // Update lead notes
   const updateLeadNotes = async () => {
     if (!lead) return;
-    
+
     try {
       setSubmitting(true);
       const response = await fetch(`/api/admin/leads/${lead.id}`, {
@@ -99,11 +99,11 @@ export default function LeadDetailPage() {
         },
         body: JSON.stringify({ notes }),
       });
-      
+
       if (!response.ok) {
         throw new Error("Failed to update lead notes");
       }
-      
+
       // Refresh lead data
       fetchLead();
     } catch (err: any) {
@@ -117,7 +117,7 @@ export default function LeadDetailPage() {
   // Mark as processed
   const markAsProcessed = async () => {
     if (!lead) return;
-    
+
     try {
       setSubmitting(true);
       const response = await fetch(`/api/admin/leads/${lead.id}`, {
@@ -127,11 +127,11 @@ export default function LeadDetailPage() {
         },
         body: JSON.stringify({ processed: !lead.processed }),
       });
-      
+
       if (!response.ok) {
         throw new Error("Failed to update lead processed status");
       }
-      
+
       // Refresh lead data
       fetchLead();
     } catch (err: any) {
@@ -146,7 +146,7 @@ export default function LeadDetailPage() {
   if (status === "loading" || loading) {
     return (
       <div className="flex items-center justify-center min-h-[calc(100vh-200px)]">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold"></div>
       </div>
     );
   }
@@ -155,14 +155,14 @@ export default function LeadDetailPage() {
   if (error || !lead) {
     return (
       <div className="container mx-auto px-4 py-8">
-        <div className="bg-red-100 text-red-700 p-4 rounded-lg mb-8">
+        <div className="bg-red-900/30 text-red-400 p-4 rounded-lg mb-8">
           {error || "Lead not found"}
         </div>
         <Link
           href="/admin"
-          className="text-black font-medium hover:underline"
+          className="text-gold font-medium hover:underline"
         >
-          ← Back to Dashboard
+          &larr; Back to Dashboard
         </Link>
       </div>
     );
@@ -173,26 +173,26 @@ export default function LeadDetailPage() {
       <div className="mb-8">
         <Link
           href="/admin"
-          className="text-black font-medium hover:underline"
+          className="text-gold font-medium hover:underline"
         >
-          ← Back to Dashboard
+          &larr; Back to Dashboard
         </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Lead Information Card */}
         <div className="md:col-span-2">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="px-6 py-4 border-b flex justify-between items-center">
-              <h2 className="text-xl font-semibold">Lead Information</h2>
+          <div className="bg-surface rounded-lg shadow-md overflow-hidden">
+            <div className="px-6 py-4 border-b border-border-default flex justify-between items-center">
+              <h2 className="text-xl font-semibold text-text-primary">Lead Information</h2>
               <span
                 className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
                 ${
                   lead.status === "new"
-                    ? "bg-blue-100 text-blue-800"
+                    ? "bg-blue-900/30 text-blue-400"
                     : lead.status === "contacted"
-                    ? "bg-yellow-100 text-yellow-800"
-                    : "bg-green-100 text-green-800"
+                    ? "bg-yellow-900/30 text-yellow-400"
+                    : "bg-green-900/30 text-green-400"
                 }`}
               >
                 {lead.status.charAt(0).toUpperCase() + lead.status.slice(1)}
@@ -201,40 +201,40 @@ export default function LeadDetailPage() {
             <div className="p-6">
               <div className="space-y-4">
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500">Name</h3>
-                  <p className="mt-1 text-lg">{lead.name}</p>
+                  <h3 className="text-sm font-medium text-silver-dark">Name</h3>
+                  <p className="mt-1 text-lg text-text-primary">{lead.name}</p>
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500">Email</h3>
-                  <p className="mt-1 text-lg">{lead.email}</p>
+                  <h3 className="text-sm font-medium text-silver-dark">Email</h3>
+                  <p className="mt-1 text-lg text-text-primary">{lead.email}</p>
                 </div>
                 {lead.phone && (
                   <div>
-                    <h3 className="text-sm font-medium text-gray-500">Phone</h3>
-                    <p className="mt-1 text-lg">{lead.phone}</p>
+                    <h3 className="text-sm font-medium text-silver-dark">Phone</h3>
+                    <p className="mt-1 text-lg text-text-primary">{lead.phone}</p>
                   </div>
                 )}
                 {lead.service && (
                   <div>
-                    <h3 className="text-sm font-medium text-gray-500">
+                    <h3 className="text-sm font-medium text-silver-dark">
                       Service Needed
                     </h3>
-                    <p className="mt-1 text-lg">
+                    <p className="mt-1 text-lg text-text-primary">
                       {lead.service.charAt(0).toUpperCase() + lead.service.slice(1)}
                     </p>
                   </div>
                 )}
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500">Message</h3>
-                  <p className="mt-1 p-4 bg-gray-50 rounded-md whitespace-pre-wrap">
+                  <h3 className="text-sm font-medium text-silver-dark">Message</h3>
+                  <p className="mt-1 p-4 bg-surface-light rounded-md whitespace-pre-wrap text-text-secondary">
                     {lead.message}
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-sm font-medium text-gray-500">
+                  <h3 className="text-sm font-medium text-silver-dark">
                     Submission Date
                   </h3>
-                  <p className="mt-1">
+                  <p className="mt-1 text-text-primary">
                     {new Date(lead.createdAt).toLocaleString()}
                   </p>
                 </div>
@@ -246,9 +246,9 @@ export default function LeadDetailPage() {
         {/* Actions and Notes Card */}
         <div className="md:col-span-1 space-y-8">
           {/* Status Actions */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="px-6 py-4 border-b">
-              <h2 className="text-lg font-semibold">Actions</h2>
+          <div className="bg-surface rounded-lg shadow-md overflow-hidden">
+            <div className="px-6 py-4 border-b border-border-default">
+              <h2 className="text-lg font-semibold text-text-primary">Actions</h2>
             </div>
             <div className="p-6 space-y-4">
               <button
@@ -256,8 +256,8 @@ export default function LeadDetailPage() {
                 disabled={lead.status === "new" || submitting}
                 className={`w-full py-2 rounded-md text-center font-medium ${
                   lead.status === "new"
-                    ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                    : "bg-blue-100 text-blue-800 hover:bg-blue-200"
+                    ? "bg-surface-raised text-silver-dark cursor-not-allowed"
+                    : "bg-blue-900/30 text-blue-400 hover:bg-blue-900/50"
                 }`}
               >
                 Mark as New
@@ -267,8 +267,8 @@ export default function LeadDetailPage() {
                 disabled={lead.status === "contacted" || submitting}
                 className={`w-full py-2 rounded-md text-center font-medium ${
                   lead.status === "contacted"
-                    ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                    : "bg-yellow-100 text-yellow-800 hover:bg-yellow-200"
+                    ? "bg-surface-raised text-silver-dark cursor-not-allowed"
+                    : "bg-yellow-900/30 text-yellow-400 hover:bg-yellow-900/50"
                 }`}
               >
                 Mark as Contacted
@@ -278,8 +278,8 @@ export default function LeadDetailPage() {
                 disabled={lead.status === "completed" || submitting}
                 className={`w-full py-2 rounded-md text-center font-medium ${
                   lead.status === "completed"
-                    ? "bg-gray-100 text-gray-400 cursor-not-allowed"
-                    : "bg-green-100 text-green-800 hover:bg-green-200"
+                    ? "bg-surface-raised text-silver-dark cursor-not-allowed"
+                    : "bg-green-900/30 text-green-400 hover:bg-green-900/50"
                 }`}
               >
                 Mark as Completed
@@ -288,8 +288,8 @@ export default function LeadDetailPage() {
                 onClick={markAsProcessed}
                 className={`w-full py-2 rounded-md text-center font-medium ${
                   lead.processed
-                    ? "bg-red-100 text-red-800 hover:bg-red-200"
-                    : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                    ? "bg-red-900/30 text-red-400 hover:bg-red-900/50"
+                    : "bg-surface-light text-text-secondary hover:bg-surface-raised"
                 }`}
               >
                 {lead.processed ? "Mark as Unprocessed" : "Mark as Processed"}
@@ -298,22 +298,22 @@ export default function LeadDetailPage() {
           </div>
 
           {/* Notes */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="px-6 py-4 border-b">
-              <h2 className="text-lg font-semibold">Notes</h2>
+          <div className="bg-surface rounded-lg shadow-md overflow-hidden">
+            <div className="px-6 py-4 border-b border-border-default">
+              <h2 className="text-lg font-semibold text-text-primary">Notes</h2>
             </div>
             <div className="p-6">
               <textarea
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="w-full h-32 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-black transition-colors resize-none"
+                className="w-full h-32 p-3 border border-border-default bg-surface-light text-text-primary rounded-md focus:outline-none focus:ring-2 focus:ring-gold transition-colors resize-none"
                 placeholder="Add notes about this lead..."
               ></textarea>
               <div className="mt-4">
                 <button
                   onClick={updateLeadNotes}
                   disabled={submitting}
-                  className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors disabled:bg-gray-400"
+                  className="px-4 py-2 bg-gold text-text-inverse rounded-md hover:bg-gold-dark transition-colors disabled:bg-surface-raised"
                 >
                   {submitting ? "Saving..." : "Save Notes"}
                 </button>

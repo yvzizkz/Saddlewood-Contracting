@@ -89,7 +89,7 @@ export default function AdminDashboardCharts({ leads }: AdminDashboardChartsProp
   // If no leads, show placeholder
   if (leads.length === 0) {
     return (
-      <div className="bg-white rounded-lg shadow-md p-6 text-center text-gray-500">
+      <div className="bg-surface rounded-lg shadow-md p-6 text-center text-silver-dark">
         No lead data available to display charts.
       </div>
     );
@@ -101,10 +101,32 @@ export default function AdminDashboardCharts({ leads }: AdminDashboardChartsProp
     plugins: {
       legend: {
         position: "top" as const,
+        labels: {
+          color: "#A8B2C1",
+        },
       },
       title: {
         display: true,
         text: "Service Distribution",
+        color: "#A8B2C1",
+      },
+    },
+    scales: {
+      x: {
+        grid: {
+          color: "rgba(42,46,53,0.5)",
+        },
+        ticks: {
+          color: "#A8B2C1",
+        },
+      },
+      y: {
+        grid: {
+          color: "rgba(42,46,53,0.5)",
+        },
+        ticks: {
+          color: "#A8B2C1",
+        },
       },
     },
   };
@@ -115,7 +137,7 @@ export default function AdminDashboardCharts({ leads }: AdminDashboardChartsProp
       {
         label: "Number of leads",
         data: serviceData.data,
-        backgroundColor: "rgba(0, 0, 0, 0.7)",
+        backgroundColor: "rgba(212,175,55,0.7)",
       },
     ],
   };
@@ -126,10 +148,14 @@ export default function AdminDashboardCharts({ leads }: AdminDashboardChartsProp
     plugins: {
       legend: {
         position: "top" as const,
+        labels: {
+          color: "#A8B2C1",
+        },
       },
       title: {
         display: true,
         text: "Lead Status Distribution",
+        color: "#A8B2C1",
       },
     },
   };
@@ -157,10 +183,10 @@ export default function AdminDashboardCharts({ leads }: AdminDashboardChartsProp
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div className="bg-white rounded-lg shadow-md p-4">
+      <div className="bg-surface rounded-lg shadow-md p-4">
         <Bar options={barOptions} data={barData} />
       </div>
-      <div className="bg-white rounded-lg shadow-md p-4">
+      <div className="bg-surface rounded-lg shadow-md p-4">
         <Pie options={pieOptions} data={pieData} />
       </div>
     </div>
