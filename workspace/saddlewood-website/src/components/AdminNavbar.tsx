@@ -28,12 +28,12 @@ export default function AdminNavbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-surface shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/admin" className="text-xl font-bold text-gray-900">
+              <Link href="/admin" className="text-xl font-bold text-text-primary">
                 Saddlewood Admin
               </Link>
             </div>
@@ -42,8 +42,8 @@ export default function AdminNavbar() {
                 href="/admin"
                 className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                   isActive("/admin")
-                    ? "border-black text-gray-900"
-                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    ? "border-gold text-text-primary"
+                    : "border-transparent text-silver-dark hover:border-border-default hover:text-text-secondary"
                 }`}
               >
                 Dashboard
@@ -52,8 +52,8 @@ export default function AdminNavbar() {
                 href="/admin/leads"
                 className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                   isActive("/admin/leads")
-                    ? "border-black text-gray-900"
-                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    ? "border-gold text-text-primary"
+                    : "border-transparent text-silver-dark hover:border-border-default hover:text-text-secondary"
                 }`}
               >
                 Leads
@@ -62,15 +62,15 @@ export default function AdminNavbar() {
                 href="/admin/users"
                 className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
                   isActive("/admin/users")
-                    ? "border-black text-gray-900"
-                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                    ? "border-gold text-text-primary"
+                    : "border-transparent text-silver-dark hover:border-border-default hover:text-text-secondary"
                 }`}
               >
                 Users
               </Link>
               <Link
                 href="/"
-                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-silver-dark hover:border-border-default hover:text-text-secondary"
               >
                 View Website
               </Link>
@@ -80,7 +80,7 @@ export default function AdminNavbar() {
             <button
               onClick={handleLogout}
               disabled={isLoggingOut}
-              className="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-black hover:bg-gray-800 focus:outline-none transition-colors disabled:bg-gray-400"
+              className="ml-3 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-text-inverse bg-gold hover:bg-gold-dark focus:outline-none transition-colors disabled:bg-surface-raised"
             >
               {isLoggingOut ? "Logging out..." : "Sign out"}
             </button>
@@ -89,7 +89,7 @@ export default function AdminNavbar() {
             <button
               onClick={handleLogout}
               disabled={isLoggingOut}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-black hover:bg-gray-100 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-text-primary hover:text-gold hover:bg-surface-light focus:outline-none"
             >
               {isLoggingOut ? "..." : "Sign out"}
             </button>
@@ -104,8 +104,8 @@ export default function AdminNavbar() {
             href="/admin"
             className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
               isActive("/admin")
-                ? "border-black text-black bg-gray-50"
-                : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                ? "border-gold text-gold bg-surface-light"
+                : "border-transparent text-text-secondary hover:bg-surface-light hover:border-border-default hover:text-text-primary"
             }`}
           >
             Dashboard
@@ -114,8 +114,8 @@ export default function AdminNavbar() {
             href="/admin/leads"
             className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
               isActive("/admin/leads")
-                ? "border-black text-black bg-gray-50"
-                : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                ? "border-gold text-gold bg-surface-light"
+                : "border-transparent text-text-secondary hover:bg-surface-light hover:border-border-default hover:text-text-primary"
             }`}
           >
             Leads
@@ -124,15 +124,15 @@ export default function AdminNavbar() {
             href="/admin/users"
             className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
               isActive("/admin/users")
-                ? "border-black text-black bg-gray-50"
-                : "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+                ? "border-gold text-gold bg-surface-light"
+                : "border-transparent text-text-secondary hover:bg-surface-light hover:border-border-default hover:text-text-primary"
             }`}
           >
             Users
           </Link>
           <Link
             href="/"
-            className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800"
+            className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-text-secondary hover:bg-surface-light hover:border-border-default hover:text-text-primary"
           >
             View Website
           </Link>

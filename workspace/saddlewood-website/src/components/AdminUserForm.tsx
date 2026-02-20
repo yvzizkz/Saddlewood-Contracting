@@ -48,14 +48,14 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
       // Try our context method first
       try {
         const success = await registerUser(data.username, data.password, data.name);
-        
+
         if (!success) {
           throw new Error("Registration failed");
         }
-        
+
         setSubmitSuccess(true);
         reset();
-        
+
         // Call the onSuccess callback if provided
         if (onSuccess) {
           onSuccess();
@@ -82,7 +82,7 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
 
       setSubmitSuccess(true);
       reset();
-      
+
       // Call the onSuccess callback if provided
       if (onSuccess) {
         onSuccess();
@@ -96,19 +96,19 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <div className="px-6 py-4 border-b">
-        <h2 className="text-xl font-semibold">Create Admin User</h2>
+    <div className="bg-surface rounded-lg shadow-md overflow-hidden">
+      <div className="px-6 py-4 border-b border-border-default">
+        <h2 className="text-xl font-semibold text-text-primary">Create Admin User</h2>
       </div>
       <div className="p-6">
         {submitSuccess && (
-          <div className="mb-6 bg-green-100 text-green-700 p-4 rounded-md">
+          <div className="mb-6 bg-green-900/30 text-green-400 p-4 rounded-md">
             Admin user created successfully!
           </div>
         )}
 
         {submitError && (
-          <div className="mb-6 bg-red-100 text-red-700 p-4 rounded-md">
+          <div className="mb-6 bg-red-900/30 text-red-400 p-4 rounded-md">
             {submitError}
           </div>
         )}
@@ -117,7 +117,7 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
           <div>
             <label
               htmlFor="username"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-text-secondary mb-1"
             >
               Username
             </label>
@@ -125,11 +125,11 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
               id="username"
               type="text"
               {...register("username")}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full px-4 py-2 border border-border-default bg-surface-light text-text-primary rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
               placeholder="Enter username"
             />
             {errors.username && (
-              <p className="mt-1 text-sm text-red-600">
+              <p className="mt-1 text-sm text-red-400">
                 {errors.username.message}
               </p>
             )}
@@ -138,7 +138,7 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-text-secondary mb-1"
             >
               Password
             </label>
@@ -146,11 +146,11 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
               id="password"
               type="password"
               {...register("password")}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full px-4 py-2 border border-border-default bg-surface-light text-text-primary rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
               placeholder="Enter password"
             />
             {errors.password && (
-              <p className="mt-1 text-sm text-red-600">
+              <p className="mt-1 text-sm text-red-400">
                 {errors.password.message}
               </p>
             )}
@@ -159,7 +159,7 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1"
+              className="block text-sm font-medium text-text-secondary mb-1"
             >
               Name (Optional)
             </label>
@@ -167,11 +167,11 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
               id="name"
               type="text"
               {...register("name")}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+              className="w-full px-4 py-2 border border-border-default bg-surface-light text-text-primary rounded-md focus:outline-none focus:ring-2 focus:ring-gold"
               placeholder="Enter name"
             />
             {errors.name && (
-              <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+              <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>
             )}
           </div>
 
@@ -179,7 +179,7 @@ export default function AdminUserForm({ onSuccess }: AdminUserFormProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 transition-colors disabled:bg-gray-400"
+              className="w-full px-4 py-2 bg-gold text-text-inverse rounded-md hover:bg-gold-dark transition-colors disabled:bg-surface-raised"
             >
               {isSubmitting ? "Creating..." : "Create Admin User"}
             </button>

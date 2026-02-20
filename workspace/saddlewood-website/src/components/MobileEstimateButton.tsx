@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 export default function MobileEstimateButton() {
   const [isVisible, setIsVisible] = useState(false);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
@@ -14,22 +14,22 @@ export default function MobileEstimateButton() {
         setIsVisible(false);
       }
     };
-    
+
     window.addEventListener('scroll', handleScroll);
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-  
+
   return (
     <div className={`md:hidden fixed bottom-20 left-4 right-4 z-30 transition-all duration-300 transform ${
       isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0 pointer-events-none'
     }`}>
-      <Link 
-        href="/contact" 
-        className="flex items-center justify-center w-full px-6 py-4 bg-accent hover:bg-accent-dark 
-                  text-white font-medium rounded-xl shadow-warm-lg
+      <Link
+        href="/contact"
+        className="flex items-center justify-center w-full px-6 py-4 bg-gold hover:bg-gold-dark
+                  text-text-inverse font-medium rounded-xl shadow-gold-lg
                   transition-all duration-300"
         aria-label="Schedule a consultation"
       >

@@ -49,12 +49,12 @@ export default function ServiceCard({ title, description, link, icon, featured }
 
   return (
     <Link href={link} className="block">
-      <div className={`relative rounded-2xl bg-white border p-8 sm:p-10 
-                      hover:shadow-lift hover:-translate-y-1 
+      <div className={`relative rounded-2xl bg-surface border p-8 sm:p-10
+                      hover:shadow-lift hover:-translate-y-1
                       transition-all duration-300 group overflow-hidden
-                      ${featured 
-                        ? 'border-gold/40 shadow-soft-lg' 
-                        : 'border-sandstone hover:border-gold/40 shadow-soft'}`}>
+                      ${featured
+                        ? 'border-gold/40 shadow-soft-lg'
+                        : 'border-border-default hover:border-gold/40 shadow-soft'}`}>
         {featured && (
           <>
             <div className="absolute top-0 right-0 w-24 h-24">
@@ -73,43 +73,43 @@ export default function ServiceCard({ title, description, link, icon, featured }
             </div>
           </>
         )}
-        
+
         <div className={`flex flex-col sm:flex-row items-start gap-6 ${featured ? 'mt-6' : ''}`}>
           <div className="flex-shrink-0">
             <div className={`w-16 h-16 rounded-xl flex items-center justify-center
                            transition-all duration-300 shadow-soft
-                           ${featured 
-                             ? 'bg-gradient-to-br from-gold/20 to-gold/5 text-gold group-hover:from-gold group-hover:to-gold-dark group-hover:text-white' 
-                             : 'bg-ivory text-gold group-hover:bg-gold group-hover:text-white'}`}>
+                           ${featured
+                             ? 'bg-gradient-to-br from-gold/20 to-gold/5 text-gold group-hover:from-gold group-hover:to-gold-dark group-hover:text-text-inverse'
+                             : 'bg-surface-light text-gold group-hover:bg-gold group-hover:text-text-inverse'}`}>
               {renderIcon(icon)}
             </div>
           </div>
-          
+
           <div className="flex-1">
-            <h3 className="font-serif text-xl sm:text-2xl font-semibold mb-3 text-primary 
+            <h3 className="font-serif text-xl sm:text-2xl font-semibold mb-3 text-text-primary
                            group-hover:text-gold transition-colors duration-300">
               {title}
             </h3>
-            <p className="text-primary/60 mb-5 leading-relaxed">{description}</p>
-            
-            <span className="inline-flex items-center text-sm font-medium text-gold group-hover:text-gold-dark transition-colors duration-300">
+            <p className="text-text-secondary mb-5 leading-relaxed">{description}</p>
+
+            <span className="inline-flex items-center text-sm font-medium text-gold group-hover:text-gold-light transition-colors duration-300">
               <span>Learn More</span>
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" 
-                viewBox="0 0 20 20" 
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform"
+                viewBox="0 0 20 20"
                 fill="currentColor"
               >
-                <path 
-                  fillRule="evenodd" 
-                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" 
-                  clipRule="evenodd" 
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
                 />
               </svg>
             </span>
           </div>
         </div>
-        
+
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-gold/0 via-gold/20 to-gold/0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
       </div>
     </Link>

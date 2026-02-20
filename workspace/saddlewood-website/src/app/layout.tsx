@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Roboto_Mono, Playfair_Display } from 'next/font/google';
+import { DM_Sans, JetBrains_Mono, Cormorant_Garamond } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -13,22 +13,24 @@ const MobileEstimateButton = dynamic(() => import('@/components/MobileEstimateBu
 });
 
 
-// Load Inter font - clean, modern sans-serif
-const inter = Inter({ 
+// Load DM Sans - sleek modern sans-serif for body text
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700'],
 });
 
-// Load Roboto Mono font for code/technical elements
-const robotoMono = Roboto_Mono({
+// Load JetBrains Mono for code/technical elements
+const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  variable: '--font-roboto-mono',
+  variable: '--font-jetbrains-mono',
+  weight: ['400'],
 });
 
-// Load Playfair Display - elegant serif for premium headings
-const playfair = Playfair_Display({
+// Load Cormorant Garamond - refined serif for premium headings
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-cormorant',
   weight: ['400', '500', '600', '700'],
 });
 
@@ -101,7 +103,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${robotoMono.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${jetbrainsMono.variable} ${cormorant.variable}`}>
       <head>
         {/* Saddlewood Contracting favicon */}
         <link rel="icon" href="/favicon.ico" />
@@ -115,7 +117,7 @@ export default function RootLayout({
         
         {/* Windows tile icon */}
         <meta name="msapplication-TileImage" content="/favicon.png" />
-        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="msapplication-TileColor" content="#0B0D0F" />
         
         {/* Schema.org structured data */}
         <script
@@ -181,7 +183,7 @@ export default function RootLayout({
         {/* GoHighLevel Form Script */}
         <script src="https://link.msgsndr.com/js/form_embed.js"></script>
       </head>
-      <body className="flex flex-col min-h-screen text-gray-800">
+      <body className="flex flex-col min-h-screen bg-obsidian text-silver-light">
         <AuthProvider>
           <Navbar />
           <main className="flex-grow">

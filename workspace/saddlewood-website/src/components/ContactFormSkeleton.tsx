@@ -5,7 +5,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export default function ContactFormSkeleton() {
   return (
-    <div className="shadow-lg rounded-2xl bg-white p-8">
+    <div className="shadow-lg rounded-2xl bg-surface p-8 border border-border-default">
       <Skeleton className="h-8 w-40 mb-6" />
       
       <div className="space-y-4">

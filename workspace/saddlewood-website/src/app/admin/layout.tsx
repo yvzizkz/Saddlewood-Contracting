@@ -28,8 +28,8 @@ function AdminLayoutContent({
   // Immediately return null to prevent any rendering until authentication is complete
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
+      <div className="min-h-screen bg-obsidian flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold"></div>
       </div>
     );
   }
@@ -45,7 +45,7 @@ function AdminLayoutContent({
   // Show only content (no navbar) for login page
   if (pathname === '/admin/login') {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-obsidian">
         <main>{children}</main>
       </div>
     );
@@ -53,7 +53,7 @@ function AdminLayoutContent({
 
   // For authenticated pages, show navbar and content
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-obsidian">
       <AdminNavbar />
       <main className="py-4">{children}</main>
     </div>

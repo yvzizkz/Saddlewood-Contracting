@@ -94,7 +94,7 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen">
-      <div className="bg-gradient-to-br from-charcoal via-charcoal-light to-primary text-white py-20 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-obsidian via-surface to-obsidian text-text-primary py-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
@@ -102,19 +102,19 @@ export default function ServicesPage() {
             <h1 className="font-serif text-4xl md:text-6xl font-semibold mt-4 mb-6">
               Signature Services
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+            <p className="text-xl text-silver-dark max-w-3xl mx-auto mb-10">
               Premium home services tailored for discerning homeowners who expect excellence in every detail
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact" 
-                className="bg-gradient-to-r from-gold to-gold-dark text-charcoal px-8 py-4 rounded-lg font-semibold 
+              <Link
+                href="/contact"
+                className="bg-gradient-to-r from-gold to-gold-dark text-text-inverse px-8 py-4 rounded-lg font-semibold
                          hover:shadow-gold-glow transform hover:scale-105 transition-all duration-300"
               >
                 Schedule Consultation
               </Link>
-              <a 
-                href="tel:480-999-6100" 
+              <a
+                href="tel:480-999-6100"
                 className="border border-gold/50 text-gold hover:bg-gold/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
               >
                 (480) 999-6100
@@ -128,26 +128,26 @@ export default function ServicesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-2 gap-10">
           {services.map((serviceCategory, index) => (
-            <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden 
+            <div key={index} className="bg-surface rounded-2xl shadow-lg border border-border-default overflow-hidden
                                        hover:shadow-premium hover:border-gold/20 transition-all duration-500 group">
               <div className="p-8">
                 <div className="flex items-start mb-6">
-                  <div className="w-14 h-14 rounded-xl bg-charcoal text-gold flex items-center justify-center mr-4
-                                group-hover:bg-gold group-hover:text-charcoal transition-all duration-300">
+                  <div className="w-14 h-14 rounded-xl bg-obsidian text-gold flex items-center justify-center mr-4
+                                group-hover:bg-gold group-hover:text-text-inverse transition-all duration-300">
                     {serviceCategory.icon}
                   </div>
                   <div>
                     <span className="text-gold text-sm font-medium uppercase tracking-wider">{serviceCategory.subtitle}</span>
-                    <h2 className="font-serif text-2xl font-semibold text-charcoal">
+                    <h2 className="font-serif text-2xl font-semibold text-text-primary">
                       {serviceCategory.category}
                     </h2>
                   </div>
                 </div>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed">
+
+                <p className="text-silver-dark mb-6 leading-relaxed">
                   {serviceCategory.description}
                 </p>
-                
+
                 <ul className="space-y-3 mb-6">
                   {serviceCategory.services.map((service, serviceIndex) => (
                     <li key={serviceIndex} className="flex items-start">
@@ -156,13 +156,13 @@ export default function ServicesPage() {
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                         </svg>
                       </span>
-                      <span className="text-gray-700">{service}</span>
+                      <span className="text-text-secondary">{service}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="pt-6 border-t border-gray-100 flex items-center justify-end">
-                  <Link 
+                <div className="pt-6 border-t border-border-default flex items-center justify-end">
+                  <Link
                     href={`/services/${serviceCategory.category.toLowerCase().split(' ')[0]}`}
                     className="text-gold hover:text-gold-dark font-medium flex items-center group/link"
                   >
@@ -178,96 +178,96 @@ export default function ServicesPage() {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b from-white to-gray-50 py-20">
+      <div className="bg-gradient-to-b from-surface to-surface-light py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">The Saddlewood Standard</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 text-charcoal">
+            <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 text-text-primary">
               Why Our Clients Choose Us
             </h2>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center p-6">
-              <div className="w-20 h-20 rounded-full bg-charcoal flex items-center justify-center mx-auto mb-5">
+              <div className="w-20 h-20 rounded-full bg-obsidian flex items-center justify-center mx-auto mb-5">
                 <span className="text-gold text-2xl font-serif font-bold">18+</span>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-charcoal">Years of Excellence</h3>
-              <p className="text-gray-600 text-sm">Trusted by Arizona homeowners since 2007</p>
+              <h3 className="text-lg font-semibold mb-2 text-text-primary">Years of Excellence</h3>
+              <p className="text-silver-dark text-sm">Trusted by Arizona homeowners since 2007</p>
             </div>
 
             <div className="text-center p-6">
-              <div className="w-20 h-20 rounded-full bg-charcoal flex items-center justify-center mx-auto mb-5">
+              <div className="w-20 h-20 rounded-full bg-obsidian flex items-center justify-center mx-auto mb-5">
                 <svg className="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-charcoal">Fully Licensed</h3>
-              <p className="text-gray-600 text-sm">Four AZ ROC licenses for complete coverage</p>
+              <h3 className="text-lg font-semibold mb-2 text-text-primary">Fully Licensed</h3>
+              <p className="text-silver-dark text-sm">Four AZ ROC licenses for complete coverage</p>
             </div>
 
             <div className="text-center p-6">
-              <div className="w-20 h-20 rounded-full bg-charcoal flex items-center justify-center mx-auto mb-5">
+              <div className="w-20 h-20 rounded-full bg-obsidian flex items-center justify-center mx-auto mb-5">
                 <svg className="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-charcoal">24hr Response</h3>
-              <p className="text-gray-600 text-sm">Guaranteed response within one business day</p>
+              <h3 className="text-lg font-semibold mb-2 text-text-primary">24hr Response</h3>
+              <p className="text-silver-dark text-sm">Guaranteed response within one business day</p>
             </div>
 
             <div className="text-center p-6">
-              <div className="w-20 h-20 rounded-full bg-charcoal flex items-center justify-center mx-auto mb-5">
+              <div className="w-20 h-20 rounded-full bg-obsidian flex items-center justify-center mx-auto mb-5">
                 <svg className="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-charcoal">White-Glove Service</h3>
-              <p className="text-gray-600 text-sm">Dedicated project management on every job</p>
+              <h3 className="text-lg font-semibold mb-2 text-text-primary">White-Glove Service</h3>
+              <p className="text-silver-dark text-sm">Dedicated project management on every job</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-gray-50 py-20">
+      <div className="bg-surface-light py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Where We Serve</span>
-            <h2 className="font-serif text-3xl font-semibold mt-3 text-charcoal">
+            <h2 className="font-serif text-3xl font-semibold mt-3 text-text-primary">
               Select Service Areas
             </h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
-            {['Paradise Valley', 'Scottsdale', 'Phoenix', 'Arcadia', 'Fountain Hills', 'Cave Creek', 
+            {['Paradise Valley', 'Scottsdale', 'Phoenix', 'Arcadia', 'Fountain Hills', 'Cave Creek',
               'Carefree', 'Tempe', 'Mesa', 'Chandler', 'Gilbert', 'Ahwatukee'].map((city, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 shadow-sm hover:shadow-lg hover:border-gold/30 border border-transparent transition-all duration-300">
-                <span className="font-medium text-charcoal">{city}</span>
+              <div key={index} className="bg-surface rounded-lg p-4 shadow-sm hover:shadow-lg hover:border-gold/30 border border-transparent transition-all duration-300">
+                <span className="font-medium text-text-primary">{city}</span>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="bg-charcoal py-20">
+      <div className="bg-obsidian py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-gold uppercase tracking-[0.2em] text-sm font-medium">Ready to Begin?</span>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 mb-6 text-white">
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold mt-3 mb-6 text-text-primary">
             Let's Discuss Your Vision
           </h2>
-          <p className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-text-muted text-lg mb-10 max-w-2xl mx-auto">
             Every exceptional home improvement starts with a conversation. Schedule a private consultation to explore possibilities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/contact" 
-              className="bg-gradient-to-r from-gold to-gold-dark text-charcoal px-8 py-4 rounded-lg font-semibold 
+            <Link
+              href="/contact"
+              className="bg-gradient-to-r from-gold to-gold-dark text-text-inverse px-8 py-4 rounded-lg font-semibold
                        hover:shadow-gold-glow transform hover:scale-105 transition-all duration-300"
             >
               Schedule Your Consultation
             </Link>
-            <Link 
-              href="/gallery" 
+            <Link
+              href="/gallery"
               className="border border-gold/50 text-gold hover:bg-gold/10 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
             >
               View Our Portfolio
