@@ -97,9 +97,9 @@ export default function McCormickRanchPage() {
               Saddlewood Contracting has been transforming McCormick Ranch homes since 2007. We understand your community, your homes, and your expectations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-text-inverse font-semibold rounded-xl shadow-gold hover:shadow-gold-lg hover:bg-gold-dark transition-all duration-300">
+              <a href="#contact" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-text-inverse font-semibold rounded-xl shadow-gold hover:shadow-gold-lg hover:bg-gold-dark transition-all duration-300">
                 Schedule Consultation
-              </Link>
+              </a>
               <a href="tel:4809996100" className="inline-flex items-center justify-center px-8 py-4 bg-surface text-text-primary font-medium border border-border-default rounded-xl shadow-soft hover:shadow-lift hover:border-gold/50 transition-all duration-300">
                 (480) 999-6100
               </a>
@@ -184,17 +184,42 @@ export default function McCormickRanchPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-20 sm:py-24 bg-surface">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-serif text-3xl font-semibold text-text-primary mb-4">Schedule Your Free McCormick Ranch Consultation</h2>
-            <p className="text-text-secondary leading-relaxed mb-8 max-w-2xl mx-auto">
-              We&apos;ll visit your McCormick Ranch home, discuss your vision, and provide a preliminary scope and estimate — all at no cost or obligation.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="inline-flex items-center justify-center px-8 py-4 bg-gold text-text-inverse font-semibold rounded-xl shadow-gold hover:shadow-gold-lg hover:bg-gold-dark transition-all duration-300">
-                Schedule Consultation
-              </Link>
+        {/* Contact Form */}
+        <section className="py-20 sm:py-24 bg-surface" id="contact">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="font-serif text-3xl font-semibold text-text-primary mb-4">Schedule Your Free McCormick Ranch Consultation</h2>
+              <p className="text-text-secondary leading-relaxed max-w-2xl mx-auto">
+                We&apos;ll visit your McCormick Ranch home, discuss your vision, and provide a preliminary scope and estimate — all at no cost or obligation.
+              </p>
+            </div>
+            <div className="bg-surface rounded-2xl shadow-soft-lg border border-border-default overflow-hidden max-w-2xl mx-auto">
+              <div className="bg-obsidian p-8">
+                <h3 className="text-text-primary font-semibold text-lg">Request a Consultation</h3>
+                <p className="text-silver-dark text-sm mt-1">We typically respond within one business day</p>
+              </div>
+              <div style={{ height: '1563px' }}>
+                <iframe
+                  src="https://api.leadconnectorhq.com/widget/form/qjPFOpSfY46uUC4smKZe"
+                  style={{ width: '100%', height: '100%', border: 'none', borderRadius: '3px' }}
+                  id="inline-qjPFOpSfY46uUC4smKZe-mccormick"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Form 4"
+                  data-height="1563"
+                  data-layout-iframe-id="inline-qjPFOpSfY46uUC4smKZe-mccormick"
+                  data-form-id="qjPFOpSfY46uUC4smKZe"
+                  title="Request a Consultation - McCormick Ranch"
+                />
+              </div>
+            </div>
+            <div className="text-center mt-8">
+              <p className="text-text-secondary text-sm mb-2">Prefer to call?</p>
               <a href="tel:4809996100" className="inline-flex items-center justify-center px-8 py-4 bg-surface-light text-text-primary font-medium border border-border-default rounded-xl shadow-soft hover:shadow-lift hover:border-gold/50 transition-all duration-300">
                 (480) 999-6100
               </a>
