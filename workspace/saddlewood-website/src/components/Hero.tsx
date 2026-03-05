@@ -25,14 +25,14 @@ export default function Hero() {
             <div className="inline-flex items-center gap-3 mb-6">
               <div className="w-12 h-px bg-gradient-to-r from-gold to-gold/0"></div>
               <span className="text-gold uppercase tracking-[0.25em] text-xs font-semibold">
-                Paradise Valley&apos;s Premier Contractor
+                Scottsdale&apos;s Premier Contractor
               </span>
             </div>
 
             <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-6 leading-[1.05] text-text-primary">
-              Crafting Exceptional
+              Scottsdale&apos;s Luxury
               <span className="block mt-2 text-gold relative">
-                Living Spaces
+                Home Remodeling &amp; Custom Build Contractor
                 <svg className="absolute -bottom-2 left-0 w-48 h-2 text-gold/20" viewBox="0 0 200 8" fill="none">
                   <path d="M0 4C50 4 50 1 100 1C150 1 150 7 200 7" stroke="currentColor" strokeWidth="2"/>
                 </svg>
@@ -40,11 +40,11 @@ export default function Hero() {
             </h1>
 
             <p className="text-lg sm:text-xl mb-4 max-w-xl text-silver-light leading-relaxed">
-              For discerning homeowners who demand excellence. We deliver remodeling, HVAC, electrical, and plumbing solutions with uncompromising attention to detail.
+              Since 2007, Saddlewood Contracting has been the trusted general contractor for homeowners in McCormick Ranch, Gainey Ranch, Paradise Valley, and North Scottsdale.
             </p>
 
             <p className="text-base mb-8 max-w-xl text-silver-dark">
-              Serving Paradise Valley, Scottsdale, Phoenix, and select communities throughout the Valley.
+              Luxury home remodeling, kitchen and bathroom renovations, custom new construction, and full-service HVAC, electrical, and plumbing.
             </p>
 
             <div className="flex flex-wrap items-center gap-6 mb-10 p-5 bg-surface/80 backdrop-blur-sm rounded-2xl border border-border-default shadow-soft">

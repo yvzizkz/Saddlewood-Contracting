@@ -7,29 +7,29 @@ import Image from 'next/image';
 export default function Home() {
   const services = [
     {
-      title: 'Signature Remodeling',
-      description: 'Transform your space with renovation services tailored to your vision. Kitchens, bathrooms, and whole-home transformations.',
-      link: '/services/remodeling',
+      title: 'Complete Home Remodels',
+      description: 'Whole-home transformations that reimagine how you use every room. From open-concept living spaces to indoor-outdoor desert living in McCormick Ranch and Gainey Ranch.',
+      link: '/whole-home-remodel-scottsdale',
       icon: 'home',
       featured: true,
     },
     {
-      title: 'Precision Climate',
-      description: 'Climate solutions engineered for comfort and efficiency. High-end system installations and expert maintenance.',
-      link: '/services/hvac',
-      icon: 'ac_unit',
+      title: 'Kitchen Renovations',
+      description: 'Custom cabinetry, premium stone countertops, professional-grade appliances, and layouts designed for how you actually cook and entertain.',
+      link: '/kitchen-remodeling-scottsdale',
+      icon: 'countertops',
     },
     {
-      title: 'Expert Electrical',
-      description: 'Electrical work for discerning homeowners. Smart home integration, architectural lighting, and complete system upgrades.',
-      link: '/services/electrical',
-      icon: 'bolt',
+      title: 'Bathroom Transformations',
+      description: 'Spa-inspired primary baths, guest bath updates, and luxury fixture installations. Walk-in showers, heated floors, and custom tile work.',
+      link: '/bathroom-remodeling-scottsdale',
+      icon: 'bathtub',
     },
     {
-      title: 'Premium Plumbing',
-      description: 'Thoughtful plumbing installations and expert repairs. Fixture upgrades, water treatment, and whole-home solutions.',
-      link: '/services/plumbing',
-      icon: 'water_drop',
+      title: 'Custom New Construction',
+      description: 'Ground-up luxury homes built to your vision. We coordinate with architects, handle all permitting, and manage every phase of construction.',
+      link: '/custom-home-builder-scottsdale',
+      icon: 'construction',
     },
   ];
 
@@ -50,9 +50,9 @@ export default function Home() {
               <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold">What We Offer</span>
               <div className="w-8 h-px bg-gold"></div>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-text-primary">Our Signature Services</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-text-primary">Full-Service Home Remodeling for Scottsdale&apos;s Finest Neighborhoods</h2>
             <p className="text-text-secondary mt-5 max-w-2xl mx-auto leading-relaxed">
-              Each project receives our full attention and commitment to excellence. We specialize in premium home services for clients who expect the best.
+              Since 2007, Saddlewood Contracting has been the trusted general contractor for homeowners in McCormick Ranch, Gainey Ranch, Paradise Valley, and North Scottsdale — delivering the craftsmanship, communication, and attention to detail that discerning homeowners expect.
             </p>
           </div>
 
@@ -67,6 +67,24 @@ export default function Home() {
                 featured={service.featured}
               />
             ))}
+          </div>
+
+          <div className="mt-12 p-8 bg-surface-light rounded-2xl border border-border-default shadow-soft">
+            <h3 className="font-serif text-2xl font-semibold text-text-primary mb-4">HVAC, Electrical &amp; Plumbing</h3>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              Full-service mechanical systems expertise — all in-house, all under our own ROC licenses. When your remodel requires new ductwork, electrical panels, or plumbing reconfiguration, we handle it directly. No outside subcontractors, no coordination headaches.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/services/hvac" className="text-gold hover:text-gold-light font-medium text-sm transition-colors">HVAC Services →</Link>
+              <Link href="/services/electrical" className="text-gold hover:text-gold-light font-medium text-sm transition-colors">Electrical Services →</Link>
+              <Link href="/services/plumbing" className="text-gold hover:text-gold-light font-medium text-sm transition-colors">Plumbing Services →</Link>
+            </div>
+          </div>
+
+          <div className="mt-12 text-text-secondary leading-relaxed max-w-3xl mx-auto">
+            <p>
+              What sets Saddlewood apart is our full-service approach. With active ROC licenses in general contracting, HVAC, electrical, and plumbing, we handle every aspect of your renovation under one roof. No subcontractor runaround. One team. One point of contact. One standard of quality.
+            </p>
           </div>
         </div>
       </section>
@@ -208,7 +226,7 @@ export default function Home() {
               <span className="text-gold uppercase tracking-[0.2em] text-xs font-semibold">The Saddlewood Difference</span>
               <div className="w-8 h-px bg-gold"></div>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-text-primary">Why Clients Choose Us</h2>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-text-primary">Why McCormick Ranch &amp; Gainey Ranch Homeowners Choose Saddlewood</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -216,8 +234,8 @@ export default function Home() {
               <div className="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 flex items-center justify-center shadow-soft group-hover:shadow-glow-gold transition-shadow">
                 <span className="text-gold text-3xl font-serif font-bold">18+</span>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-text-primary">Years of Mastery</h3>
-              <p className="text-text-secondary leading-relaxed text-sm">Nearly two decades of refining our craft, serving Arizona's most discerning homeowners since 2007.</p>
+              <h3 className="text-xl font-semibold mb-3 text-text-primary">18+ Years Serving Scottsdale</h3>
+              <p className="text-text-secondary leading-relaxed text-sm">Established, experienced, trusted. We&apos;ve been building in Scottsdale&apos;s most distinguished communities since 2007.</p>
             </div>
 
             <div className="group text-center p-8 bg-gradient-to-b from-surface to-obsidian rounded-2xl shadow-soft border border-border-default hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
@@ -226,8 +244,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-text-primary">Fully Credentialed</h3>
-              <p className="text-text-secondary leading-relaxed text-sm">Four Arizona ROC licenses ensure expertise across all disciplines. Bonded, insured, and committed to excellence.</p>
+              <h3 className="text-xl font-semibold mb-3 text-text-primary">Multiple Active ROC Licenses</h3>
+              <p className="text-text-secondary leading-relaxed text-sm">General #305762, HVAC #350714, Electrical #350715, Plumbing #350716. Fully licensed, bonded, and insured.</p>
             </div>
 
             <div className="group text-center p-8 bg-gradient-to-b from-surface to-obsidian rounded-2xl shadow-soft border border-border-default hover:shadow-lift hover:-translate-y-1 transition-all duration-300">
@@ -236,8 +254,8 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-text-primary">White-Glove Service</h3>
-              <p className="text-text-secondary leading-relaxed text-sm">Dedicated project managers, 24-hour response guarantee, and meticulous attention to every detail.</p>
+              <h3 className="text-xl font-semibold mb-3 text-text-primary">Top 10% of AZ Contractors</h3>
+              <p className="text-text-secondary leading-relaxed text-sm">As rated by BuildZoom. Dedicated project managers, transparent communication, and meticulous attention to every detail.</p>
             </div>
           </div>
         </div>
@@ -260,7 +278,19 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
-            {['Paradise Valley', 'Scottsdale', 'Phoenix', 'Fountain Hills', 'Arcadia', 'Tempe', 'Mesa', 'Chandler', 'Gilbert', 'Glendale'].map((area) => (
+            <Link
+              href="/mccormick-ranch"
+              className="group bg-surface-raised p-4 shadow-soft rounded-xl text-center hover:shadow-lift hover:-translate-y-0.5 border border-transparent hover:border-gold/20 transition-all duration-300"
+            >
+              <h3 className="font-medium text-text-primary group-hover:text-gold transition-colors">McCormick Ranch</h3>
+            </Link>
+            <Link
+              href="/gainey-ranch"
+              className="group bg-surface-raised p-4 shadow-soft rounded-xl text-center hover:shadow-lift hover:-translate-y-0.5 border border-transparent hover:border-gold/20 transition-all duration-300"
+            >
+              <h3 className="font-medium text-text-primary group-hover:text-gold transition-colors">Gainey Ranch</h3>
+            </Link>
+            {['Paradise Valley', 'North Scottsdale', 'Scottsdale', 'Phoenix', 'Fountain Hills', 'Arcadia', 'Tempe', 'Mesa'].map((area) => (
               <a
                 key={area}
                 href={`/contact?area=${encodeURIComponent(area)}`}
@@ -284,9 +314,9 @@ export default function Home() {
             <span className="text-silver-dark uppercase tracking-[0.2em] text-xs font-semibold">Ready to Begin?</span>
             <div className="w-8 h-px bg-silver-dark/30"></div>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-text-primary">Let's Discuss Your Vision</h2>
+          <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-text-primary">Schedule Your Complimentary Design Consultation</h2>
           <p className="text-text-secondary mt-5 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Every project starts with a conversation. Schedule a private consultation to explore how we can elevate your home.
+            We&apos;ll visit your home, discuss your vision, assess the possibilities, and provide a clear preliminary scope — all at no cost or obligation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

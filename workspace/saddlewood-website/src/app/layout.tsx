@@ -35,9 +35,9 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'Saddlewood Contracting – Premium HVAC, Electrical & Plumbing | Phoenix AZ',
-  description: 'Valley-wide same-day HVAC, electrical, plumbing & remodeling from a top-rated Arizona contractor. 18+ years of quality service in Phoenix and surrounding areas. Licensed & insured with ROC certification.',
-  keywords: 'HVAC, air conditioning, heating, electrical, plumbing, remodeling, home services, Phoenix, Paradise Valley, Scottsdale, Tempe, Mesa, Chandler, Gilbert, Glendale, Fountain Hills, Arizona, contractor, home improvement',
+  title: 'Scottsdale Luxury Home Remodeling & Custom Builds | Saddlewood Contracting',
+  description: "Scottsdale's trusted luxury remodeling contractor since 2007. Kitchen & bath renovations, whole-home remodels, custom builds. Free consultation: (480) 999-6100.",
+  keywords: 'Scottsdale general contractor, home remodel Scottsdale, McCormick Ranch contractor, Gainey Ranch remodel, kitchen remodeling Scottsdale, bathroom renovation Scottsdale, luxury home remodeling, custom home builder Scottsdale, Paradise Valley contractor',
   authors: [{ name: 'Saddlewood Contracting' }],
   creator: 'Saddlewood Contracting',
   publisher: 'Saddlewood Contracting',
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Saddlewood Contracting – Premium Home Services | Same-Day Service',
-    description: 'Expert HVAC, electrical, plumbing, and remodeling throughout Phoenix, AZ. 5-star service since 2007. Licensed, bonded and insured with full ROC certifications. Book online today!',
+    title: 'Scottsdale Luxury Home Remodeling & Custom Builds | Saddlewood Contracting',
+    description: "Scottsdale's trusted luxury remodeling contractor since 2007. Kitchen & bath renovations, whole-home remodels, custom builds. Free consultation: (480) 999-6100.",
     url: 'https://saddlewoodcontracting.com',
     siteName: 'Saddlewood Contracting',
     locale: 'en_US',
@@ -80,8 +80,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Saddlewood Contracting – Premium Home Services | Same-Day Service',
-    description: 'Expert HVAC, electrical, plumbing, and remodeling throughout Phoenix, AZ. 5-star service since 2007. Licensed and insured with full ROC certifications.',
+    title: 'Scottsdale Luxury Home Remodeling & Custom Builds | Saddlewood Contracting',
+    description: "Scottsdale's trusted luxury remodeling contractor since 2007. Kitchen & bath renovations, whole-home remodels, custom builds. Free consultation: (480) 999-6100.",
     images: ['/images/brand-splash.svg'],
   },
   robots: {
@@ -119,63 +119,65 @@ export default function RootLayout({
         <meta name="msapplication-TileImage" content="/favicon.png" />
         <meta name="msapplication-TileColor" content="#0B0D0F" />
         
-        {/* Schema.org structured data */}
+        {/* Schema.org structured data - GeneralContractor */}
         <script
           type="application/ld+json"
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "Organization",
-                  "@id": "https://saddlewoodcontracting.com/#organization",
-                  "name": "Saddlewood Contracting",
-                  "url": "https://saddlewoodcontracting.com",
-                  "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://saddlewoodcontracting.com/images/logo.png"
-                  },
-                  "sameAs": [
-                    "https://www.facebook.com/saddlewoodcontracting",
-                    "https://www.instagram.com/saddlewoodcontracting"
-                  ],
-                  "description": "Expert HVAC, electrical, plumbing, and remodeling service provider serving Phoenix and surrounding areas since 2007."
-                },
-                {
-                  "@type": "LocalBusiness",
-                  "@id": "https://saddlewoodcontracting.com/#localbusiness",
-                  "name": "Saddlewood Contracting",
-                  "url": "https://saddlewoodcontracting.com",
-                  "telephone": "(480) 999-6100",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "streetAddress": "1234 N Construction Ave",
-                    "addressLocality": "Phoenix",
-                    "addressRegion": "AZ",
-                    "postalCode": "85001",
-                    "addressCountry": "US"
-                  },
-                  "geo": {
-                    "@type": "GeoCoordinates",
-                    "latitude": 33.4484,
-                    "longitude": -112.0740
-                  },
-                  "openingHoursSpecification": {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": [
-                      "Monday",
-                      "Tuesday",
-                      "Wednesday",
-                      "Thursday",
-                      "Friday"
-                    ],
-                    "opens": "08:00",
-                    "closes": "17:00"
-                  },
-                  "areaServed": "Phoenix Metropolitan Area"
-                }
-              ]
+              "@type": "GeneralContractor",
+              "name": "Saddlewood Contracting LLC",
+              "url": "https://saddlewoodcontracting.com",
+              "logo": "https://saddlewoodcontracting.com/images/logo.png",
+              "image": "https://saddlewoodcontracting.com/images/hero-project.jpg",
+              "telephone": "+14809996100",
+              "email": "info@saddlewoodcontracting.com",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Phoenix",
+                "addressRegion": "AZ",
+                "postalCode": "85258",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "33.5550",
+                "longitude": "-111.9250"
+              },
+              "areaServed": [
+                { "@type": "Place", "name": "McCormick Ranch, Scottsdale, AZ" },
+                { "@type": "Place", "name": "Gainey Ranch, Scottsdale, AZ" },
+                { "@type": "Place", "name": "Paradise Valley, AZ" },
+                { "@type": "Place", "name": "North Scottsdale, AZ" },
+                { "@type": "Place", "name": "Phoenix, AZ" }
+              ],
+              "description": "Saddlewood Contracting is a licensed general contractor serving McCormick Ranch, Gainey Ranch, and Scottsdale since 2007. Full home remodels, kitchen and bathroom renovations, custom new builds, HVAC, electrical, and plumbing.",
+              "foundingDate": "2007",
+              "priceRange": "$$$",
+              "paymentAccepted": "Cash, Check, Credit Card",
+              "openingHours": "Mo-Fr 07:00-17:00",
+              "sameAs": [
+                "https://www.facebook.com/SaddlewoodAZ/",
+                "https://www.instagram.com/saddlewood_contracting/"
+              ],
+              "hasCredential": [
+                { "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "ROC #305762 - General Contracting" },
+                { "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "ROC #350714 - HVAC Systems" },
+                { "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "ROC #350715 - Electrical" },
+                { "@type": "EducationalOccupationalCredential", "credentialCategory": "license", "name": "ROC #350716 - Plumbing" }
+              ],
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Remodeling & Construction Services",
+                "itemListElement": [
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Complete Home Remodels", "description": "Whole-home transformations including structural changes, layout redesign, and full interior renovation." } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Kitchen Renovations", "description": "Custom kitchen remodeling including cabinetry, countertops, appliances, and layout redesign." } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bathroom Renovations", "description": "Luxury bathroom transformations including walk-in showers, custom tile, fixtures, and spa-inspired design." } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom New Construction", "description": "Ground-up luxury home construction in Scottsdale, from architecture coordination through final inspection." } },
+                  { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "HVAC, Electrical & Plumbing", "description": "Full-service mechanical systems work under dedicated ROC licenses." } }
+                ]
+              }
             })
           }}
         />

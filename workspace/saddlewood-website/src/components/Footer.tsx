@@ -69,8 +69,23 @@ export default function Footer() {
             <h3 className="text-gold font-semibold mb-5 uppercase tracking-wider text-sm">Services</h3>
             <ul className="space-y-4">
               <li>
-                <Link href="/services/remodeling" className="text-silver-dark hover:text-gold transition-colors">
-                  Remodeling
+                <Link href="/kitchen-remodeling-scottsdale" className="text-silver-dark hover:text-gold transition-colors">
+                  Kitchen Remodeling
+                </Link>
+              </li>
+              <li>
+                <Link href="/bathroom-remodeling-scottsdale" className="text-silver-dark hover:text-gold transition-colors">
+                  Bathroom Remodeling
+                </Link>
+              </li>
+              <li>
+                <Link href="/whole-home-remodel-scottsdale" className="text-silver-dark hover:text-gold transition-colors">
+                  Whole-Home Remodeling
+                </Link>
+              </li>
+              <li>
+                <Link href="/custom-home-builder-scottsdale" className="text-silver-dark hover:text-gold transition-colors">
+                  Custom New Construction
                 </Link>
               </li>
               <li>
@@ -112,6 +127,19 @@ export default function Footer() {
               <li>
                 <Link href="/license-info" className="text-silver-dark hover:text-gold transition-colors">
                   Licensing
+                </Link>
+              </li>
+            </ul>
+            <h3 className="text-gold font-semibold mt-8 mb-5 uppercase tracking-wider text-sm">Neighborhoods</h3>
+            <ul className="space-y-4">
+              <li>
+                <Link href="/mccormick-ranch" className="text-silver-dark hover:text-gold transition-colors">
+                  McCormick Ranch
+                </Link>
+              </li>
+              <li>
+                <Link href="/gainey-ranch" className="text-silver-dark hover:text-gold transition-colors">
+                  Gainey Ranch
                 </Link>
               </li>
             </ul>
