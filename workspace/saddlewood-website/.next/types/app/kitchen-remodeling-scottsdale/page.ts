@@ -1,4 +1,4 @@
-// File: /home/user/Saddlewood-Contracting/workspace/saddlewood-website/src/app/kitchen-remodeling-scottsdale/page.tsx
+// File: /home/runner/workspace/workspace/saddlewood-website/src/app/kitchen-remodeling-scottsdale/page.tsx
 import * as entry from '../../../../src/app/kitchen-remodeling-scottsdale/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
