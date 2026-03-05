@@ -67,10 +67,20 @@ export default function Navbar() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                   </div>
-                  <div className="absolute left-0 mt-1 w-48 bg-surface shadow-soft-lg rounded-xl overflow-hidden z-10 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 border border-border-default">
-                    <Link href="/services/remodeling" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
-                      Remodeling
+                  <div className="absolute left-0 mt-1 w-56 bg-surface shadow-soft-lg rounded-xl overflow-hidden z-10 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 border border-border-default">
+                    <Link href="/kitchen-remodeling-scottsdale" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
+                      Kitchen Remodeling
                     </Link>
+                    <Link href="/bathroom-remodeling-scottsdale" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
+                      Bathroom Remodeling
+                    </Link>
+                    <Link href="/whole-home-remodel-scottsdale" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
+                      Whole-Home Remodeling
+                    </Link>
+                    <Link href="/custom-home-builder-scottsdale" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
+                      Custom New Construction
+                    </Link>
+                    <div className="border-t border-border-default"></div>
                     <Link href="/services/hvac" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
                       HVAC
                     </Link>
@@ -79,6 +89,22 @@ export default function Navbar() {
                     </Link>
                     <Link href="/services/plumbing" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
                       Plumbing
+                    </Link>
+                  </div>
+                </div>
+                <div className="relative group">
+                  <div className="px-4 py-2 text-sm font-medium text-silver cursor-pointer hover:text-gold transition-colors duration-200 rounded-lg hover:bg-surface-light flex items-center gap-1">
+                    Neighborhoods
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </div>
+                  <div className="absolute left-0 mt-1 w-48 bg-surface shadow-soft-lg rounded-xl overflow-hidden z-10 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 border border-border-default">
+                    <Link href="/mccormick-ranch" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
+                      McCormick Ranch
+                    </Link>
+                    <Link href="/gainey-ranch" className="block px-4 py-3 text-silver hover:bg-surface-light hover:text-gold transition-colors duration-200">
+                      Gainey Ranch
                     </Link>
                   </div>
                 </div>
@@ -216,14 +242,39 @@ export default function Navbar() {
 
               <div className="pt-2">
                 <p className="px-4 text-xs uppercase tracking-wider text-silver-dark font-medium mb-2">Services</p>
-                {['Remodeling', 'HVAC', 'Electrical', 'Plumbing'].map((service) => (
+                {[
+                  { label: 'Kitchen Remodeling', href: '/kitchen-remodeling-scottsdale' },
+                  { label: 'Bathroom Remodeling', href: '/bathroom-remodeling-scottsdale' },
+                  { label: 'Whole-Home Remodeling', href: '/whole-home-remodel-scottsdale' },
+                  { label: 'Custom New Construction', href: '/custom-home-builder-scottsdale' },
+                  { label: 'HVAC', href: '/services/hvac' },
+                  { label: 'Electrical', href: '/services/electrical' },
+                  { label: 'Plumbing', href: '/services/plumbing' },
+                ].map((service) => (
                   <Link
-                    key={service}
-                    href={`/services/${service.toLowerCase()}`}
+                    key={service.href}
+                    href={service.href}
                     className="block py-2.5 px-4 pl-6 text-silver hover:text-gold hover:bg-surface-light rounded-xl transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {service}
+                    {service.label}
+                  </Link>
+                ))}
+              </div>
+
+              <div className="pt-2">
+                <p className="px-4 text-xs uppercase tracking-wider text-silver-dark font-medium mb-2">Neighborhoods</p>
+                {[
+                  { label: 'McCormick Ranch', href: '/mccormick-ranch' },
+                  { label: 'Gainey Ranch', href: '/gainey-ranch' },
+                ].map((neighborhood) => (
+                  <Link
+                    key={neighborhood.href}
+                    href={neighborhood.href}
+                    className="block py-2.5 px-4 pl-6 text-silver hover:text-gold hover:bg-surface-light rounded-xl transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {neighborhood.label}
                   </Link>
                 ))}
               </div>
