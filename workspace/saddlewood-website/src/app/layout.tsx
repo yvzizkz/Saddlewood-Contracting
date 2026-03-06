@@ -4,13 +4,6 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AuthProvider from '@/lib/auth/auth-provider';
-import dynamic from 'next/dynamic';
-
-
-// Mobile sticky estimate button
-const MobileEstimateButton = dynamic(() => import('@/components/MobileEstimateButton'), {
-  ssr: false
-});
 
 
 // Load DM Sans - sleek modern sans-serif for body text
@@ -192,9 +185,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          
-          {/* Mobile sticky estimate button */}
-          <MobileEstimateButton />
           
           {/* GoHighLevel Chat Widget */}
           <script 
